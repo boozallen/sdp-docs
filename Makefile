@@ -26,11 +26,11 @@ image:
 
 get-remote-docs:
 	# library docs 
-	git clone --depth=1 -n --single-branch --branch=master $(LIBSREPO) pages/libraries
+	ls pages/libraries || git clone --depth=1 -n --single-branch --branch=master $(LIBSREPO) pages/libraries
 	cd pages/libraries && git checkout master -- $$(git diff --name-only --cached -- '*.rst') && cd -
 
 	# jte docs
-	git clone --depth=1 -n --single-branch --branch=master $(JTEREPO) pages/jte
+	ls pages/jte || git clone --depth=1 -n --single-branch --branch=master $(JTEREPO) pages/jte
 	cd pages/jte && git checkout master -- docs && cd -
 
 # build docs 
