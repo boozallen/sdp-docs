@@ -48,6 +48,7 @@ live:
 push: 
 	make image 
 	make get-remote-docs
+	# need to add sphinx-versioning command here when docs are ready to go public
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
