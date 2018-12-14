@@ -19,24 +19,17 @@ to the idea that you can setup a hierarchy where code repositories can be forced
 to inherit certain configurations from a higher-level pipeline's configurations.
 
 You can easily customize which parts of the pipeline configuration can
-(or cannot) be overriden by a child repository. From a security and testing
+(or cannot) be overridden by a child repository. From a security and testing
 perspective, this is a great way to ensure that the repositories in your
 organization meet certain requirements. To make this work, we take advantage of
 Jenkins' built-in tier system.
 
-For this guide, we will be configuring a Jenkins Folder with two things in it: a
-GitHub Organization and a repository from a different GitHub Organization. The
-GitHub Organization and the unaffiliated GitHub repository will inherit the
-pipeline configuration applied to the folder while being able to supply some of
-their own configuration settings as well.
+For this guide, we will be configuring a Jenkins Folder that has its own set of
+pipeline settings, and then move our GitHub Organization Job we made previously
+into it and observe how it inherits those settings.
 
 Create another Pipeline Configuration File
 ===========================================
-
-We will start by creating a new GitHub organization and a GitHub repository
-within it. The repository will have a pipeline configuration within it, so we
-can use it for the folder Jenkins item that we will be creating further down
-below.
 
 We'll start by creating a new set of governance rules in the "pipeline-config"
 repository we created in the previous section. Create a new folder in that repo
@@ -49,9 +42,22 @@ file, *pipeline_config.groovy*, with the following contents:
       message = "hello world"
     }
 
-The file sets up a single application environment called "dev" for pipelines
-under this governance tier. With this new file, our pipeline-config repo should
-have this file structure:
+The keywords section of the pipeline_config allows us to create some global
+variables for our pipeline. For example, the |github_enterprise| library's
+``on_commit`` step can take a regex argument to check if a particular GitHub
+branch has been committed to. By the |default_pipeline_config| has a couple of
+regex expressions in the keywords section to match branch names for master,
+develop, hotfix, and others.
+
+.. |github_enterprise| raw:: html
+
+   <a href="https://github.com/boozallen/sdp-libraries/tree/master/github_enterprise" target="_blank">github enterprise</a>
+
+
+.. |default_pipeline_config| raw:: html
+
+   <a href="https://github.com/boozallen/jenkins-templating-engine/blob/master/src/main/resources/org/boozallen/plugins/jte/config/pipeline_config.groovy" target="_blank">default pipeline config</a>
+
 
 ::
 
