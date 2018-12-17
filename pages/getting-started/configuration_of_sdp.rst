@@ -180,7 +180,8 @@ Jenkins template (Jenkinsfile), and added the two credentials we'll need to
 Jenkins' credentials store (github & docker-registry). The next
 step is to start populating Jenkins with pipelines to run.
 
-In the Jenkins homepage, click "New Item," enter a name for your project,
+In the Jenkins homepage, click "New Item," enter a name for your project (such
+as the name of the GitHub organization it'll represent),
 select "GitHub Organization," then click OK. This will take you to the
 configuration page for your new GitHub Organization project.
 
