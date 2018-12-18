@@ -66,4 +66,3 @@ Use the ``previous`` and ``next`` buttons to navigate through this guide.
    deploying_devops_tools
    configuration_of_sdp
    configure_conditional_inheritance_hierarchy
-   integrate_sample_application
