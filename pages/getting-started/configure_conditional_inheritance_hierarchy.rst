@@ -42,15 +42,15 @@ file, *pipeline_config.groovy*, with the following contents:
 .. code-block:: groovy
 
     keywords{
-      message = "hello world"
+      message = "building my app"
     }
 
 The keywords section of the pipeline_config allows us to create some global
-variables for our pipeline. For example, the |github_enterprise| library's
-``on_commit`` step can take a regex argument to check if a particular GitHub
-branch has been committed to. By the |default_pipeline_config| has a couple of
-regex expressions in the keywords section to match branch names for master,
-develop, hotfix, and others.
+variables for our pipeline. For example, the |default_pipeline_config| provides
+a few keywords to make using the |github_enterprise| pipeline library easier.
+We can say ``on_commit to: develop`` and the ``develop`` keyword is points to
+a regular expression that should match your *develop* branch (or *Develop*,
+*development*, etc.)
 
 .. |github_enterprise| raw:: html
 
@@ -61,8 +61,8 @@ develop, hotfix, and others.
 
    <a href="https://github.com/boozallen/jenkins-templating-engine/blob/master/src/main/resources/org/boozallen/plugins/jte/config/pipeline_config.groovy" target="_blank">default pipeline config</a>
 
-Once you add the folder and file, your pipeline-config repository should have a
-file structure like this:
+Once you add the gov-tier folder and pipeline_config.groovy file, your
+repository should have a file structure like this:
 
 ::
 
@@ -81,30 +81,90 @@ governance tier, we need to update what will be our higher-level governance tier
 (the one in the root of *pipeline-config*) to allow that section to be used. As
 things stand, the *keywords* section in *pipeline-config/gov-tier/pipeline_config.groovy*
 would  be completely ignored because *pipeline-config/pipeline_config.groovy*
-doesn't allow it.
+doesn't explicitly allow for that section to be overwritten. Check out the page
+on :ref:`conditional inheritance` for more information.
 
-Go
+Go back to your top-level pipeline config file (i.e.
+pipeline-config/pipeline_config.groovy) and add a keywords section that allows
+for merges. The final file should look like this:
+
+.. code-block:: groovy
+
+    application_image_repository = "docker-registry.default.svc:5000/demo"
+    application_image_repository_credential = "docker-registry"
+
+    libraries{
+      github_enterprise
+      docker
+    }
+
+    keywords{
+      merge = true
+    }
+
+
+Note the added ``keywords`` section. It has only one field: ``merge``. This is a
+**reserved** field name in pipeline configuration files. We can add ``merge = true``
+to any section of this file, and the settings in "lower" pipeline config files
+will be merged into this file to synthesize a pipeline's final, aggregated pipeline
+file. In this case, we want to allow our gov-tier's keyword to be used, so we
+allow it's ``keywords`` section to be merged with this config file. This is
+explained in more detail on the :ref:`conditional inheritance` page.
 
 
 Add a New Pipeline Template
 ---------------------------
 
+Now that we've added a keyword, and we've given our pipeline permission to use
+it, we should create a new pipeline template that uses this keyword. In the
+previous section of the Getting Started guide, we created a default pipeline
+template that builds a container image. With our current pipeline configuration
+repository, it will still use that pipeline template.
+
+Now add a new pipeline template, also called Jenkinsfile, to the gov-tier folder
+we created. It should look like this:
+
+.. code-block:: groovy
+
+    echo message
+    build()
+
+And now your pipeline configuration repo should look like this:
+
+::
+
+  pipieline-config
+  |-  Jenkinsfile
+  |-  pipeline_config.groovy
+  |-  gov-tier
+         |- Jenkinsfile
+         |- pipeline_config.groovy
+
+When searching for a pipeline template, the JTE will start at the lowest-level
+governance tier and, if it can't find it there, traverse up governance-tiers
+until it finds one. Since we plan to use the gov-tier folder as the
+lower governance tier, that means that the JTE will now choose the template we
+just created for the pipeline.
 
 Create a Jenkins Folder With Governance
 =======================================
 
-We now have two directories in our pipeline-config repository that can serve as governance
-tiers, each with their own pipeline_config.groovy file. Now to apply them in Jenkins.
-We'll be using the config file in the root of our pipeline config repository for
-a Jenkins folder, move our Organization Job into that folder, then update that
-job to use the pipeline_config.groovy file that we just created.
+We now have two directories in our pipeline-config repository that can serve as
+governance tiers, each with their own pipeline_config.groovy file. However, the
+JTE doesn't know from the file structure how we want to use these governance
+tiers. We need to configure that ourselves.
+
+We'll be creating a folder object in Jenkins, use the the root of our pipeline
+config repository as its Configuration Base Directory, move our Organization Job
+into that folder, then update that job to use the gov-tier folder we created
+as *its* Configuration Base Directory.
 
 First, create a Folder in Jenkins. We'll be configuring it much like how we
 configured the GitHub Organization job in the previous section.
 On the Jenkins starting screen on the left hand side, click "New Item."
 
-For the "item name," put *Project*. Click "Folder" and then click
-OK.
+For the "item name," put *Project* (The name is arbitrary). Click "Folder" and
+then click OK.
 
 On the top navigation tabs, you should see a *Solutions Delivery Platform* tab.
 Clicking it should take you to the configuration section to specify the location
