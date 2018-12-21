@@ -202,11 +202,6 @@ menu you should see a *move* option. Click it, and you will be redirected to a
 screen asking where you'd like to to move the organization to. In the dropdown,
 select the option with *Jenkins » My Project*.
 
-With that last action, you should now have a organization that inherits all the
-pipeline configurations of the folder and the GitHub Organization Job, your
-Organization, then Configure. Click on the Solutions Delivery Platform tab to
-scroll down to the SDP settings, and in the Configuration Base Directory field
-
 
 Update the Organization's Governance
 ====================================
