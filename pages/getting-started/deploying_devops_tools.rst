@@ -50,13 +50,13 @@ installed, that shouldn't be a problem.
 Follow the instructions on the screen to perform the initial Jenkins setup.
 Create an admin user and install the recommended plugins.
 
-Once that wraps up, we need to install the JTE plugin. Clone and build the
-|JTE_plugin| following the instructions in the README. Then, from your Jenkins'
+Once that wraps up, build and install the JTE plugin Following the instructions on the
+|Installing_JTE| page. Alternatively, follow the instructions in the README file of the JTE Repository. Then, from your Jenkins'
 homepage, click on Manage Jenkins, Manage Plugins, Advanced, and under Upload
 Plugin click Choose File. Select the **jte.jpi** file (it should be under
 build/libs in your JTE folder), then click Upload. After loading and
 restarting, Jenkins will have installed the JTE plugin.
 
-.. |JTE_plugin| raw:: html
+.. |Installing_JTE| raw:: html
 
-   <a href="https://github.com/boozallen/jenkins-templating-engine" target="_blank">JTE Repository</a>
+   <a href="/pages/jte/docs/pages/installation.html" target="_blank">Installing JTE</a>
