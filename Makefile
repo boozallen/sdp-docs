@@ -11,13 +11,15 @@ LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
 JTEREPO       = https://github.com/boozallen/jenkins-templating-engine.git
 
 # Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+help: ## Show help 
+	e
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+
 
 .PHONY: help Makefile
 
 # cleanup
-clean: 
+clean: ## removes remote documentation and compiled docs
 	rm -rf $(BUILDDIR) pages/libraries pages/jte
 
 # build image 
@@ -35,15 +37,15 @@ get-remote-docs:
 
 # build docs 
 docs: 
+	make clean 
 	make image
 	make get-remote-docs
-	docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-# hot reload
-live:
-	make image
-	make get-remote-docs
-	docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0
+	@if [ "$(filter-out $@,$(MAKECMDGOALS))" = "live" ]; then\
+		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
+	else\
+		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
+	fi
 
 push: 
 	make image 
