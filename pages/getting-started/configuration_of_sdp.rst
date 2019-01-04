@@ -119,7 +119,7 @@ it is a dependency of the Docker library. A list of pipeline libraries can be fo
    Although the library name is "github_enterprise," it will work with the
    repositories on `public GitHub`_ as well.
 
-   .. _public GitHub: https://github.com
+.. _public GitHub: https://github.com
 
 Add a Jenkinsfile
 -----------------
