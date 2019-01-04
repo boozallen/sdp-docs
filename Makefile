@@ -10,23 +10,19 @@ BUILDDIR      = _build
 LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
 JTEREPO       = https://github.com/boozallen/jenkins-templating-engine.git
 
-# Put it first so that "make" without argument is like "make help".
-help: ## Show help 
-	e
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
-
-
 .PHONY: help Makefile
 
-# cleanup
-clean: ## removes remote documentation and compiled docs
+# Put it first so that "make" without argument is like "make help".
+help: ## Show target options
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+
+clean: ## removes remote documentation and compiled documentation
 	rm -rf $(BUILDDIR) pages/libraries pages/jte
 
-# build image 
-image: 
+image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
 
-get-remote-docs:
+get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 	# library docs 
 	ls pages/libraries || git clone --depth=1 -n --single-branch --branch=master $(LIBSREPO) pages/libraries
 	cd pages/libraries && git checkout master -- $$(git diff --name-only --cached -- '*.rst') && cd -
@@ -36,7 +32,8 @@ get-remote-docs:
 	cd pages/jte && git checkout master -- docs && cd -
 
 # build docs 
-docs: 
+docs: ## builds documentation in _build/html 
+      ## run make docs live for hot reloading of edits during development
 	make clean 
 	make image
 	make get-remote-docs
@@ -47,9 +44,9 @@ docs:
 		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
 	fi
 
-push: 
-	make image 
-	make get-remote-docs
+#push: 
+#	make image 
+#	make get-remote-docs
 	# need to add sphinx-versioning command here when docs are ready to go public
 
 # Catch-all target: route all unknown targets to Sphinx using the new
