@@ -22,7 +22,7 @@ Identify the Source Code
 ========================
 
 It wouldn't be much of a pipeline if there was nothing to send through it. Feel
-free to try to use your own source code. If you have none to use, you could
+free to try to use your own source code. If you have none to use, you can
 fork this `example project`_.
 
 .. _example project: https://github.com/kottoson-bah/sdp-example-proj
@@ -60,9 +60,12 @@ Add a pipeline_config.groovy file
 ---------------------------------
 
 While a pipeline_config.groovy file is not strictly required - the JTE uses a
-base pipeline config file with sensible defaults - it's a good idea to create
+`base pipeline config file`_ with sensible defaults - it's a good idea to create
 the file now. Should you want to add to it later, it will be there and ready for
 you to add changes.
+
+.. _base pipeline config file: https://github.com/boozallen/sdp-pipeline-framework/blob/master/resources/sdp/pipeline_config.groovy
+
 
 For this getting started guide, it is assumed your project's application runs
 inside containers. This means that, at a bare minimum, your pipeline builds
@@ -109,12 +112,14 @@ later on in this guide, but note that this ID is an arbitrary name.
 Under ``libraries{}`` there are two SDP libraries listed: ``github_enterprise``
 and ``docker``. We will be using the pipeline steps provided by the Docker
 library in the pipeline, and we include the GitHub Enterprise library because
-it is a dependency of the Docker library.
+it is a dependency of the Docker library. A list of pipeline libraries can be found :ref:`here<pipeline libraries>`.
 
 .. note::
 
    Although the library name is "github_enterprise," it will work with the
-   repositories on the github.com site as well.
+   repositories on `public GitHub`_ as well.
+
+   .. _public GitHub: https://github.com
 
 Add a Jenkinsfile
 -----------------
@@ -172,7 +177,7 @@ and put "docker-registry" in the *ID* and *Description* fields.
 
     If your application image repository doesn't require a username/password,
     you still need to create a credential to use. Just set both the username
-    and password to **unused**
+    and password to **unused**.
 
 Add a GitHub Organization Project to Jenkins
 --------------------------------------------
@@ -231,7 +236,7 @@ Final Touches
 =============
 
 If you've followed all of the previous sections, you should now have a basic
-build pipeline. All that's left is to watch it run and automate it.
+build pipeline. All that's left is to watch it run and to automate it.
 
 
 Watch The Pipeline Run
