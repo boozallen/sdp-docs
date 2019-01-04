@@ -36,8 +36,8 @@ Create another Pipeline Configuration File
 
 We'll start by creating a new set of governance rules in the "pipeline-config"
 repository we created in the previous section. Create a new folder in that repo
-and call it "gov-tier" (the name is arbitrary). Inside that folder create a new
-file, *pipeline_config.groovy*, with the following contents:
+and call it "gov-tier" (the name is arbitrary). Inside that folder, create a new
+file named *pipeline_config.groovy*, with the following contents:
 
 .. code-block:: groovy
 
@@ -47,8 +47,8 @@ file, *pipeline_config.groovy*, with the following contents:
 
 The keywords section of the pipeline_config allows us to create some global
 variables for our pipeline. For example, the |default_pipeline_config| provides
-a few keywords to make using the |github_enterprise| pipeline library easier.
-We can say ``on_commit to: develop`` and the ``develop`` keyword is points to
+a few keywords to make it easier to use the |github_enterprise| pipeline library.
+We can say ``on_commit to: develop`` and the ``develop`` keyword points to
 a regular expression that should match your *develop* branch (or *Develop*,
 *development*, etc.)
 
