@@ -9,11 +9,11 @@ Recap
 
 At this point, you should have read the introduction page and made sure
 that the prerequisites were met.
+    * You either have an application with source code in GitHub or you've forked https://github.com/kottoson-bah/sdp-example-proj
+    * You have access to `boozallen SDP GitHub repositories`_
+    * You have `Docker`_ installed
 
-* You either have an application with source code in GitHub or you've forked https://github.com/kottoson-bah/sdp-example-proj
-* You have access to `boozallen SDP GitHub repositories`_
-* You have Docker installed
-
+.. _Docker: https://docs.docker.com/install/
 .. _boozallen SDP GitHub repositories: https://github.com/boozallen/?utf8=✓&q=sdp
 
 Overview

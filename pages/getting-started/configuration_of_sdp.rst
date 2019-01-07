@@ -7,21 +7,21 @@ Configuration of SDP
 Recap
 =====
 
-At this point, you should have deployed and configured your Jenkins instance, as
+At this point, you should have deployed and configured your Jenkins instance as
 well as installed the JTE plugin.
 
 
 Overview
 ========
 
-In this section of the getting started guide, you will setup and configure a
-basic pipeline for the different repositories in your GitHub Organization.
+In this section of the Getting Started guide, you will setup and configure a
+basic Jenkins pipeline for the different repositories in your GitHub Organization.
 
 
 Identify the Source Code
 ========================
 
-It wouldn't be much of a pipeline if there was nothing to send through it. Feel
+It wouldn't be much of a pipeline if there wasn't any code to send through it. Feel
 free to try to use your own source code. If you have none to use, you can
 fork this `example project`_.
 
@@ -81,6 +81,7 @@ pipeline_config.groovy and add to it the following:
     application_image_repository_credential = "docker-registry"
 
     libraries{
+      sdp
       github_enterprise
       docker
     }
@@ -109,8 +110,9 @@ The ``application_image_repository_credential`` is the ID of the credential
 stored in Jenkins used to login to that repository. We create this credential
 later on in this guide, but note that this ID is an arbitrary name.
 
-Under ``libraries{}`` there are two SDP libraries listed: ``github_enterprise``
-and ``docker``. We will be using the pipeline steps provided by the Docker
+Under ``libraries{}`` there are three SDP libraries listed: ``sdp``, ``github_enterprise``,
+and ``docker``. The SDP library is a required library that includes a pipeline step needed for most of the other tools' libraries.
+We will be using the pipeline steps provided by the Docker
 library in the pipeline, and we include the GitHub Enterprise library because
 it is a dependency of the Docker library. A list of pipeline libraries can be found :ref:`here<pipeline libraries>`.
 
@@ -132,7 +134,7 @@ Create a file called Jenkinsfile and inside put one line: ``build()``. Now,
 every pipeline that uses this default template will execute the "build" step,
 which is provided by the "docker" library we specified in the pipeline config
 file. This step should build a container image from source code and push it to
-the application image repository.
+the application image repository defined within the ``pipeline_config.groovy`` file.
 
 
 Configure Your Organization in Jenkins
@@ -261,18 +263,18 @@ Automate The Pipeline
 We've proven that the pipeline finishes successfully (at least for the
 repository we just tested). Now we want the pipeline to run automatically
 whenever a new commit is pushed to the repository. This way, we have a built
-container image with the latest features as soon as they get pushed the the
+container image with the latest features as soon as they get pushed to
 GitHub.
 
 You can configure webhooks for the entire GitHub Organization or for each
-repository individually. For whichever you choose, go to it's settings page,
+repository individually. For whichever you choose, go to its settings page,
 select *Hooks*, and click the *Add webhook* button in the top right. The
 *Payload URL* is your Jenkins URL *plus* ``/github-webhook/``
 (i.e. https://my-jenkins.example.com/github-webhook/). Leave *Content type* and
 *Secret*. Choose "Let me select individual events" and check "Pull
 Requests," "Pushes," and "Repositories."
 
-Once you click "Add webhook" GitHub will test that your webhooks can reach the
+Once you click "Add webhook," GitHub will test that your webhooks can reach the
 Jenkins server. If that succeeds, you're all set! Make a commit to your
 repository and, in a moment, you should see Jenkins automatically start a
 corresponding build.
