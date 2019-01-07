@@ -7,7 +7,7 @@ Configuration of SDP
 Recap
 =====
 
-At this point you should have deployed and configured your Jenkins instance, as
+At this point, you should have deployed and configured your Jenkins instance, as
 well as installed the JTE plugin.
 
 
