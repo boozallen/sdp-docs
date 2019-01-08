@@ -22,7 +22,7 @@ Identify the Source Code
 ========================
 
 It wouldn't be much of a pipeline if there wasn't any code to send through it. Feel
-free to try to use your own source code. If you have none to use, you can
+free to try to use your own source code. If you have any of your own to use, you can
 fork this `example project`_.
 
 .. _example project: https://github.com/kottoson-bah/sdp-example-proj

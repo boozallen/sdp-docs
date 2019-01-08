@@ -16,7 +16,7 @@ create a simple pipeline, and establish some governance rules.
 .. note::
 
     Because one of the goals of this guide is to cover *how* the SDP is set up, we
-    intentionally avoid some certain shortcuts. A quick-start guide will be made
+    intentionally avoid some shortcuts. A quick-start guide will be made
     available in the future.
 
 =============
@@ -29,28 +29,24 @@ for building end-to-end DevSecOps pipelines for containerized applications. The
 getting started guide will cover this particular use-case.
 
 Furthermore, this guide will be operating under some assumptions:
-
-* You're using GitHub (public or enterprise) to host source code. If you don't
-have source code to use for this getting started guide, free to fork this
-`example project`_.
-* You can access the relevant `GitHub repositories`_.
-* Your workstation is running OSX or Linux, either natively or in a VM
-* You have Docker installed on your workstation
+    * You're using GitHub (public or enterprise) to host source code. If you don't have source code to use for this Getting Started guide, feel free to fork this `example project`_.
+    * You can access the relevant `GitHub repositories`_
+    * Your workstation is running OSX or Linux, either natively or in a VM
+    * You have Docker installed on your workstation
 
 .. _example project: https://github.com/kottoson-bah/sdp-example-proj
 .. _GitHub repositories: https://github.com/boozallen/?utf8=✓&q=sdp
 
 
-.. note:: Support of other git based scm's and non-git scm's are on the roadmap, but have not yet been implemented.
+.. note:: Support of other git based SCM's and non-git SCM's are on the roadmap but have not yet been implemented.
 
 =====
 Tools
 =====
 
 This getting started guide assumes some familiarity with:
-
-* GitHub, or your source code manager (SCM) of choice
-* Docker, a containerization tool
+    * GitHub, or your source code manager (SCM) of choice
+    * Docker, a containerization tool
 
 =================
 Let's Get Started
