@@ -97,8 +97,10 @@ images it builds.
     `deploy one locally`_. If you go this route, set ``application_image_repository``
     to ``127.0.0.1:5000`` or the IP address of the container, depending on how
     you're running Jenkins. Note that if you don't add a signed ssl certificate
-    to your registry you'll need to add your registry's IP and port to your
-    Docker daemon's list of trusted registries.
+    to your registry you'll need to `add your registry's IP and port to your
+    Docker daemon's list of trusted registries`_.
+
+..  _add your registry's IP and port to your Docker daemon's list of trusted registries: https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry
 
 .. _deploy one locally: https://docs.docker.com/registry/deploying/
 
