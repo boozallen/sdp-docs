@@ -14,16 +14,17 @@ well as installed the JTE plugin.
 Overview
 ========
 
-In this section of the Getting Started guide, you will setup and configure a
+In this section of the Getting Started Guide, you will setup and configure a
 basic Jenkins pipeline for the different repositories in your GitHub Organization.
 
 
 Identify the Source Code
 ========================
 
-It wouldn't be much of a pipeline if there wasn't any code to send through it. Feel
-free to try to use your own source code. If you have any of your own to use, you can
-fork this `example project`_.
+It wouldn't be much of a pipeline if there wasn't any code to send through it.
+You can use your own source code so long as can be compiled/built with
+``docker build``. If you don't yet have a compatible source code repository, you
+can fork this `example project`_ for the purposes of this Getting Started Guide.
 
 .. _example project: https://github.com/kottoson-bah/sdp-example-proj
 
@@ -67,7 +68,7 @@ you to add changes.
 .. _base pipeline config file: https://github.com/boozallen/sdp-pipeline-framework/blob/master/resources/sdp/pipeline_config.groovy
 
 
-For this getting started guide, it is assumed your project's application runs
+For this Getting Started Guide, it is assumed your project's application runs
 inside containers. This means that, at a bare minimum, your pipeline builds
 and pushes a (Docker) container image. In order to do that, we need a pipeline
 config file set up to use Docker and our SCM (GitHub).
@@ -81,7 +82,6 @@ pipeline_config.groovy and add to it the following:
     application_image_repository_credential = "docker-registry"
 
     libraries{
-      sdp
       github_enterprise
       docker
     }
@@ -112,11 +112,11 @@ The ``application_image_repository_credential`` is the ID of the credential
 stored in Jenkins used to login to that repository. We create this credential
 later on in this guide, but note that this ID is an arbitrary name.
 
-Under ``libraries{}`` there are three SDP libraries listed: ``sdp``, ``github_enterprise``,
-and ``docker``. The SDP library is a required library that includes a pipeline step needed for most of the other tools' libraries.
-We will be using the pipeline steps provided by the Docker
+Under ``libraries{}`` there are two SDP libraries listed: ``github_enterprise``
+and ``docker``. We will be using the pipeline steps provided by the Docker
 library in the pipeline, and we include the GitHub Enterprise library because
-it is a dependency of the Docker library. A list of pipeline libraries can be found :ref:`here<pipeline libraries>`.
+it is a dependency of the Docker library. A list of pipeline libraries can be
+found :ref:`here<pipeline libraries>`.
 
 .. note::
 
@@ -155,7 +155,7 @@ Add Credentials
 
 .. note::
 
-  In this getting started guide we will cover how to create
+  In this Getting Started Guide we will cover how to create
   *global credentials*. If you want to create credentials in different domains
   with different scopes, be sure that the relevant Jenkins projects have access.
 
