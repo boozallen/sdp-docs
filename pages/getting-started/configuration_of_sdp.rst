@@ -198,15 +198,15 @@ configuration page for your new GitHub Organization project.
 
 Starting in the *Projects* section, choose the "github" credential we created in
 the *Credentials* field, set the *Owner* field to the name of the GitHub
-organization (or name of the account) containing the source code repositories to
-build from. In the *Project Recognizers* sub-section, using the red **X** delete
-the *Pipeline Jenkinsfile* block. Then, using the *Add* dropdown, add a *Jenkins
-Templating Engine* block.
+organization (or name of the account) containing the source code repositories for your application code to
+build from. In the *Project Recognizers* sub-section, delete
+the *Pipeline Jenkinsfile* block by clicking the red **X**. Then, using the *Add* dropdown, click the *Jenkins
+Templating Engine* option to add it.
 
 Scroll down to the *Solutions Delivery Platform* section and in the *Source
-Location* dropdown select "Git." In the *Repository URL* section add your
-pipeline config repo's URL. This is the same URL you would use to clone it,
-which you can get by accessing to the repo online, clicking the "Clone or download"
+Location* dropdown select "Git." In the *Repository URL* section add the URL for the repository where you stored your pipeline config.
+This is the same URL you would use to clone it,
+which you can get by navigating to the repository on GitHub, clicking the "Clone or download"
 button and copying the (http or https) URL. If there's a "Failed to connect"
 error message, don't panic. Select your GitHub credential for the
 *Credentials* section and that should disappear.
