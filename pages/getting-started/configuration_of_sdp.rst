@@ -222,9 +222,11 @@ URL* section, and again use your github credential in the *Credentials* section.
 
 .. note::
 
-    If you're using GitHub Enterprise, you'll need to add a GitHub
-    Enterprise Server in your Jenkins configuration if you haven't already.
+    If you're using GitHub Enterprise, you'll need to `add a GitHub
+    Enterprise Server in your Jenkins configuration`_ if you haven't already.
     You'll also need to set any *API endpoint* fields to use this server.
+
+.. _add a GitHub Enterprise Server in your Jenkins configuration: https://www.360logica.com/blog/how-to-use-github-plugin-for-jenkins/
 
 Double-check your settings, then hit *Save*. Jenkins will start scanning your
 GitHub Organization for repositories. Clicking *Status* in the top right should
