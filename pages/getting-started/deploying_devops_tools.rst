@@ -19,7 +19,7 @@ that the prerequisites were met.
 Overview
 ========
 
-In this section of the getting started guide, we'll be deploying Jenkins and
+In this section of the Getting Started Guide, we'll be deploying Jenkins and
 installing the JTE Jenkins plugin.
 
 Deploy Jenkins

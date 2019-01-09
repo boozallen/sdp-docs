@@ -117,7 +117,7 @@ Add a New Pipeline Template
 
 Now that we've added a keyword, and we've given our pipeline permission to use
 it, we should create a new pipeline template that uses this keyword. In the
-previous section of the Getting Started guide, we created a default pipeline
+previous section of the Getting Started Guide, we created a default pipeline
 template that builds a container image. With our current pipeline configuration
 repository, it will still use that pipeline template.
 
