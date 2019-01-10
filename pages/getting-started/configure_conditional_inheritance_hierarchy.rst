@@ -15,11 +15,13 @@ Overview
 
 This section describes how you can take advantage of one of JTE's best
 features: **organizational governance**. Organizational governance refers
-to the idea that you can setup a hierarchy where code repositories can be forced
-to inherit certain configurations from a higher-level pipeline's configurations.
+to the ability to setup a configuration hierarchy, where mulitiple code
+repositories' can be forced to inherit a single set of pipeline configuration
+settings. Groups of these parent pipeline configs can in turn be forced to
+inherit certain configuration settings, and so on.
 
 You can easily customize which parts of the pipeline configuration can
-(or cannot) be overridden by a child repository. From a security and testing
+(or cannot) be overridden by a child pipeline config. From a security and testing
 perspective, this is a great way to ensure that the repositories in your
 organization meet certain requirements. To make this work, we take advantage of
 Jenkins' built-in tier system.
@@ -42,7 +44,7 @@ file named *pipeline_config.groovy*, with the following contents:
 .. code-block:: groovy
 
     keywords{
-      message = "building my app"
+      message = "Starting My Pipeline"
     }
 
 The keywords section of the pipeline_config allows us to create some global
@@ -121,15 +123,21 @@ previous section of the Getting Started Guide, we created a default pipeline
 template that builds a container image. With our current pipeline configuration
 repository, it will still use that pipeline template.
 
-Now add a new pipeline template, also called Jenkinsfile, to the gov-tier folder
+Add a new pipeline template, also called Jenkinsfile, to the gov-tier folder
 we created. It should look like this:
 
 .. code-block:: groovy
 
-    echo message
+    stage(message){
+      echo message
+    }
     build()
 
-And now your pipeline configuration repo should look like this:
+This will create a new pipeline stage in Jenkins, called "Starting My Pipeline"
+(the "message" keyword), and in that stage Jenkins will print out the message
+to the console log.
+
+Now your pipeline configuration repo should look like this:
 
 ::
 
@@ -166,7 +174,7 @@ On the Jenkins starting screen on the left hand side, click "New Item."
 For the "item name," put *Project* (The name is arbitrary). Click "Folder" and
 then click OK.
 
-On the top navigation tabs, you should see a *Solutions Delivery Platform* tab.
+On the top navigation tabs, you should see a *Jenkins Templating Engine* tab.
 Clicking it should take you to the configuration section to specify the location
 of the pipeline configuration we'd like to use for this folder.
 
@@ -186,8 +194,8 @@ You can now click *Apply* and then *Save*.
 You now have a Folder item that you put things under so that they may
 inherit the settings in its pipeline config file.
 
-The configurations should look something like the following picture with the
-credentials field being replaced by your own.
+.. The configurations should look something like the following picture with the
+.. credentials field being replaced by your own.
 
 
 Putting an Organization Into a Folder
@@ -200,7 +208,8 @@ Go back to the Jenkins homepage (you can do this by clicking on the Jenkins logo
 in the top left) and click the name of the organization job. On the left hand
 menu you should see a *move* option. Click it, and you will be redirected to a
 screen asking where you'd like to to move the organization to. In the dropdown,
-select the option with *Jenkins » My Project*.
+select *Jenkins » My Project*. The organization job should now be under the
+folder we just created.
 
 
 Update the Organization's Governance
@@ -208,13 +217,32 @@ Update the Organization's Governance
 
 The next step is to update our Organization Job in Jenkins to use our new
 governance tier. From the Jenkins home page, click on the My Project folder,
-the Organization job, then *configure*. Click on the *Solutions Delivery Platform*
+the Organization job, then *Configure*. Click on the *Jenkins Templating Engine*
 tab on the top to go down to relevant settings. In the *Configuration Base
 Directory* field enter the name of the "gov-tier" folder we created in the
 pipeline config GitHub Repository. This'll tell the Organization job to use
-the pipeline config file in *that* folder as its config file.
+the pipeline config file in *that* folder as its config file. Click *Save* to
+save these changes.
+
+
+Run the Pipeline
+================
+
+Go back to one of the repository jobs inside the organization project inside the
+folder we created and run another build. You should see a step called
+"Starting My Pipeline."
+
+.. note::
+
+   While we defined this "step" block manually in the Jenkinsfile, you don't need to
+   specify these when using a pipeline step provided by a library (i.e. the
+   *build()* step from the Docker library) since they do this within the step.
 
 
 If you still have any questions about how to configure your DevOps pipelines to
 utilize a conditional inheritance hierarchy or if you have any advanced use
 cases, take a look at the :ref:`conditional inheritance` section.
+
+Feel free to try changing the keyword value in the different pipeline config
+files, and making small changes to the pipeline templates to get a better feel
+for how conditional inheritance works.

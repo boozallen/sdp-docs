@@ -48,8 +48,8 @@ Create the Repository
 
 The logical place to do this is alongside your project's other source-code
 repositories. In GitHub, this usually means creating it in the same
-Organization. If your project is spread across multiple Organizations
-identify one that makes sense to use, or create a new one. If all of your
+Organization. If your project is spread across multiple Organizations,
+identify one that makes sense to use or create a new one. If all of your
 repositories are under your account, and not in an organization, your username is
 the functional organization name. A good name for this repository you create is
 "pipeline-config," but you can name it anything. What's important is that the
@@ -116,7 +116,9 @@ Under ``libraries{}`` there are two SDP libraries listed: ``github_enterprise``
 and ``docker``. We will be using the pipeline steps provided by the Docker
 library in the pipeline, and we include the GitHub Enterprise library because
 it is a dependency of the Docker library. A list of pipeline libraries can be
-found :ref:`here<pipeline libraries>`.
+found `on the Pipeline Libraries page`_
+
+.. _on the Pipeline Libraries page: /pages/libraries/index.html
 
 .. note::
 
@@ -187,8 +189,8 @@ Add a GitHub Organization Project to Jenkins
 --------------------------------------------
 
 So far we've created a pipeline config file (pipeline_config.groovy), a default
-Jenkins template (Jenkinsfile), and added the two credentials we'll need to
-Jenkins' credentials store (github & docker-registry). The next
+pipeline template (Jenkinsfile), and added the two credentials we'll need to
+the Jenkins credentials store (github & docker-registry). The next
 step is to start populating Jenkins with pipelines to run.
 
 In the Jenkins homepage, click "New Item," enter a name for your project (such
@@ -203,13 +205,20 @@ build from. In the *Project Recognizers* sub-section, using the red **X** delete
 the *Pipeline Jenkinsfile* block. Then, using the *Add* dropdown, add a *Jenkins
 Templating Engine* block.
 
-Scroll down to the *Solutions Delivery Platform* section and in the *Source
-Location* dropdown select "Git." In the *Repository URL* section add your
+Scroll down to the *Solutions Delivery Platform* section and, in the *Source
+Location* dropdown, select "Git." In the *Repository URL* section, add your
 pipeline config repo's URL. This is the same URL you would use to clone it,
 which you can get by accessing to the repo online, clicking the "Clone or download"
-button and copying the (http or https) URL. If there's a "Failed to connect"
+button, and copying the (http or https) URL. If there's a "Failed to connect"
 error message, don't panic. Select your GitHub credential for the
 *Credentials* section and that should disappear.
+
+.. note::
+
+    If you're using GitHub Enterprise, you'll need to add a GitHub
+    Enterprise Server in your Jenkins configuration if you haven't already.
+    You'll also need to set any *API endpoint* to your GitHub Enterprise server's
+    API endpoint.
 
 Move down to the *Library Sources* section and click add. A *Library* block
 should pop up. In the *SCM* dropdown select "Git." You should have access to
@@ -220,11 +229,6 @@ URL* section, and again use your github credential in the *Credentials* section.
 
     <a href="https://github.com/boozallen/sdp-libraries" target="_blank">sdp-libraries</a>
 
-.. note::
-
-    If you're using GitHub Enterprise, you'll need to add a GitHub
-    Enterprise Server in your Jenkins configuration if you haven't already.
-    You'll also need to set any *API endpoint* fields to use this server.
 
 Double-check your settings, then hit *Save*. Jenkins will start scanning your
 GitHub Organization for repositories. Clicking *Status* in the top right should
@@ -271,10 +275,10 @@ GitHub.
 You can configure webhooks for the entire GitHub Organization or for each
 repository individually. For whichever you choose, go to its settings page,
 select *Hooks*, and click the *Add webhook* button in the top right. The
-*Payload URL* is your Jenkins URL *plus* ``/github-webhook/``
-(i.e. https://my-jenkins.example.com/github-webhook/). Leave *Content type* and
-*Secret*. Choose "Let me select individual events" and check "Pull
-Requests," "Pushes," and "Repositories."
+*Payload URL* is your Jenkins URL **plus** ``/github-webhook/``
+(i.e. https://my-jenkins.example.com/github-webhook/). Don't change
+*Content type* or *Secret*. Choose "Let me select individual events" and check
+"Pull Requests," "Pushes," and "Repositories."
 
 Once you click "Add webhook," GitHub will test that your webhooks can reach the
 Jenkins server. If that succeeds, you're all set! Make a commit to your
