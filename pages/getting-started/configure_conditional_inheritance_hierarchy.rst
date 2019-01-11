@@ -110,7 +110,7 @@ Note the added ``keywords`` section. It has only one field: ``merge``. This is a
 to any section of this file, and the settings in "lower" pipeline config files
 will be merged into this file to synthesize a pipeline's final, aggregated pipeline
 file. In this case, we want to allow our gov-tier's keyword to be used, so we
-allow it's ``keywords`` section to be merged with this config file. This is
+allow its ``keywords`` section to be merged with this config file. This is
 explained in more detail on the :ref:`conditional inheritance` page.
 
 
@@ -162,9 +162,9 @@ governance tiers, each with their own pipeline_config.groovy file. However, the
 JTE doesn't know from the file structure how we want to use these governance
 tiers. We need to configure that ourselves.
 
-We'll be creating a folder object in Jenkins, use the the root of our pipeline
-config repository as its Configuration Base Directory, move our Organization Job
-into that folder, then update that job to use the gov-tier folder we created
+We'll be creating a folder object in Jenkins, using the root of our pipeline
+config repository as its Configuration Base Directory, moving our Organization Job
+into that folder, and then updating that job to use the gov-tier folder we created
 as *its* Configuration Base Directory.
 
 First, create a Folder in Jenkins. We'll be configuring it much like how we
