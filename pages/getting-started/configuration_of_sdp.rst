@@ -205,7 +205,7 @@ build from. In the *Project Recognizers* sub-section, delete
 the *Pipeline Jenkinsfile* block by clicking the red **X**. Then, using the *Add* dropdown, click the *Jenkins
 Templating Engine* option to add it.
 
-Scroll down to the *Solutions Delivery Platform* section and, in the *Source
+Scroll down to the *Jenkins Templating Engine* section and, in the *Source
 Location* dropdown, select "Git." In the *Repository URL* section, add your
 pipeline config repo's URL. This is the same URL you would use to clone it,
 which you can get by accessing to the repo online, clicking the "Clone or download"
