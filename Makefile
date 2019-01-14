@@ -10,7 +10,7 @@ BUILDDIR      = _build
 LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
 JTEREPO       = https://github.com/boozallen/jenkins-templating-engine.git
 
-.PHONY: help Makefile
+.PHONY: help Makefile 
 
 # Put it first so that "make" without argument is like "make help".
 help: ## Show target options
@@ -40,14 +40,19 @@ docs: ## builds documentation in _build/html
 
 	@if [ "$(filter-out $@,$(MAKECMDGOALS))" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
+	elif [ "$(goal)" = "deploy" ]; then\
+		$(eval old_remote := $(shell git remote get-url origin)) \
+		git remote set-url origin https://$(user):$(token)@github.com/boozallen/sdp-docs.git ;\
+		docker run -v $(shell pwd):/app sdp-docs sphinx-versioning push --show-banner . gh-pages . ;\
+		echo git remote set-url origin $(old_remote) ;\
+		git remote set-url origin $(old_remote) ;\
+
 	else\
 		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
 	fi
 
-#push: 
-#	make image 
-#	make get-remote-docs
-	# need to add sphinx-versioning command here when docs are ready to go public
+deploy: ;
+live: ; 
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
