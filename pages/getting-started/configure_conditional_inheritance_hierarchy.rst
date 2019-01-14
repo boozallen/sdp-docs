@@ -15,8 +15,8 @@ Overview
 
 This section describes how you can take advantage of one of JTE's best
 features: **organizational governance**. Organizational governance refers
-to the ability to setup a configuration hierarchy, where mulitiple code
-repositories' can be forced to inherit a single set of pipeline configuration
+to the ability to setup a configuration hierarchy, where multiple code
+repositories can be forced to inherit a single set of pipeline configuration
 settings. Groups of these parent pipeline configs can in turn be forced to
 inherit certain configuration settings, and so on.
 
