@@ -36,12 +36,14 @@ get-remote-docs:
 # build docs 
 docs: 
 	make image
+	make clean
 	make get-remote-docs
 	docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # hot reload
 live:
 	make image
+	make clean
 	make get-remote-docs
 	docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0
 
