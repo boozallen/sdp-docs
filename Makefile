@@ -36,7 +36,7 @@ docs: ## builds documentation in _build/html
       ## run make docs live for hot reloading of edits during development
 	make clean 
 	make image
-	make get-remote-docs
+	#make get-remote-docs
 	$(eval goal := $(filter-out $@,$(MAKECMDGOALS)))
 	@if [ "$(goal)" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
