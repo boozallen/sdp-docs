@@ -17,8 +17,9 @@ help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	rm -rf $(BUILDDIR) 
-	git rm -rf pages/libraries pages/jte || true 
+	git rm -rf pages/libraries || true 
+	git rm -rf pages/jte || true 
+	rm -rf $(BUILDDIR)  pages/libraries pages/jte 
 
 image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
