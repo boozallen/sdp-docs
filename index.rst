@@ -80,6 +80,7 @@ Are you pumped? I'm pumped.  Head over to the :ref:`Getting Started<Getting Star
    pages/getting-started/index
    pages/libraries/index
    pages/jte/docs/index
+   pages/deployment-guides/index
    pages/for-framework-devs/index
    pages/for-library-devs/index
    pages/for-sdp-users/index
