@@ -6,14 +6,13 @@ SDP on Openshift Deployment Guide
 Overview
 --------
 When you complete this guide, you should have a functioning deployment of the
-SDP on Openshift that you could reasonably use on a project. This includes a
-Jenkins master, one or more Jenkins agents, and services used by SDP libraries,
-such as Sonarqube.
+SDP. This includes a Jenkins master, one or more Jenkins agents, and services
+used by SDP libraries, such as Sonarqube.
 
 This guide also covers setting up a space in Openshift
 that can be automatically deployed to using the "Openshift" SDP Library. This
-includes a Tiller server for deployments via Helm, different "environments" such
-as "Dev" and "Test"
+includes a Tiller server for deployments via Helm, as well as separate
+application environments such as "Dev" and "Test"
 
 ----------------
 Before You Begin
@@ -32,8 +31,8 @@ You Should Have...
 You Should Be Able To...
 ========================
 
-* Be able to modify simple configuration files
-* Be able to run bash commands/scripts
+* Modify simple configuration files
+* Run bash commands/scripts
 
 -------------------
 System Requirements
@@ -54,7 +53,7 @@ Additional Recommendations
 * Your Openshift cluster is able to create Persistent Volumes
     * OCP 3.11: https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/index.html
     * OKD 3.11: https://docs.okd.io/3.11/install_config/persistent_storage/index.html
-* Your Openshift cluster is able to dynamically create Persistent Volumes
+* Your Openshift cluster is able to dynamically create said Persistent Volumes
     * OCP 3.11: https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html
     * OKD 3.11: https://docs.okd.io/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html
 
