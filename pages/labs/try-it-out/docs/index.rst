@@ -1,4 +1,4 @@
-.. _Try it Out: 
+.. _Try It Out: 
 
 Try It Out
 ===========

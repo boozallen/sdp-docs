@@ -1,13 +1,22 @@
 
-SDP Labs
-========
+.. _Learning Labs: 
+-------------
+Learning Labs
+-------------
 
-The purpose of the SDP-Labs is to give users the opportunity to get some hands-on experience through some activities and labs that we put together that we think will enhance your experience with using SDP.
+The best way to learn a technology is to use it. We've designed these Learning Labs to 
+give you hands-on experience with Booz Allen's Solutions Delivery Platform.
 
+
+.. csv-table:: Learning Labs Overview
+   :header: "**Lab**", "**Description**"
+
+   ":ref:`Try It Out <Try It Out>`", "A brief introduction to the Jenkins Templating Engine and our SDP Pipeline Libraries. You'll learn how to configure Jenkins to leverage SDP and make your first pipeline."
 
 
 .. toctree::
    :hidden:
+   :glob: 
    :maxdepth: 1
    :glob:
    :titlesonly:
