@@ -9,6 +9,7 @@ SOURCEDIR     = .
 BUILDDIR      = _build
 LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
 JTEREPO       = https://github.com/boozallen/jenkins-templating-engine.git
+LABSREPO      = https://github.com/boozallen/sdp-labs.git
 
 .PHONY: help Makefile 
 
@@ -19,7 +20,8 @@ help: ## Show target options
 clean: ## removes remote documentation and compiled documentation
 	git rm -rf pages/libraries || true 
 	git rm -rf pages/jte || true 
-	rm -rf $(BUILDDIR)  pages/libraries pages/jte 
+	git rm -rf pages/labs || true 
+	rm -rf $(BUILDDIR)  pages/libraries pages/jte pages/labs 
 
 image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
@@ -33,8 +35,13 @@ get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 	ls pages/jte || git clone --depth=1 -n --single-branch --branch=master $(JTEREPO) pages/jte
 	cd pages/jte && git checkout master -- docs && cd -
 
+	# learning labs 
+	ls pages/labs || git clone --depth=1 -n --single-branch --branch=try-it-out $(LABSREPO) pages/labs
+	cd pages/labs && git checkout try-it-out -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
+
 	git add pages/libraries/* || true 
 	git add pages/jte/* || true 
+	git add pages/labs/* || true 
 	git commit -m "updating jte and sdp library documentation"
 	git push -u origin master 
 
