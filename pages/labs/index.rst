@@ -16,9 +16,8 @@ give you hands-on experience with Booz Allen's Solutions Delivery Platform.
 
 .. toctree::
    :hidden:
+   :maxdepth: 2
    :glob: 
-   :maxdepth: 4
-   :glob:
    :titlesonly:
 
    **/docs/index
