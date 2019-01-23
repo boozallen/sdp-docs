@@ -1,0 +1,4 @@
+NAME                                 DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/springio-app   1         0         0            0           <unknown>
+NAME                   TYPE       CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+service/springio-app   NodePort   <none>       <none>        8080/TCP   <unknown>
