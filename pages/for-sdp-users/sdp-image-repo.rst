@@ -11,13 +11,19 @@ container registry.
 .. csv-table:: SDP Pipeline Image Repository Settings
    :header: "Field", "Description"
 
-   "sdp_image_repository", "The container image repository where SDP pipeline images will be pulled from" 
-   "sdp_image_repository_credential", "The Jenkins credential ID to log into the sdp image repository"  
+   "libraries.sdp.image.registry", "The container image repository where SDP pipeline images will be pulled from"
+   "libraries.sdp.image.cred", "The Jenkins credential ID to log into the sdp image repository"
 
 
 **Example Configuration**
 
 .. code:: groovy
 
-    sdp_image_repository = "https://docker-registry.default.svc:5000"
-    sdp_image_repository_credential = "sdp-jenkins-docker-registry"
+    libraries{
+      sdp{
+        images{
+          registry = "https://docker-registry.default.svc:5000" // "http://0.0.0.0:5000" // registry url
+          cred = "sdp-docker-registry"// jenkins cred id to authenticate
+        }
+      }
+    }

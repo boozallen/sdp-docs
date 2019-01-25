@@ -8,14 +8,17 @@ Images that get built via SDP will be pushed to a container image repository.
 .. csv-table:: Application Image Repository Settings
    :header: "Field", "Description"
 
-   "application_image_repository", "The container image repository where images will be pushed to." 
-   "application_image_repository_credential", "The Jenkins credential ID to log into the application image repository"  
+   "libraries.docker.registry", "The container image repository where images will be pushed to."
+   "libraries.docker.cred", "The Jenkins credential ID to log into the application image repository"
 
 
 **Example Configuration**
 
 .. code:: groovy
 
-    application_image_repository = "docker-registry.default.svc:5000/red-hat-summit"
-    application_image_repository_credential = "sdp-jenkins-docker-registry"
+      docker{
+        registry = "docker-registry.default.svc:5000/red-hat-summit" // "0.0.0.0:5000" // registry url
+        cred = "sdp-docker-registry"// jenkins cred id to authenticate
+      }
+    }
 

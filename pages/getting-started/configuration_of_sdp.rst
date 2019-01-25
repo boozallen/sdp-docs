@@ -78,12 +78,23 @@ pipeline_config.groovy and add to it the following:
 
 .. code-block:: groovy
 
-    application_image_repository = "docker-registry.default.svc:5000/demo"
-    application_image_repository_credential = "docker-registry"
-
     libraries{
+      sdp{
+        images{
+          registry = "http://docker-registry.default.svc:5000" // registry url
+          cred = "sdp-docker-registry"// jenkins cred id to authenticate
+          repo = "sdp"       // repo to find sdp images -> currently hard coded as "sdp"
+          docker_args = "--network=try-it-out_sdp"  // docker runtime args
+        }
+      }
       github_enterprise
-      docker
+      sonarqube{
+        enforce_quality_gate = true
+      }
+      docker{
+        registry = "docker-registry.default.svc:5000" // registry url
+        cred = "sdp-docker-registry"// jenkins cred id to authenticate
+      }
     }
 
 
@@ -94,7 +105,7 @@ images it builds.
 .. note::
 
     If you don't have a docker registry to store images in, you can
-    `deploy one locally`_. If you go this route, set ``application_image_repository``
+    `deploy one locally`_. If you go this route, set ``libraries.docker.registry``
     to ``127.0.0.1:5000`` or the IP address of the container, depending on how
     you're running Jenkins. Note that if you don't add a signed ssl certificate
     to your registry you'll need to `add your registry's IP and port to your
@@ -104,11 +115,11 @@ images it builds.
 
 .. _deploy one locally: https://docs.docker.com/registry/deploying/
 
-The ``application_image_repository`` field identifies the *hostname* and
+The ``libraries.docker.registry`` field identifies the *hostname* and
 *namespace* of the repositories used to store and retrieve application images.
 This is prepended to an image's (repo) name and tag to create the full image name.
 
-The ``application_image_repository_credential`` is the ID of the credential
+The ``libraries.docker.cred`` is the ID of the credential
 stored in Jenkins used to login to that repository. We create this credential
 later on in this guide, but note that this ID is an arbitrary name.
 
