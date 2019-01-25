@@ -18,9 +18,6 @@ help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	git rm -rf pages/libraries || true 
-	git rm -rf pages/jte || true 
-	git rm -rf pages/labs || true 
 	rm -rf $(BUILDDIR)  pages/libraries pages/jte pages/labs 
 
 image: ## builds container image used to build documentation 
@@ -39,11 +36,6 @@ get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 	ls pages/labs || git clone --depth=1 -n --single-branch --branch=try-it-out $(LABSREPO) pages/labs
 	cd pages/labs && git checkout try-it-out -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
 
-	git add pages/libraries/* || true 
-	git add pages/jte/* || true 
-	git add pages/labs/* || true 
-	git commit -m "updating jte and sdp library documentation"
-	git push -u origin master 
 
 # build docs 
 docs: ## builds documentation in _build/html 
