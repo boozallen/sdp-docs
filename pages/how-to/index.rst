@@ -1,5 +1,7 @@
+.. How To: 
+========
 How-To's
-==========
+========
 
 Your DevSecOps pipeline is at the center of your platform.  As such, there are many topics that will prove useful to understand
 even if they are outside the immediate scope of what SDP aims to accomplish.  We've collected some of that knowledge here:

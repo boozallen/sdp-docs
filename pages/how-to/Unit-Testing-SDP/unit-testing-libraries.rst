@@ -23,6 +23,7 @@ to verify the step functions as intended.
 How Are the Tests Written?
 --------------------------
 
+=====================
 The Testing Framework
 =====================
 
@@ -39,8 +40,9 @@ general Spock documentation is available at |this link|.
 
   <a href="http://spockframework.org/spock/docs" target="_blank">this link</a>
 
+============================
 Writing a Specification File
-===============================
+============================
 
 A "specification" is a list of features derived from business requirements. A
 specification file contains that list of features as unit tests, and those
@@ -94,6 +96,7 @@ to swap names with ones for your library.
 
   }
 
+=============
 Running Tests
 =============
 
@@ -106,6 +109,7 @@ from the root of the pipeline-framework repo, run ``mvn clean verify``
 I would advise running tests frequently in order to catch errors quickly. These
 tests aren't always easy to write correctly, and mistakes in syntax are common.
 
+=============
 Writing Tests
 =============
 

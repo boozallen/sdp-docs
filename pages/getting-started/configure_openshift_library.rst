@@ -258,9 +258,9 @@ _helpers.tpl
     {{- end }}
     {{- end }}
 
-~~~~~~~~~~~~
+~~~~~~~~~
 NOTES.txt
-~~~~~~~~~~~~
+~~~~~~~~~
 
 ::
 
@@ -268,17 +268,17 @@ NOTES.txt
 
 This file contains text that is displayed after the chart is successfully installed.
 
-~~~~~~~~~~~~
+~~~~~~~~~~
 Chart.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~
 
 ``name: .`` changed to ``name: helm-configuration-repository``
 
 The following files were created manually:
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 frontend.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 ::
 
     kind: List
@@ -358,18 +358,18 @@ frontend.yaml
     ``application_image_repository = "docker-registry.default.svc:5000/bar"`` so your image value in the above yaml file would look like ``- image: docker-registry.default.svc:5000/bar/sdp-website:{{ .Values.image_shas.sdp_website }}``. Note the switch from
     */demo/sdp-website* to */bar/sdp-website*.
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 values.dev.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 ::
 
     namespace: demo-dev # if your tiller server is foo-tiller this is probably foo-dev
     image_shas:
         sdp_website:
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 values.prod.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 ::
 
     namespace: demo-prod # if your tiller server is foo-tiller this is probably foo-dev
