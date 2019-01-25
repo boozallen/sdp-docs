@@ -28,7 +28,7 @@ Run the following command in your terminal from the top-level directory of the `
 
 .. code-block:: bash
 
-   docker-compose -f ./try-it-out/docker-compose.yaml up -d
+   docker-compose -f ./try-it-out/docker-compose.yaml up -d --scale sonar-scanner=0
 
 .. note:: The ``docker-compose`` command run above may not work on a company's WIFI depending on its firewall settings, so you may need to run it on a private network or where firewall rules are more lax. 
 
@@ -39,9 +39,6 @@ The above command will create and run the following Docker containers: Jenkins, 
 The response should show something similar to the following screenshot.
 
 .. image:: ../images/deploy-devops-tools/docker_ps_command.png
-
-.. note:: If you looked at the ``docker-compose.yaml`` file we provided, you may have noticed that sonar-scanner isn't a running container. This is a Docker image that we will need later, even though it's intentionally not running.
-
 
 For your conenvience, we have already automated the following thing to allow you to focus on the usage of SDP:
     
@@ -58,3 +55,9 @@ To be able to use and access the Docker registry that you just deployed, you wil
 Follow the instructions under the section labeled "Deploy a plain HTTP registry" on the following website to do so within the format of ``IP_Address:Port``: https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry
 
 .. note:: The URL of the Docker registry should not be preceded by **http://** when being added to the list of insecure registries.
+
+
+========
+Validate
+========
+
