@@ -52,6 +52,7 @@ Choose a location for your project files, and create a new directory called **pi
 In a text editor, create a file within the pipeline-configuration directory called **pipeline_config.groovy** with the following content:
 
 .. code-block:: bash
+
     libraries{
       sdp{
         images{
