@@ -1,4 +1,5 @@
 .. _helm multitenancy: 
+
 -----------------
 Helm Multitenancy
 -----------------
@@ -15,6 +16,7 @@ The `Helm docs on using RBAC`_ are a good resource for more information.
 .. _Helm docs on using RBAC: https://docs.helm.sh/using_helm/#role-based-access-control
 
 .. _helm environment provisioning script: 
+
 ===============================
 Environment Provisioning script
 ===============================

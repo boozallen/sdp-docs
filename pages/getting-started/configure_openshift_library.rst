@@ -1,4 +1,5 @@
 .. _configure_openshift_library:
+
 ---------------------------------
 Configuring the OpenShift Library
 ---------------------------------
@@ -212,6 +213,7 @@ Create a Values File Per Environment
 In addition to the *values.yaml* file created when ``helm create`` was run, you should make a *values.<APP_ENV>.yaml* file for each application environment you created at the top of this page. Be sure to substitute *<APP_ENV>* with the ``short_name`` of the application environment. For example, if you created a *dev* and *prod* environment, you might create those files with the command:
 
 .. code::
+
   cp values.yaml values.dev.yaml
   cp values.yaml values.prod.yaml
 
