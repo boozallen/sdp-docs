@@ -97,12 +97,20 @@ for merges. The final file should look like this:
 
 .. code-block:: groovy
 
-    application_image_repository = "docker-registry.default.svc:5000/demo"
-    application_image_repository_credential = "docker-registry"
-
     libraries{
+      sdp{
+        images{
+          registry = "http://docker-registry.default.svc:5000" // registry url
+          cred = "sdp-docker-registry"// jenkins cred id to authenticate
+          repo = "sdp"       // repo to find sdp images -> currently hard coded as "sdp"
+          docker_args = "--network=try-it-out_sdp"  // docker runtime args
+        }
+      }
       github_enterprise
-      docker
+      docker{
+        registry = "docker-registry.default.svc:5000" // registry url
+        cred = "sdp-docker-registry"// jenkins cred id to authenticate
+      }
     }
 
     keywords{
