@@ -31,23 +31,37 @@ be deploying on Openshift, we can make some assumptions about your pipeline.
 Building
 --------
 
-Currently the SDP supports building applications as Docker containers through
-the |docker_library|.
+Since Openshift is a container application platform, and it's assumed that your
+application is being deployed to Openshift, it can also be assumed that your application
+running as (Docker) containers. The SDP's |docker_library| makes it easy to
+build images from your source code repository and store them in Openshift's
+built-in |container_registry|.
+
+.. important::
+
+   Openshift has some guidelines around container images that it's important
+   to be aware of. The section on supporting arbitrary user IDs is particularly
+   importatant.
 
 -------
 Testing
 -------
 
 The SDP currently has libraries for tools that run |code_quality_tests|,
-|accessibility_compliance_tests|, |penetration_tests| and more. What you should
-use depends on the needs of your application, but automated tests ensure that
-problems are detected earlier in a feature's lifecycle, where it's easier (and
+|accessibility_compliance_tests|, |penetration_tests| and more. Which ones you should
+use depends on the needs of your application. Automated tests are useful for
+detecting issues earlier in a feature's lifecycle, where it's easier (and
 cheaper) to correct.
 
 ---------
 Deploying
 ---------
 
+The |openshift_library| makes it easy to deploy to different Openshift projects
+using |helm| a Kubernetes/Openshift package manager and templating tool. How to
+deploy an application is defined in a helm chart or charts, which is maintained
+in your SCM alongside your source code and pipeline configuration. This is covered
+in greater detail in Section 3.
 
 
 

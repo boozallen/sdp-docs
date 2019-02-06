@@ -24,5 +24,6 @@ application environments such as "Dev" and "Test"
    1_2_Run_Installer
    2_0_Pipeline_Config_Overview
    2_1_Pipeline_Planning
+   2_2_Pipeline_Config
 
 **Click on the Next button to continue on to the Section 1 of this guide*

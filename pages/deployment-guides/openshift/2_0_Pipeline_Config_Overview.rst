@@ -26,4 +26,4 @@ You Should Be Able To...
 ------------------------
 
 * Modify simple configuration files
-* Create a GitHub repository
+* Create a GitHub repository (or the equivalent in your SCM of choice)
