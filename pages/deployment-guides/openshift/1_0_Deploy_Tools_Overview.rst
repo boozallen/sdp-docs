@@ -20,7 +20,10 @@ You Should Have...
 * A working Openshift cluster
 * Credentials for a User on that cluster that has the *cluster-admin* role
 * Access to the relevant GitHub Repositories
+* The Helm client installed (https://docs.helm.sh/using_helm/#installing-helm)
 * The Openshift CLI installed
+
+    * OCP: https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html
     * OKD: https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli
 
 ------------------------

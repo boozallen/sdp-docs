@@ -25,5 +25,8 @@ application environments such as "Dev" and "Test"
    2_0_Pipeline_Config_Overview
    2_1_Pipeline_Planning
    2_2_Pipeline_Config
+   3_0_Application_Environment_Overview
+   3_1_Application_Environments
+   3_2_Helm_Chart_Repo
 
 **Click on the Next button to continue on to the Section 1 of this guide*
