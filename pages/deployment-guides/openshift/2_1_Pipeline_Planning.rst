@@ -39,7 +39,7 @@ built-in |container_registry|.
 
 .. important::
 
-   Openshift has some guidelines around container images that it's important
+   Openshift has some |guidelines_around_container_images| that it's important
    to be aware of. The section on supporting arbitrary user IDs is particularly
    importatant.
 
@@ -58,7 +58,7 @@ Deploying
 ---------
 
 The |openshift_library| makes it easy to deploy to different Openshift projects
-using |helm| a Kubernetes/Openshift package manager and templating tool. How to
+using |helm|, a Kubernetes/Openshift package manager and templating tool. How to
 deploy an application is defined in a helm chart or charts, which is maintained
 in your SCM alongside your source code and pipeline configuration. This is covered
 in greater detail in Section 3.
