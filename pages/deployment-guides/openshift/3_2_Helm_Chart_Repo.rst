@@ -157,6 +157,9 @@ helm chart using *values.dev.yaml*.
 The SDP will automatically update the image sha value discussed earlier, but you
 should now modify the different values.yaml files with environment-specifc variables.
 
+.. TODO: add section on Ephemeral environments and the necessary helpers.tpl
+         either here or in the Openshift library.
+
 ===================================
 Updating the Pipeline Configuration
 ===================================
@@ -189,7 +192,6 @@ Here's what you should now put for each of these settings
    "helm_configuration_repository_credential", "The ID of the username/password credential in Jenkins that can be used to read to and write from your helm repository"
    "tiller_namespace", "The Openshift namespace/project hosting the tiller server (e.g. demo-tiller)"
    "tiller_credential", "The credential for the tiller server you created in the previous section (e.g. demo-tiller)"
-
 
 
 ===============
