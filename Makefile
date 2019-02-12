@@ -9,6 +9,7 @@ SOURCEDIR     = .
 BUILDDIR      = _build
 LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
 JTEREPO       = https://github.com/boozallen/jenkins-templating-engine.git
+LABSREPO      = https://github.com/boozallen/sdp-labs.git
 
 .PHONY: help Makefile 
 
@@ -17,7 +18,7 @@ help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	rm -rf $(BUILDDIR) pages/libraries pages/jte
+	rm -rf $(BUILDDIR)  pages/libraries pages/jte pages/labs 
 
 image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
@@ -31,12 +32,17 @@ get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 	ls pages/jte || git clone --depth=1 -n --single-branch --branch=master $(JTEREPO) pages/jte
 	cd pages/jte && git checkout master -- docs && cd -
 
+	# learning labs 
+	ls pages/labs || git clone --depth=1 -n --single-branch --branch=master $(LABSREPO) pages/labs
+	cd pages/labs && git checkout master -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
+
+
 # build docs 
 docs: ## builds documentation in _build/html 
       ## run make docs live for hot reloading of edits during development
 	make clean 
 	make image
-	make get-remote-docs
+	#make get-remote-docs
 	$(eval goal := $(filter-out $@,$(MAKECMDGOALS)))
 	@if [ "$(goal)" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\

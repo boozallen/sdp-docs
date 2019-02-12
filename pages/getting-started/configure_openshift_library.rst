@@ -1,4 +1,5 @@
 .. _configure_openshift_library:
+
 ---------------------------------
 Configuring the OpenShift Library
 ---------------------------------
@@ -212,6 +213,7 @@ Create a Values File Per Environment
 In addition to the *values.yaml* file created when ``helm create`` was run, you should make a *values.<APP_ENV>.yaml* file for each application environment you created at the top of this page. Be sure to substitute *<APP_ENV>* with the ``short_name`` of the application environment. For example, if you created a *dev* and *prod* environment, you might create those files with the command:
 
 .. code::
+
   cp values.yaml values.dev.yaml
   cp values.yaml values.prod.yaml
 
@@ -258,9 +260,9 @@ _helpers.tpl
     {{- end }}
     {{- end }}
 
-~~~~~~~~~~~~
+~~~~~~~~~
 NOTES.txt
-~~~~~~~~~~~~
+~~~~~~~~~
 
 ::
 
@@ -268,17 +270,17 @@ NOTES.txt
 
 This file contains text that is displayed after the chart is successfully installed.
 
-~~~~~~~~~~~~
+~~~~~~~~~~
 Chart.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~
 
 ``name: .`` changed to ``name: helm-configuration-repository``
 
 The following files were created manually:
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 frontend.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 ::
 
     kind: List
@@ -358,18 +360,18 @@ frontend.yaml
     ``application_image_repository = "docker-registry.default.svc:5000/bar"`` so your image value in the above yaml file would look like ``- image: docker-registry.default.svc:5000/bar/sdp-website:{{ .Values.image_shas.sdp_website }}``. Note the switch from
     */demo/sdp-website* to */bar/sdp-website*.
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 values.dev.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 ::
 
     namespace: demo-dev # if your tiller server is foo-tiller this is probably foo-dev
     image_shas:
         sdp_website:
 
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 values.prod.yaml
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 ::
 
     namespace: demo-prod # if your tiller server is foo-tiller this is probably foo-dev

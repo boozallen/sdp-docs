@@ -70,8 +70,6 @@ aggregate this data into actionable insights empowering you to streamline your s
 Now what?
 ---------
 
-Are you pumped? I'm pumped.  Head over to the :ref:`Getting Started<Getting Started>` page to start deploying a DevSecOps pipeline for your project.
-
 .. toctree::
    :hidden:
    :maxdepth: 1
@@ -80,9 +78,7 @@ Are you pumped? I'm pumped.  Head over to the :ref:`Getting Started<Getting Star
    pages/getting-started/index
    pages/libraries/index
    pages/jte/docs/index
+   pages/labs/index
    pages/deployment-guides/index
-   pages/for-framework-devs/index
-   pages/for-library-devs/index
-   pages/for-sdp-users/index
    pages/how-to/index
    pages/contribute-to-docs

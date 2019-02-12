@@ -16,6 +16,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# -- Get Remote Docs ---------------------------------------------------------
+
+import os
+
+os.system("make get-remote-docs")
 
 # -- Project information -----------------------------------------------------
 
