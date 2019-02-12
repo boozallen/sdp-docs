@@ -102,7 +102,39 @@ appropriate flags to provide the three pieces of information covered above.
   $ bash provision_app_envs.sh -p $PREFIX -e $ENV_1 -e $ENV_2 ... -e $ENV_N -i $IMAGE_PROJ
 
 The script should take care of the rest, creating and setting up projects for
-the application environments, images, and tiller server.
+the application environments, images, and tiller server. So, for example, if
+you ran this command, with the prefix "demo", a dev and prod environment, and
+an image project called "demo", you should see the following project created:
+
+.. code-block:: shell
+
+  $ bash provision_app_envs.sh -p demo -e dev -e prod -i demo
+
+.. csv-table:: Provisioned OpenShift Infrastructure
+   :header: "Project", "Description"
+
+   "demo-dev", "The Development application environment"
+   "demo-prod", "The Production application environment"
+   "demo-tiller", "The tiller project"
+   "demo", "The project where we will configure SDP to push container images"
+
+=======================================
+Adding The Tiller Credential To Jenkins
+=======================================
+
+.. TODO: automate this away...
+
+The tiller server just created cannot be used without credentials, so those
+credentials need to be added to Jenkins. Assuming your tiller project is called "demo-tiller", follow
+:ref:`this guide<add credentials to jenkins>` to create a username/password
+credential in Jenkins with the username ``system:serviceaccount:demo-tiller:tiller``
+and use the command below to get the password, which will output a token you'll
+need to copy-paste into Jenkins. For easy identification, make the credential's
+ID the same as the name of the tiller project (i.e. *demo-tiller*).
+
+.. code-block:: bash
+
+  $ oc sa get-token tiller -n demo-tiller
 
 
 .. |openshift_library| raw:: html
