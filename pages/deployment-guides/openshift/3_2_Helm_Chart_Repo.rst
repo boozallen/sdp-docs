@@ -165,8 +165,8 @@ Updating the Pipeline Configuration
 ===================================
 
 If you recall from earlier in this guide, in the page on the
-|Pipeline Configuration Repo|, there were some settings for the
-|openshift sdp library| that may not have been clear before this point in the
+|Pipeline_Config_Repo|, there were some settings for the
+|openshift_sdp_library| that may not have been clear before this point in the
 guide.
 
 .. code-block:: groovy
@@ -193,32 +193,96 @@ Here's what you should now put for each of these settings
    "tiller_namespace", "The Openshift namespace/project hosting the tiller server (e.g. demo-tiller)"
    "tiller_credential", "The credential for the tiller server you created in the previous section (e.g. demo-tiller)"
 
+Also, if you haven't already, update the application environments in your
+pipeline config file to reflect the application environments you have just
+deployed.
+
 
 ===============
 Closing Summary
 ===============
 
+In order to enable automatic deployments to Openshift, this guide covered the
+following:
+
+1) Setting up Application Environments on OpenShift using |provision_app_envs.sh|
+2) Creating a Helm chart repository that defines how to deploy your application
+3) Modifying Jenkins and the pipeline config file to use the helm chart repository and the provisioned application environments
+
 ==========
 Next Steps
 ==========
 
-.. |Helm|
-.. https://helm.sh/
+* |more_on_helm_multitenancy|
+* |more_on_the_openshift_library|
+* |more_on_writing_helm_charts|
+* |example_helm_chart|
 
-.. |openshift_sdp_library|
 
-.. |DeploymentConfigs|
+.. |Helm| raw:: html
 
-.. |Services|
+    <a href="https://helm.sh/" target="_blank">Helm</a>
 
-.. |Routes|
+.. |openshift_sdp_library| raw:: html
 
-.. |Pipeline Config Repository|
-.. /pages/deployment-guides/openshift/2_2_Pipeline_Config.html
+   <a href="/pages/libraries/openshift/README.html" target="_blank">openshift SDP library</a>
+
+.. |DeploymentConfigs| raw:: html
+
+   <a href="" target="_blank">DeploymentConfigs</a>
+
+.. |Services| raw:: html
+
+   <a href="" target="_blank">Services</a>
+
+.. |Routes| raw:: html
+
+   <a href="" target="_blank">Routes</a>
+
+.. |Pipeline_Config_Repo| raw:: html
+
+   <a href="/pages/deployment-guides/openshift/2_2_Pipeline_Config.html" target="_blank">Pipeline Configuration Repository</a>
 
 .. |Helm_documentation| raw:: html
 
     <a href="https://docs.helm.sh/developing_charts/" target="_blank">Helm documentation</a>
 
-.. |openshift_blog_post|
-.. https://blog.openshift.com/getting-started-helm-openshift/
+.. |openshift_blog_post| raw:: html
+
+   <a href="https://blog.openshift.com/getting-started-helm-openshift/" target="_blank">OpenShift blog post</a>"
+
+.. |example_helm_chart| raw:: html
+
+   <a href="https://github.com/kottoson-bah/sdp-example-helm-config" target="_blank">example Helm chart</a>
+
+.. |sdp-helm-chart| raw:: html
+
+   <a href="https://github.com/boozallen/sdp-helm-chart" target="_blank">sdp-helm-chart</a>
+
+.. |charts| raw:: html
+
+   <a href="https://docs.helm.sh/developing_charts/" target="_blank">charts</a>
+
+.. |templates| raw:: html
+
+   <a href="https://docs.helm.sh/chart_template_guide/" target="_blank">templates</a>
+
+.. |provision_app_envs.sh| raw:: html
+
+   <a href="https://github.com/boozallen/sdp-helm-chart/blob/master/resources/helm/provision_app_envs.sh" target="_blank">provision_app_envs.sh</a>
+
+.. |more_on_helm_multitenancy| raw:: html
+
+   <a href="/pages/how-to/helm-multitenancy.html" target="_blank">More on Helm multitenancy in Openshift</a>
+
+.. |more_on_the_openshift_library| raw:: html
+
+   <a href="/pages/libraries/openshift/README.html" target="_blank">More on the openshift SDP library</a>
+
+.. |more_on_writing_helm_charts| raw:: html
+
+  <a href="https://docs.helm.sh/developing_charts/" target="_blank">More on writing Helm charts</a>
+
+.. |more_on_writing_helm_templates| raw:: html
+
+   <a href="https://docs.helm.sh/chart_template_guide/" target="_blank">More on writing Helm templates</a>
