@@ -37,7 +37,6 @@ You Should Be Able To...
 * Run bash commands/scripts
 
 
-
 .. |openshift_sdp_library| raw:: html
 
    <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>

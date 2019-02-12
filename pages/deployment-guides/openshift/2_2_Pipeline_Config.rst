@@ -14,8 +14,8 @@ Create a Repository
 ===================
 
 Use an SCM like GitHub to create a repository to store your pipeline
-configuration. This way you can share and maintain pipeline configuration like
-any other piece of code.
+configuration. This way you can access, share, and maintain pipeline configuration
+like any other piece of code.
 
 ==========================
 Create a Pipeline Template
