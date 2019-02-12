@@ -90,7 +90,7 @@ to reflect how you wish to deploy your app.
 Information on Writing Templates
 ================================
 
-The |helm_documentation| on writing |charts| and |templates| is a good place
+The Helm documentation on writing |charts| and |templates| is a good place
 to start learning how to create your helm chart. There are a few additional tips
 that are useful for writing charts and templates for OpenShift.
 
@@ -232,27 +232,23 @@ Next Steps
 
 .. |DeploymentConfigs| raw:: html
 
-   <a href="" target="_blank">DeploymentConfigs</a>
+   <a href="https://docs.openshift.com/container-platform/3.11/dev_guide/deployments/how_deployments_work.html" target="_blank">DeploymentConfigs</a>
 
 .. |Services| raw:: html
 
-   <a href="" target="_blank">Services</a>
+   <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/pods_and_services.html#services" target="_blank">Services</a>
 
 .. |Routes| raw:: html
 
-   <a href="" target="_blank">Routes</a>
+   <a href="https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html" target="_blank">Routes</a>
 
 .. |Pipeline_Config_Repo| raw:: html
 
    <a href="/pages/deployment-guides/openshift/2_2_Pipeline_Config.html" target="_blank">Pipeline Configuration Repository</a>
 
-.. |Helm_documentation| raw:: html
-
-    <a href="https://docs.helm.sh/developing_charts/" target="_blank">Helm documentation</a>
-
 .. |openshift_blog_post| raw:: html
 
-   <a href="https://blog.openshift.com/getting-started-helm-openshift/" target="_blank">OpenShift blog post</a>"
+   <a href="https://blog.openshift.com/getting-started-helm-openshift/" target="_blank">OpenShift blog post</a>
 
 .. |example_helm_chart| raw:: html
 

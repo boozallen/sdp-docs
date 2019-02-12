@@ -36,7 +36,7 @@ Since OpenShift is a container application platform, and it's assumed that your
 application is being deployed to OpenShift, it can also be assumed that your application
 running as (Docker) containers. The SDP's |docker_library| makes it easy to
 build images from your source code repository and store them in OpenShift's
-built-in |container_registry|.
+built-in container registry.
 
 .. important::
 
@@ -59,8 +59,8 @@ Deploying
 ---------
 
 The |openshift_library| makes it easy to deploy to different OpenShift projects
-using |helm|, a Kubernetes/OpenShift package manager and templating tool. How to
-deploy an application is defined in a helm chart or charts, which is maintained
+using |Helm|, a Kubernetes/OpenShift package manager and templating tool. How to
+deploy an application is defined in a Helm chart or charts, which is maintained
 in your SCM alongside your source code and pipeline configuration. This is covered
 in greater detail in Section 3.
 
@@ -72,7 +72,11 @@ in greater detail in Section 3.
 
 .. |docker_library| raw:: html
 
-   <a href="/pages/libraries/docker/README.html" target="_blank">docker library</a>
+   <a href="/pages/libraries/docker/README.html" target="_blank">Docker library</a>
+
+.. |guidelines_around_container_images| raw:: html
+
+   <a href=https://docs.openshift.com/container-platform/3.9/creating_images/guidelines.html target="_blank">guidelines around creating container images</a>
 
 .. |Gradle_Build_Tool| raw:: html
 
@@ -89,3 +93,11 @@ in greater detail in Section 3.
 .. |penetration_tests| raw:: html
 
    <a href="/pages/libraries/owasp_zap/README.html" target="_blank">penetration tests</a>
+
+.. |openshift_library| raw:: html
+
+  <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
+
+.. |Helm| raw:: html
+
+    <a href="https://helm.sh/" target="_blank">Helm</a>

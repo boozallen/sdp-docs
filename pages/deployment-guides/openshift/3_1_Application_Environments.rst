@@ -20,7 +20,7 @@ Prerequisites
 
 In addition to the prerequisites covered in the |section_overview|, make sure
 
-1) You are logged into the OpenShift cluster you're deploying to as a user with the |cluster-admin role|
+1) You are logged into the OpenShift cluster you're deploying to as a user with the |cluster-admin_role|
 2) None of the projects that the provision app envs script will create already exist (not likely if this is your first run)
 
 =============================
@@ -143,7 +143,7 @@ ID the same as the name of the tiller project (i.e. *demo-tiller*).
 
 .. |deploy_step| raw:: html
 
-    <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">the deploy step</a>
+    <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">deploy step</a>
 
 .. |tiller_server| raw:: html
 
@@ -153,6 +153,14 @@ ID the same as the name of the tiller project (i.e. *demo-tiller*).
 
    <a href="https://github.com/boozallen/sdp-helm-chart/blob/master/resources/helm/provision_app_envs.sh" target="_blank">provision_app_envs script</a>
 
+.. |section_overview| raw:: html
+
+   <a href="/pages/deployment-guides/openshift/3_0_Application_Environment_Overview.html" target="_blank">the section overview</a>
+
+.. |cluster-admin_role| raw:: html
+
+   <a href="https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html#roles" target="_blank">cluster-admin role</a>
+
 .. |sdp-helm-chart_repository| raw:: html
 
    <a href="https://github.com/boozallen/sdp-helm-chart" target="_blank">sdp-helm-chart repository</a>
@@ -160,8 +168,5 @@ ID the same as the name of the tiller project (i.e. *demo-tiller*).
 .. |application_environments| raw:: html
 
     <a href="http://localhost:8000/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">application environments</a>
-
-
-.. https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html#roles
 
 .. https://docs.openshift.com/container-platform/3.11/admin_guide/manage_rbac.html#managing-role-bindings

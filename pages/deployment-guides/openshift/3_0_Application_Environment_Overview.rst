@@ -22,7 +22,7 @@ You Should Have...
 * A working Openshift cluster
 * Credentials for a User on that cluster that has the *cluster-admin* role
 * Access to the relevant GitHub Repositories
-* The Helm client installed (https://docs.helm.sh/using_helm/#installing-helm)
+* |The_Helm_client_installed|
 * The OpenShift CLI installed
 
     * OCP: https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html
@@ -42,14 +42,18 @@ You Should Be Able To...
 
    <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
 
-.. |the_deploy_step| raw:: html
+.. |deploy_step| raw:: html
 
-   <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">the deploy step</a>
+   <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">deploy step</a>
 
 .. |OpenShift_project| raw:: html
 
-    <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects" target-"_blank">OpenShift project</a>
+    <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects" target="_blank">OpenShift project</a>
+
+.. |The_Helm_client_installed| raw:: html
+
+   <a href="https://docs.helm.sh/using_helm/#installing-helm" target="_blank">The Helm client installed</a>
 
 .. |Create_a_GitHub_repository| raw:: html
 
-   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">Create a GitHub repository</a>
+   <a href="https://help.github.com/articles/create-a-repo/" target="_blank">Create a GitHub repository</a>

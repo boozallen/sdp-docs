@@ -280,11 +280,11 @@ chart repository. For more on the information covered in this section:
 
 .. |create_a_repository| raw:: html
 
-   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">create a repository</a>
+   <a href="https://help.github.com/articles/create-a-repo/" target="_blank">create a repository</a>
 
 .. |More_on_writing_pipeline_templates| raw:: html
 
-    <a href="/pages/pages/jte/docs/pages/Templating/index.html" target="_blank">You can learn more about writing pipeline templates here</a>
+    <a href="/pages/jte/docs/pages/Templating/index.html" target="_blank">You can learn more about writing pipeline templates here</a>
 
 .. |More_on_writing_pipeline_config_files| raw:: html
 
@@ -332,4 +332,4 @@ chart repository. For more on the information covered in this section:
 
 .. |More_on_writing_libraries| raw:: html
 
-    <a href-"/pages/jte/docs/pages/Library_Development/index.html" target="_blank">You can learn more about writing your own pipeline libraries here</a>
+    <a href="/pages/jte/docs/pages/Library_Development/index.html" target="_blank">You can learn more about writing your own pipeline libraries here</a>

@@ -47,14 +47,14 @@ Verify the Installation
 After a few minutes, Jenkins should finish setting up. On the overview page for
 the "sdp" project you should see all blue rings showing all of the pods are
 running successfully. When you click on the
-Jenkins link - it'll be something like http://jenkins.app.ocp.example.com - you
+Jenkins link - it'll be something like *\http://jenkins.app.ocp.example.com* - you
 should be redirected to an OpenShift login page. Use your OpenShift credentials
 to log in. If you're prompted to allow the *jenkins* Service Account to
 access your account, click "Allow selected permissions" to proceed. You should
 see a fresh Jenkins ready for new jobs.
 
 If you installed SonarQube, you should be able to click on the its link - it'll be
-something like http://sonarqube.apps.ocp-dev.microcaas.net - and go to the
+something like *\http://sonarqube.apps.ocp-dev.microcaas.net* - and go to the
 SonarQube homepage. Log in with the username and password "admin" and optionally
 skip the tutorial. You should see an empty SonarQube ready to analyze projects.
 

@@ -31,4 +31,4 @@ You Should Be Able To...
 
 .. |Create_a_GitHub_repository| raw:: html
 
-   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">Create a GitHub repository</a>
+   <a href="https://help.github.com/articles/create-a-repo/" target="_blank">Create a GitHub repository</a>
