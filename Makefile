@@ -33,8 +33,8 @@ get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 	cd pages/jte && git checkout master -- docs && cd -
 
 	# learning labs 
-	ls pages/labs || git clone --depth=1 -n --single-branch --branch=try-it-out $(LABSREPO) pages/labs
-	cd pages/labs && git checkout try-it-out -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
+	ls pages/labs || git clone --depth=1 -n --single-branch --branch=master $(LABSREPO) pages/labs
+	cd pages/labs && git checkout master -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
 
 
 # build docs 
