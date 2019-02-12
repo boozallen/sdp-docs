@@ -23,7 +23,7 @@ You Should Have...
 * Credentials for a User on that cluster that has the *cluster-admin* role
 * Access to the relevant GitHub Repositories
 * The Helm client installed (https://docs.helm.sh/using_helm/#installing-helm)
-* The Openshift CLI installed
+* The OpenShift CLI installed
 
     * OCP: https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html
     * OKD: https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli
@@ -35,6 +35,7 @@ You Should Be Able To...
 
 * Modify simple configuration files
 * Run bash commands/scripts
+* |Create_a_GitHub_repository|
 
 
 .. |openshift_sdp_library| raw:: html
@@ -48,3 +49,7 @@ You Should Be Able To...
 .. |OpenShift_project| raw:: html
 
     <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects" target-"_blank">OpenShift project</a>
+
+.. |Create_a_GitHub_repository| raw:: html
+
+   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">Create a GitHub repository</a>

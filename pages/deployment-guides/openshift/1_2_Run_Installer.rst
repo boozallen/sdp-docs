@@ -13,14 +13,18 @@ From the root of the sdp-helm-chart directory, run the command
 
 Supply a GitHub username and password (or access token) when prompted.
 
+.. important::
+
+   This GitHub login must be for the public GitHub site, and not a GitHub Enterprise server
+
 Should the installer script fail, see if you can use the error message to
-resolve the issue and try running the script again. If you can't, go to the previous
+resolve the issue and try running the script again. If that fails, go to the previous
 pages of the guide and make sure the prerequisites are met and the steps were
 completed.
 
 .. Go to an FAQ when there is one, a forum should we create one, or the issues page on GitHub ?
 
-After the SDP has successfully been installed, you should see the message
+After the SDP has successfully been installed, you should see this message:
 
 ::
 
@@ -28,10 +32,13 @@ After the SDP has successfully been installed, you should see the message
 
   ✔ Solutions Delivery Platform Installed
 
-While the SDP has been installed on Openshift, it needs a few minutes to
+While the SDP has been installed on OpenShift, it needs a few minutes to
 prepare and set up. Go to the overview page for the "sdp" project in your
 OpenShift cluster's web console to monitor the progress. The overview page
 should also show the links for Jenkins and any other tools you opted to install.
+
+.. TODO: maybe include the order you would expect "things" in Openshift to complete,
+         i.e. first the Master build, then the master deployment, then the agents
 
 =======================
 Verify the Installation
@@ -41,22 +48,24 @@ After a few minutes, Jenkins should finish setting up. On the overview page for
 the "sdp" project you should see all blue rings showing all of the pods are
 running successfully. When you click on the
 Jenkins link - it'll be something like http://jenkins.app.ocp.example.com - you
-should be redirected to an OpenShift login page. Use your Openshift credentials
-to log in. If you're prompted to allow the jenkins Service Account to
+should be redirected to an OpenShift login page. Use your OpenShift credentials
+to log in. If you're prompted to allow the *jenkins* Service Account to
 access your account, click "Allow selected permissions" to proceed. You should
 see a fresh Jenkins ready for new jobs.
 
-If you installed Sonarqube, you should be able to click on the link - it'll be
+If you installed SonarQube, you should be able to click on the its link - it'll be
 something like http://sonarqube.apps.ocp-dev.microcaas.net - and go to the
-Sonarqube homepage. Log in with the username and password "admin" and optionally
-skip the tutorial. You should be an empty Sonarqube ready to analyze
+SonarQube homepage. Log in with the username and password "admin" and optionally
+skip the tutorial. You should see an empty SonarQube ready to analyze projects.
 
 ==========
 Next Steps
 ==========
 
 If all you need is Jenkins and the DevOps tools, you should be finished. Jenkins
-has the JTE and a number of standard plugins installed for you.
+has the JTE and a number of standard plugins installed for you. It also has
+credentials for GitHub, the Openshift Docker registry, and Sonarqube already
+created.
 
 Continue on to the following sections to walk through creating a CI/CD pipeline
-using the SDP to automatically deploy your applications to Openshift.
+using the SDP to automatically deploy your applications to OpenShift.

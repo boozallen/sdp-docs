@@ -6,7 +6,7 @@ Section 2 Overview
 ==================
 
 Once you have completed this section, you should have a Pipeline Configuration
-repository that can be used to define a DevSecOps pipeline for your project
+repository that defines a DevSecOps pipeline for your project
 or your business organization.
 
 ================
@@ -18,7 +18,7 @@ You Should Have...
 ------------------
 
 * Some idea of what you want from your automated pipeline
-* Some idea of the software that will be built, tested, and deployed with your pipeline
+* A general understanding of the software that will be built, tested, and deployed with your pipeline
 * Designed the components of your application to run in (Docker) containers
 
 ------------------------
@@ -26,4 +26,9 @@ You Should Be Able To...
 ------------------------
 
 * Modify simple configuration files
-* Create a GitHub repository (or the equivalent in your SCM of choice)
+* |Create_a_GitHub_repository| (or the equivalent in your SCM of choice)
+
+
+.. |Create_a_GitHub_repository| raw:: html
+
+   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">Create a GitHub repository</a>

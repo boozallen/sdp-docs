@@ -2,15 +2,15 @@ Section 1.1 - Preparing to Run the Installer
 ==========================================
 
 ==================
-Log into Openshift
+Log into OpenShift
 ==================
 
 Run the command here, replacing the URI shown with the one for your cluster's
-master node(s). The URI is the one you use to reach your Openshift web console.
+master node(s). The URI is the one you use to reach your OpenShift web console.
 
 .. code::
 
-   oc login master.ocp.example.com:8443
+   $ oc login master.ocp.example.com:8443
 
 When prompted, use the login for your cluster-admin User.
 
@@ -23,9 +23,9 @@ To clone the |sdp-helm-chart_repository|, run one of the following commands:
 .. code::
 
   ## cloning via ssh
-  git clone git@github.com:boozallen/sdp-helm-chart.git
+  $ git clone git@github.com:boozallen/sdp-helm-chart.git
   ## cloning via https
-  git clone https://github.com/boozallen/sdp-helm-chart.git
+  $ git clone https://github.com/boozallen/sdp-helm-chart.git
 
 =======================
 Create Your Values File
@@ -36,10 +36,15 @@ to values.yaml.
 
 .. code::
 
-  cp values.template.yaml values.yaml
+  $ cp values.template.yaml values.yaml
 
 The installer script will use the settings defined in this file when deploying
 the SDP.
+
+.. note::
+
+   This extra step is intended to prevent users from inadvertently pushing their
+   values.yaml file, which may contain sensitive information.
 
 ======================
 Modify the Values File
@@ -61,7 +66,7 @@ then values.yaml should contain:
 You can also add to your values file any of the values described in the
 |sdp-helm-chart_repository| README.
 
-While the SDP installation will install Sonarqube and other tools, you
+While the SDP installation will deploy SonarQube and other tools, you
 can opt not to install them by changing their "enable" setting from ``true``
 to ``false``.
 

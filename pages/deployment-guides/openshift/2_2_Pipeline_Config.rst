@@ -6,14 +6,14 @@ as there are ways to create software. This guide should provide a good foundatio
 build off of.
 
 This page covers the creation of a simple pipeline configuration repository, a
-repository that contains files that define one or more pipelines, containing a
-single governance tier. |More_on_pipeline_governance|.
+repository containing files that define one or more pipelines, with a
+single governance tier in the root. |More_on_pipeline_governance|.
 
 ===================
 Create a Repository
 ===================
 
-Use an SCM like GitHub to create a repository to store your pipeline
+Use an SCM like GitHub to |create_a_repository| to store your pipeline
 configuration. This way you can access, share, and maintain pipeline configuration
 like any other piece of code.
 
@@ -36,9 +36,6 @@ the default pipeline template. A simple pipeline template might look like this:
   on_merge to: master, {
     deploy_to prod
   }
-
-Head to the bottom of the page for details on this pipeline template. It makes
-more sense after creating the pipeline config file.
 
 .. note::
 
@@ -105,22 +102,21 @@ simple pipeline config file might look like this:
 .. important::
 
     The pipeline defined by this example won't work until you've finished
-    setting up your application environment in Openshift and written your helm
+    setting up your application environments in OpenShift and written your helm
     configuration repository, which is covered in the next section.
 
 ========================================
 About The Example Pipeline Configuration
 ========================================
 
-If you're using the example pipeline template and pipeline config file above,
-this section explains how they work together to create a pipeline. Feel free to
-move onto the next section if you're already comfortable with the material.
+This section explains how the example pipeline template and pipeline config file
+above work together to create a pipeline.
 
 ---------------------
 The Pipeline Template
 ---------------------
 
-Starting with the pipeline template, every pipeline created from this template
+Starting with the pipeline template, every pipeline created from *this* template
 will have these steps:
 
 .. code-block:: groovy
@@ -136,7 +132,7 @@ will have these steps:
     deploy_to prod      // 4b) deploy the application to the "prod" environment
   }
 
-Now that the pipeline template has defined *what* a pipeline does, there needs
+Now that the pipeline template has defined *what* the pipeline does, there needs
 to be a pipeline config file to define *how*. It needs |libraries| to provide the
 implementation for the pipeline steps, |application_environments| to define
 the dev and prod environments being deployed to, and |keywords| for the
@@ -174,13 +170,13 @@ The Libraries
     }
 
 For every step used in a pipeline template, something needs to define that
-step's implementation. For the JTE, these step implementations come from
-"libraries", which are imported from a "library source". For this example
+step's implementation. For the JTE, these step implementations most commonly come
+from "libraries", which are imported from a "library source". For this example
 pipeline, it's assumed that the |sdp-libraries| library source is available, and
 any of the libraries it contains can be used.
 
 Five libraries are being imported here: github_enterprise, sonarqube, docker,
-sdp, and openshift. Below is a mapping of steps to the libraries that are
+sdp, and OpenShift. Below is a mapping of steps to the libraries that are
 being used.
 
 .. code-block:: groovy
@@ -196,8 +192,8 @@ being used.
     deploy_to prod      // openshift
   }
 
-Although the sdp library doesn't provide the implementation for one of the steps
-here, it's being imported because both the sonarqube and openshift libraries
+Although the sdp library doesn't provide the implementation for any of the steps
+here, it's being imported because both the SonarQube and OpenShift libraries
 depend on a step it defines.
 
 .. note::
@@ -226,7 +222,7 @@ project in OpenShift to deploy to. For example, when the pipeline template calls
 ``deploy to: dev``(which can also be read as ``deploy(to: dev)``), it takes the
 *dev* application environment primitive object that we define here and uses its
 values in |the_deploy_step|. The ``short_name``, in particular, is used to select
-the target Openshift project and which values.yaml file to use as part of the
+the target OpenShift project and which values.yaml file to use as part of the
 deployment. View the next section or the |openshift_library| page for more
 details.
 
@@ -256,12 +252,12 @@ the base of the repository, contains two files: *Jenkinsfile* and
 *pipeline_config.groovy*. The default pipeline template, *Jenkinsfile*, defines
 the steps that each pipeline executes. The pipeline configuration file,
 *pipeline_config.groovy*, controls how those steps are run in the pipeline by
-defining the libraries to implement those steps, the settings for those libraries,
+selecting the libraries to implement those steps, the settings for those libraries,
 and any other pipeline primitives being used.
 
 Using the files in this example, pipelines will:
 
-1) test the source code using Sonarqube
+1) test the source code using SonarQube
 2) build & push a Docker container image
 3) depending on the pipeline trigger, deploy that container on OpenShift
 
@@ -269,7 +265,7 @@ Using the files in this example, pipelines will:
 Next Steps
 ==========
 
-You should be able to move onto the next section, which covers creating a Helm
+You should be ready to move onto the next section, which covers creating a Helm
 chart repository. For more on the information covered in this section:
 
 * |More_on_writing_pipeline_templates|
@@ -281,6 +277,10 @@ chart repository. For more on the information covered in this section:
 .. |More_on_pipeline_governance| raw:: html
 
     <a href="/pages/jte/docs/pages/Governance/index.html" target="_blank">You can learn more about pipeline governance here</a>
+
+.. |create_a_repository| raw:: html
+
+   <a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/" target="_blank">create a repository</a>
 
 .. |More_on_writing_pipeline_templates| raw:: html
 

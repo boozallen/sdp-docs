@@ -5,10 +5,10 @@ Section 3.1 - Creating the Application Environments
 Overview
 ========
 
-The first prerequisite for using the |openshift_library|'s |deploy_step| is a
-set of pre-configured projects in Openshift:
+In order to use the |openshift_library|'s |deploy_step|, there needs to be
+set of pre-configured projects in OpenShift:
 
-* The application environments, one or more projects that will host the application (e.g. "my-app-dev" & "my-app-prod")
+* The application environments, one or more Openshift projects that will host the application (e.g. "my-app-dev" & "my-app-prod")
 * A project to host container images that are shared between the application environments
 * A project to host the |tiller_server| that manages the application environments.
 
@@ -20,7 +20,7 @@ Prerequisites
 
 In addition to the prerequisites covered in the |section_overview|, make sure
 
-1) You are logged into the Openshift cluster you're deploying to as a user with the |cluster-admin role|
+1) You are logged into the OpenShift cluster you're deploying to as a user with the |cluster-admin role|
 2) None of the projects that the provision app envs script will create already exist (not likely if this is your first run)
 
 =============================
@@ -74,18 +74,18 @@ name that makes it possible to distinguish your application from others that may
 share the same cluster. This prefix is ideally an abbreviation of your project
 name. In the example above, the prefix for the "RedHat Summit" project is "rhs."
 
-You need to know how many environments you want, and abbreviated names for each.
-For each of these environments you will add ``-e <env>``. In the example above,
-there are four environments being provisioned: dev, test, staging, and prod. The
-script will create an Openshift project for each one: rhs-dev, rhs-test,
-rhs-staging, and rhs-prod.
+You need to know how many environments you want, as well as abbreviated names for
+each. These abbreviated names are placed after ``-e`` in the script's options.
+In the example above, there are four environments being provisioned: dev, test,
+staging, and prod. The script will create an OpenShift project for each one:
+rhs-dev, rhs-test, rhs-staging, and rhs-prod.
 
 .. note::
 
   These abbreviated names map to the "short names" of the |application_environments|
   in your pipeline configuration file(s).
 
-You need a name for the project hosting the container images. This is the
+You also need a name for the project hosting the container images. This is the
 *full name of the project* and will not necessarily include the prefix (unlike
 the other projects being created). In the example above, that project is called
 "red-hat-summit".
@@ -102,9 +102,9 @@ appropriate flags to provide the three pieces of information covered above.
   $ bash provision_app_envs.sh -p $PREFIX -e $ENV_1 -e $ENV_2 ... -e $ENV_N -i $IMAGE_PROJ
 
 The script should take care of the rest, creating and setting up projects for
-the application environments, images, and tiller server. So, for example, if
+the application environments, images, and tiller server. For example, if
 you ran this command, with the prefix "demo", a dev and prod environment, and
-an image project called "demo", you should see the following project created:
+an image project called "demo", you should see the projects below created:
 
 .. code-block:: shell
 
@@ -128,7 +128,7 @@ The tiller server just created cannot be used without credentials, so those
 credentials need to be added to Jenkins. Assuming your tiller project is called "demo-tiller", follow
 :ref:`this guide<add credentials to jenkins>` to create a username/password
 credential in Jenkins with the username ``system:serviceaccount:demo-tiller:tiller``
-and use the command below to get the password, which will output a token you'll
+and use the command below to get the password, which will output a token you
 need to copy-paste into Jenkins. For easy identification, make the credential's
 ID the same as the name of the tiller project (i.e. *demo-tiller*).
 
