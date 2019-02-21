@@ -79,5 +79,6 @@ Now what?
    pages/libraries/index
    pages/jte/docs/index
    pages/labs/index
+   pages/deployment-guides/index
    pages/how-to/index
    pages/contribute-to-docs
