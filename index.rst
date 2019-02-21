@@ -75,7 +75,6 @@ Now what?
    :maxdepth: 1
    :titlesonly:
 
-   pages/getting-started/index
    pages/libraries/index
    pages/jte/docs/index
    pages/labs/index
