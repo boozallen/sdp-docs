@@ -80,4 +80,3 @@ Now what?
    pages/labs/index
    pages/deployment-guides/index
    pages/how-to/index
-   pages/contribute-to-docs
