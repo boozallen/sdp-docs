@@ -228,7 +228,7 @@ Next Steps
 
 .. |openshift_sdp_library| raw:: html
 
-   <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift SDP library</a>
+   <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift SDP library</a>
 
 .. |DeploymentConfigs| raw:: html
 
@@ -244,7 +244,7 @@ Next Steps
 
 .. |Pipeline_Config_Repo| raw:: html
 
-   <a href="/pages/deployment-guides/openshift/2_2_Pipeline_Config.html" target="_blank">Pipeline Configuration Repository</a>
+   <a href="/sdp-docs/pages/deployment-guides/openshift/2_2_Pipeline_Config.html" target="_blank">Pipeline Configuration Repository</a>
 
 .. |openshift_blog_post| raw:: html
 
@@ -272,11 +272,11 @@ Next Steps
 
 .. |more_on_helm_multitenancy| raw:: html
 
-   <a href="/pages/how-to/helm-multitenancy.html" target="_blank">More on Helm multitenancy in OpenShift</a>
+   <a href="/sdp-docs/pages/how-to/helm-multitenancy.html" target="_blank">More on Helm multitenancy in OpenShift</a>
 
 .. |more_on_the_openshift_library| raw:: html
 
-   <a href="/pages/libraries/openshift/README.html" target="_blank">More on the OpenShift SDP library</a>
+   <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">More on the OpenShift SDP library</a>
 
 .. |more_on_writing_helm_charts| raw:: html
 

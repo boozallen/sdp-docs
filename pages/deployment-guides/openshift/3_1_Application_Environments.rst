@@ -139,7 +139,7 @@ ID the same as the name of the tiller project (i.e. *demo-tiller*).
 
 .. |openshift_library| raw:: html
 
-    <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
+    <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
 
 .. |deploy_step| raw:: html
 
@@ -155,7 +155,7 @@ ID the same as the name of the tiller project (i.e. *demo-tiller*).
 
 .. |section_overview| raw:: html
 
-   <a href="/pages/deployment-guides/openshift/3_0_Application_Environment_Overview.html" target="_blank">the section overview</a>
+   <a href="/sdp-docs/pages/deployment-guides/openshift/3_0_Application_Environment_Overview.html" target="_blank">the section overview</a>
 
 .. |cluster-admin_role| raw:: html
 

@@ -40,7 +40,7 @@ You Should Be Able To...
 
 .. |openshift_sdp_library| raw:: html
 
-   <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
+   <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
 
 .. |deploy_step| raw:: html
 

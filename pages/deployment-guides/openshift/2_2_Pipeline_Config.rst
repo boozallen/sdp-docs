@@ -276,7 +276,7 @@ chart repository. For more on the information covered in this section:
 
 .. |More_on_pipeline_governance| raw:: html
 
-    <a href="/pages/jte/docs/pages/Governance/index.html" target="_blank">You can learn more about pipeline governance here</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Governance/index.html" target="_blank">You can learn more about pipeline governance here</a>
 
 .. |create_a_repository| raw:: html
 
@@ -284,23 +284,23 @@ chart repository. For more on the information covered in this section:
 
 .. |More_on_writing_pipeline_templates| raw:: html
 
-    <a href="/pages/jte/docs/pages/Templating/index.html" target="_blank">You can learn more about writing pipeline templates here</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Templating/index.html" target="_blank">You can learn more about writing pipeline templates here</a>
 
 .. |More_on_writing_pipeline_config_files| raw:: html
 
-    <a href="/pages/jte/docs/pages/Templating/configuration_files/index.html" target="_blank">You can learn more about writing pipeline config files here</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Templating/configuration_files/index.html" target="_blank">You can learn more about writing pipeline config files here</a>
 
 .. |libraries| raw:: html
 
-    <a href="/pages/jte/docs/pages/Governance/index.html#library-selection" target="_blank">libraries</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Governance/index.html#library-selection" target="_blank">libraries</a>
 
 .. |application_environments| raw:: html
 
-    <a href="/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">application environments</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">application environments</a>
 
 .. |keywords| raw:: html
 
-    <a href="/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">keywords</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">keywords</a>
 
 .. |sdp-libraries| raw:: html
 
@@ -308,11 +308,11 @@ chart repository. For more on the information covered in this section:
 
 .. |openshift_library| raw:: html
 
-   <a href="/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
+   <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
 
 .. |Application_Environment_primitives| raw:: html
 
-   <a href="/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">Application Environment primitives</a>
+   <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">Application Environment primitives</a>
 
 .. |the_deploy_step| raw:: html
 
@@ -320,16 +320,16 @@ chart repository. For more on the information covered in this section:
 
 .. |github_enterprise_library| raw:: html
 
-   <a href="/pages/libraries/github_enterprise/README.html" target="_blank">github_enterprise library</a>
+   <a href="/sdp-docs/pages/libraries/github_enterprise/README.html" target="_blank">github_enterprise library</a>
 
 .. |Keyword_primitives| raw:: html
 
-    <a href="/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">Keyword primitives</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">Keyword primitives</a>
 
 .. |More_on_sdp_libraries| raw:: html
 
-    <a href="/pages/libraries/index.html" target="_blank">You can learn more about the SDP pipeline libraries here</a>
+    <a href="/sdp-docs/pages/libraries/index.html" target="_blank">You can learn more about the SDP pipeline libraries here</a>
 
 .. |More_on_writing_libraries| raw:: html
 
-    <a href="/pages/jte/docs/pages/Library_Development/index.html" target="_blank">You can learn more about writing your own pipeline libraries here</a>
+    <a href="/sdp-docs/pages/jte/docs/pages/Library_Development/index.html" target="_blank">You can learn more about writing your own pipeline libraries here</a>
