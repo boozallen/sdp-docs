@@ -72,7 +72,7 @@ in greater detail in Section 3.
 
 .. |docker_library| raw:: html
 
-   <a href="sdp-docs/pages/libraries/docker/README.html" target="_blank">Docker library</a>
+   <a href="/sdp-docs/pages/libraries/docker/README.html" target="_blank">Docker library</a>
 
 .. |guidelines_around_container_images| raw:: html
 
@@ -84,19 +84,19 @@ in greater detail in Section 3.
 
 .. |code_quality_tests| raw:: html
 
-   <a href="sdp-docs/pages/libraries/sonarqube/README.html" target="_blank">code quality tests</a>
+   <a href="/sdp-docs/pages/libraries/sonarqube/README.html" target="_blank">code quality tests</a>
 
 .. |accessibility_compliance_tests| raw:: html
 
-   <a href="sdp-docs/pages/libraries/a11y/README.html" target="_blank">accessibility compliance (508) tests</a>
+   <a href="/sdp-docs/pages/libraries/a11y/README.html" target="_blank">accessibility compliance (508) tests</a>
 
 .. |penetration_tests| raw:: html
 
-   <a href="sdp-docs/pages/libraries/owasp_zap/README.html" target="_blank">penetration tests</a>
+   <a href="/sdp-docs/pages/libraries/owasp_zap/README.html" target="_blank">penetration tests</a>
 
 .. |openshift_library| raw:: html
 
-  <a href="sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
+  <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a>
 
 .. |Helm| raw:: html
 
