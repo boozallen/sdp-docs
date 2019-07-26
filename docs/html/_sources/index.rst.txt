@@ -71,6 +71,7 @@ a DevSecOps dashboard to enable continuous improvement of your processes.
 .. toctree::
    :hidden:
    :titlesonly:
+   :caption: Components
    
    Jenkins Templating Engine <https://jenkinsci.github.io/templating-engine-plugin>
    Pipeline Libraries <https://boozallen.github.io/sdp-libraries>
