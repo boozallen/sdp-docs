@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Section 3 - Setting up the Application Environments &mdash; Solutions Delivery Platform  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Section 3.1 - Creating the Application Environments" href="3_1_Application_Environments.html" />
+    <link rel="prev" title="Section 2.2 - Creating the Pipeline Configuration Repository" href="2_2_Pipeline_Config.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Solutions Delivery Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://jenkinsci.github.io/templating-engine-plugin">Jenkins Templating Engine</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://boozallen.github.io/sdp-libraries">Pipeline Libraries</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenShift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_0_Deploy_Tools_Overview.html">Section 1 - Deploying the DevOps Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_1_Prepare_To_Install.html">Section 1.1 - Preparing to Run the Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_Run_Installer.html">Section 1.2 - Running the Installer Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_0_Pipeline_Config_Overview.html">Section 2 - Setting Up a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_1_Pipeline_Planning.html">Section 2.1 - Pipeline Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_2_Pipeline_Config.html">Section 2.2 - Creating the Pipeline Configuration Repository</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Section 3 - Setting up the Application Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_1_Application_Environments.html">Section 3.1 - Creating the Application Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_2_Helm_Chart_Repo.html">Section 3.2 - Setting up the Helm Chart Repository</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Learning Labs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/try-it-out/docs/index.html">Try It Out</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/helm-multitenancy.html">Helm Multitenancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/add_jenkins_credentials.html">Add Credentials to Jenkins</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://help.github.com/articles/creating-a-new-organization-from-scratch/">Create a GitHub Organization</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/">Deploy Twistlock to OpenShift</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Solutions Delivery Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">OpenShift</a> &raquo;</li>
+        
+      <li>Section 3 - Setting up the Application Environments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/pages/deployment-guides/openshift/3_0_Application_Environment_Overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="section-3-setting-up-the-application-environments">
+<h1>Section 3 - Setting up the Application Environments<a class="headerlink" href="#section-3-setting-up-the-application-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="section-3-overview">
+<h2>Section 3 Overview<a class="headerlink" href="#section-3-overview" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a> has a <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">deploy step</a> that can be used to
+deploy the most recent build of a particular service to a given
+<a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects" target="_blank">OpenShift project</a>. The first part of this section covers how to create and
+configure the target OpenShift projects. The second part goes over how to create
+a Helm repository, defines how your application is deployed.</p>
+</div>
+<div class="section" id="before-you-begin">
+<h2>Before You Begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="you-should-have">
+<h3>You Should Have…<a class="headerlink" href="#you-should-have" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">A working Openshift cluster</p>
+</li>
+<li><p class="first">Credentials for a User on that cluster that has the <em>cluster-admin</em> role</p>
+</li>
+<li><p class="first">Access to the relevant GitHub Repositories</p>
+</li>
+<li><p class="first"><a href="https://docs.helm.sh/using_helm/#installing-helm" target="_blank">The Helm client installed</a></p>
+</li>
+<li><p class="first">The OpenShift CLI installed</p>
+<blockquote>
+<div><ul class="simple">
+<li>OCP: <a class="reference external" href="https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html">https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html</a></li>
+<li>OKD: <a class="reference external" href="https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli">https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli</a></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="you-should-be-able-to">
+<h3>You Should Be Able To…<a class="headerlink" href="#you-should-be-able-to" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Modify simple configuration files</li>
+<li>Run bash commands/scripts</li>
+<li><a href="https://help.github.com/articles/create-a-repo/" target="_blank">Create a GitHub repository</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_1_Application_Environments.html" class="btn btn-neutral float-right" title="Section 3.1 - Creating the Application Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2_2_Pipeline_Config.html" class="btn btn-neutral" title="Section 2.2 - Creating the Pipeline Configuration Repository" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Booz Allen Hamilton
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
