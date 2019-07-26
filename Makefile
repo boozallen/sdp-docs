@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = SolutionsDeliveryPlatform
 SOURCEDIR     = .
-BUILDDIR      = _build
+BUILDDIR      = docs
 LABSREPO      = https://github.com/boozallen/sdp-labs.git
 LIBSBRANCH    = master
 JTEBRANCH     = master
@@ -20,7 +20,7 @@ help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	rm -rf $(BUILDDIR)  pages/libraries pages/jte pages/labs 
+	rm -rf pages/labs docs/doctrees docs/html 
 
 image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
@@ -41,16 +41,16 @@ docs: ## builds documentation in _build/html
 	@if [ "$(goal)" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
 	elif [ "$(goal)" = "deploy" ]; then\
-		$(eval old_remote := $(shell git remote get-url origin)) \
-		git remote set-url origin https://$(user):$(token)@github.com/boozallen/sdp-docs.git ;\
-		docker run -v $(shell pwd):/app sdp-docs sphinx-versioning push --show-banner . gh-pages . ;\
-		echo git remote set-url origin $(old_remote) ;\
-		git remote set-url origin $(old_remote) ;\
-	else\
 		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
+		git add docs/*
+		git commit -m "updating documentation"
+		git push
+	else\
+		
 	fi
 
 deploy: ;
+
 live: ; 
 
 # Catch-all target: route all unknown targets to Sphinx using the new
