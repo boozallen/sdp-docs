@@ -7,8 +7,6 @@ SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = SolutionsDeliveryPlatform
 SOURCEDIR     = .
 BUILDDIR      = _build
-LIBSREPO      = https://github.com/boozallen/sdp-libraries.git
-JTEREPO       = https://github.com/jenkinsci/templating-engine-plugin.git
 LABSREPO      = https://github.com/boozallen/sdp-labs.git
 LIBSBRANCH    = master
 JTEBRANCH     = master
@@ -28,14 +26,6 @@ image: ## builds container image used to build documentation
 	docker build . -t sdp-docs
 
 get-remote-docs: ## fetches sdp library and JTE documentation from their repos
-	# library docs 
-	ls pages/libraries || git clone --depth=1 -n --single-branch --branch=$(LIBSBRANCH) $(LIBSREPO) pages/libraries
-	cd pages/libraries && git checkout $(LIBSBRANCH) -- $$(git diff --name-only --cached -- '*.rst') && cd -
-
-	# jte docs
-	ls pages/jte || git clone --depth=1 -n --single-branch --branch=$(JTEBRANCH) $(JTEREPO) pages/jte
-	cd pages/jte && git checkout $(JTEBRANCH) -- docs && cd -
-
 	# learning labs 
 	ls pages/labs || git clone --depth=1 -n --single-branch --branch=$(LABSBRANCH) $(LABSREPO) pages/labs
 	cd pages/labs && git checkout $(LABSBRANCH) -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -

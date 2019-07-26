@@ -46,9 +46,9 @@ The Jenkins Templating Engine is a custom plugin written by Booz Allen that enab
 capabilities of the Solutions Delivery Platform; such as organizational governance through 
 templating and hierarchical configuration files. 
 
-.. important:: 
+.. note::
 
-    This plugin will soon be hosted in the official Jenkins Update Center 
+    This plugin is available in the Jenkins Update Center under the name `Templating Engine Plugin <https://plugins.jenkins.io/templating-engine>`_.
 
 **********************
 SDP Pipeline Libraries
@@ -70,11 +70,32 @@ a DevSecOps dashboard to enable continuous improvement of your processes.
 
 .. toctree::
    :hidden:
-   :maxdepth: 1
    :titlesonly:
+   
+   Jenkins Templating Engine <https://jenkinsci.github.io/templating-engine-plugin>
+   Pipeline Libraries <https://boozallen.github.io/sdp-libraries>
 
-   pages/libraries/index
-   pages/jte/docs/index
-   pages/labs/index
-   pages/deployment-guides/index
-   pages/how-to/index
+.. toctree::
+   :hidden:
+   :titlesonly:
+   :caption: Deployment Guides
+
+   /pages/deployment-guides/openshift/index
+
+.. toctree::
+   :hidden:
+   :titlesonly:
+   :caption: Learning Labs 
+
+   /pages/labs/index
+   /pages/labs/try-it-out/docs/index
+
+.. toctree::
+   :hidden: 
+   :titlesonly:
+   :caption: How-To Guides
+
+   /pages/how-to/helm-multitenancy
+   /pages/how-to/add_jenkins_credentials
+   Create a GitHub Organization <https://help.github.com/articles/creating-a-new-organization-from-scratch/>
+   Deploy Twistlock to OpenShift <https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/>

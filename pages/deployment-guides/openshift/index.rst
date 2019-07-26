@@ -1,5 +1,5 @@
-SDP on Openshift Deployment Guide
-=================================
+OpenShift
+=========
 
 ========
 Overview
@@ -7,10 +7,10 @@ Overview
 
 When you complete this guide, you should have a functioning deployment of the
 SDP. This includes a Jenkins master, one or more Jenkins agents, and services
-used by SDP libraries, such as Sonarqube.
+used by SDP libraries, such as SonarQube.
 
-This guide also covers setting up a space in Openshift
-that can be automatically deployed to using the "Openshift" SDP Library. This
+This guide also covers setting up a space in OpenShift
+that can be automatically deployed to using the "OpenShift" SDP Library. This
 includes a Tiller server for deployments via Helm, as well as separate
 application environments such as "Dev" and "Test"
 
