@@ -32,21 +32,21 @@ get-remote-docs: ## fetches sdp library and JTE documentation from their repos
 
 
 # build docs 
-docs: ## builds documentation in _build/html 
-      ## run make docs live for hot reloading of edits during development
+html: ## builds documentation in _build/html 
+      ## run make html live for hot reloading of edits during development
 	make clean 
 	make image
-	#make get-remote-docs
+	make get-remote-docs
 	$(eval goal := $(filter-out $@,$(MAKECMDGOALS)))
 	@if [ "$(goal)" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
 	elif [ "$(goal)" = "deploy" ]; then\
 		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
-		git add docs/*
-		git commit -m "updating documentation"
-		git push
+		git add docs/*;\
+		git commit -m "updating documentation";\
+		git push;\
 	else\
-		
+		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
 	fi
 
 deploy: ;
@@ -57,3 +57,4 @@ live: ;
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	echo "Make command $@ not found" 
+
