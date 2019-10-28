@@ -20,8 +20,6 @@
 
 import os
 
-os.system("make get-remote-docs")
-
 # -- Project information -----------------------------------------------------
 
 project = u'Solutions Delivery Platform'
@@ -44,7 +42,7 @@ release = u''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.githubpages',
+    'sphinx.ext.githubpages'
 ]
 
 scv_whitelist_branches = ('master', )
@@ -118,7 +116,9 @@ html_context = {
         '_static/theme_overrides.css',  # override wide tables in RTD theme
         '_static/style.css',
         ],
-     }
+}
+
+
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

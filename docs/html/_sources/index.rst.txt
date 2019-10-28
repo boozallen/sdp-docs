@@ -88,8 +88,9 @@ a DevSecOps dashboard to enable continuous improvement of your processes.
    :titlesonly:
    :caption: Learning Labs 
 
-   /pages/labs/index
-   /pages/labs/try-it-out/docs/index
+   /pages/learning-labs/index
+   /pages/learning-labs/try-it-out/docs/index
+   /pages/learning-labs/local-development/index
 
 .. toctree::
    :hidden: 

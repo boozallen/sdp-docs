@@ -7,11 +7,6 @@ SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = SolutionsDeliveryPlatform
 SOURCEDIR     = .
 BUILDDIR      = docs
-LABSREPO      = https://github.com/boozallen/sdp-labs.git
-LIBSBRANCH    = master
-JTEBRANCH     = master
-LABSBRANCH    = master
-
 
 .PHONY: help Makefile 
 
@@ -20,23 +15,16 @@ help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	rm -rf pages/labs docs/doctrees docs/html 
+	rm -rf docs/doctrees docs/html 
 
 image: ## builds container image used to build documentation 
 	docker build . -t sdp-docs
-
-get-remote-docs: ## fetches sdp library and JTE documentation from their repos
-	# learning labs 
-	ls pages/labs || git clone --depth=1 -n --single-branch --branch=$(LABSBRANCH) $(LABSREPO) pages/labs
-	cd pages/labs && git checkout $(LABSBRANCH) -- $$(git diff --name-only --cached -- '*.rst' '**/docs/*' ) && cd -
-
 
 # build docs 
 html: ## builds documentation in _build/html 
       ## run make html live for hot reloading of edits during development
 	make clean 
 	make image
-	make get-remote-docs
 	$(eval goal := $(filter-out $@,$(MAKECMDGOALS)))
 	@if [ "$(goal)" = "live" ]; then\
 		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
