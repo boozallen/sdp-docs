@@ -20,20 +20,11 @@
   <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../../../',
-              VERSION:'',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -113,8 +104,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Learning Labs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/try-it-out/docs/index.html">Try It Out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/try-it-out/docs/index.html">Try It Out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/local-development/index.html">Local Development</a></li>
 </ul>
 <p class="caption"><span class="caption-text">How-To Guides</span></p>
 <ul>
@@ -204,9 +196,9 @@ like any other piece of code.</p>
 </div>
 <div class="section" id="create-a-pipeline-template">
 <h2>Create a Pipeline Template<a class="headerlink" href="#create-a-pipeline-template" title="Permalink to this headline">¶</a></h2>
-<p>At the root of this repository create a file called <code class="docutils literal"><span class="pre">Jenkinsfile</span></code>. This is
+<p>At the root of this repository create a file called <code class="docutils literal notranslate"><span class="pre">Jenkinsfile</span></code>. This is
 the default pipeline template. A simple pipeline template might look like this:</p>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span>
 <span class="n">build</span><span class="o">()</span>
 
 <span class="n">on_merge</span> <span class="nl">to:</span> <span class="n">develop</span><span class="o">,</span> <span class="o">{</span>
@@ -226,10 +218,10 @@ the default pipeline template. A simple pipeline template might look like this:<
 <div class="section" id="create-pipeline-config-groovy">
 <h2>Create pipeline_config.groovy<a class="headerlink" href="#create-pipeline-config-groovy" title="Permalink to this headline">¶</a></h2>
 <p>Also at the root of your pipeline configuration repository, create a file
-called <code class="docutils literal"><span class="pre">pipeline_config.groovy</span></code>. Since this file will (likely) be in your global
+called <code class="docutils literal notranslate"><span class="pre">pipeline_config.groovy</span></code>. Since this file will (likely) be in your global
 governance tier, you modify it to make changes that apply to every pipeline. A
 simple pipeline config file might look like this:</p>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">application_environments</span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">application_environments</span><span class="o">{</span>
   <span class="n">dev</span><span class="o">{</span>
     <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;dev&quot;</span>
     <span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Develop&quot;</span>
@@ -290,7 +282,7 @@ above work together to create a pipeline.</p>
 <h3>The Pipeline Template<a class="headerlink" href="#the-pipeline-template" title="Permalink to this headline">¶</a></h3>
 <p>Starting with the pipeline template, every pipeline created from <em>this</em> template
 will have these steps:</p>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span> <span class="c1">// 1) Check the source code for bugs &amp; code smells</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span> <span class="c1">// 1) Check the source code for bugs &amp; code smells</span>
 <span class="n">build</span><span class="o">()</span>                <span class="c1">// 2) Build an artifact from the source code</span>
 
 <span class="n">on_merge</span> <span class="nl">to:</span> <span class="n">develop</span><span class="o">,</span> <span class="o">{</span><span class="c1">// 3a) if a merge to the develop branch triggered the build...</span>
@@ -306,11 +298,11 @@ will have these steps:</p>
 to be a pipeline config file to define <em>how</em>. It needs <a href="/sdp-docs/pages/jte/docs/pages/Governance/index.html#library-selection" target="_blank">libraries</a> to provide the
 implementation for the pipeline steps, <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">application environments</a> to define
 the dev and prod environments being deployed to, and <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">keywords</a> for the
-variables <code class="docutils literal"><span class="pre">develop</span></code> and <code class="docutils literal"><span class="pre">master</span></code> being used.</p>
+variables <code class="docutils literal notranslate"><span class="pre">develop</span></code> and <code class="docutils literal notranslate"><span class="pre">master</span></code> being used.</p>
 </div>
 <div class="section" id="the-libraries">
 <h3>The Libraries<a class="headerlink" href="#the-libraries" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">libraries</span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">libraries</span><span class="o">{</span>
   <span class="n">github_enterprise</span>
   <span class="n">sonarqube</span>
   <span class="n">docker</span><span class="o">{</span>
@@ -344,7 +336,7 @@ any of the libraries it contains can be used.</p>
 <p>Five libraries are being imported here: github_enterprise, sonarqube, docker,
 sdp, and OpenShift. Below is a mapping of steps to the libraries that are
 being used.</p>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span> <span class="c1">// sonarqube</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">static_code_analysis</span><span class="o">()</span> <span class="c1">// sonarqube</span>
 <span class="n">build</span><span class="o">()</span>                <span class="c1">// docker</span>
 
 <span class="n">on_merge</span> <span class="nl">to:</span> <span class="n">develop</span><span class="o">,</span> <span class="o">{</span><span class="c1">// github_enterprise</span>
@@ -366,7 +358,7 @@ depend on a step it defines.</p>
 </div>
 <div class="section" id="the-application-environments">
 <h3>The Application Environments<a class="headerlink" href="#the-application-environments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">application_environments</span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">application_environments</span><span class="o">{</span>
   <span class="n">dev</span><span class="o">{</span>
     <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;dev&quot;</span>
     <span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Develop&quot;</span>
@@ -380,24 +372,24 @@ depend on a step it defines.</p>
 </div>
 <p>The <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a> uses <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html" target="_blank">Application Environment primitives</a> to select which
 project in OpenShift to deploy to. For example, when the pipeline template calls
-<code class="docutils literal"><span class="pre">deploy</span> <span class="pre">to:</span> <span class="pre">dev``(which</span> <span class="pre">can</span> <span class="pre">also</span> <span class="pre">be</span> <span class="pre">read</span> <span class="pre">as</span> <span class="pre">``deploy(to:</span> <span class="pre">dev)</span></code>), it takes the
+<code class="docutils literal notranslate"><span class="pre">deploy</span> <span class="pre">to:</span> <span class="pre">dev``(which</span> <span class="pre">can</span> <span class="pre">also</span> <span class="pre">be</span> <span class="pre">read</span> <span class="pre">as</span> <span class="pre">``deploy(to:</span> <span class="pre">dev)</span></code>), it takes the
 <em>dev</em> application environment primitive object that we define here and uses its
-values in <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">the deploy step</a>. The <code class="docutils literal"><span class="pre">short_name</span></code>, in particular, is used to select
+values in <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy" target="_blank">the deploy step</a>. The <code class="docutils literal notranslate"><span class="pre">short_name</span></code>, in particular, is used to select
 the target OpenShift project and which values.yaml file to use as part of the
 deployment. View the next section or the <a href="/sdp-docs/pages/libraries/openshift/README.html" target="_blank">OpenShift library</a> page for more
 details.</p>
 </div>
 <div class="section" id="the-keywords">
 <h3>The Keywords<a class="headerlink" href="#the-keywords" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-groovy"><div class="highlight"><pre><span></span><span class="n">keywords</span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">keywords</span><span class="o">{</span>
   <span class="n">master</span> <span class="o">=</span> <span class="s">/^[Mm]aster$/</span>
   <span class="n">develop</span> <span class="o">=</span> <span class="s">/^[Dd]evelop$/</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <p>The <a href="/sdp-docs/pages/libraries/github_enterprise/README.html" target="_blank">github_enterprise library</a> uses <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html" target="_blank">Keyword primitives</a> to determine what kind
-of GitHub branch is being built. The steps <code class="docutils literal"><span class="pre">on_merge()</span></code>, <code class="docutils literal"><span class="pre">on_commit</span></code>, and
-<code class="docutils literal"><span class="pre">on_pull_request</span></code> take a regex expression as a parameter. These regex
+of GitHub branch is being built. The steps <code class="docutils literal notranslate"><span class="pre">on_merge()</span></code>, <code class="docutils literal notranslate"><span class="pre">on_commit</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">on_pull_request</span></code> take a regex expression as a parameter. These regex
 expressions have been stored as keywords to make the pipeline template more
 human-readable.</p>
 </div>
