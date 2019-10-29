@@ -20,11 +20,20 @@
   <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="../../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -104,9 +113,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Learning Labs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/try-it-out/docs/index.html">Try It Out</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/local-development/index.html">Local Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/try-it-out/docs/index.html">Try It Out</a></li>
 </ul>
 <p class="caption"><span class="caption-text">How-To Guides</span></p>
 <ul>
@@ -185,7 +193,7 @@
 <div class="section" id="run-the-installer-script">
 <h2>Run the Installer Script<a class="headerlink" href="#run-the-installer-script" title="Permalink to this headline">¶</a></h2>
 <p>From the root of the sdp-helm-chart directory, run the command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">installer</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">installer</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>Supply a GitHub username and password (or access token) when prompted.</p>
@@ -198,7 +206,7 @@ resolve the issue and try running the script again. If that fails, go to the pre
 pages of the guide and make sure the prerequisites are met and the steps were
 completed.</p>
 <p>After the SDP has successfully been installed, you should see this message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Successfully Installed the Solutions Delivery Platform.
+<div class="highlight-default"><div class="highlight"><pre><span></span>Successfully Installed the Solutions Delivery Platform.
 
 ✔ Solutions Delivery Platform Installed
 </pre></div>

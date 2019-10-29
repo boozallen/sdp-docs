@@ -20,11 +20,20 @@
   <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -91,9 +100,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Learning Labs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../learning-labs/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../learning-labs/try-it-out/docs/index.html">Try It Out</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../learning-labs/local-development/index.html">Local Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/try-it-out/docs/index.html">Try It Out</a></li>
 </ul>
 <p class="caption"><span class="caption-text">How-To Guides</span></p>
 <ul>
@@ -180,18 +188,18 @@ Below are two example stings for configuring the driver.  When using the SDP Clu
 <h2>Remote WebDriver<a class="headerlink" href="#remote-webdriver" title="Permalink to this headline">¶</a></h2>
 <p>In both examples replace &lt;BROWSER&gt; with the type of browser being used.</p>
 <p><strong>Python</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Remote</span><span class="p">(</span><span class="n">command_executor</span><span class="o">=</span><span class="s2">&quot;http://selenium-hub.sdp.svc:4444/wd/hub&quot;</span><span class="p">,</span><span class="n">webdriver</span><span class="o">.</span><span class="n">DesiredCapabilities</span><span class="o">.&lt;</span><span class="n">BROWSER</span><span class="o">&gt;.</span><span class="n">copy</span><span class="p">())</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Remote</span><span class="p">(</span><span class="n">command_executor</span><span class="o">=</span><span class="s2">&quot;http://selenium-hub.sdp.svc:4444/wd/hub&quot;</span><span class="p">,</span><span class="n">webdriver</span><span class="o">.</span><span class="n">DesiredCapabilities</span><span class="o">.&lt;</span><span class="n">BROWSER</span><span class="o">&gt;.</span><span class="n">copy</span><span class="p">())</span>
 </pre></div>
 </div>
 <p><strong>Java</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">new</span> <span class="n">RemoteWebDriver</span><span class="p">(</span><span class="n">new</span> <span class="n">URL</span><span class="p">(</span><span class="s2">&quot;http://selenium-hub.sdp.svc:4444/wd/hub”),</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">new</span> <span class="n">RemoteWebDriver</span><span class="p">(</span><span class="n">new</span> <span class="n">URL</span><span class="p">(</span><span class="s2">&quot;http://selenium-hub.sdp.svc:4444/wd/hub”),</span>
          <span class="n">DesiredCapabilities</span><span class="o">.&lt;</span><span class="n">browser</span><span class="o">&gt;</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>For More examples for creating a Remote WebDriver in other languages (<em>c#, ruby, javascript, and php</em>) visit the official Selenium Grid documentation.
 <a class="reference external" href="https://www.seleniumhq.org/docs/04_webdriver_advanced.jsp#remotewebdriver">https://www.seleniumhq.org/docs/04_webdriver_advanced.jsp#remotewebdriver</a></p>
 <p>Python Selenium Grid Minimal Example.  In the example below the script connects into the Selenium Hub. From there the Hub makes a request to the Chrome Node running a series of simple test. If all test succeed the driver prints the title of the website loaded (Google.com) then releases the driver object.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat &gt; SGTest.py &lt;&lt;EOF
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cat &gt; SGTest.py &lt;&lt;EOF
 #Simple test written in Python for Selenium Grid
 
 from selenium import webdriver
@@ -226,17 +234,17 @@ $ python SGTest.py
 <h2>Adding a new Node<a class="headerlink" href="#adding-a-new-node" title="Permalink to this headline">¶</a></h2>
 <p>If needed adding a new node requires creating a new OpenShift Pod/Deployment. A good place to start is by using the Selenium Grid NodeBase image. <a class="reference external" href="https://github.com/SeleniumHQ/docker-selenium/tree/master/NodeBase">https://github.com/SeleniumHQ/docker-selenium/tree/master/NodeBase</a>.</p>
 <p>When configuring the nodes make sure to set the Pods environment variables are set too</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HUB_HOST</span><span class="p">:</span> <span class="n">selenium</span><span class="o">-</span><span class="n">hub</span><span class="o">.</span><span class="n">sdp</span><span class="o">.</span><span class="n">svc</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">HUB_HOST</span><span class="p">:</span> <span class="n">selenium</span><span class="o">-</span><span class="n">hub</span><span class="o">.</span><span class="n">sdp</span><span class="o">.</span><span class="n">svc</span>
 <span class="n">HUB_PORT_PARAM</span><span class="p">:</span> <span class="mi">4444</span>
 </pre></div>
 </div>
 <p>If the pod is attempting to run as the root user add these two additional environment variables to the pod</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span><span class="p">:</span> <span class="n">seluser</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span><span class="p">:</span> <span class="n">seluser</span>
 <span class="n">HOME</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">seluser</span>
 </pre></div>
 </div>
 <p>Then add the following code to the top of the entry_point.sh file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if ! whoami &amp;&gt; /dev/null; then
+<div class="highlight-default"><div class="highlight"><pre><span></span>if ! whoami &amp;&gt; /dev/null; then
   if [ -w /etc/passwd ]; then
     echo &quot;${USER_NAME:-default}:x:$(id -u):0:${USER_NAME:-default} user:${HOME}:/sbin/nologin&quot; &gt;&gt; /etc/passwd
   fi

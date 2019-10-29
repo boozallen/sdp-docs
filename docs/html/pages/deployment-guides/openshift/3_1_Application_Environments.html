@@ -20,11 +20,20 @@
   <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="../../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -104,9 +113,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Learning Labs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/try-it-out/docs/index.html">Try It Out</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-labs/local-development/index.html">Local Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/try-it-out/docs/index.html">Try It Out</a></li>
 </ul>
 <p class="caption"><span class="caption-text">How-To Guides</span></p>
 <ul>
@@ -204,10 +212,10 @@ set of pre-configured projects in OpenShift:</p>
 <div class="section" id="getting-provision-app-envs-sh">
 <h2>Getting provision_app_envs.sh<a class="headerlink" href="#getting-provision-app-envs-sh" title="Permalink to this headline">¶</a></h2>
 <p>Clone the <a href="https://github.com/boozallen/sdp-helm-chart" target="_blank">sdp-helm-chart repository</a> if you haven’t already, and use your
-terminal to navigate to the <code class="docutils literal notranslate"><span class="pre">resources/helm</span></code> folder. You should see a file called
-<code class="docutils literal notranslate"><span class="pre">provision_app_envs.sh</span></code>. You can execute it with the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to view the
+terminal to navigate to the <code class="docutils literal"><span class="pre">resources/helm</span></code> folder. You should see a file called
+<code class="docutils literal"><span class="pre">provision_app_envs.sh</span></code>. You can execute it with the <code class="docutils literal"><span class="pre">-h</span></code> flag to view the
 options for running it.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/boozallen/sdp-helm-chart.git
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ git clone https://github.com/boozallen/sdp-helm-chart.git
 Cloning into &#39;sdp-helm-chart&#39;...
 remote: Enumerating objects: 182, done.
 remote: Counting objects: 100% (182/182), done.
@@ -245,7 +253,7 @@ name that makes it possible to distinguish your application from others that may
 share the same cluster. This prefix is ideally an abbreviation of your project
 name. In the example above, the prefix for the “RedHat Summit” project is “rhs.”</p>
 <p>You need to know how many environments you want, as well as abbreviated names for
-each. These abbreviated names are placed after <code class="docutils literal notranslate"><span class="pre">-e</span></code> in the script’s options.
+each. These abbreviated names are placed after <code class="docutils literal"><span class="pre">-e</span></code> in the script’s options.
 In the example above, there are four environments being provisioned: dev, test,
 staging, and prod. The script will create an OpenShift project for each one:
 rhs-dev, rhs-test, rhs-staging, and rhs-prod.</p>
@@ -263,14 +271,14 @@ the other projects being created). In the example above, that project is called
 <h2>Running The Script<a class="headerlink" href="#running-the-script" title="Permalink to this headline">¶</a></h2>
 <p>Putting it all together, execute the provision_app_envs script, using the
 appropriate flags to provide the three pieces of information covered above.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ bash provision_app_envs.sh -p <span class="nv">$PREFIX</span> -e <span class="nv">$ENV_1</span> -e <span class="nv">$ENV_2</span> ... -e <span class="nv">$ENV_N</span> -i <span class="nv">$IMAGE_PROJ</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ bash provision_app_envs.sh -p <span class="nv">$PREFIX</span> -e <span class="nv">$ENV_1</span> -e <span class="nv">$ENV_2</span> ... -e <span class="nv">$ENV_N</span> -i <span class="nv">$IMAGE_PROJ</span>
 </pre></div>
 </div>
 <p>The script should take care of the rest, creating and setting up projects for
 the application environments, images, and tiller server. For example, if
 you ran this command, with the prefix “demo”, a dev and prod environment, and
 an image project called “demo”, you should see the projects below created:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ bash provision_app_envs.sh -p demo -e dev -e prod -i demo
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ bash provision_app_envs.sh -p demo -e dev -e prod -i demo
 </pre></div>
 </div>
 <table border="1" class="docutils" id="id1">
@@ -305,11 +313,11 @@ an image project called “demo”, you should see the projects below created:</
 <p>The tiller server just created cannot be used without credentials, so those
 credentials need to be added to Jenkins. Assuming your tiller project is called “demo-tiller”, follow
 <a class="reference internal" href="../../how-to/add_jenkins_credentials.html#add-credentials-to-jenkins"><span class="std std-ref">this guide</span></a> to create a username/password
-credential in Jenkins with the username <code class="docutils literal notranslate"><span class="pre">system:serviceaccount:demo-tiller:tiller</span></code>
+credential in Jenkins with the username <code class="docutils literal"><span class="pre">system:serviceaccount:demo-tiller:tiller</span></code>
 and use the command below to get the password, which will output a token you
 need to copy-paste into Jenkins. For easy identification, make the credential’s
 ID the same as the name of the tiller project (i.e. <em>demo-tiller</em>).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ oc sa get-token tiller -n demo-tiller
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ oc sa get-token tiller -n demo-tiller
 </pre></div>
 </div>
 </div>
