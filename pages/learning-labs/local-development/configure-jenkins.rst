@@ -122,3 +122,9 @@ The plugin will not become active until you select
 
 At this point, Jenkins will restart automatically.  Log in again with either the custom 
 admin user you created earlier or the initial admin password. 
+
+.. important::
+
+    You can run ``docker logs -f jenkins`` to see the Jenkins logs.  It will say
+    "Jenkins is fully up and running" when Jenkins has completed the restart and 
+    is ready to be interacted with. 
