@@ -36,11 +36,15 @@ In your terminal, run:
    "-d", "Runs the container process in the background" 
    "jenkins/jenkins:lts", "The container image from which to run this container" 
 
-.. important:: 
+.. note:: 
 
     If port 8080 is already in use by another process then this command will fail.  To run Jenkins on a different port, 
     swap out the first 8080 to your desired port: ``<desired port number>:8080``.  
 
+.. important::
+
+    You can run ``docker logs -f jenkins`` to see the Jenkins logs.  It will say
+    "Jenkins is fully up and running" when Jenkins is ready.
 
 You can validate the container launched as expected by going to ``http://localhost:8080``. 
 
