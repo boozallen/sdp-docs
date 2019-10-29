@@ -235,10 +235,15 @@ jenkins/jenkins:lts
 </tr>
 </tbody>
 </table>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">If port 8080 is already in use by another process then this command will fail.  To run Jenkins on a different port,
 swap out the first 8080 to your desired port: <code class="docutils literal notranslate"><span class="pre">&lt;desired</span> <span class="pre">port</span> <span class="pre">number&gt;:8080</span></code>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You can run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">jenkins</span></code> to see the Jenkins logs.  It will say
+“Jenkins is fully up and running” when Jenkins is ready.</p>
 </div>
 <p>You can validate the container launched as expected by going to <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code>.</p>
 <p>You should see the Jenkins Startup Wizard:</p>
