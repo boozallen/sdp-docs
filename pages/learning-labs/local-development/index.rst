@@ -19,7 +19,7 @@ Click ``Next`` to move on to this lab's prerequisites.
    :hidden:
    :titlesonly:
 
-   prerequisites
-   run-jenkins
-   configure-jenkins
-   validate-jenkins
+   1-prerequisites
+   2-run-jenkins
+   3-configure-jenkins
+   4-validate-jenkins
