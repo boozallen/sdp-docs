@@ -12,4 +12,5 @@ give you hands-on experience with Booz Allen's Solutions Delivery Platform.
    :header: "**Lab**", "**Description**"
 
    ":ref:`Try It Out <Try It Out>`", "A brief introduction to the Jenkins Templating Engine and our SDP Pipeline Libraries. You'll learn how to configure Jenkins to leverage SDP and make your first pipeline."
-   ":ref:`Local Development <Local Development>`", "In this lab, we'll be deploying a local Jenkins instance using Docker and installing the Jenkins Templating Engine" 
+   ":ref:`Local Development <Local Development>`", "In this lab, we'll be deploying a local Jenkins instance using Docker and installing the Jenkins Templating Engine." 
+   ":ref:`JTE: The Basics <JTE The Basics>`", "In this lab, we'll be exploring the basic concepts of the Jenkins Templating Engine and different ways to use it."
