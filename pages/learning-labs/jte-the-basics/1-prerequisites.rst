@@ -23,3 +23,23 @@ from Jenkins you will need to be able to create GitHub repositories on `github.c
 
     Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab, etc) should integrate and 
     work as expected with JTE.  For the purposes of simplifying this lab, we will be using GitHub. 
+
+==========================================
+GitHub PAT in the Jenkins Credential Store
+==========================================
+
+Create a `GitHub Personal Access Token <https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line>`_. 
+
+Copy this token and store it in the Jenkins credential store. 
+
+1.  From the Jenkins home page, click ``Credentials`` in the lefthand navigation menu
+2.  Select the ``global`` credential scope 
+3.  Select ``Add Credential`` in the lefthand navigation menu
+4.  Enter your github username in the ``Username`` field 
+5.  Paste the Personal Access Token into the ``Password`` field 
+6.  Enter ``github`` into the ``ID`` field 
+7.  Enter ``github`` into the ``Description`` field 
+8.  Click ``OK``
+
+.. image:: ../../../images/learning-labs/jte-the-basics/pat.gif 
+   :align: center 

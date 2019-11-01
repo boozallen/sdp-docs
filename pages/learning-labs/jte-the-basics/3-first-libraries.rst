@@ -34,7 +34,7 @@ Create the following directory structure within your repository:
     .
     └── libraries
         ├── maven
-        │  └── build.groovy
+        │   └── build.groovy
         └── sonarqube
             └── static_code_analysis.groovy
 
@@ -113,8 +113,9 @@ Jenkins instace:
 5. Ensure the ``Library Provider`` is set to ``From SCM`` 
 6. Select ``Git`` as the ``SCM`` type 
 7. Enter the **https** repository URL
-8. Enter ``libraries`` in the ``Base Directory`` text box
-9. Click ``Save`` 
+8. In the ``Credentials`` drop down menu, select the github credential created during the prerequisites
+9. Enter ``libraries`` in the ``Base Directory`` text box
+10. Click ``Save`` 
 
 .. image:: ../../../images/learning-labs/jte-the-basics/library_source.gif
    :align: center
