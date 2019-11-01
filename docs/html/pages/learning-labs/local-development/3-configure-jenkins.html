@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuring Jenkins &mdash; Solutions Delivery Platform  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Validate Jenkins" href="4-validate-jenkins.html" />
+    <link rel="prev" title="Run the Jenkins Container" href="2-run-jenkins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Solutions Delivery Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Components</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://jenkinsci.github.io/templating-engine-plugin">Jenkins Templating Engine</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://boozallen.github.io/sdp-libraries">Pipeline Libraries</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../deployment-guides/openshift/index.html">OpenShift</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Learning Labs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../try-it-out/docs/index.html">Try It Out</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Local Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-run-jenkins.html">Run the Jenkins Container</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuring Jenkins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-validate-jenkins.html">Validate Jenkins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jte-the-basics/index.html">JTE: The Basics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/helm-multitenancy.html">Helm Multitenancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/add_jenkins_credentials.html">Add Credentials to Jenkins</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://help.github.com/articles/creating-a-new-organization-from-scratch/">Create a GitHub Organization</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/">Deploy Twistlock to OpenShift</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Solutions Delivery Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Local Development</a> &raquo;</li>
+        
+      <li>Configuring Jenkins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/pages/learning-labs/local-development/3-configure-jenkins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuring-jenkins">
+<h1>Configuring Jenkins<a class="headerlink" href="#configuring-jenkins" title="Permalink to this headline">¶</a></h1>
+<p>In the last section, we ran a local Jenkins instance via Docker and validated
+it’s running on <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code>.</p>
+<p>Now, we’re going to configure that Jenkins instance by:</p>
+<ul class="simple">
+<li>Entering the initial admin password</li>
+<li>Installing the default suggested plugins</li>
+<li>Installing the Jenkins Templating Engine</li>
+</ul>
+<div class="section" id="initial-admin-password">
+<h2>Initial Admin Password<a class="headerlink" href="#initial-admin-password" title="Permalink to this headline">¶</a></h2>
+<p>There are <em>two</em> ways to get the initial admin password for Jenkins.</p>
+<div class="section" id="cat-the-file">
+<h3>1. Cat the file<a class="headerlink" href="#cat-the-file" title="Permalink to this headline">¶</a></h3>
+<p>The initial admin password is stored in <code class="docutils literal notranslate"><span class="pre">/var/jenkins_home/secrets/initialAdminPassword</span></code> within the container.</p>
+<p>You can print this password in your terminal by running: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">jenkins</span> <span class="pre">cat</span> <span class="pre">/var/jenkins_home/secrets/initialAdminPassword</span></code></p>
+<img alt="../../../_images/cat-init-password.png" src="../../../_images/cat-init-password.png" />
+<p>Copy and paste this password into the text box in Jenkins.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you’re using a mac, i’d recommend running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">jenkins</span> <span class="pre">cat</span> <span class="pre">/var/jenkins_home/secrets/initialAdminPassword</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>
+which will automatically insert the password into your clipboard for pasting.</p>
+</div>
+</div>
+<div class="section" id="fetch-it-from-the-container-logs">
+<h3>2. Fetch it from the container logs<a class="headerlink" href="#fetch-it-from-the-container-logs" title="Permalink to this headline">¶</a></h3>
+<p>The initial admin password is also printed to standard out while Jenkins starts up.  To view the Jenkins logs, run
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">jenkins</span></code>.</p>
+<p>In the output, you should see something similar to this:</p>
+<img alt="../../../_images/logs_init_password.png" class="align-center" src="../../../_images/logs_init_password.png" />
+<p>Copy and paste the password into the text box in Jenkins.</p>
+</div>
+</div>
+<div class="section" id="installing-the-suggested-plugins">
+<h2>Installing the Suggested Plugins<a class="headerlink" href="#installing-the-suggested-plugins" title="Permalink to this headline">¶</a></h2>
+<p>After entering the initial admin password, Jenkins will bring you to a <em>Customize Jenkins</em> page.</p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">suggested</span> <span class="pre">plugins</span></code> button.</p>
+<p>This will bring you to a loading screen displaying the progress as Jenkins installs the most popular
+community plugins.</p>
+</div>
+<div class="section" id="setup-initial-admin-user">
+<h2>Setup Initial Admin User<a class="headerlink" href="#setup-initial-admin-user" title="Permalink to this headline">¶</a></h2>
+<p>After the plugins are done installing, Jenkins will send you to a screen to configure the default
+admin user.</p>
+<img alt="../../../_images/initial_admin_user.png" class="align-center" src="../../../_images/initial_admin_user.png" />
+<p>Feel free to create a custom username and password or continue as admin.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you click “continue as admin” then the username will be <code class="docutils literal notranslate"><span class="pre">admin</span></code> and the password
+will be the initial admin password we found earlier.</p>
+</div>
+</div>
+<div class="section" id="instance-configuration">
+<h2>Instance Configuration<a class="headerlink" href="#instance-configuration" title="Permalink to this headline">¶</a></h2>
+<p>After creating the initial admin user, Jenkins will send you to a screen where you can
+configure the instance’s URL.  The text box will be prepopulated with what’s currently
+in your browser, so click <em>Save and Finish</em> in the bottom righthand side of the screen.</p>
+</div>
+<div class="section" id="installing-the-jenkins-templating-engine">
+<h2>Installing the Jenkins Templating Engine<a class="headerlink" href="#installing-the-jenkins-templating-engine" title="Permalink to this headline">¶</a></h2>
+<p>At this point, you’ve completed the Jenkins Startup Wizard process.  Click “<em>Start Using Jenkins</em>”
+and you will be directed to the Jenkins home page.</p>
+<img alt="../../../_images/jenkins-home-page.png" class="align-center" src="../../../_images/jenkins-home-page.png" />
+<p>Now, we’re going to install the Jenkins Templating Engine, which can be found as the
+<code class="docutils literal notranslate"><span class="pre">Templating</span> <span class="pre">Engine</span> <span class="pre">Plugin</span></code> in the Jenkins Update Center.</p>
+<ol class="arabic simple">
+<li>In the lefthand navigation menu, select <em>Manage Jenkins</em></li>
+<li>In the middle of the screen, Select <em>Manage Plugins</em></li>
+<li>Select the <em>Available</em> tab at the top</li>
+<li>In the upper right <em>Filter</em> text box, type: <code class="docutils literal notranslate"><span class="pre">Templating</span> <span class="pre">Engine</span></code></li>
+</ol>
+<p>At this point you should see:</p>
+<img alt="../../../_images/jte-update-center.png" class="align-center" src="../../../_images/jte-update-center.png" />
+<p>Make sure to select the Templating Engine Plugin and click
+“<em>Download now and install after restart</em>”.</p>
+<p>This will direct you to a screen showing the download progress of JTE.</p>
+<p>The plugin will not become active until you select
+“<em>Restart Jenkins when installation is complete and no jobs are running</em>”.</p>
+<img alt="../../../_images/restart-post-install-jte.png" class="align-center" src="../../../_images/restart-post-install-jte.png" />
+<p>At this point, Jenkins will restart automatically.  Log in again with either the custom
+admin user you created earlier or the initial admin password.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You can run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">jenkins</span></code> to see the Jenkins logs.  It will say
+“Jenkins is fully up and running” when Jenkins has completed the restart and
+is ready to be interacted with.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="4-validate-jenkins.html" class="btn btn-neutral float-right" title="Validate Jenkins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2-run-jenkins.html" class="btn btn-neutral float-left" title="Run the Jenkins Container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Booz Allen Hamilton
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-144247959-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
