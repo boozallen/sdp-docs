@@ -12,6 +12,7 @@ What You'll Learn
 
 * The Default Step Implementation: how to create steps on the fly in the Pipeline Configuration 
 * Pipeline Lifecycle Hooks: how to register steps to be dynamically invoked in response to pipeline events
+* Multi-Method Steps: how to create utility wrappers by defining multiple methods in a step
 
 
 Click ``Next`` to move on to this lab's prerequisites. 
