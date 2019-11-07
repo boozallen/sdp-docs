@@ -10,8 +10,8 @@ In this lab we're going to highlight some of JTE's more advanced features.
 What You'll Learn
 =================
 
-* The default step implementation 
-* Pipeline Lifecycle Hooks 
+* The Default Step Implementation: how to create steps on the fly in the Pipeline Configuration 
+* Pipeline Lifecycle Hooks: how to register steps to be dynamically invoked in response to pipeline events
 
 
 Click ``Next`` to move on to this lab's prerequisites. 
