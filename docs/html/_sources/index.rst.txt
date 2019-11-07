@@ -92,6 +92,8 @@ a DevSecOps dashboard to enable continuous improvement of your processes.
    /pages/learning-labs/try-it-out/docs/index
    /pages/learning-labs/local-development/index
    /pages/learning-labs/jte-the-basics/index
+   /pages/learning-labs/jte-primitives/index
+   /pages/learning-labs/jte-advanced-features/index
 
 .. toctree::
    :hidden: 

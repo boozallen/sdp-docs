@@ -1,0 +1,123 @@
+.. _JTE Primitives Stages: 
+
+------
+Stages
+------
+
+================
+What is a Stage?
+================
+
+Stages are a mechanism for chaining multiple steps together to be invoked through an aliased method name. 
+
+As pipeline templates mature in complexity and grow to represent branching strategies for application development 
+teams, it's likely that you would want to call the same series of steps multiple times in the template. 
+
+To minimize repeating ourselves in pipeline templates, the Stage primitive was created to address this use case. 
+
+.. note:: 
+
+    `View the Stage documentation <https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/stages.html>`_
+
+======================
+Define and Use A Stage
+======================
+
+A very common stage to create is a **Continuous Integration** stage.  
+
+.. note:: 
+
+    In general, Continuous Integration represents a series of fast-feedback verification 
+    steps that help developers quickly determine if the changes made have broken anything 
+    obvious.  It's common to run steps like building an artifact, running unit tests, and 
+    performing static code analysis on every commit to feature branches in a source code 
+    repository and then once again in the Pull Request job to verify the merged result is 
+    still good. 
+
+Our current pipeline template specifies to run the ``build()`` and ``static_code_analysis()`` 
+steps.  Let's group these together into a ``continuous_integration()`` stage. 
+
+**********************************************
+Define the Stage in the Pipeline Configuration
+**********************************************
+
+Update the **Pipeline Configuration** to: 
+
+.. code:: groovy 
+
+    libraries{
+        maven
+        sonarqube
+    }
+
+    stages{
+        continuous_integration{
+            build
+            static_code_analysis
+        }
+    }
+
+.. important:: 
+
+    All Stages will be defined in the ``stages`` block of the Pipeline Configuration.  Root level 
+    keys within this block, in this case ``continuous_integration``, will become invokable methods 
+    within the pipeline template. 
+
+    The lines within the ``continuous_integration`` block outline which steps will be chained together 
+    when the stage is invoked. 
+
+****************************
+Update the Pipeline Template
+****************************
+
+With the ``continuous_integration`` stage defined, we can update the pipeline template to make use of it. 
+
+Update the **Pipeline Template** to: 
+
+.. code:: groovy
+
+    continuous_integration() 
+
+****************
+Run the Pipeline
+**************** 
+
+From the Pipeline job's main page, click ``Build Now`` in the lefthand navigation menu. 
+
+When viewing the build logs, you should see output similar to:
+
+.. code-block:: text 
+
+    [Pipeline] node
+    Running on Jenkins in /var/jenkins_home/workspace/single-job
+    [Pipeline] {
+    [Pipeline] writeFile
+    [Pipeline] archiveArtifacts
+    Archiving artifacts
+    [Pipeline] }
+    [Pipeline] // node
+    [JTE] [Stage - continuous_integration]
+    [JTE] [Step - maven/build.call()]
+    [Pipeline] stage
+    [Pipeline] { (Maven: Build)
+    [Pipeline] echo
+    build from the maven library
+    [Pipeline] }
+    [Pipeline] // stage
+    [JTE] [Step - sonarqube/static_code_analysis.call()]
+    [Pipeline] stage
+    [Pipeline] { (SonarQube: Static Code Analysis)
+    [Pipeline] echo
+    static code analysis from the sonarqube library
+    [Pipeline] }
+    [Pipeline] // stage
+    [Pipeline] End of Pipeline
+    Finished: SUCCESS
+
+.. important:: 
+
+    When reading the build logs of a JTE job, you can identify the start of stages by looking for 
+    ``[JTE] [Stage - *]`` in the output.  
+
+    In this case, the log output was: ``[JTE] [Stage - continuous_integration]`` indicating a Stage 
+    called ``continuous_integration`` is about to be executed. 
