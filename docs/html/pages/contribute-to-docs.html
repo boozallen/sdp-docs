@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contribute to the Docs &mdash; Solutions Delivery Platform  documentation</title>
+  <title>Contribute to this Documentation! &mdash; Solutions Delivery Platform  documentation</title>
   
 
   
@@ -36,7 +36,8 @@
   <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Add Credentials to Jenkins" href="how-to/add_jenkins_credentials.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,6 +106,10 @@
 <li class="toctree-l1"><a class="reference external" href="https://help.github.com/articles/creating-a-new-organization-from-scratch/">Create a GitHub Organization</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/">Deploy Twistlock to OpenShift</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contribute to this Documentation!</a></li>
+</ul>
 
             
           
@@ -149,7 +154,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Contribute to the Docs</li>
+      <li>Contribute to this Documentation!</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,8 +173,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="contribute-to-the-docs">
-<h1>Contribute to the Docs<a class="headerlink" href="#contribute-to-the-docs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="contribute-to-this-documentation">
+<h1>Contribute to this Documentation!<a class="headerlink" href="#contribute-to-this-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -179,18 +184,56 @@
 </div>
 <div class="section" id="distributed-documentation">
 <h2>Distributed Documentation<a class="headerlink" href="#distributed-documentation" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="introduction-to-rst">
-<h2>Introduction to RST<a class="headerlink" href="#introduction-to-rst" title="Permalink to this headline">¶</a></h2>
+<p>The documentation for SDP is distributed across multiple repositories in order to keep the documentation
+next to the code.  This greatly helps with ensuring documentation remains up to date by enforcing the
+documentation is maintained during Pull Request reviews.</p>
+<p>The rest of this documentation outlines how to contribute to the main SDP Documentation site.</p>
+<p>Both the <a class="reference external" href="https://github.com/jenkinsci/templating-engine-plugin">Jenkins Templating Engine</a>
+and <a class="reference external" href="https://github.com/boozallen/sdp-libraries">SDP Pipeline Libraries</a> repositories will have
+documentation that explains how to contribute to those respective sites.</p>
 </div>
 <div class="section" id="local-development">
 <h2>Local Development<a class="headerlink" href="#local-development" title="Permalink to this headline">¶</a></h2>
+<p>There is a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> at the root of the <a class="reference external" href="https://github.com/boozallen/sdp-docs">SDP Documentation Repository</a>
+that automates some tasks to aide in local development of this documentation:</p>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">Local Development Commands</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></td>
+<td>Builds the documentation locally.  Open <code class="docutils literal notranslate"><span class="pre">./docs/html/index.html</span></code> to see the resulting docs</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span> <span class="pre">live</span></code></td>
+<td>Runs a hot-reload server to see the documentation updated as changes are made on <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">user=&lt;github</span> <span class="pre">username&gt;</span> <span class="pre">token=&lt;github</span> <span class="pre">pat&gt;</span> <span class="pre">html</span> <span class="pre">deploy</span></code></td>
+<td>When run from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, if you have write permissions to the SDP Documentation Repository, this will deploy the docs.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="submitting-contributions">
 <h2>Submitting Contributions<a class="headerlink" href="#submitting-contributions" title="Permalink to this headline">¶</a></h2>
+<p>SDP follows the Fork and Pull workflow for accepting contributions from contributors.</p>
+<div class="section" id="steps-to-contribute">
+<h3>Steps to Contribute<a class="headerlink" href="#steps-to-contribute" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Fork the <a class="reference external" href="https://github.com/boozallen/sdp-docs">SDP Documentation Repository</a></li>
+<li>Make changes to your own fork of the repository</li>
+<li>Create a Pull Request from your fork to the main repository</li>
+<li>Fill out the Pull Request Template describing your changes</li>
+</ol>
+<p>Lambda School has produced a great <a class="reference external" href="https://lambdaschool.com/the-commons/how-to-fork-and-contribute-to-a-project-using-git">tutorial</a>
+that explains the Fork and Pull model in more detail.</p>
 </div>
-<div class="section" id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -199,6 +242,13 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="how-to/add_jenkins_credentials.html" class="btn btn-neutral float-left" title="Add Credentials to Jenkins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

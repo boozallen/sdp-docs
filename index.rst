@@ -104,3 +104,10 @@ a DevSecOps dashboard to enable continuous improvement of your processes.
    /pages/how-to/add_jenkins_credentials
    Create a GitHub Organization <https://help.github.com/articles/creating-a-new-organization-from-scratch/>
    Deploy Twistlock to OpenShift <https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/>
+
+.. toctree:: 
+   :hidden: 
+   :titlesonly: 
+   :caption: Resources
+
+   /pages/contribute-to-docs
