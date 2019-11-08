@@ -1,0 +1,6 @@
+language: ruby 
+services:
+  - docker 
+if: branch = master
+script: 
+- make html 
