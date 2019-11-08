@@ -4,7 +4,7 @@
 Overview
 --------
 
-The best way to learn a technology is to use it. We've designed these Learning Labs to 
+The best way to learn a technology is to use it. These Learning Labs have been designed to 
 give you hands-on experience with Booz Allen's Solutions Delivery Platform.
 
 
