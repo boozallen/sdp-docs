@@ -43,6 +43,10 @@ Submitting Contributions
 
 SDP follows the Fork and Pull workflow for accepting contributions from contributors. 
 
+The content for this site can be found in the ``pages`` directory of the repository. 
+
+Images should be added to the ``images`` directory. 
+
 *******************
 Steps to Contribute 
 *******************
