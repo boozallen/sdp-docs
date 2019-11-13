@@ -42,7 +42,7 @@ We learned that:
 2.  Pipeline Templates are responsible for the **business logic** of your pipeline
 3.  Libraries are responsible for the **technical implementation** of your pipeline 
 4.  Pipeline Configuration Files **implement** a template by specifying (among other things) what libraries to load
-4.  When stored in a repo, Pipeline Configuration Files are called ``pipeline_config.groovy`` and are located at the root of the repository
+5.  When stored in a repo, Pipeline Configuration Files are called ``pipeline_config.groovy`` and are located at the root of the repository
 
 ==========================
 What is a Governance Tier?

@@ -26,7 +26,7 @@ to create a maven application repository named ``jte-the-basics-app-maven``.
 Modify the Pipeline Configurations
 ==================================
 
-Now that there are multiple applications with some configurations are common 
+Now that there are multiple applications with some configurations that are common
 and some configurations that are unique, we need to introduce the concept of 
 pipeline configuration aggregation. 
 

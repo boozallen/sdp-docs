@@ -258,4 +258,4 @@ default step implementation here: ``[JTE] [Step - Default Step Implementation/un
 
 When the step executed, it checked if the ``maven`` step was available locally and pulls the image if not. 
 
-Within it container image, it then ran ``mvn -v`` and the maven version was printed to the build log. 
+Within the container image, it then ran ``mvn -v`` and the maven version was printed to the build log.

@@ -28,7 +28,7 @@ When to use Multi-Method Steps
 The most common use case for defining multiple methods inside one step file is when you're 
 creating some utility functionality. 
 
-To demonstrate this, let's create a mock ``git`` utility that can ``add`, ``commit``, and 
+To demonstrate this, let's create a mock ``git`` utility that can ``add``, ``commit``, and
 ``push``. 
 
 ======================
