@@ -4,11 +4,11 @@
 Pipeline Lifecycle Hooks 
 ------------------------
 
-There can be interdependent functionalities that presented a challenge to the 
-Jenkins Templating Engine.  
+There can be interdependent functionalities that present a challenge to the
+Jenkins Templating Engine.
 
 For example, let's say we wanted to introduce Splunk monitoring by sending events 
-as part of the pipeline? 
+as part of the pipeline.
 
 How do you: 
 
@@ -458,7 +458,7 @@ Update the ``@AfterStep`` Annotation
 
 Let's see it in action. 
 
-Update the ``@AfterStep`` created in **libraries/splunk/pipeline_step_watcher.groovy** to: 
+Update the ``@AfterStep`` created in **libraries/splunk/splunk_step_watcher.groovy** to:
 
 .. code:: groovy 
 
@@ -510,5 +510,5 @@ Run the pipeline again and notice that the hook was only executed after the step
     As long as the Closure returns a non-false value, the hook will be invoked. 
 
 
-**Remember to read through the `Pipeline Lifecycle Hook documentation <https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html>`_ 
-to see all the annotations available.**
+**Remember to read through the** `Pipeline Lifecycle Hook documentation <https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html>`_
+**to see all the annotations available**.
