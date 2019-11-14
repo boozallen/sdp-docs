@@ -185,10 +185,10 @@
             
   <div class="section" id="pipeline-lifecycle-hooks">
 <span id="jte-advanced-features-pipeline-lifecycle-hooks"></span><h1>Pipeline Lifecycle Hooks<a class="headerlink" href="#pipeline-lifecycle-hooks" title="Permalink to this headline">¶</a></h1>
-<p>There can be interdependent functionalities that presented a challenge to the
+<p>There can be interdependent functionalities that present a challenge to the
 Jenkins Templating Engine.</p>
 <p>For example, let’s say we wanted to introduce Splunk monitoring by sending events
-as part of the pipeline?</p>
+as part of the pipeline.</p>
 <p>How do you:</p>
 <ol class="arabic simple">
 <li>Maintain a clean, easy to read Pipeline Template?</li>
@@ -595,7 +595,7 @@ becomes the return object by default.</p>
 <div class="section" id="update-the-afterstep-annotation">
 <h3>Update the <code class="docutils literal notranslate"><span class="pre">&#64;AfterStep</span></code> Annotation<a class="headerlink" href="#update-the-afterstep-annotation" title="Permalink to this headline">¶</a></h3>
 <p>Let’s see it in action.</p>
-<p>Update the <code class="docutils literal notranslate"><span class="pre">&#64;AfterStep</span></code> created in <strong>libraries/splunk/pipeline_step_watcher.groovy</strong> to:</p>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">&#64;AfterStep</span></code> created in <strong>libraries/splunk/splunk_step_watcher.groovy</strong> to:</p>
 <div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@AfterStep</span><span class="p">({</span> <span class="n">context</span><span class="o">.</span><span class="n">step</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="s2">&quot;static_code_analysis&quot;</span><span class="p">)</span> <span class="p">})</span>
 </pre></div>
 </div>
@@ -635,8 +635,8 @@ is in an array called <code class="docutils literal notranslate"><span class="pr
 <p class="last">Conditional Execution Closure Parameters can be passed to any Pipeline Lifecycle Hook annotation.
 As long as the Closure returns a non-false value, the hook will be invoked.</p>
 </div>
-<p><strong>Remember to read through the `Pipeline Lifecycle Hook documentation &lt;https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html&gt;`_
-to see all the annotations available.</strong></p>
+<p><strong>Remember to read through the</strong> <a class="reference external" href="https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html">Pipeline Lifecycle Hook documentation</a>
+<strong>to see all the annotations available</strong>.</p>
 </div>
 </div>
 </div>

@@ -10,7 +10,7 @@ What is an Application Environment?
 
 Performing an automated deployment is a ubiquitious step in continuous delivery pipelines. 
 
-Libraries can implement steps to perform deployments and when doing so, need a mechanism to 
+Libraries can implement steps to perform deployments and, when doing so, need a mechanism to
 tell the deployment step which application environment is being deployed to. 
 
 The Application Environment acts to encapsulate the contextual information that identifies 
@@ -151,8 +151,8 @@ Update the **Pipeline Configuration** to:
     variable will be made available in the pipeline template based upon this name. 
 
     The only two keys that Application Environments explicitly define are ``short_name`` 
-    and ``long_name``.  These values default to the key defininig the Application Environment 
-    in the Pipelien Configuration, but can be overridden. 
+    and ``long_name``.  These values default to the key defining the Application Environment
+    in the Pipeline Configuration, but can be overridden.
 
 ****************************
 Update the Pipeline Template

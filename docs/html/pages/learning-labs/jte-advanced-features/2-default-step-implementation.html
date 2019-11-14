@@ -407,7 +407,7 @@ $ docker rm -f e41cf335bb258d366d9c5dc2a91090184d0bc00b207ccf10b125e035a3a5ede5
 <p>You can see JTE announcing it’s about to execute a step called <code class="docutils literal notranslate"><span class="pre">unit_test</span></code> that was constructed via the
 default step implementation here: <code class="docutils literal notranslate"><span class="pre">[JTE]</span> <span class="pre">[Step</span> <span class="pre">-</span> <span class="pre">Default</span> <span class="pre">Step</span> <span class="pre">Implementation/unit_test.call()]</span></code>.</p>
 <p>When the step executed, it checked if the <code class="docutils literal notranslate"><span class="pre">maven</span></code> step was available locally and pulls the image if not.</p>
-<p>Within it container image, it then ran <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">-v</span></code> and the maven version was printed to the build log.</p>
+<p>Within the container image, it then ran <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">-v</span></code> and the maven version was printed to the build log.</p>
 </div>
 </div>
 
