@@ -116,14 +116,15 @@ Now, we'll create a ``GitHub Organization Project`` that can automatically creat
 for every repository within a GitHub Organization. 
 
 1.  From the Jenkins home page, select ``New Item`` in the lefthand navigation menu
-2.  Select a name for the job.  
-3.  Select the GitHub credential under the ``Credentials`` drop down menu 
-4.  Enter your GitHub username under the ``Owner`` field 
-5.  Under ``Behaviors`` click ``Add`` and select ``Filter by name (with wildcards)``
-6.  Enter ``jte-the-basics-app-*`` in the ``Include`` text box (assuming you've following the naming recommendations of the application repositories)
-7.  Under ``Project Recognizers`` hit the red X to delete the ``Pipeline Jenkinsfile`` Recognizers
-8.  Under ``Project Recognizers`` select ``Add`` and click ``Jenkins Templating Engine``
-9.  Click ``Save`` 
+2.  Select a name for the job.
+3.  Select ``GitHub Organization`` the click ``OK`` at the bottom of the screen
+4.  Select the GitHub credential under the ``Credentials`` drop down menu 
+5.  Enter your GitHub username under the ``Owner`` field 
+6.  Under ``Behaviors`` click ``Add`` then under ``Repositories``, select ``Filter by name (with wildcards)``
+7.  Enter ``jte-the-basics-app-*`` in the ``Include`` text box (assuming you've following the naming recommendations of the application repositories)
+8.  Under ``Project Recognizers`` hit the red X to delete the ``Pipeline Jenkinsfile`` Recognizers
+9.  Under ``Project Recognizers`` select ``Add`` and click ``Jenkins Templating Engine``
+10.  Click ``Save``
 
 After creating the GitHub Organization job in Jenkins, you will be redirected to the logs of the GitHub Organization being 
 scanned to find repositories that match the wildcard format entered during job creation.  This will scope the repositories for 
