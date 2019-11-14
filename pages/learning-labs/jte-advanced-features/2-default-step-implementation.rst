@@ -48,7 +48,7 @@ not have the same configuration flexibility that a library would have.
 Create a Step
 =============
 
-In the same Pipeline Job we were using during the JTE: Pipeline Primtives lab, let's add a 
+In the same Pipeline Job we were using during the JTE: Pipeline Primitives lab, let's add a 
 new step called ``unit_test()``. 
 
 *********************************

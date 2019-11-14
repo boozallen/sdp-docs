@@ -120,7 +120,7 @@ for every repository within a GitHub Organization.
 3.  Select ``GitHub Organization`` the click ``OK`` at the bottom of the screen
 4.  Select the GitHub credential under the ``Credentials`` drop down menu 
 5.  Enter your GitHub username under the ``Owner`` field 
-6.  Under ``Behaviors`` click ``Add`` then under ``Repositories``, select ``Filter by name (with wildcards)``
+6.  Under ``Behaviors`` click ``Add`` then under ``Repositories`` (not to be confused with ``Within Repositories``), select ``Filter by name (with wildcards)``
 7.  Enter ``jte-the-basics-app-*`` in the ``Include`` text box (assuming you've following the naming recommendations of the application repositories)
 8.  Under ``Project Recognizers`` hit the red X to delete the ``Pipeline Jenkinsfile`` Recognizers
 9.  Under ``Project Recognizers`` select ``Add`` and click ``Jenkins Templating Engine``
