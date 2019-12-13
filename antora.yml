@@ -1,4 +1,5 @@
 name: sdp
 title: Overview
+version:
 nav:
 - modules/ROOT/nav.adoc
