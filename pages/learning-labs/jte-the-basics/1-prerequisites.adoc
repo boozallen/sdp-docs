@@ -1,0 +1,42 @@
+[[JTE The Basics Prerequisites]]
+== Prerequisites
+
+=== Jenkins Instance
+
+A Jenkins instance will be required for this lab. If you don't have one
+available to you, we would recommend going through the
+`Local Development<Local Development>` learning lab to deploy a local
+Jenkins instance through Docker.
+
+=== Ability to Create GitHub Repositories
+
+When creating your first set of pipeline libraries and externalizing the
+pipeline configuration from Jenkins you will need to be able to create
+GitHub repositories on https://github.com[github.com].
+
+[NOTE]
+.Note
+====
+Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab,
+etc) should integrate and work as expected with JTE. For the purposes of
+simplifying this lab, we will be using GitHub.
+======= GitHub PAT in the Jenkins Credential Store
+
+Create a
+https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line[GitHub
+Personal Access Token].
+
+Copy this token and store it in the Jenkins credential store.
+
+[arabic]
+. From the Jenkins home page, click `Credentials` in the lefthand
+navigation menu
+. Select the `global` credential scope
+. Select `Add Credential` in the lefthand navigation menu
+. Enter your github username in the `Username` field
+. Paste the Personal Access Token into the `Password` field
+. Enter `github` into the `ID` field
+. Enter `github` into the `Description` field
+. Click `OK`
+
+image:../../../images/learning-labs/jte-the-basics/pat.gif[image]
