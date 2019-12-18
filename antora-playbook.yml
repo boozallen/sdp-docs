@@ -1,16 +1,10 @@
 site:
   title: Solutions Delivery Platform
   url: http://localhost
-  start_page: component-b::index.adoc 
 content:
   sources:
   - url: ./
     branches: HEAD
-  - url: https://gitlab.com/antora/demo/demo-component-a.git
-    branches: master
-  - url: https://gitlab.com/antora/demo/demo-component-b.git
-    branches: [v2.0, v1.0]
-    start_path: docs
 ui: 
   bundle: 
     url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.0/ui-bundle.zip
