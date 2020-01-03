@@ -19,7 +19,8 @@ _multiple_ repositories at the same time.
 
 The modularity that JTE promotes allows you to do this across teams
 _regardless_ of the specific tools that each application may be using.
-======= What You'll Learn
+====
+=== What You'll Learn
 
 * Configure your first tool-agnostic pipeline template
 * Create your first set of pipeline libraries to provide tool-specific

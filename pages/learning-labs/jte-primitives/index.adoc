@@ -23,7 +23,8 @@ easier.
 ====
 Pipeline Primitives are defined in the aggregated pipeline configuration
 and make writing & reading pipeline templates easier.
-======= What You'll Learn
+====
+=== What You'll Learn
 
 * The Application Environment primitive
 * The Stage primitive

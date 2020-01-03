@@ -1,4 +1,5 @@
 [[JTE The Basics Prerequisites]]
+
 == Prerequisites
 
 === Jenkins Instance
@@ -20,7 +21,8 @@ GitHub repositories on https://github.com[github.com].
 Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab,
 etc) should integrate and work as expected with JTE. For the purposes of
 simplifying this lab, we will be using GitHub.
-======= GitHub PAT in the Jenkins Credential Store
+====
+=== GitHub PAT in the Jenkins Credential Store
 
 Create a
 https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line[GitHub

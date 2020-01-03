@@ -34,5 +34,6 @@ libraries{
 If you're reusing the same Pipeline job, your pipeline configuration may
 specify the `gradle` instead of the `maven` library. Either will do for
 the purposes of this lab.
-====This Pipeline job is going to be the playground within which we
+====
+This Pipeline job is going to be the playground within which we
 learn about the different pipeline primitives for the rest of the lab.

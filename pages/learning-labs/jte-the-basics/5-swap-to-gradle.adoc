@@ -1,4 +1,5 @@
 [[JTE The Basics Swap Libraries]]
+
 == Swap Libraries
 
 [IMPORTANT]
@@ -32,7 +33,8 @@ process is being followed by disparate application development teams and
 confirm that organizational policies around code quality and security
 are being met. JTE brings a level of governance to your pipelines by
 centralizing the definition of the pipeline workflow to a common place.
-====To demonstrate the reusability of pipeline templates, what would
+====
+To demonstrate the reusability of pipeline templates, what would
 happen if the development team switched to using Gradle?
 
 All we would have to do is create a `gradle` library that implements the
@@ -80,7 +82,8 @@ void call(){
 If you added this library on your local computer instead of through the
 GitHub UI, then please make sure you've pushed this change to the master
 branch of the repository.
-======= Swap from Maven to Gradle
+====
+=== Swap from Maven to Gradle
 
 Now that we have a swappable implementation for the `build()` step of
 the pipeline template, switching from Maven to Gradle is as easy as

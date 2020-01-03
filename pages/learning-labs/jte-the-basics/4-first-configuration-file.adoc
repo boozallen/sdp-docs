@@ -43,7 +43,8 @@ The `maven` library will provide the `build()` step and the `sonarqube`
 library will provide the `static_code_analysis()` step.
 
 With these steps now implemented, we can run the pipeline.
-======= Run the Pipeline
+====
+=== Run the Pipeline
 
 After clicking `Save` you'll be directed back to the main page for the
 job.
@@ -109,10 +110,10 @@ Templating Engine
 expand these sections.
 . The first part of the pipeline output shows the initialization process
 +
-____
+
 * pipeline configuration files being aggregated
 * libraries being loaded
-____
+
 . Before steps are executed, JTE will tell you which step is being run
 and what library contributed the step
 ====

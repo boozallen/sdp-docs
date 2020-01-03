@@ -1,4 +1,5 @@
 [[JTE Advanced Features Default Step Implementation]]
+
 == Default Step Implementation
 
 There are a large number of use cases where a step contributed by
@@ -65,10 +66,10 @@ steps{
 ====
 Steps implemented through the default step implementation are defined in
 the `steps` block of the Pipeline Configuration.
-
 Root level keys within the `steps` block become the *name* of the step
 that can be invoked from the Pipeline Template.
-====The step above creates a `unit_test` step that can be invoked from
+====
+The step above creates a `unit_test` step that can be invoked from
 the Pipeline Template that executes the command `mvn -v` inside the
 `maven:latest` container image from Docker Hub.
 

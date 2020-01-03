@@ -1,4 +1,5 @@
 [[JTE Advanced Features Pipeline Lifecycle Hooks]]
+
 == Pipeline Lifecycle Hooks
 
 There can be interdependent functionalities that present a challenge to
@@ -31,7 +32,8 @@ functionality.
 Read the
 https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[entire
 pipeline lifecycle hook documentation].
-======= Create a Splunk Library
+====
+=== Create a Splunk Library
 
 Methods defined within steps are able to register themselves to
 correspond to specific lifecycle events via annotations. As such, these
@@ -51,7 +53,8 @@ It doesn't matter what you call steps that only contain Pipeline
 Lifecycle Hook annotated methods. But to avoid collisions of everyone
 naming their hook steps `beforeStep.groovy` - we recommend
 `<libraryName>_<action>` as we'll demonstrate in this lab.
-======== Notify of Pipeline Start
+====
+==== Notify of Pipeline Start
 
 Within the same Library Source created during JTE: The Basics create a
 step called `splunk_pipeline_start.groovy`:
@@ -79,10 +82,10 @@ responding to.
 ====
 This input parameter to annotated steps is typically called `context`
 but can be called anything.
-
 Since Groovy is a dynamically typed language, this input parameter does
 not have to be given a class.
-======== Update the Pipeline Configuration
+====
+==== Update the Pipeline Configuration
 
 In the Pipeline job again, update the Pipeline Configuration to load the
 `splunk` library we just created.
@@ -134,10 +137,10 @@ println "Splunk: running after the ${context.library} library's ${context.step} 
 ====
 Here, we're defining two different methods in a single step. In the next
 section we'll talk about this in more detail.
-
 For right now, the important piece is that the method's have the
 `@BeforeStep` and `@AfterStep` annotations.
-====Rerunning the pipeline, we can now see these hooks get executed:
+====
+Rerunning the pipeline, we can now see these hooks get executed:
 
 [source,text]
 ----
@@ -452,7 +455,8 @@ the step will be executed.
 ====
 Remember: Groovy has implicit return statements. The last statement made
 becomes the return object by default.
-====We call this functionality *Conditional Hook Execution*.
+====
+We call this functionality *Conditional Hook Execution*.
 
 ==== Update the `@AfterStep` Annotation
 
@@ -470,12 +474,13 @@ Rerun the pipeline and notice that now, the hook has been restricted to
 only run after the desired step.
 
 [IMPORTANT]
-.Important
 ====
+.Important
 When the `Closure` parameter is invoked, it will have access to the
 `context` variable that is passed to the step itself as well as the
 library configuration that is stored via the `config` variable.
-======== Taking It A Step Further
+====
+==== Taking It A Step Further
 
 It would be even better if we could externalize the configuration of
 exactly which steps the `@AfterStep` hook should be triggered.
@@ -514,6 +519,8 @@ the steps defined in the Pipeline Configuration.
 Conditional Execution Closure Parameters can be passed to any Pipeline
 Lifecycle Hook annotation. As long as the Closure returns a non-false
 value, the hook will be invoked.
-====*Remember to read through the*
+====
+
+*Remember to read through the*
 https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[Pipeline
 Lifecycle Hook documentation] *to see all the annotations available*.

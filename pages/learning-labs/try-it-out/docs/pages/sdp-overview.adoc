@@ -20,7 +20,8 @@ repository or within a `Governance Tier <Governance Model>`.
 ====
 In this lab, we've defined the pipeline template via a Jenkinsfile
 within the sample app repository.
-====The pipeline template is responsible for defining the business logic
+====
+The pipeline template is responsible for defining the business logic
 of the pipeline. When a developer does something in GitHub, what should
 the pipeline do? These templates define this logic by calling generic
 *step* names like `unit_test()`, `build()`, `deploy_to`, etc.

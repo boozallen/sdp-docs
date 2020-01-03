@@ -55,7 +55,8 @@ the `gradle` library.
 Since we want to allow these apps to add _additional_ configurations, we
 need to be explicit about that by setting `merge = true` in the
 `libraries` block of the pipeline configuration.
-====[IMPORTANT]
+====
+[IMPORTANT]
 .Important
 ====
 When aggregating pipeline configurations, JTE applies _conditional
@@ -63,7 +64,8 @@ inheritance_ during the aggregation process. To learn more on
 conditional inheritance,
 https://jenkinsci.github.io/templating-engine-plugin/pages/Governance/config_file_aggregation.html[read
 the docs].
-======== Create a Pipeline Configuration File for the Maven Application
+====
+==== Create a Pipeline Configuration File for the Maven Application
 
 In the `jte-the-basics-app-maven` repository we just created, add a
 `pipeline_config.groovy` file at the root that specifies you want to
@@ -84,7 +86,8 @@ libraries{
 Since this application will inherit the global configurations defined in
 the Governance Tier, we don't have to duplicate the configuration of
 loading the sonarqube library in the repo level pipeline configuration.
-======== Create a Pipeline Configuration File for the Gradle Application
+====
+==== Create a Pipeline Configuration File for the Gradle Application
 
 In the `jte-the-basics-app-gradle` repository we created earlier for the
 Multibranch Project, add a `pipeline_config.groovy` file at the root

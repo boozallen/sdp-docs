@@ -1,4 +1,5 @@
 [[JTE The Basics First Libraries]]
+
 == Create the Libraries
 
 In the previous section we created a pipeline template that invoked
@@ -40,7 +41,8 @@ When configuring this repository as a *Library Source* for JTE in
 Jenkins, you will be able to configure the base directory. Since there
 might be other resources in this repository in the future, all of the
 libraries we create will be stored in the `libraries` directory.
-====It is important to understand that a library in JTE is just a
+====
+It is important to understand that a library in JTE is just a
 _directory_, likely in a source code repository, that contains groovy
 files. When a library is loaded, each groovy file in the library's
 directory will become a step named after the base filename.
@@ -59,7 +61,8 @@ method that takes no input parameters.
 ====
 In future labs, we'll learn how to pass information to our steps through
 the pipeline configuration file.
-====*libraries/maven/build.groovy*:
+====
+*libraries/maven/build.groovy*:
 
 [source,groovy]
 ----
@@ -95,7 +98,8 @@ You can define as many Library Sources as you need. They can be defined
 globally for the entire Jenkins instance in
 `Manage Jenkins > Configure System > Jenkins Templating Engine` or under
 the `Jenkins Templating Engine` configuration section on Folders.
-====To make our libraries accessible to every job configured to use JTE
+====
+To make our libraries accessible to every job configured to use JTE
 on the Jenkins instace:
 
 [arabic]

@@ -1,4 +1,5 @@
 [[JTE The Basics Pipeline Job]]
+
 == Write the Template
 
 In JTE, instead of creating application-specific `Jenkinsfiles` we
@@ -45,6 +46,7 @@ static_code_analysis()
 A word on vocabulary: The entire script above is called a *Pipeline
 Template*. Pipeline Templates invoke *steps*, in this case build &
 static_code_analysis, that are implemented by *libraries*.
-====You can click `Apply` to save your progress. In the next section
+====
+You can click `Apply` to save your progress. In the next section
 we'll be creating the pipeline libraries that implement the `build()`
 and `static_code_analysis()` steps.

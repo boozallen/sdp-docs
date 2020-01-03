@@ -25,7 +25,8 @@ Templating Engine_
 .Important
 ====
 This confirms that JTE has been installed successfully
-====[arabic, start=3]
+====
+[arabic, start=3]
 . In the _Pipeline Template_ text box, enter:
 
 [source,groovy]
@@ -44,7 +45,8 @@ image.
 
 This will validate that the local Jenkins can pull container images, run
 them, and then execute pipeline commands inside the launched container.
-====image:../../../images/learning-labs/local-development/job-configuration.png[image]
+====
+image:../../../images/learning-labs/local-development/job-configuration.png[image]
 
 [arabic, start=4]
 . Click _Save_ at the bottom of the screen.

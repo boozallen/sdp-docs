@@ -22,7 +22,8 @@ steps are one of the few exceptions to this rule.
 ====
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/application_environments.html[View
 the Application Environment documentation]
-======== A Word on Input Parameters to Library Steps
+====
+==== A Word on Input Parameters to Library Steps
 
 Understanding _why_, in general, library steps should not accept input
 parameters is fundamental to understanding the goals of the Jenkins
@@ -55,7 +56,8 @@ parameters.
 ====
 You can read more about how to externalize library configuration
 https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/externalizing_config.html[here].
-====Deployment steps are different. It is safe to assume that every step
+====
+Deployment steps are different. It is safe to assume that every step
 that performs a deployment needs to know some environment context.
 
 === Define and Use an Application Environment
@@ -75,7 +77,8 @@ Application Environment parameter
 Remember that libraries are just subdirectories within a source code
 repository and that steps are just groovy files in those subdirectories
 that typically implement a `call` method.
-====For the sake of our pretend `ansible` library, let's assume that it
+====
+For the sake of our pretend `ansible` library, let's assume that it
 needs to know a list of IP addresses relevant to the environment it's
 deploying too.
 
@@ -115,7 +118,8 @@ The file structure within your `libraries` directory should now be:
     └── sonarqube
         └── static_code_analysis.groovy
 ----
-======== Define the Application Environments in the Pipeline Configuration
+====
+==== Define the Application Environments in the Pipeline Configuration
 
 We now need to load the `ansible` library and define the Application
 Environments.
@@ -162,7 +166,8 @@ The only two keys that Application Environments explicitly define are
 `short_name` and `long_name`. These values default to the key defining
 the Application Environment in the Pipeline Configuration, but can be
 overridden.
-======== Update the Pipeline Template
+====
+==== Update the Pipeline Template
 
 Now that we have a library that performs a deployment step and
 Application Environments defined in the Pipeline Configuration, let's
@@ -182,7 +187,8 @@ deploy_to prod
 ====
 These variables `dev` and `prod` come directly from the Applications
 Environments we just defined in the Pipeline Configuration.
-======== Run the Pipeline
+====
+==== Run the Pipeline
 
 From the Pipeline job's main page, click `Build Now` in the lefthand
 navigation menu.

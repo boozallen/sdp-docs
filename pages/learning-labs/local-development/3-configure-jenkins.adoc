@@ -32,7 +32,8 @@ If you're using a mac, i'd recommend running
 `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword | pbcopy`
 which will automatically insert the password into your clipboard for
 pasting.
-======== 2. Fetch it from the container logs
+====
+==== 2. Fetch it from the container logs
 
 The initial admin password is also printed to standard out while Jenkins
 starts up. To view the Jenkins logs, run `docker logs jenkins`.
@@ -67,7 +68,8 @@ Feel free to create a custom username and password or continue as admin.
 ====
 If you click "continue as admin" then the username will be `admin` and
 the password will be the initial admin password we found earlier.
-======= Instance Configuration
+====
+=== Instance Configuration
 
 After creating the initial admin user, Jenkins will send you to a screen
 where you can configure the instance's URL. The text box will be

@@ -85,7 +85,8 @@ The series of letters and numbers make up the
 https://help.github.com/articles/github-glossary/[Git SHA] (the unique
 ID) of the latest commit for the sample code application's GitHub
 repository.
-====For the text that you just pasted into your terminal, remove the
+====
+For the text that you just pasted into your terminal, remove the
 text `Successfully tagged` and replace it with `docker pull`. An example
 of the command using the above image would be:
 

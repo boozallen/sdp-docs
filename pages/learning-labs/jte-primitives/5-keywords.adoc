@@ -23,7 +23,8 @@ required before the deployment to Production.
 ====
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/keywords.html[View
 the Keyword documentation]
-======= Define and Use A Keyword
+====
+=== Define and Use A Keyword
 
 ==== Define the Keyword in the Pipeline Configuration
 
@@ -67,7 +68,8 @@ Configuration.
 
 Traditional variable setting syntax of `a = b` is used to define
 Keywords.
-======== Update the Pipeline Template
+====
+==== Update the Pipeline Template
 
 With the `continuous_integration` stage defined, we can update the
 pipeline template to make use of it.
@@ -98,7 +100,8 @@ in a production pipeline.
 We would recommend that, in practice, the deployment library inherits
 this manual gate approval so that `requiresApproval` could be set on
 each Application Environment individually.
-======== Run the Pipeline
+====
+==== Run the Pipeline
 
 From the Pipeline job's main page, click `Build Now` in the lefthand
 navigation menu.
@@ -187,7 +190,8 @@ stages by looking for `[JTE] [Stage - *]` in the output.
 In this case, the log output was:
 `[JTE] [Stage - continuous_integration]` indicating a Stage called
 `continuous_integration` is about to be executed.
-====[NOTE]
+====
+[NOTE]
 .Note
 ====
 The exercise of setting `requiresApproval = false` and seeing the

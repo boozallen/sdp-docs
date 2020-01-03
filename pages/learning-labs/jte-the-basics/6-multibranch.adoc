@@ -1,4 +1,5 @@
 [[JTE The Basics Apply to Entire Repository]]
+
 == Apply to a GitHub Repository
 
 So far we've learned:
@@ -30,7 +31,8 @@ create a new subdirectory at the root of the repositories called
 ====
 The actual names of the `libraries` and `pipeline-configuration`
 subdirectories do not matter and are configurable.
-====Within this `pipeline-configuration` directory create a file called
+====
+Within this `pipeline-configuration` directory create a file called
 `Jenkinsfile` and populate it with the same contents as the
 `Pipeline Template` text box in the Jenkins UI.
 
@@ -51,7 +53,8 @@ application teams select which template applies to them. More on that
 later, or
 https://jenkinsci.github.io/templating-engine-plugin/pages/Governance/pipeline_template_selection.html[read
 the docs].
-======= Move the Pipeline Configuration to a Repository
+====
+=== Move the Pipeline Configuration to a Repository
 
 In the same `pipeline-configuration` directory, create a file called
 `pipeline_config.groovy`.
@@ -61,7 +64,8 @@ In the same `pipeline-configuration` directory, create a file called
 ====
 When the pipeline configuration is stored in a file in a source code
 repository, it will always be called `pipeline_config.groovy`.
-====Populate this file with the same contents as the
+====
+Populate this file with the same contents as the
 `Pipeline Configuration` text box in the Jenkins UI.
 
 _pipeline-configuration/pipeline_config.groovy_:
@@ -134,7 +138,8 @@ configured, they apply to every Job within that Folder.
 Through Governance Tiers, you can create a governance hierarchy that
 matches your organizational hierarchy just by how you organize jobs
 within Jenkins.
-======= Create an Application Repository
+====
+=== Create an Application Repository
 
 We're going to apply the pipeline template and configuration file to
 every branch in a GitHub repository.
@@ -163,7 +168,8 @@ repository they represent.
 Through JTE, we can configure each branch and Pull Request to use the
 *same* pipeline template. This _removes_ the Jenkinsfile from the
 repository.
-====[arabic]
+====
+[arabic]
 . From the Jenkins home page, select `New Item` in the lefthand
 navigation menu
 . In the `Enter an item name` text box, type `gradle-app`

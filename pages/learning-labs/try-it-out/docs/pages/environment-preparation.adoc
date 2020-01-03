@@ -26,7 +26,8 @@ The tools that we will be utilizing throughout this tutorial are not
 fully secure or highly available and thus *not production-ready*. Their
 configuration in this lab is meant strictly for local development to try
 out SDP.
-======= Step 1: Register The Insecure Docker Registry
+====
+=== Step 1: Register The Insecure Docker Registry
 
 To push and pull images from the local registry to be deployed, you'll
 need to register it as an insecure registry on your machine. Modify your
@@ -41,7 +42,8 @@ https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry[here].
 ====
 The URL of the Docker registry should *not* be preceded by `http://`
 when being added to the list of insecure registries.
-====Make sure to apply the changes and restart your docker daemon in
+====
+Make sure to apply the changes and restart your docker daemon in
 order for these changes to take effect.
 
 === Step 2: Clone the Learning Labs Repository Application
@@ -82,7 +84,8 @@ docker-compose -f ./try-it-out/docker-compose.yaml up --build -d --scale sonar-s
 The `docker-compose` command run above may not work on Booz Allen's WiFi
 depending on its firewall settings, so you may need to run it on a
 private network or where firewall rules are more lax.
-====The above command will create and run the following Docker
+====
+The above command will create and run the following Docker
 containers: Jenkins, a Docker registry, and SonarQube.
 
 === Step 4: Validate the Deployment
