@@ -1,0 +1,6 @@
+name: how-to
+title: How-To's
+version: 1.0
+nav:
+- modules/ROOT/nav.adoc
+- modules/guides/nav.adoc

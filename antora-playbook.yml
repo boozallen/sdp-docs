@@ -1,9 +1,19 @@
 site:
   title: Solutions Delivery Platform
   url: http://localhost
+  start_page: general::index.adoc
 content:
   sources:
-  - url: ./
+  - url: ./general
+    branches: HEAD
+    start_path: docs
+  - url: ./deployment-guides
+    branches: HEAD
+  - url: ./learning-labs
+    branches: HEAD
+  - url: ./how-to
+    branches: HEAD
+  - url: ./contribute
     branches: HEAD
 ui: 
   bundle: 

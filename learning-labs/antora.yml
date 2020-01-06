@@ -1,0 +1,10 @@
+name: learning-labs
+title: Learning Labs
+version: 1.0
+nav:
+- modules/ROOT/nav.adoc
+- modules/try-it-out/nav.adoc
+- modules/local-development/nav.adoc
+- modules/jte-the-basics/nav.adoc
+- modules/jte-primitives/nav.adoc
+- modules/jte-advanced-features/nav.adoc
