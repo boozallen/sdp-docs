@@ -1,4 +1,5 @@
 [[JTE The Basics First Configuration File]]
+
 == Configure the Pipeline
 
 With the libraries created now discoverable by JTE, we can configure the

@@ -1,4 +1,5 @@
 [[JTE Advanced Features]]
+
 == JTE: Advanced Features
 
 In this lab we're going to highlight some of JTE's more advanced

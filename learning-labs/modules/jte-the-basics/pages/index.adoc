@@ -1,4 +1,5 @@
 [[JTE The Basics]]
+
 == JTE: The Basics
 
 The purpose of this lab is to introduce you to the Jenkins Templating

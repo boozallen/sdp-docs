@@ -1,4 +1,5 @@
 [[JTE Primitives]]
+
 == JTE: Pipeline Primitives
 
 In this lab, we're going to walk through each of the JTE pipeline

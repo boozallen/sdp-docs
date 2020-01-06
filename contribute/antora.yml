@@ -1,5 +1,6 @@
 name: contribute
 title: Contribute
 version: 1.0
+start_page: ROOT:contribute-to-docs.adoc
 nav:
 - modules/ROOT/nav.adoc

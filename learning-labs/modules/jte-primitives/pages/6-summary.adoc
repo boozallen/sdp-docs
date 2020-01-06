@@ -1,4 +1,5 @@
 [[JTE Primitives Summary]]
+
 == Summary
 
 We learned a lot in this lab! Let's recap some of what we learned:

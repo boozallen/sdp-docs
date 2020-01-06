@@ -1,4 +1,5 @@
 [[try-it-out troubleshooting]]
+
 == Troubleshooting
 
 On this page, we'll be going over what we think might be some of the
@@ -30,7 +31,7 @@ ____
 some Docker containers don't get started.
 
 ____
---
+
 *Solution 1*: It's very likely that you ran out of memory within your
 Docker engine due to all the Docker images you have within it. We
 suggest running the following command to get rid of all your unneeded
@@ -82,5 +83,5 @@ docker-compose -f ./try-it-out/docker-compose.yaml up --build --scale sonar-scan
 ----
 ____
 
---
+
 ____

@@ -1,4 +1,5 @@
 [[JTE The Basics Apply to Multiple Repositories]]
+
 == Apply to Multiple GitHub Repositories
 
 Next up, we'll see how to apply the same template to two different

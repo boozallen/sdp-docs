@@ -1,4 +1,5 @@
 [[JTE Primitives Application Environments]]
+
 == Application Environments
 
 === What is an Application Environment?

@@ -1,7 +1,7 @@
 site:
   title: Solutions Delivery Platform
   url: http://localhost
-  start_page: general::index.adoc
+  start_page: learning-labs::index.adoc
 content:
   sources:
   - url: ./general
