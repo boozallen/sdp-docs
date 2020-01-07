@@ -4,17 +4,21 @@ site:
   start_page: learning-labs::index.adoc
 content:
   sources:
-  - url: ./general
+  - url: .
     branches: HEAD
-    start_path: docs
-  - url: ./deployment-guides
+    start_path: general/docs
+  - url: .
+    start_path: deployment-guides
     branches: HEAD
-  - url: ./learning-labs
+  - url: .
     branches: HEAD
-  - url: ./how-to
+    start_path: learning-labs
+  - url: .
     branches: HEAD
-  - url: ./contribute
+    start_path: how-to
+  - url: .
     branches: HEAD
+    start_path: contribute
 ui: 
   bundle: 
     url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.0/ui-bundle.zip
