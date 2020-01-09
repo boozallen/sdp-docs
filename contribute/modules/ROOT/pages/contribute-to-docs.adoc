@@ -2,7 +2,7 @@
 
 === Prerequisites
 
-* You have docker installed on your local machine (`Mac <https://docs.docker.com/docker-for-mac/install/>`_, `Windows <https://docs.docker.com/docker-for-windows/install/>`_)
+* You have docker installed on your local machine (https://docs.docker.com/docker-for-mac/install/[Mac], https://docs.docker.com/docker-for-windows/install/[Windows])
 * Ability to run ``make`` commands
 
 === Distributed Documentation
@@ -11,17 +11,17 @@ The documentation for SDP is distributed across multiple repositories in order t
 
 The rest of this documentation outlines how to contribute to the main SDP Documentation site. 
 
-Both the `Jenkins Templating Engine <https://github.com/jenkinsci/templating-engine-plugin>`
-and `SDP Pipeline Libraries <https://github.com/boozallen/sdp-libraries>` repositories will have 
+Both the  https://github.com/jenkinsci/templating-engine-plugin[Jenkins Templating Engine]
+and https://github.com/boozallen/sdp-libraries[SDP Pipeline Libraries] repositories will have 
 documentation that explains how to contribute to those respective sites. 
 
 === Local Development
 
-There is a ``Makefile`` at the root of the `SDP Documentation Repository <https://github.com/boozallen/sdp-docs>` that automates some tasks to aide in local development of this documentation: 
+There is a ``Makefile`` at the root of the https://github.com/boozallen/sdp-docs[SDP Documentation Repository] that automates some tasks to aide in local development of this documentation: 
 
-[%header ,cols=2*]
+[%header,cols=2*]
 .Local Development Commands
-|==
+|===
 |Command
 |Description
 
@@ -33,7 +33,7 @@ There is a ``Makefile`` at the root of the `SDP Documentation Repository <https:
 
 |``make user=<github username> token=<github pat> html deploy``
 |When run from the ``master`` branch, if you have write permissions to the SDP Documentation Repository, this will deploy the docs.
-|==
+|===
 
 === Submitting Contributions
 
@@ -45,9 +45,9 @@ Images should be added to the ``images`` directory.
 
 ==== Steps to Contribute
 
-1. Fork the `SDP Documentation Repository <https://github.com/boozallen/sdp-docs>` 
+1. Fork the https://github.com/boozallen/sdp-docs[SDP Documentation Repository] 
 2. Make changes to your own fork of the repository 
 3. Create a Pull Request from your fork to the main repository
 4. Fill out the Pull Request Template describing your changes 
 
-Lambda School has produced a great `tutorial <https://lambdaschool.com/the-commons/how-to-fork-and-contribute-to-a-project-using-git>` that explains the Fork and Pull model in more detail. 
+Lambda School has produced a great https://lambdaschool.com/the-commons/how-to-fork-and-contribute-to-a-project-using-git[tutorial] that explains the Fork and Pull model in more detail. 
