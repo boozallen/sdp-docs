@@ -28,7 +28,6 @@ solution, is responsible for hosting the DevOps tools; such as Jenkins
 or SonarQube.
 
 [NOTE]
-.Note
 ====
 There is no strict dependency on OpenShift or Kubernetes, though this
 will enable a more robust platform.
@@ -41,7 +40,6 @@ as organizational governance through templating and hierarchical
 configuration files.
 
 [NOTE]
-.Note
 ====
 This plugin is available in the Jenkins Update Center under the name
 https://plugins.jenkins.io/templating-engine[Templating Engine Plugin].
@@ -59,22 +57,3 @@ delivery for your project or organization. Through SDP, you would be
 able to aggregate these metrics into a DevSecOps dashboard to enable
 continuous improvement of your processes.
 
-Jenkins Templating Engine
-<https://jenkinsci.github.io/templating-engine-plugin> Pipeline
-Libraries <https://boozallen.github.io/sdp-libraries>
-
-/pages/deployment-guides/openshift/index
-
-/pages/learning-labs/index /pages/learning-labs/try-it-out/docs/index
-/pages/learning-labs/local-development/index
-/pages/learning-labs/jte-the-basics/index
-/pages/learning-labs/jte-primitives/index
-/pages/learning-labs/jte-advanced-features/index
-
-/pages/how-to/helm-multitenancy /pages/how-to/add_jenkins_credentials
-Create a GitHub Organization
-<https://help.github.com/articles/creating-a-new-organization-from-scratch/>
-Deploy Twistlock to OpenShift
-<https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/>
-
-/pages/contribute-to-docs
