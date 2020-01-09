@@ -1,4 +1,3 @@
-[[helm multitenancy]]
 
 == Helm Multitenancy
 
@@ -11,10 +10,8 @@ Helm can be configured by multitenancy by deploying multiple tiller
 servers with different service accounts and using RBAC policies to
 enforce separation of tenants.
 
-The https://docs.helm.sh/using_helm/#role-based-access-control[Helm docs
-on using RBAC] are a good resource for more information.
+The https://docs.helm.sh/using_helm/#role-based-access-control[Helm docson using RBAC] are a good resource for more information.
 
-[[helm environment provisioning script]]
 
 === Environment Provisioning script
 

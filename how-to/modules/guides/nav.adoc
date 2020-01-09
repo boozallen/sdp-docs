@@ -1,3 +1,3 @@
-** xref:heml-multitenancy.adoc[Helm Multitenancy]
+** xref:helm-multitenancy.adoc[Helm Multitenancy]
 ** xref:add_jenkins_credentials.adoc[Add Credentials to Jenkins]
 ** xref:selenium_grid_configurations.adoc[Selenium Grid Configurations.adoc]
