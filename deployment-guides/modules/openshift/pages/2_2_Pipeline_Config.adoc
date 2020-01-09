@@ -6,11 +6,11 @@ provide a good foundation to build off of.
 
 This page covers the creation of a simple pipeline configuration
 repository, a repository containing files that define one or more
-pipelines, with a single governance tier in the root. .
+pipelines, with a single governance tier in the root. link:/sdp-docs/pages/jte/docs/pages/Governance/index.html[You can learn more about pipeline goverance here].
 
 === Create a Repository
 
-Use an SCM like GitHub to to store your pipeline configuration. This way
+Use an SCM like GitHub to link:https://help.github.com/articles/create-a-repo/[create a repository] to store your pipeline configuration. This way
 you can access, share, and maintain pipeline configuration like any
 other piece of code.
 
@@ -35,8 +35,7 @@ on_merge to: master, {
 ----
 
 [NOTE]
-.Note
-You can learn more about writing pipeline templates here
+link:/sdp-docs/pages/jte/docs/pages/Templating/index.html[You can learn more about writing pipeline templates here]
 
 === Create pipeline_config.groovy
 
@@ -90,12 +89,10 @@ libraries{
 ----
 
 [NOTE]
-.Note
 
-You can learn more about writing pipeline config files here
+link:/sdp-docs/pages/jte/docs/pages/Templating/configuration_files/index.html[You can learn more about writing pipeline config files here]
 
 [IMPORTANT]
-.Important
 
 The pipeline defined by this example won't work until you've finished
 setting up your application environments in OpenShift and written your
@@ -126,9 +123,9 @@ on_merge to: master, {// 4a) if a merge to the master branch triggered the build
 ----
 
 Now that the pipeline template has defined _what_ the pipeline does,
-there needs to be a pipeline config file to define _how_. It needs to
-provide the implementation for the pipeline steps, to define the dev and
-prod environments being deployed to, and for the variables `develop` and
+there needs link:/sdp-docs/pages/jte/docs/pages/Governance/index.html#library-selection[libraries] to be a pipeline config file to define _how_. It needs to
+provide the implementation for the pipeline steps, link:/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html[application environments] to define the dev and
+prod environments being deployed to, and link:/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html[keywords] for the variables `develop` and
 `master` being used.
 
 ==== The Libraries
@@ -164,7 +161,7 @@ libraries{
 For every step used in a pipeline template, something needs to define
 that step's implementation. For the JTE, these step implementations most
 commonly come from "libraries", which are imported from a "library
-source". For this example pipeline, it's assumed that the library source
+source". For this example pipeline, it's assumed that the link:https://github.com/boozallen/sdp-libraries[sdp-libraries] library source
 is available, and any of the libraries it contains can be used.
 
 Five libraries are being imported here: github_enterprise, sonarqube,
@@ -190,9 +187,8 @@ the steps here, it's being imported because both the SonarQube and
 OpenShift libraries depend on a step it defines.
 
 [NOTE]
-.Note
 
-You can learn more about the SDP pipeline libraries here
+link:/sdp-docs/pages/libraries/index.html[You can learn more about the SDP pipeline libraries here]
 
 ==== The Application Environments
 
@@ -210,13 +206,13 @@ application_environments{
 }
 ----
 
-The uses to select which project in OpenShift to deploy to. For example,
+The link:/sdp-docs/pages/libraries/openshift/README.html[OpenShift library] uses link:/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html[Application Environment primitives] to select which project in OpenShift to deploy to. For example,
 when the pipeline template calls `deploy to: dev`(which can also be read
 as `deploy(to: dev)`), it takes the _dev_ application environment
-primitive object that we define here and uses its values in . The
+primitive object that we define here and uses its values in link:https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy[the deploy step]. The
 `short_name`, in particular, is used to select the target OpenShift
 project and which values.yaml file to use as part of the deployment.
-View the next section or the page for more details.
+View the next section or the link:/sdp-docs/pages/libraries/openshift/README.html[OpenShift library] page for more details.
 
 ==== The Keywords
 
@@ -228,7 +224,7 @@ keywords{
 }
 ----
 
-The uses to determine what kind of GitHub branch is being built. The
+The link:/sdp-docs/pages/libraries/github_enterprise/README.html[GitHub Enterprise library] uses link:/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html[Keyword primitives] to determine what kind of GitHub branch is being built. The
 steps `on_merge()`, `on_commit`, and `on_pull_request` take a regex
 expression as a parameter. These regex expressions have been stored as
 keywords to make the pipeline template more human-readable.
@@ -257,7 +253,7 @@ You should be ready to move onto the next section, which covers creating
 a Helm chart repository. For more on the information covered in this
 section:
 
-* You can learn more about writing pipeline templates here
-* You can learn more about writing pipeline config files here
-* You can learn more about the SDP pipeline libraries here
-* You can learn more about writing your own pipeline libraries here
+* link:/sdp-docs/pages/jte/docs/pages/Templating/index.html[You can learn more about writing pipeline templates here]
+* link:/sdp-docs/pages/jte/docs/pages/Templating/configuration_files/index.html[You can learn more about writing pipeline config files here]
+* link:/sdp-docs/pages/libraries/index.html[You can learn more about the SDP pipeline libraries here]
+* link:/sdp-docs/pages/jte/docs/pages/Library_Development/index.html[You can learn more about writing your own pipeline libraries here]

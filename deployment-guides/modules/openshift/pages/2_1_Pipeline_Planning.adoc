@@ -7,7 +7,7 @@ there's some source code management tool (SCM) that's being used to
 centralize, share, and manage source code. The SDP takes advantage of
 these features of SCMs in your CI/CD pipelines.
 
-Currently, the preferred SCM is , which is where the SDP keeps and
+Currently, the preferred SCM is link:https://github.com/[GitHub], which is where the SDP keeps and
 maintains its source code. Other Git-based SCMS like GitLab are also
 viable, as are other SCMs like Mercurial, though the SDP libraries to
 support them have not yet been created.
@@ -29,26 +29,25 @@ about your pipeline.
 
 Since OpenShift is a container application platform, and it's assumed
 that your application is being deployed to OpenShift, it can also be
-assumed that your application running as (Docker) containers. The SDP's
+assumed that your application running as (Docker) containers. The SDP's link:/sdp-docs/pages/libraries/docker/README.html[Docker Library]
 makes it easy to build images from your source code repository and store
 them in OpenShift's built-in container registry.
 
 [IMPORTANT]
-.Important
 
-OpenShift has some that it's important to be aware of. The section on
+OpenShift has some link:https://docs.openshift.com/container-platform/3.9/creating_images/guidelines.html[guidelines around creating container images] that it's important to be aware of. The section on
 supporting arbitrary user IDs is especially important.
 
 ==== Testing
 
-The SDP currently has libraries for tools that run , , and more. Which
+The SDP currently has libraries for tools that run link:/sdp-docs/pages/libraries/sonarqube/README.html[code quality tests], link:/sdp-docs/pages/libraries/a11y/README.html[accessibility compliance (508) tests], link:/sdp-docs/pages/libraries/owasp_zap/README.html[penetration tests], and more. Which
 ones you should use depends on the needs of your application. Automated
 tests like these are useful for detecting issues earlier in a feature's
 lifecycle, where it's easier (and cheaper) to correct.
 
 ==== Deploying
 
-The makes it easy to deploy to different OpenShift projects using , a
+The link:/sdp-docs/pages/libraries/openshift/README.html[OpenShift Library] makes it easy to deploy to different OpenShift projects using link:https://helm.sh/[Helm], a
 Kubernetes/OpenShift package manager and templating tool. How to deploy
 an application is defined in a Helm chart or charts, which is maintained
 in your SCM alongside your source code and pipeline configuration. This

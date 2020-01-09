@@ -2,8 +2,8 @@
 
 === Section 3 Overview
 
-The has a that can be used to deploy the most recent build of a
-particular service to a given . The first part of this section covers
+The link:/sdp-docs/pages/libraries/openshift/README.html[OpenShift library] has a link:https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy[deploy step] that can be used to deploy the most recent build of a
+particular service to a given link:https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects[OpenShift project]. The first part of this section covers
 how to create and configure the target OpenShift projects. The second
 part goes over how to create a Helm repository, defines how your
 application is deployed.
@@ -16,18 +16,18 @@ application is deployed.
 * Credentials for a User on that cluster that has the _cluster-admin_
 role
 * Access to the relevant GitHub Repositories
-* 
+* link:https://docs.helm.sh/using_helm/#installing-helm[The Helm client installed]
 * The OpenShift CLI installed
-+
-____
+
+
 ** OCP:
 https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html
 ** OKD:
 https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli
-____
+
 
 ==== You Should Be Able To...
 
 * Modify simple configuration files
 * Run bash commands/scripts
-* Create a GitHub repository
+* link:https://help.github.com/articles/create-a-repo/[Create a GitHub repository]

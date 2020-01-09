@@ -17,13 +17,12 @@ role
 * The Helm client installed
 (https://docs.helm.sh/using_helm/#installing-helm)
 * The OpenShift CLI installed
-+
-____
+
 ** OCP:
 https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html
 ** OKD:
 https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli
-____
+
 
 ==== You Should Be Able To...
 
@@ -33,9 +32,10 @@ ____
 === System Requirements
 
 * Your OpenShift cluster meets the minimum hardware requirements as laid
-out in the documentation * OCP 3.11 (formerly OpenShift Enterprise):
+out in the documentation 
+** OCP 3.11 (formerly OpenShift Enterprise):
 https://docs.openshift.com/container-platform/3.11/install/prerequisites.html
-* OKD 3.11 (formerly OpenShift Origin):
+** OKD 3.11 (formerly OpenShift Origin):
 https://docs.okd.io/3.11/install/prerequisites.html
 * Your cluster has enough available CPU and Memory for the SDP
 containers (see below)
@@ -61,7 +61,6 @@ Volumes::
   https://docs.okd.io/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html
 
 [NOTE]
-.Note
 
 While not required to deploy the SDP, persistent volumes allow for
 safely restarting containers without loosing any storage or history. It
@@ -73,9 +72,8 @@ images.
 [width="93%",cols="27%,23%,28%,22%",]
 |===
 a|
-____
+
 *Container*
-____
 
 |*CPU (ea.)* |*Memory (ea.)* |*Quantity*
 |Jenkins Master |1000m |3000Mi |1

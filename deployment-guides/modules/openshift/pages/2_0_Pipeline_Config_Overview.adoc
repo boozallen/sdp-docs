@@ -19,4 +19,4 @@ containers
 ==== You Should Be Able To...
 
 * Modify simple configuration files
-* (or the equivalent in your SCM of choice)
+* link:https://help.github.com/articles/create-a-repo/[Create a GitHub Repository] (or the equivalent in your SCM of choice)

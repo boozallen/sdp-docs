@@ -15,7 +15,7 @@ When prompted, use the login for your cluster-admin User.
 
 === Clone the sdp-helm-chart Repository
 
-To clone the , run one of the following commands:
+To clone the link:https://github.com/boozallen/sdp-helm-chart[sdp-helm-chart repository], run one of the following commands:
 
 [source,]
 ----
@@ -39,7 +39,6 @@ The installer script will use the settings defined in this file when
 deploying the SDP.
 
 [NOTE]
-.Note
 
 This extra step is intended to prevent users from inadvertently pushingtheir values.yaml file, which may contain sensitive information.
 
@@ -59,7 +58,7 @@ global:
   domain: apps.ocp.example.com
 ----
 
-You can also add to your values file any of the values described in the
+You can also add to your values file any of the values described in the link:https://github.com/boozallen/sdp-helm-chart[sdp-helm-chart repository]
 README.
 
 While the SDP installation will deploy SonarQube and other tools, you

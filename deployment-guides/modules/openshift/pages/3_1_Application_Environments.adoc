@@ -2,30 +2,30 @@
 
 === Overview
 
-In order to use the 's , there needs to be set of pre-configured
+In order to use the link:/sdp-docs/pages/libraries/openshift/README.html[OpenShift library]'s link:https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy[deploy step], there needs to be set of pre-configured
 projects in OpenShift:
 
 * The application environments, one or more Openshift projects that will
 host the application (e.g. "my-app-dev" & "my-app-prod")
 * A project to host container images that are shared between the
 application environments
-* A project to host the that manages the application environments.
+* A project to host the link:https://docs.helm.sh/glossary/#tiller[Tiller server] that manages the application environments.
 
-You can create all of these using the .
+You can create all of these using the link:https://github.com/boozallen/sdp-helm-chart/blob/master/resources/helm/provision_app_envs.sh[provision_app_envs script].
 
 === Prerequisites
 
-In addition to the prerequisites covered in the , make sure
+In addition to the prerequisites covered in the link:/sdp-docs/pages/deployment-guides/openshift/3_0_Application_Environment_Overview.html[section overview], make sure
 
 [arabic]
 . You are logged into the OpenShift cluster you're deploying to as a
-user with the
+user with the link:https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html#roles[cluster-admin role]
 . None of the projects that the provision app envs script will create
 already exist (not likely if this is your first run)
 
 === Getting provision_app_envs.sh
 
-Clone the if you haven't already, and use your terminal to navigate to
+Clone the https://github.com/boozallen/sdp-helm-chart[sdp-helm-chart repository] if you haven't already, and use your terminal to navigate to
 the `resources/helm` folder. You should see a file called
 `provision_app_envs.sh`. You can execute it with the `-h` flag to view
 the options for running it.
@@ -78,8 +78,7 @@ an OpenShift project for each one: rhs-dev, rhs-test, rhs-staging, and
 rhs-prod.
 
 [NOTE]
-.Note
-These abbreviated names map to the "short names" of the in your pipeline
+These abbreviated names map to the link:http://localhost:8000/pages/jte/docs/pages/Templating/primitives/application_environments.html[application environments] "short names" of the in your pipeline
 configuration file(s).
 
 
@@ -125,7 +124,7 @@ $ bash provision_app_envs.sh -p demo -e dev -e prod -i demo
 The tiller server just created cannot be used without credentials, so
 those credentials need to be added to Jenkins. Assuming your tiller
 project is called "demo-tiller", follow
-`this guide<add credentials to jenkins>` to create a username/password
+link:sdp-docs/modules/guides/pages/add_jenkins_credentials.adoc[this guide] to create a username/password
 credential in Jenkins with the username
 `system:serviceaccount:demo-tiller:tiller` and use the command below to
 get the password, which will output a token you need to copy-paste into
