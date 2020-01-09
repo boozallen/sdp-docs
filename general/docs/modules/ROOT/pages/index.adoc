@@ -8,7 +8,7 @@ Grants.Gov.
 At Booz Allen, DevSecOps is a foundational element of our Modern
 Software development Approach
 
-image:images/sdp/modern-sd-approach.png[image]
+image:../../../../../images/sdp/modern-sd-approach.png[image]
 
 Over the past two years, we've developed an open source and reusable
 pipeline framework that jump starts projects. SDP has allowed the
