@@ -1,5 +1,3 @@
-[[JTE The Basics Pipeline Job]]
-
 == Write the Template
 
 In JTE, instead of creating application-specific `Jenkinsfiles` we
@@ -17,7 +15,7 @@ navigation menu.
 . Select `Pipeline` from the list of available job types
 . Click `OK`
 
-image:../../../images/learning-labs/jte-the-basics/create_pipeline_job.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/create_pipeline_job.gif[image]
 
 === Write the Template
 
@@ -41,7 +39,6 @@ static_code_analysis()
 ----
 
 [NOTE]
-.Note
 ====
 A word on vocabulary: The entire script above is called a *Pipeline
 Template*. Pipeline Templates invoke *steps*, in this case build &

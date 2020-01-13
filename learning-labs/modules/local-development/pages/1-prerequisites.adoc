@@ -9,7 +9,7 @@ terminal.
 
 You should see output similar to:
 
-image:../../../images/learning-labs/local-development/empty_docker_ps.png[image]
+image:../../../../images/learning-labs/local-development/empty_docker_ps.png[image]
 
 === Internet Connectivity
 
@@ -19,4 +19,4 @@ by running `docker pull jenkins/jenkins:lts`.
 
 You should see output similar to:
 
-image:../../../images/learning-labs/local-development/docker_pull_jenkins.png[image]
+image:../../../../images/learning-labs/local-development/docker_pull_jenkins.png[image]

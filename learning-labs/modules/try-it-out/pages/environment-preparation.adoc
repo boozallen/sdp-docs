@@ -20,7 +20,6 @@ bugs, and code smells
 |===
 
 [NOTE]
-.Note
 ====
 The tools that we will be utilizing throughout this tutorial are not
 fully secure or highly available and thus *not production-ready*. Their
@@ -79,7 +78,6 @@ docker-compose -f ./try-it-out/docker-compose.yaml up --build -d --scale sonar-s
 ----
 
 [NOTE]
-.Note
 ====
 The `docker-compose` command run above may not work on Booz Allen's WiFi
 depending on its firewall settings, so you may need to run it on a
@@ -94,7 +92,6 @@ Let's verify that each tool was successfully deployed.
 
 *Docker Registry*
 
-____
 [verse]
 --
 Navigate http://localhost:5000/v2/_catalog[here].
@@ -102,11 +99,10 @@ You should see the following screen:
 --
 
 image:../images/deploy-devops-tools/docker_registry.png[image]
-____
+
 
 *Jenkins*
 
-____
 [verse]
 --
 Navigate http://localhost:8080[here].
@@ -114,11 +110,9 @@ You should see the following screen:
 --
 
 image:../images/deploy-devops-tools/jenkins.png[image]
-____
 
 *SonarQube Server*
 
-____
 [verse]
 --
 Navigate http://localhost:9000[here].
@@ -126,10 +120,8 @@ You should see the following screen:
 --
 
 image:../images/deploy-devops-tools/sonarqube.png[image]
-____
 
 [IMPORTANT]
-.Important
 ====
 If any of these services are not working as expected you can check out
 the `troubleshooting <try-it-out troubleshooting>` page for common

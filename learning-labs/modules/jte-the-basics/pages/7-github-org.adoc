@@ -1,5 +1,3 @@
-[[JTE The Basics Apply to Multiple Repositories]]
-
 == Apply to Multiple GitHub Repositories
 
 Next up, we'll see how to apply the same template to two different
@@ -43,7 +41,6 @@ libraries{
 ----
 
 [NOTE]
-.Note
 ====
 In this configuration, both applications are using SonarQube. Since this
 is a common configuration, we'll leave it in the Governance Tier's
@@ -58,7 +55,6 @@ need to be explicit about that by setting `merge = true` in the
 `libraries` block of the pipeline configuration.
 ====
 [IMPORTANT]
-.Important
 ====
 When aggregating pipeline configurations, JTE applies _conditional
 inheritance_ during the aggregation process. To learn more on
@@ -82,7 +78,6 @@ libraries{
 ----
 
 [NOTE]
-.Note
 ====
 Since this application will inherit the global configurations defined in
 the Governance Tier, we don't have to duplicate the configuration of
@@ -146,10 +141,9 @@ Explore each of these jobs to see that the `gradle` repository's
 pipeline loaded the `gradle` library and the `maven` repository loaded
 the `maven` library and both pipelines loaded the `sonarqube` library.
 
-image:../../../images/learning-labs/jte-the-basics/github_org.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/github_org.gif[image]
 
 [IMPORTANT]
-.Important
 ====
 We just created a configuration where *multiple* applications used the
 *same* pipeline template, shared a common configuration, but still have

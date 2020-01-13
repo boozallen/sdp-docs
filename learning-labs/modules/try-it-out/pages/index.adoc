@@ -1,4 +1,3 @@
-[[Try It Out]]
 
 == Try It Out
 
@@ -14,24 +13,20 @@ configured as well as a local SonarQube instance so that you will be
 able to run a sample pipeline that builds a Spring Boot application
 while performing static code analysis.
 
-The https://github.com/boozallen/sdp-labs-sample-app[sample application
-GitHub repository] represents a web application that users of SDP might
+The https://github.com/boozallen/sdp-labs-sample-app[sample applicationGitHub repository] represents a web application that users of SDP might
 want to create a pipeline for.
 
 === Prerequisites
 
 *Local Environment*:
 
-____
+
 * A text editor
 * You have
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
 installed on your machine
-* You have https://docs.docker.com/docker-for-mac/install/[Docker for
-Mac] or https://docs.docker.com/docker-for-windows/install/[Docker for
-Windows] installed on your machine
-+
-____
+* You have https://docs.docker.com/docker-for-mac/install/[Docker forMac] or https://docs.docker.com/docker-for-windows/install/[Docker forWindows] installed on your machine
+
 ** For your Docker resources, you will need at least 2CPUs, 3.0GIB
 Memory, and 1.0GIB Swap to ensure that everything within this guide can
 run properly
@@ -40,25 +35,16 @@ resources you allocate to Docker depending on if you have a
 https://docs.docker.com/docker-for-windows/#advanced[Windows] computer
 or a https://docs.docker.com/docker-for-mac/#preferences-menu[Mac]
 computer
-____
-____
 
 *Skills*: The following skills would prove helpful but not needed to get
 through this lab
 
-____
 * Docker
 * Git / GitHub
 * Jenkins
 * Static Code Analysis (with SonarQube)
-____
 
 [NOTE]
-.Note
 ====
 Use the `previous` and `next` buttons to navigate through this guide.
 ====
-pages/environment-preparation pages/sdp-overview
-pages/pipeline-configuration-file pages/jenkinsfile
-pages/create-github-credentials pages/run-jenkins-build.rst
-pages/troubleshooting.rst

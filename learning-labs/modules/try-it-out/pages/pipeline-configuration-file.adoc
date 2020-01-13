@@ -92,8 +92,7 @@ Finally, the `docker_args` parameter forces all the SDP-related Docker
 images to be run with any given Docker flag, as the
 `"--network=try-it-out_sdp"` value specifies that the SDP docker images
 should all be placed inside a
-https://docs.docker.com/v17.09/engine/userguide/networking/#user-defined-networks[Docker
-network] called `try-it-out_sdp`.
+https://docs.docker.com/v17.09/engine/userguide/networking/#user-defined-networks[Dockernetwork] called `try-it-out_sdp`.
 
 === SonarQube Library
 
@@ -117,7 +116,6 @@ The value of `cred` parameter is the ID of the Jenkins credential
 Jenkins uses to be able to access the local Docker registry.
 
 [NOTE]
-.Note
 ====
 The value of the `localhost:5000` URL does not contain `http://` on
 purpose, as the URL value is what is used for the Docker tag, whose

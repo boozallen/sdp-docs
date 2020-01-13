@@ -1,5 +1,3 @@
-[[JTE Primitives Stages]]
-
 == Stages
 
 === What is a Stage?
@@ -16,7 +14,6 @@ To minimize repeating ourselves in pipeline templates, the Stage
 primitive was created to address this use case.
 
 [NOTE]
-.Note
 ====
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/stages.html[View
 the Stage documentation]
@@ -26,7 +23,6 @@ the Stage documentation]
 A very common stage to create is a *Continuous Integration* stage.
 
 [NOTE]
-.Note
 ====
 In general, Continuous Integration represents a series of fast-feedback
 verification steps that help developers quickly determine if the changes
@@ -60,7 +56,6 @@ stages{
 ----
 
 [IMPORTANT]
-.Important
 ====
 All Stages will be defined in the `stages` block of the Pipeline
 Configuration. Root level keys within this block, in this case
@@ -119,7 +114,6 @@ Finished: SUCCESS
 ----
 
 [IMPORTANT]
-.Important
 ====
 When reading the build logs of a JTE job, you can identify the start of
 stages by looking for `[JTE] [Stage - *]` in the output.

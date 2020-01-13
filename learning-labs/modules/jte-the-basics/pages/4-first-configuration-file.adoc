@@ -1,5 +1,3 @@
-[[JTE The Basics First Configuration File]]
-
 == Configure the Pipeline
 
 With the libraries created now discoverable by JTE, we can configure the
@@ -33,7 +31,6 @@ libraries{
 Click `Save`.
 
 [IMPORTANT]
-.Important
 ====
 The `libraries` portion of the pipeline configuration file will read
 much like an application's technical stack. In this case, we're telling
@@ -100,7 +97,6 @@ As expected, JTE loaded the `maven` and `sonarqube` libraries and then
 executed the template.
 
 [NOTE]
-.Note
 ====
 A couple points to note about the build log:
 

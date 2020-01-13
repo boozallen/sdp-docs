@@ -1,9 +1,6 @@
-[[JTE The Basics Swap Libraries]]
-
 == Swap Libraries
 
 [IMPORTANT]
-.Important
 ====
 The purpose of the Jenkins Templating Engine is three fold:
 
@@ -77,7 +74,6 @@ void call(){
 ----
 
 [NOTE]
-.Note
 ====
 If you added this library on your local computer instead of through the
 GitHub UI, then please make sure you've pushed this change to the master

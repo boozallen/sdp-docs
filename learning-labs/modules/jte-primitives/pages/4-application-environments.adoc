@@ -1,5 +1,3 @@
-[[JTE Primitives Application Environments]]
-
 == Application Environments
 
 === What is an Application Environment?
@@ -19,7 +17,6 @@ In general, library steps should not accept input parameters. Deployment
 steps are one of the few exceptions to this rule.
 
 [NOTE]
-.Note
 ====
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/application_environments.html[View
 the Application Environment documentation]
@@ -53,7 +50,6 @@ through an autowired variable as opposed to directly via input
 parameters.
 
 [NOTE]
-.Note
 ====
 You can read more about how to externalize library configuration
 https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/externalizing_config.html[here].
@@ -73,7 +69,6 @@ called `ansible` with a step called `deploy_to` that takes an
 Application Environment parameter
 
 [NOTE]
-.Note
 ====
 Remember that libraries are just subdirectories within a source code
 repository and that steps are just groovy files in those subdirectories
@@ -102,7 +97,6 @@ iterate over the IP addresses provided on the application environment
 and print out the target server.
 
 [NOTE]
-.Note
 ====
 The file structure within your `libraries` directory should now be:
 
@@ -154,7 +148,6 @@ application_environments{
 ----
 
 [IMPORTANT]
-.Important
 ====
 Application Environments are defined in the `application_environments`
 block within the pipeline pipeline configuration.
@@ -184,7 +177,6 @@ deploy_to prod
 ----
 
 [NOTE]
-.Note
 ====
 These variables `dev` and `prod` come directly from the Applications
 Environments we just defined in the Pipeline Configuration.

@@ -6,7 +6,7 @@ The best way to learn a technology is to use it. These Learning Labs have been d
 
 [%header ,cols=2*]
 .Learning Labs Overview
-|==
+|===
 |Lab
 |Description
 
@@ -24,4 +24,4 @@ The best way to learn a technology is to use it. These Learning Labs have been d
 
 |link:.\jte-advanced-features\index.adoc[JTE: Advanced Features]
 |Level up your JTE skills by learning its advanced features like the default step implementation and how to leverage step lifecycle hooks.
-|==
+|===

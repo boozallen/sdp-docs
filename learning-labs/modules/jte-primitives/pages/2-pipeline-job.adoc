@@ -1,5 +1,3 @@
-[[JTE Primitives Pipeline Job]]
-
 == Create a Pipeline Job
 
 Before we get started, we'll need to create a Pipeline job in Jenkins
@@ -30,7 +28,6 @@ libraries{
 ----
 
 [NOTE]
-.Note
 ====
 If you're reusing the same Pipeline job, your pipeline configuration may
 specify the `gradle` instead of the `maven` library. Either will do for

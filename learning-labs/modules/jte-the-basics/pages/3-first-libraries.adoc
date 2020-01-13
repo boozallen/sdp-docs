@@ -1,5 +1,3 @@
-[[JTE The Basics First Libraries]]
-
 == Create the Libraries
 
 In the previous section we created a pipeline template that invoked
@@ -35,7 +33,6 @@ Create the following directory structure within your repository:
 ----
 
 [IMPORTANT]
-.Important
 ====
 When configuring this repository as a *Library Source* for JTE in
 Jenkins, you will be able to configure the base directory. Since there
@@ -57,7 +54,6 @@ Generally, the most idiomatic way to define a step is to create a `call`
 method that takes no input parameters.
 
 [NOTE]
-.Note
 ====
 In future labs, we'll learn how to pass information to our steps through
 the pipeline configuration file.
@@ -92,7 +88,6 @@ have to tell JTE where to find them.
 This is done by configuring a *Library Source* in Jenkins.
 
 [NOTE]
-.Note
 ====
 You can define as many Library Sources as you need. They can be defined
 globally for the entire Jenkins instance in
@@ -115,4 +110,4 @@ created during the prerequisites
 . Enter `libraries` in the `Base Directory` text box
 . Click `Save`
 
-image:../../../images/learning-labs/jte-the-basics/library_source.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/library_source.gif[image]

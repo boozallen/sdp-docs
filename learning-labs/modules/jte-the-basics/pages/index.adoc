@@ -1,5 +1,3 @@
-[[JTE The Basics]]
-
 == JTE: The Basics
 
 The purpose of this lab is to introduce you to the Jenkins Templating
@@ -11,7 +9,6 @@ apply them to multiple applications simultaneously, you can then
 *remove* individual Jenkinsfiles from each source code repository.
 
 [IMPORTANT]
-.Important
 ====
 In JTE, we talk a lot about the concept of governance. When we say
 governance, we mean that JTE allows you to *enforce* a common software
@@ -37,6 +34,3 @@ template across multiple repositories
 
 Click `Next` to move on to this lab's prerequisites.
 
-1-prerequisites 2-pipeline-job 3-first-libraries
-4-first-configuration-file 5-swap-to-gradle 6-multibranch 7-github-org
-8-summary

@@ -18,7 +18,7 @@ Jenkins is interacting with the different tools you've deployed.
 
 Jenkins does the following in the list as ordered:
 
-____
+
 [arabic]
 . Retrieves the
 https://github.com/boozallen/sdp-labs-sample-app/blob/master/pipeline_config.groovy[pipeline_config.groovy]
@@ -49,7 +49,7 @@ GitHub repository] using the repository's
 https://github.com/boozallen/sdp-labs-sample-app/blob/master/Dockerfile[Dockerfile]
 . Pushes the Docker image built from step 7 to your local Docker
 registry located at http://localhost:5000
-____
+
 
 Once the build is complete, you should see the following text at the
 bottom of the screen:
@@ -80,7 +80,6 @@ image:../images/run-jenkins-build/docker_tag.png[image]
 Paste the content into your terminal.
 
 [NOTE]
-.Note
 ====
 The series of letters and numbers make up the
 https://help.github.com/articles/github-glossary/[Git SHA] (the unique

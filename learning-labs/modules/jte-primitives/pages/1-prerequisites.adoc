@@ -1,5 +1,3 @@
-[[JTE Primitives Prerequisites]]
-
 == Prerequisites
 
 === Jenkins Instance
@@ -38,7 +36,6 @@ navigation menu
 . Click `Save`
 
 [NOTE]
-.Note
 ====
 There should still be a global Library Source configured. Leave that
 there.

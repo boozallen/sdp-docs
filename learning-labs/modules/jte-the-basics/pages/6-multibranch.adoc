@@ -1,5 +1,3 @@
-[[JTE The Basics Apply to Entire Repository]]
-
 == Apply to a GitHub Repository
 
 So far we've learned:
@@ -27,7 +25,6 @@ create a new subdirectory at the root of the repositories called
 `pipeline-configuration`.
 
 [NOTE]
-.Note
 ====
 The actual names of the `libraries` and `pipeline-configuration`
 subdirectories do not matter and are configurable.
@@ -45,7 +42,6 @@ static_code_analysis()
 ----
 
 [IMPORTANT]
-.Important
 ====
 The `Jenkinsfile` is the *default pipeline template* that will be used.
 It is possible to define more than one pipeline template and let
@@ -60,7 +56,6 @@ In the same `pipeline-configuration` directory, create a file called
 `pipeline_config.groovy`.
 
 [IMPORTANT]
-.Important
 ====
 When the pipeline configuration is stored in a file in a source code
 repository, it will always be called `pipeline_config.groovy`.
@@ -115,10 +110,9 @@ created during the prerequisites
 text box
 . Click `Save`
 
-image:../../../images/learning-labs/jte-the-basics/global_governance_tier.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/global_governance_tier.gif[image]
 
 [NOTE]
-.Note
 ====
 You just configured your first *Governance Tier*!
 
@@ -151,7 +145,7 @@ repository named `jte-the-basics-app-gradle`
 . Modify the README in order to create a branch called
 [.title-ref]#test#
 
-image:../../../images/learning-labs/jte-the-basics/create_gradle_repo.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/create_gradle_repo.gif[image]
 
 === Create a Multibranch Project
 
@@ -159,7 +153,6 @@ Now that we have a GitHub repository representing our application, we
 can create a *Multibranch Project* in Jenkins.
 
 [IMPORTANT]
-.Important
 ====
 Multibranch Projects are Folders in Jenkins that automatically create
 pipeline jobs for every branch and Pull Request in the source code
@@ -193,4 +186,4 @@ scan has repeated: a job for the `master` branch and a job for the
 When these jobs complete, clicking them will show that each branch
 executed the pipeline template with the same configuration.
 
-image:../../../images/learning-labs/jte-the-basics/multibranch.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/multibranch.gif[image]

@@ -22,7 +22,6 @@ navigation menu.
 Templating Engine_
 
 [IMPORTANT]
-.Important
 ====
 This confirms that JTE has been installed successfully
 ====
@@ -37,7 +36,6 @@ docker.image("maven").inside{
 ----
 
 [NOTE]
-.Note
 ====
 The pipeline configured pulls the latest `maven` image from Docker Hub
 and executes the command [.title-ref]#mvn -v# within that container
@@ -46,7 +44,7 @@ image.
 This will validate that the local Jenkins can pull container images, run
 them, and then execute pipeline commands inside the launched container.
 ====
-image:../../../images/learning-labs/local-development/job-configuration.png[image]
+image:../../../../images/learning-labs/local-development/job-configuration.png[image]
 
 [arabic, start=4]
 . Click _Save_ at the bottom of the screen.
@@ -63,4 +61,4 @@ maven version
 
 If all went well, the console output should show something like:
 
-image:../../../images/learning-labs/local-development/console-output.png[image]
+image:../../../../images/learning-labs/local-development/console-output.png[image]

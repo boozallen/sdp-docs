@@ -1,12 +1,10 @@
-[[JTE The Basics Prerequisites]]
-
 == Prerequisites
 
 === Jenkins Instance
 
 A Jenkins instance will be required for this lab. If you don't have one
 available to you, we would recommend going through the
-`Local Development<Local Development>` learning lab to deploy a local
+link:../../local-development/index.html[Local Development] learning lab to deploy a local
 Jenkins instance through Docker.
 
 === Ability to Create GitHub Repositories
@@ -16,7 +14,6 @@ pipeline configuration from Jenkins you will need to be able to create
 GitHub repositories on https://github.com[github.com].
 
 [NOTE]
-.Note
 ====
 Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab,
 etc) should integrate and work as expected with JTE. For the purposes of
@@ -41,4 +38,4 @@ navigation menu
 . Enter `github` into the `Description` field
 . Click `OK`
 
-image:../../../images/learning-labs/jte-the-basics/pat.gif[image]
+image:../../../../images/learning-labs/jte-the-basics/pat.gif[image]

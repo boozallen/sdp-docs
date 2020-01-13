@@ -1,4 +1,3 @@
-[[Local Development]]
 
 == Local Development
 
@@ -13,4 +12,3 @@ can:::
 
 Click `Next` to move on to this lab's prerequisites.
 
-1-prerequisites 2-run-jenkins 3-configure-jenkins 4-validate-jenkins
