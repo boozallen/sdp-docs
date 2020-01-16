@@ -13,7 +13,7 @@ configured as well as a local SonarQube instance so that you will be
 able to run a sample pipeline that builds a Spring Boot application
 while performing static code analysis.
 
-The https://github.com/boozallen/sdp-labs-sample-app[sample applicationGitHub repository] represents a web application that users of SDP might
+The https://github.com/boozallen/sdp-labs-sample-app[sample application GitHub repository] represents a web application that users of SDP might
 want to create a pipeline for.
 
 === Prerequisites
