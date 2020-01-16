@@ -75,7 +75,7 @@ Copy the entire line of where you found it including everything that
 follows the word `app`, so it would include a colon and a series of
 seemingly random letters and numbers. An example is as follows:
 
-image:../images/run-jenkins-build/docker_tag.png[image]
+image:../_images/run-jenkins-build/docker_tag.png[image]
 
 Paste the content into your terminal.
 

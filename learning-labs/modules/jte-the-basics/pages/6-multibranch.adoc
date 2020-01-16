@@ -110,7 +110,7 @@ created during the prerequisites
 text box
 . Click `Save`
 
-image:../../../../images/learning-labs/jte-the-basics/global_governance_tier.gif[image]
+image:../_images/global_governance_tier.gif[image]
 
 [NOTE]
 ====
@@ -145,7 +145,7 @@ repository named `jte-the-basics-app-gradle`
 . Modify the README in order to create a branch called
 [.title-ref]#test#
 
-image:../../../../images/learning-labs/jte-the-basics/create_gradle_repo.gif[image]
+image:../_images/create_gradle_repo.gif[image]
 
 === Create a Multibranch Project
 
@@ -186,4 +186,4 @@ scan has repeated: a job for the `master` branch and a job for the
 When these jobs complete, clicking them will show that each branch
 executed the pipeline template with the same configuration.
 
-image:../../../../images/learning-labs/jte-the-basics/multibranch.gif[image]
+image:../_images/multibranch.gif[image]

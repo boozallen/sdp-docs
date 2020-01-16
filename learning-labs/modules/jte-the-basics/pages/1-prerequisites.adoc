@@ -4,7 +4,7 @@
 
 A Jenkins instance will be required for this lab. If you don't have one
 available to you, we would recommend going through the
-link:../../local-development/index.html[Local Development] learning lab to deploy a local
+link:../../../local-development/index.html[Local Development] learning lab to deploy a local
 Jenkins instance through Docker.
 
 === Ability to Create GitHub Repositories
@@ -38,4 +38,4 @@ navigation menu
 . Enter `github` into the `Description` field
 . Click `OK`
 
-image:../../../../images/learning-labs/jte-the-basics/pat.gif[image]
+image:../_images/pat.gif[image]

@@ -98,7 +98,7 @@ Navigate http://localhost:5000/v2/_catalog[here].
 You should see the following screen:
 --
 
-image:../images/deploy-devops-tools/docker_registry.png[image]
+image:../_images/deploy-devops-tools/docker_registry.png[image]
 
 
 *Jenkins*
@@ -109,7 +109,7 @@ Navigate http://localhost:8080[here].
 You should see the following screen:
 --
 
-image:../images/deploy-devops-tools/jenkins.png[image]
+image:../_images/deploy-devops-tools/jenkins.png[image]
 
 *SonarQube Server*
 
@@ -119,7 +119,7 @@ Navigate http://localhost:9000[here].
 You should see the following screen:
 --
 
-image:../images/deploy-devops-tools/sonarqube.png[image]
+image:../_images/deploy-devops-tools/sonarqube.png[image]
 
 [IMPORTANT]
 ====

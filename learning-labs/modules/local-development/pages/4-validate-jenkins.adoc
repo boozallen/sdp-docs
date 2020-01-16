@@ -44,7 +44,7 @@ image.
 This will validate that the local Jenkins can pull container images, run
 them, and then execute pipeline commands inside the launched container.
 ====
-image:../../../../images/learning-labs/local-development/job-configuration.png[image]
+image:../_images/job-configuration.png[image]
 
 [arabic, start=4]
 . Click _Save_ at the bottom of the screen.
@@ -61,4 +61,4 @@ maven version
 
 If all went well, the console output should show something like:
 
-image:../../../../images/learning-labs/local-development/console-output.png[image]
+image:../_images/console-output.png[image]

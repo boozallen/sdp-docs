@@ -110,4 +110,4 @@ created during the prerequisites
 . Enter `libraries` in the `Base Directory` text box
 . Click `Save`
 
-image:../../../../images/learning-labs/jte-the-basics/library_source.gif[image]
+image:../_images/library_source.gif[image]

@@ -64,6 +64,6 @@ You can validate the container launched as expected by going to ``http://localho
 
 You should see the Jenkins Startup Wizard: 
 
-image::../../../../images/learning-labs/local-development/jenkins_initial_password.png[align="center"]
+image::../_images/jenkins_initial_password.png[align="center"]
 
 In the next section, we'll learn how to get past this Startup Wizard and configure the newly deployed Jenkins instance. 

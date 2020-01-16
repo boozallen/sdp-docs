@@ -141,7 +141,7 @@ Explore each of these jobs to see that the `gradle` repository's
 pipeline loaded the `gradle` library and the `maven` repository loaded
 the `maven` library and both pipelines loaded the `sonarqube` library.
 
-image:../../../../images/learning-labs/jte-the-basics/github_org.gif[image]
+image:../_images/github_org.gif[image]
 
 [IMPORTANT]
 ====

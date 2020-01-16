@@ -15,7 +15,7 @@ navigation menu.
 . Select `Pipeline` from the list of available job types
 . Click `OK`
 
-image:../../../../images/learning-labs/jte-the-basics/create_pipeline_job.gif[image]
+image:../_images/create_pipeline_job.gif[image]
 
 === Write the Template
 

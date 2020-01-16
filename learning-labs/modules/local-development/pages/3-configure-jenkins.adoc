@@ -21,7 +21,7 @@ The initial admin password is stored in
 You can print this password in your terminal by running:
 `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword`
 
-image:../../../../images/learning-labs/local-development/cat-init-password.png[image]
+image:../_images/cat-init-password.png[image]
 
 Copy and paste this password into the text box in Jenkins.
 
@@ -39,7 +39,7 @@ starts up. To view the Jenkins logs, run `docker logs jenkins`.
 
 In the output, you should see something similar to this:
 
-image:../../../../images/learning-labs/local-development/logs_init_password.png[image]
+image:../_images/logs_init_password.png[image]
 
 Copy and paste the password into the text box in Jenkins.
 
@@ -58,7 +58,7 @@ Jenkins installs the most popular community plugins.
 After the plugins are done installing, Jenkins will send you to a screen
 to configure the default admin user.
 
-image:../../../../images/learning-labs/local-development/initial_admin_user.png[image]
+image:../_images/initial_admin_user.png[image]
 
 Feel free to create a custom username and password or continue as admin.
 
@@ -80,7 +80,7 @@ At this point, you've completed the Jenkins Startup Wizard process.
 Click "_Start Using Jenkins_" and you will be directed to the Jenkins
 home page.
 
-image:../../../../images/learning-labs/local-development/jenkins-home-page.png[image]
+image:../_images/jenkins-home-page.png[image]
 
 Now, we're going to install the Jenkins Templating Engine, which can be
 found as the `Templating Engine Plugin` in the Jenkins Update Center.
@@ -93,7 +93,7 @@ found as the `Templating Engine Plugin` in the Jenkins Update Center.
 
 At this point you should see:
 
-image:../../../../images/learning-labs/local-development/jte-update-center.png[image]
+image:../_images/jte-update-center.png[image]
 
 Make sure to select the Templating Engine Plugin and click "_Download
 now and install after restart_".
@@ -103,7 +103,7 @@ This will direct you to a screen showing the download progress of JTE.
 The plugin will not become active until you select "_Restart Jenkins
 when installation is complete and no jobs are running_".
 
-image:../../../../images/learning-labs/local-development/restart-post-install-jte.png[image]
+image:../_images/restart-post-install-jte.png[image]
 
 At this point, Jenkins will restart automatically. Log in again with
 either the custom admin user you created earlier or the initial admin
