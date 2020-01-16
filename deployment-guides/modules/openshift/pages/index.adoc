@@ -12,15 +12,16 @@ includes a Tiller server for deployments via Helm, as well as separate
 application environments such as "Dev" and "Test"
 
 
-link:1_0_Deploy_Tools_Overview.html[Section 1 - Deploying the DevOps Tools] +
-link:1_1_Prepare_To_Install.html[Section 1.1 - Preparing to Run the Installer] +
-link:1_2_Run_Installer.html[Section 1.2 - Running the Installer Script] +
-link:2_0_Pipeline_Config_Overview.html[Section 2 - Setting up a Pipeline] +
-link:2_1_Pipeline_Planning.html[Section 2.1 - Pipeline Planning] +
-link:2_2_Pipeline_Config.html[Section 2.2 - Creating the Pipeline Configuration File] +
-link:3_0_Application_Environment_Overview.html[Section 3 - Setting up the Application Environments] +
-link:3_1_Application_Environments.html[Section 3.1 - Creating the Application Environments] +
-link:3_2_Helm_Chart_Repo.html[Section 3.2 - Setting up the Helm Chart Repository] +
+* link:1_0_Deploy_Tools_Overview.html[Section 1 - Deploying the DevOps Tools] +
+** <<1_0_Deploy_Tools_Overview.html#Before You Begin>>
+* link:1_1_Prepare_To_Install.html[Section 1.1 - Preparing to Run the Installer] +
+* link:1_2_Run_Installer.html[Section 1.2 - Running the Installer Script] +
+* link:2_0_Pipeline_Config_Overview.html[Section 2 - Setting up a Pipeline] +
+* link:2_1_Pipeline_Planning.html[Section 2.1 - Pipeline Planning] +
+* link:2_2_Pipeline_Config.html[Section 2.2 - Creating the Pipeline Configuration File] +
+* link:3_0_Application_Environment_Overview.html[Section 3 - Setting up the Application Environments] +
+* link:3_1_Application_Environments.html[Section 3.1 - Creating the Application Environments] +
+* link:3_2_Helm_Chart_Repo.html[Section 3.2 - Setting up the Helm Chart Repository] +
 
 *_Click on the Next button to continue on to the Section 1 of this
 guide_
