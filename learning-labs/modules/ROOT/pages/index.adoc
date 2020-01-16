@@ -10,18 +10,18 @@ The best way to learn a technology is to use it. These Learning Labs have been d
 |Lab
 |Description
 
-|link:.\try-it-out\docs\index.adoc[Try It Out]
+|link:try-it-out\index.html[Try It Out]
 |A brief introduction to the Jenkins Templating Engine and our SDP Pipeline Libraries. You’ll learn how to configure Jenkins to leverage SDP and make your first pipeline.
 
-|link:.\local-development\index.adoc[Local Development]
+|link:local-development\index.html[Local Development]
 |In this lab, we’ll be deploying a local Jenkins instance using Docker and installing the Jenkins Templating Engine.
 
-|link:.\jte-the-basics\index.adoc[JTE: The Basics]
+|link:jte-the-basics\index.html[JTE: The Basics]
 |Explore the basic concepts of the Jenkins Templating Engine and different ways to use it.
 
-|link:.\jte-primitives\index.adoc[JTE: Learn the Primitives]
+|link:jte-primitives\index.html[JTE: Learn the Primitives]
 |Explore the different pipeline primitives JTE exposes, called primitives, to aide in pipeline template authoring.
 
-|link:.\jte-advanced-features\index.adoc[JTE: Advanced Features]
+|link:jte-advanced-features\index.html[JTE: Advanced Features]
 |Level up your JTE skills by learning its advanced features like the default step implementation and how to leverage step lifecycle hooks.
 |===
