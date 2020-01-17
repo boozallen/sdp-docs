@@ -98,7 +98,7 @@ docker pull localhost:5000/sdp-labs-sample-app:9526f8338de88794e1f491ffdd513c718
 Run the command and verify that you get a response similar to the
 following:
 
-image:../images/run-jenkins-build/docker_pull_response.png[image]
+image:../_images/run-jenkins-build/docker_pull_response.png[image]
 
 === View the SonarQube Report
 
@@ -112,7 +112,7 @@ entering them.
 
 On your screen, you should now see the following:
 
-image:../images/run-jenkins-build/sonarqube_projects.png[image]
+image:../_images/run-jenkins-build/sonarqube_projects.png[image]
 
 Click the `sdp-labs-sample-app - masterPassed` text, which links the
 report of the various issues that SonarQube found when doing the code

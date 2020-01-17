@@ -1,5 +1,3 @@
-[[Understanding the Pipeline Configuration File]]
-
 == Understanding the Pipeline Configuration File
 
 In this step, we will be going over the pipeline configuration file that
