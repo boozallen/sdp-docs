@@ -31,9 +31,9 @@ defined within the Docker block within the pipeline_config.groovy, which we defi
 When the Jenkins pipeline is able to successfully complete both steps, then there will a successful build where a user can view a 
 SonarQube report of the sample code and pull a finished Docker image of the sample Spring Boot API code from their local Docker registry.
 
-.. _SonarQube: https://boozallen.github.io/sdp-docs/pages/libraries/sonarqube/README.html
+.. _SonarQube: https://boozallen.github.io/sdp-libraries/sonarqube/README.html
 
-.. _Docker: https://boozallen.github.io/sdp-docs/pages/libraries/docker/README.html
+.. _Docker: https://boozallen.github.io/sdp-libraries/docker/README.html
 
 .. _Jenkins step: https://jenkins.io/doc/book/pipeline/syntax/
 
