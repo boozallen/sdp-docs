@@ -1,9 +1,9 @@
-== JTE: Advanced Features
+= JTE: Advanced Features
 
 In this lab we're going to highlight some of JTE's more advanced
 features.
 
-=== What You'll Learn
+== What You'll Learn
 
 * The Default Step Implementation: how to create steps on the fly in the
 Pipeline Configuration

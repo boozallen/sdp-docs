@@ -4,7 +4,6 @@ version: 1.0
 start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
-- modules/try-it-out/nav.adoc
 - modules/local-development/nav.adoc
 - modules/jte-the-basics/nav.adoc
 - modules/jte-primitives/nav.adoc

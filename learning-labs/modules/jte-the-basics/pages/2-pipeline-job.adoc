@@ -1,10 +1,10 @@
-== Write the Template
+= Write the Template
 
 In JTE, instead of creating application-specific `Jenkinsfiles` we
 create pipeline templates that represent the business logic of a
 pipeline in a tool-agnostic way.
 
-=== Create a Pipeline Job
+== Create a Pipeline Job
 
 To demonstrate this, first create a `Pipeline` job.
 
@@ -17,9 +17,9 @@ navigation menu.
 
 image:../_images/create_pipeline_job.gif[image]
 
-=== Write the Template
+== Write the Template
 
-==== Overview
+=== Overview
 
 For this lab, let's create a pipeline that can build an artifact with
 maven and then perform static code analysis with SonarQube.

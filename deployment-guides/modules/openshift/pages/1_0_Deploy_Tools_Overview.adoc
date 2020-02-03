@@ -1,14 +1,14 @@
-== Section 1 - Deploying the DevOps Tools
+= Section 1 - Deploying the DevOps Tools
 
-=== Section 1 Overview
+== Section 1 Overview
 
 Once you have completed this section, you should have a functioning
 deployment of the SDP. This includes a Jenkins master, one or more
 Jenkins agents, and services used by SDP libraries, such as SonarQube.
 
-=== Before You Begin
+== Before You Begin
 
-==== You Should Have...
+=== You Should Have...
 
 * A working OpenShift cluster
 * Credentials for a User on that cluster that has the _cluster-admin_
@@ -24,12 +24,12 @@ https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli
 https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli
 
 
-==== You Should Be Able To...
+=== You Should Be Able To...
 
 * Modify simple configuration files
 * Run bash commands/scripts
 
-=== System Requirements
+== System Requirements
 
 * Your OpenShift cluster meets the minimum hardware requirements as laid
 out in the documentation 
@@ -42,7 +42,7 @@ containers (see below)
 * Your cluster has enough remaining CPU and Memory for your application
 and any additional services (such as Prometheus, for monitoring)
 
-=== Additional Recommendations
+== Additional Recommendations
 
 * {blank}
 +
@@ -67,7 +67,7 @@ safely restarting containers without loosing any storage or history. It
 can also make certain pipeline actions faster, such as building Docker
 images.
 
-=== Container Resource Recommendations
+== Container Resource Recommendations
 
 [width="93%",cols="27%,23%,28%,22%",]
 |===

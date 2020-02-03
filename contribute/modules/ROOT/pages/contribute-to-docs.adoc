@@ -1,11 +1,11 @@
-== Contribute to this Documentation!
+= Contribute to this Documentation!
 
-=== Prerequisites
+== Prerequisites
 
 * You have docker installed on your local machine (https://docs.docker.com/docker-for-mac/install/[Mac], https://docs.docker.com/docker-for-windows/install/[Windows])
 * Ability to run ``make`` commands
 
-=== Distributed Documentation
+== Distributed Documentation
 
 The documentation for SDP is distributed across multiple repositories in order to keep the documentation next to the code.  This greatly helps with ensuring documentation remains up to date by enforcing the documentation is maintained during Pull Request reviews. 
 
@@ -15,7 +15,7 @@ Both the  https://github.com/jenkinsci/templating-engine-plugin[Jenkins Templati
 and https://github.com/boozallen/sdp-libraries[SDP Pipeline Libraries] repositories will have 
 documentation that explains how to contribute to those respective sites. 
 
-=== Local Development
+== Local Development
 
 There is a ``Makefile`` at the root of the https://github.com/boozallen/sdp-docs[SDP Documentation Repository] that automates some tasks to aide in local development of this documentation: 
 
@@ -35,7 +35,7 @@ There is a ``Makefile`` at the root of the https://github.com/boozallen/sdp-docs
 |When run from the ``master`` branch, if you have write permissions to the SDP Documentation Repository, this will deploy the docs.
 |===
 
-=== Submitting Contributions
+== Submitting Contributions
 
 SDP follows the Fork and Pull workflow for accepting contributions from contributors. 
 
@@ -43,7 +43,7 @@ The content for this site can be found in the ``pages`` directory of the reposit
 
 Images should be added to the ``images`` directory. 
 
-==== Steps to Contribute
+== Steps to Contribute
 
 1. Fork the https://github.com/boozallen/sdp-docs[SDP Documentation Repository] 
 2. Make changes to your own fork of the repository 

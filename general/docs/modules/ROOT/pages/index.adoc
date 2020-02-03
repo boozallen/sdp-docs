@@ -1,4 +1,4 @@
-== Solutions Delivery Platform
+= Solutions Delivery Platform
 
 The Solutions Delivery Platform (SDP) is an accumulation of Booz Allen's
 lessons learned implementing DevSecOps practices across multiple client
@@ -19,9 +19,9 @@ Instead of creating per-application pipelines, SDP allows you to create
 tool-agnostic, templated workflows that can be used by multiple teams to
 achieve organizational governance.
 
-=== Components
+== Components
 
-==== Container Orchestration Platform
+=== Container Orchestration Platform
 
 The container orchestration platform, typically a kubernetes based
 solution, is responsible for hosting the DevOps tools; such as Jenkins
@@ -32,7 +32,8 @@ or SonarQube.
 There is no strict dependency on OpenShift or Kubernetes, though this
 will enable a more robust platform.
 ====
-==== Jenkins Templating Engine
+
+=== Jenkins Templating Engine
 
 The Jenkins Templating Engine is a custom plugin written by Booz Allen
 that enables the capabilities of the Solutions Delivery Platform; such
@@ -44,13 +45,14 @@ configuration files.
 This plugin is available in the Jenkins Update Center under the name
 https://plugins.jenkins.io/templating-engine[Templating Engine Plugin].
 ====
-==== SDP Pipeline Libraries
+
+=== SDP Pipeline Libraries
 
 The SDP Pipeline Libraries are our reusable tool integrations that
 contain the actual technical implementations of pipeline actions; such
 as static code analysis, penetration testing, and deployments.
 
-==== DevSecOps Dashboard
+=== DevSecOps Dashboard
 
 Your DevSeCops pipeline is able to observe everything about software
 delivery for your project or organization. Through SDP, you would be

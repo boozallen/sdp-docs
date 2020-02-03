@@ -1,11 +1,11 @@
-== Validate Jenkins
+= Validate Jenkins
 
 That's it! You've now deployed and configured a local Jenkins instance.
 
 We're going to run through a couple quick steps to ensure that the
 deployed Jenkins can launch containers as part of the pipeline.
 
-=== Create a Pipeline Job
+== Create a Pipeline Job
 
 [arabic]
 . From the Jenkins home page, select _New Item_ in the lefthand
@@ -14,7 +14,7 @@ navigation menu.
 . Select the _Pipeline_ job type.
 . Click _ok_ at the bottom of the screen.
 
-=== Configure a Pipeline
+== Configure a Pipeline
 
 [arabic]
 . Scroll down to the _Pipeline_ configuration section

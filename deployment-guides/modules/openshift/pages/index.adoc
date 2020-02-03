@@ -1,6 +1,6 @@
-== OpenShift
+= OpenShift
 
-=== Overview
+== Overview
 
 When you complete this guide, you should have a functioning deployment
 of the SDP. This includes a Jenkins master, one or more Jenkins agents,

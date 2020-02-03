@@ -1,4 +1,4 @@
-== Apply to a GitHub Repository
+= Apply to a GitHub Repository
 
 So far we've learned:
 
@@ -17,7 +17,7 @@ This is a more realistic scenario and it has the added benefit of taking
 the pipeline template and pipeline configuration file out of the Jenkins
 UI and storing them in a pipeline configuration repository.
 
-=== Move the Pipeline Template to a Repository
+== Move the Pipeline Template to a Repository
 
 When creating libraries, we created a GitHub repository and stored the
 libraries in a subdirectory called `libraries`. In this example, we can
@@ -50,7 +50,8 @@ later, or
 https://jenkinsci.github.io/templating-engine-plugin/pages/Governance/pipeline_template_selection.html[read
 the docs].
 ====
-=== Move the Pipeline Configuration to a Repository
+
+== Move the Pipeline Configuration to a Repository
 
 In the same `pipeline-configuration` directory, create a file called
 `pipeline_config.groovy`.
@@ -133,7 +134,8 @@ Through Governance Tiers, you can create a governance hierarchy that
 matches your organizational hierarchy just by how you organize jobs
 within Jenkins.
 ====
-=== Create an Application Repository
+
+== Create an Application Repository
 
 We're going to apply the pipeline template and configuration file to
 every branch in a GitHub repository.
@@ -147,7 +149,7 @@ repository named `jte-the-basics-app-gradle`
 
 image:../_images/create_gradle_repo.gif[image]
 
-=== Create a Multibranch Project
+== Create a Multibranch Project
 
 Now that we have a GitHub repository representing our application, we
 can create a *Multibranch Project* in Jenkins.

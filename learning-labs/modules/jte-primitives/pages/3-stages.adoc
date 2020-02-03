@@ -1,6 +1,6 @@
-== Stages
+= Stages
 
-=== What is a Stage?
+== What is a Stage?
 
 Stages are a mechanism for chaining multiple steps together to be
 invoked through an aliased method name.
@@ -18,7 +18,8 @@ primitive was created to address this use case.
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/stages.html[View
 the Stage documentation]
 ====
-=== Define and Use A Stage
+
+== Define and Use A Stage
 
 A very common stage to create is a *Continuous Integration* stage.
 
@@ -36,7 +37,7 @@ Our current pipeline template specifies to run the `build()` and
 `static_code_analysis()` steps. Let's group these together into a
 `continuous_integration()` stage.
 
-==== Define the Stage in the Pipeline Configuration
+=== Define the Stage in the Pipeline Configuration
 
 Update the *Pipeline Configuration* to:
 
@@ -65,7 +66,8 @@ pipeline template.
 The lines within the `continuous_integration` block outline which steps
 will be chained together when the stage is invoked.
 ====
-==== Update the Pipeline Template
+
+=== Update the Pipeline Template
 
 With the `continuous_integration` stage defined, we can update the
 pipeline template to make use of it.
@@ -77,7 +79,7 @@ Update the *Pipeline Template* to:
 continuous_integration() 
 ----
 
-==== Run the Pipeline
+=== Run the Pipeline
 
 From the Pipeline job's main page, click `Build Now` in the lefthand
 navigation menu.

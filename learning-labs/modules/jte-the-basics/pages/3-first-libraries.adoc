@@ -1,4 +1,4 @@
-== Create the Libraries
+= Create the Libraries
 
 In the previous section we created a pipeline template that invoked
 `build()` and `static_code_analysis()` steps.
@@ -6,7 +6,7 @@ In the previous section we created a pipeline template that invoked
 In this part of the lab, we're going to create libraries for these steps
 to implement them in our template.
 
-=== Create a GitHub Repository
+== Create a GitHub Repository
 
 Libraries can either be packaged into a separate plugin for distribution
 or fetched directly from a source code management repository.
@@ -18,7 +18,7 @@ pipeline libraries for integration with the Jenkins Templating Engine
 Go ahead and create a new GitHub repository. It can be named whatever
 you like, though `jte-the-basics` would make sense.
 
-=== Create the Libraries
+== Create the Libraries
 
 Create the following directory structure within your repository:
 
@@ -44,7 +44,7 @@ _directory_, likely in a source code repository, that contains groovy
 files. When a library is loaded, each groovy file in the library's
 directory will become a step named after the base filename.
 
-=== Implement the Steps
+== Implement the Steps
 
 In this lab, we're just getting accustomed to the Jenkins Templating
 Engine and how it works. So the implementation of the steps for this lab
@@ -80,7 +80,7 @@ void call(){
 }
 ----
 
-=== Configure the Library Source
+== Configure the Library Source
 
 Now that we have a GitHub repository containing pipeline libraries, we
 have to tell JTE where to find them.

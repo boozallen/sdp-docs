@@ -1,4 +1,4 @@
-== Configuring Jenkins
+= Configuring Jenkins
 
 In the last section, we ran a local Jenkins instance via Docker and
 validated it's running on `http://localhost:8080`.
@@ -9,11 +9,11 @@ Now, we're going to configure that Jenkins instance by:
 * Installing the default suggested plugins
 * Installing the Jenkins Templating Engine
 
-=== Initial Admin Password
+== Initial Admin Password
 
 There are _two_ ways to get the initial admin password for Jenkins.
 
-==== 1. Cat the file
+=== 1. Cat the file
 
 The initial admin password is stored in
 `/var/jenkins_home/secrets/initialAdminPassword` within the container.
@@ -32,7 +32,8 @@ If you're using a mac, i'd recommend running
 which will automatically insert the password into your clipboard for
 pasting.
 ====
-==== 2. Fetch it from the container logs
+
+=== 2. Fetch it from the container logs
 
 The initial admin password is also printed to standard out while Jenkins
 starts up. To view the Jenkins logs, run `docker logs jenkins`.
@@ -43,7 +44,7 @@ image:../_images/logs_init_password.png[image]
 
 Copy and paste the password into the text box in Jenkins.
 
-=== Installing the Suggested Plugins
+== Installing the Suggested Plugins
 
 After entering the initial admin password, Jenkins will bring you to a
 _Customize Jenkins_ page.
@@ -53,7 +54,7 @@ Click the `Install suggested plugins` button.
 This will bring you to a loading screen displaying the progress as
 Jenkins installs the most popular community plugins.
 
-=== Setup Initial Admin User
+== Setup Initial Admin User
 
 After the plugins are done installing, Jenkins will send you to a screen
 to configure the default admin user.
@@ -67,14 +68,15 @@ Feel free to create a custom username and password or continue as admin.
 If you click "continue as admin" then the username will be `admin` and
 the password will be the initial admin password we found earlier.
 ====
-=== Instance Configuration
+
+== Instance Configuration
 
 After creating the initial admin user, Jenkins will send you to a screen
 where you can configure the instance's URL. The text box will be
 prepopulated with what's currently in your browser, so click _Save and
 Finish_ in the bottom righthand side of the screen.
 
-=== Installing the Jenkins Templating Engine
+== Installing the Jenkins Templating Engine
 
 At this point, you've completed the Jenkins Startup Wizard process.
 Click "_Start Using Jenkins_" and you will be directed to the Jenkins

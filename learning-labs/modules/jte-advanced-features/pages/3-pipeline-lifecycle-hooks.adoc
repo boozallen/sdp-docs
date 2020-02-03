@@ -1,4 +1,4 @@
-== Pipeline Lifecycle Hooks
+= Pipeline Lifecycle Hooks
 
 There can be interdependent functionalities that present a challenge to
 the Jenkins Templating Engine.
@@ -30,7 +30,8 @@ Read the
 https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[entire
 pipeline lifecycle hook documentation].
 ====
-=== Create a Splunk Library
+
+== Create a Splunk Library
 
 Methods defined within steps are able to register themselves to
 correspond to specific lifecycle events via annotations. As such, these
@@ -50,7 +51,8 @@ Lifecycle Hook annotated methods. But to avoid collisions of everyone
 naming their hook steps `beforeStep.groovy` - we recommend
 `<libraryName>_<action>` as we'll demonstrate in this lab.
 ====
-==== Notify of Pipeline Start
+
+=== Notify of Pipeline Start
 
 Within the same Library Source created during JTE: The Basics create a
 step called `splunk_pipeline_start.groovy`:
@@ -80,7 +82,8 @@ but can be called anything.
 Since Groovy is a dynamically typed language, this input parameter does
 not have to be given a class.
 ====
-==== Update the Pipeline Configuration
+
+=== Update the Pipeline Configuration
 
 In the Pipeline job again, update the Pipeline Configuration to load the
 `splunk` library we just created.
@@ -107,7 +110,7 @@ Run the Pipeline job and you should see output in the logs similar to:
 Splunk: beginning of the pipeline!
 ----
 
-==== Add Before and After Step Execution Hooks
+=== Add Before and After Step Execution Hooks
 
 Let's add some hooks that inject themselves both before and after each
 step is executed in the pipeline.
@@ -276,7 +279,7 @@ Splunk: running after the ansible library's deploy_to step
 Finished: SUCCESS
 ----
 
-==== Notify of End of Pipeline Execution
+=== Notify of End of Pipeline Execution
 
 Let's try out one more hook to get executed when the pipeline has
 finished:
@@ -435,7 +438,7 @@ Splunk: end of the pipeline!
 [Pipeline] End of Pipeline
 ----
 
-=== Restricting Hook Execution
+== Restricting Hook Execution
 
 What if we only wanted to execute the `@AfterStep` hook to be executed
 after the `static_code_analysis` step?
@@ -451,7 +454,7 @@ becomes the return object by default.
 ====
 We call this functionality *Conditional Hook Execution*.
 
-==== Update the `@AfterStep` Annotation
+=== Update the `@AfterStep` Annotation
 
 Let's see it in action.
 
@@ -473,7 +476,8 @@ When the `Closure` parameter is invoked, it will have access to the
 `context` variable that is passed to the step itself as well as the
 library configuration that is stored via the `config` variable.
 ====
-==== Taking It A Step Further
+
+=== Taking It A Step Further
 
 It would be even better if we could externalize the configuration of
 exactly which steps the `@AfterStep` hook should be triggered.

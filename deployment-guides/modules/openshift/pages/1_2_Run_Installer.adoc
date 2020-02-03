@@ -1,7 +1,7 @@
 == Section 1.2 - Running the Installer Script
 
 
-=== Run the Installer Script
+== Run the Installer Script
 
 From the root of the sdp-helm-chart directory, run the command
 
@@ -35,7 +35,7 @@ your OpenShift cluster's web console to monitor the progress. The
 overview page should also show the links for Jenkins and any other tools
 you opted to install.
 
-=== Verify the Installation
+== Verify the Installation
 
 After a few minutes, Jenkins should finish setting up. On the overview
 page for the "sdp" project you should see all blue rings showing all of
@@ -52,7 +52,7 @@ If you installed SonarQube, you should be able to click on the its link
 password "admin" and optionally skip the tutorial. You should see an
 empty SonarQube ready to analyze projects.
 
-=== Next Steps
+== Next Steps
 
 If all you need is Jenkins and the DevOps tools, you should be finished.
 Jenkins has the JTE and a number of standard plugins installed for you.

@@ -13,7 +13,7 @@ const mapSite = require('@antora/site-mapper')
 const produceRedirects = require('@antora/redirect-producer')
 const publishSite = require('@antora/site-publisher')
 const { resolveConfig: resolveAsciiDocConfig } = require('@antora/asciidoc-loader')
-const generateIndex = require('antora-lunr')
+const generateIndex = require('./generate-index')
 
 async function generateSite (args, env) {
 

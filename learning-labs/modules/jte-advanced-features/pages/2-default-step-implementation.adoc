@@ -1,4 +1,4 @@
-== Default Step Implementation
+= Default Step Implementation
 
 There are a large number of use cases where a step contributed by
 library is going to do the same thing:
@@ -12,14 +12,14 @@ To support fast development of steps that follow this pattern, the
 https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/default_step_implementation.html[default
 step implementation] is available.
 
-=== What is the Default Step Implementation?
+== What is the Default Step Implementation?
 
 The default step implementation allows you to define a step from the
 Pipeline Configuration that specifies a container image as the runtime
 environment for the step, a shell command or script to execute, and then
 a stash to be created in order to store files generated.
 
-==== Benefits
+=== Benefits
 
 {empty}1. The default step implementation allows a quick and dirty way
 to quickly prototype a step on the fly without needing to create a
@@ -29,7 +29,7 @@ library.
 excellent way to build a DevSecOps pipeline that is loosely coupled to
 the underlying infrastructure.
 
-==== Setbacks
+=== Setbacks
 
 {empty}1. The default step implementation can be a little too powerful
 if you're striving for a tightly governed DevSecOps pipeline. This
@@ -39,12 +39,12 @@ feature should be exposed to end users with care.
 Pipeline Configuration and does not have the same configuration
 flexibility that a library would have.
 
-=== Create a Step
+== Create a Step
 
 In the same Pipeline Job we were using during the JTE: Pipeline
 Primitives lab, let's add a new step called `unit_test()`.
 
-==== Update the Pipeline Configuration
+=== Update the Pipeline Configuration
 
 Append to the Pipeline Configuration:
 
@@ -84,7 +84,7 @@ stages{
 }
 ----
 
-=== Run the Pipeline
+== Run the Pipeline
 
 Run the pipeline. From the job's main page, click `Build Now` in the
 lefthand navigation menu.

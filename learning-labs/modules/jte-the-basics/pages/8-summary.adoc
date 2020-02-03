@@ -1,14 +1,14 @@
-== Summary
+= Summary
 
 We learned a lot in this lab!  Let's recap some of what we learned: 
 
-=== GitHub Credentials in Jenkins
+== GitHub Credentials in Jenkins
 
 We learned how to create a Personal Access Token and store it in the Jenkins credential store. 
 
 While credentials are not strictly needed for public repositories, GitHub will API Rate Limit your Jenkins instance which can dramatically slow down the pipeline and cause it to fail. 
 
-=== Different Types of Jenkins Jobs
+== Different Types of Jenkins Jobs
 
 We learned about the three kinds of Jobs most commonly used when working with the Jenkins Templating Engine. 
 
@@ -28,7 +28,7 @@ We learned about the three kinds of Jobs most commonly used when working with th
 |Represent an entire GitHub Organization. Can be filtered to restrict which repositories are automatically represented in Jenkins.
 |===
 
-=== What makes up a pipeline in JTE? 
+== What makes up a pipeline in JTE? 
 
 We learned that: 
 
@@ -38,7 +38,7 @@ We learned that:
 4.  Pipeline Configuration Files **implement** a template by specifying (among other things) what libraries to load
 5.  When stored in a repo, Pipeline Configuration Files are called ``pipeline_config.groovy`` and are located at the root of the repository
 
-=== What is a Governance Tier?
+== What is a Governance Tier?
 
 We learned that: 
 
@@ -47,7 +47,7 @@ We learned that:
 3.  Pipeline Configuration Repositories optionally contain a pipeline template and a pipeline configuration file 
 4.  The Jenkinsfile is the **default pipeline template** in a Governance Tier 
 
-=== How to Reuse Templates?
+== How to Reuse Templates?
 
 We learned that: 
 

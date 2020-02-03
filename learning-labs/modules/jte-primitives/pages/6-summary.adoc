@@ -1,8 +1,8 @@
-== Summary
+= Summary
 
 We learned a lot in this lab! Let's recap some of what we learned:
 
-=== Pipeline Primitives
+== Pipeline Primitives
 
 .JTE Pipeline Primitives
 [width="99%",cols="20%,70%,10%",options="header",]
@@ -18,7 +18,7 @@ primarily for use in deployment steps |`application_environments{}`
 Templates and into the Pipeline Configuration |`keywords{}`
 |===
 
-=== Why shouldn't library steps take input parameters?
+== Why shouldn't library steps take input parameters?
 
 It fundamentally breaks the interchangeability of different
 implementations of the same step by different libraries by introducing a

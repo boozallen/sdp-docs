@@ -27,6 +27,7 @@ const { version: VERSION } = require('../package.json')
  *   HTML contents in a standalone page layout).
  */
 function createPageComposer (playbook, contentCatalog, uiCatalog, navigationCatalog, env = process.env) {
+
   uiCatalog
     .findByType('helper')
     .forEach((file) => handlebars.registerHelper(file.stem, requireFromString(file.contents.toString(), file.path)))

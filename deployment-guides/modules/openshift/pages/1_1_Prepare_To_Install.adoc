@@ -1,6 +1,6 @@
-== Section 1.1 - Preparing to Run the Installer
+= Section 1.1 - Preparing to Run the Installer
 
-=== Log into OpenShift
+== Log into OpenShift
 
 Run the command here, replacing the URI shown with the one for your
 cluster's master node(s). The URI is the one you use to reach your
@@ -13,7 +13,7 @@ $ oc login master.ocp.example.com:8443
 
 When prompted, use the login for your cluster-admin User.
 
-=== Clone the sdp-helm-chart Repository
+== Clone the sdp-helm-chart Repository
 
 To clone the link:https://github.com/boozallen/sdp-helm-chart[sdp-helm-chart repository], run one of the following commands:
 
@@ -25,7 +25,7 @@ $ git clone git@github.com:boozallen/sdp-helm-chart.git
 $ git clone https://github.com/boozallen/sdp-helm-chart.git
 ----
 
-=== Create Your Values File
+== Create Your Values File
 
 From the root of your new sdp-helm-chart directory, copy
 values.template.yaml to values.yaml.
@@ -42,7 +42,7 @@ deploying the SDP.
 
 This extra step is intended to prevent users from inadvertently pushingtheir values.yaml file, which may contain sensitive information.
 
-=== Modify the Values File
+== Modify the Values File
 
 The only value that you _must_ change in values.yaml is `global.domain`.
 You should change it to match the subdomain your cluster uses for

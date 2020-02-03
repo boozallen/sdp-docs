@@ -1,13 +1,13 @@
-== Prerequisites
+= Prerequisites
 
-=== Jenkins Instance
+== Jenkins Instance
 
 A Jenkins instance will be required for this lab. If you don't have one
 available to you, we would recommend going through the
 `Local Development<Local Development>` learning lab to deploy a local
 Jenkins instance through Docker.
 
-=== JTE: Pipeline Primitives
+== JTE: Pipeline Primitives
 
 This lab is the third and final lab specificially dedicated to the
 Jenkins Templating Engine's functionality.

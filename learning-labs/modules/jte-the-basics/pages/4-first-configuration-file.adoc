@@ -1,4 +1,4 @@
-== Configure the Pipeline
+= Configure the Pipeline
 
 With the libraries created now discoverable by JTE, we can configure the
 pipeline and run it!
@@ -42,7 +42,8 @@ library will provide the `static_code_analysis()` step.
 
 With these steps now implemented, we can run the pipeline.
 ====
-=== Run the Pipeline
+
+== Run the Pipeline
 
 After clicking `Save` you'll be directed back to the main page for the
 job.

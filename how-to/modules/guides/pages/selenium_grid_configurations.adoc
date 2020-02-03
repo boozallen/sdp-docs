@@ -1,4 +1,4 @@
-== How To Configure Selenium Grid
+= How To Configure Selenium Grid
 
 Selenium Grid is a web browser testing tool that allows a series of
 automated test to run in parallel across multiple browsers and versions.
@@ -6,7 +6,7 @@ automated test to run in parallel across multiple browsers and versions.
 From any Pod/Container in the OpenShift cluster you are able to access
 Selenium Grid via the Service (selenium-hub.sdp.svc).
 
-=== Installing Libraries
+== Installing Libraries
 
 Before writing any test the correct libraries must be installed. For
 more information installing libraries access the official Selenium Grid
@@ -18,7 +18,7 @@ are two example stings for configuring the driver. When using the SDP
 Cluster the Openshift Service address for accessing Selenium Hub is:
 *selenium-hub.sdp.svc:4444*
 
-=== Remote WebDriver
+== Remote WebDriver
 
 In both examples replace <BROWSER> with the type of browser being used.
 
@@ -79,7 +79,7 @@ EOF
 $ python SGTest.py 
 ....
 
-=== Adding a new Node
+== Adding a new Node
 
 If needed adding a new node requires creating a new OpenShift
 Pod/Deployment. A good place to start is by using the Selenium Grid

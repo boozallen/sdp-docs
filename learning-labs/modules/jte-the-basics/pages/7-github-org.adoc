@@ -1,4 +1,4 @@
-== Apply to Multiple GitHub Repositories
+= Apply to Multiple GitHub Repositories
 
 Next up, we'll see how to apply the same template to two different
 applications that are using different tools.
@@ -7,7 +7,7 @@ Let's walk through how you would setup JTE to this situation where one
 application is using maven, the other application is using gradle, and
 both applications are using SonarQube.
 
-=== Create a New GitHub Repository
+== Create a New GitHub Repository
 
 We already have a pipeline configuration repository that has our
 pipeline template, pipeline configuration file, and pipeline libraries
@@ -17,13 +17,13 @@ Follow the same procedure as before when creating the gradle
 application's repository to create a maven application repository named
 `jte-the-basics-app-maven`.
 
-=== Modify the Pipeline Configurations
+== Modify the Pipeline Configurations
 
 Now that there are multiple applications with some configurations that
 are common and some configurations that are unique, we need to introduce
 the concept of pipeline configuration aggregation.
 
-==== Modify the Governance Tier Configuration File
+=== Modify the Governance Tier Configuration File
 
 We need to edit the pipeline configuration file
 (`pipeline_config.groovy`) we created earlier to represent the *common*
@@ -62,7 +62,8 @@ conditional inheritance,
 https://jenkinsci.github.io/templating-engine-plugin/pages/Governance/config_file_aggregation.html[read
 the docs].
 ====
-==== Create a Pipeline Configuration File for the Maven Application
+
+=== Create a Pipeline Configuration File for the Maven Application
 
 In the `jte-the-basics-app-maven` repository we just created, add a
 `pipeline_config.groovy` file at the root that specifies you want to
@@ -83,7 +84,8 @@ Since this application will inherit the global configurations defined in
 the Governance Tier, we don't have to duplicate the configuration of
 loading the sonarqube library in the repo level pipeline configuration.
 ====
-==== Create a Pipeline Configuration File for the Gradle Application
+
+=== Create a Pipeline Configuration File for the Gradle Application
 
 In the `jte-the-basics-app-gradle` repository we created earlier for the
 Multibranch Project, add a `pipeline_config.groovy` file at the root
@@ -98,7 +100,7 @@ libraries{
 }
 ----
 
-=== Create a GitHub Organization Project
+== Create a GitHub Organization Project
 
 We created a `Multibranch Project` that automatically created jobs for
 every branch and Pull Request in a repository.

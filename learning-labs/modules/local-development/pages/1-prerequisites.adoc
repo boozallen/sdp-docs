@@ -1,6 +1,6 @@
-== Prerequisites
+= Prerequisites
 
-=== Docker
+== Docker
 
 Ensure Docker is installed and running on your local machine.
 
@@ -11,7 +11,7 @@ You should see output similar to:
 
 image:../_images//empty_docker_ps.png[image]
 
-=== Internet Connectivity
+== Internet Connectivity
 
 The Jenkins LTS container image from Docker Hub will be used in this
 course. You can validate your ability to download this container image

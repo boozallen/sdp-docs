@@ -1,4 +1,4 @@
-== Multi-Method Steps
+= Multi-Method Steps
 
 While learning about Pipeline Lifecycle Hooks, we created a step that:
 
@@ -19,7 +19,7 @@ If we understand this concept, then it would make sense that we
 could define other methods within our steps and invoke them by their
 full name.
 
-=== When to use Multi-Method Steps
+== When to use Multi-Method Steps
 
 The most common use case for defining multiple methods inside one step
 file is when you're creating some utility functionality.
@@ -27,7 +27,7 @@ file is when you're creating some utility functionality.
 To demonstrate this, let's create a mock `git` utility that can `add`,
 `commit`, and `push`.
 
-=== Create the Git Library
+== Create the Git Library
 
 In the same Pipeline Configuration Repository we used for JTE: The
 Basics, create a `git` library.
@@ -92,7 +92,8 @@ should now be:
         └── splunk_step_watcher.groovy
 ----
 ====
-=== Update the Pipeline Configuration
+
+== Update the Pipeline Configuration
 
 Update the Pipeline Configuration to load the `git` library.
 
@@ -111,7 +112,7 @@ libraries{
 }
 ----
 
-=== Use the new Git Utility
+== Use the new Git Utility
 
 Prepend to the existing Pipeline Template:
 
@@ -129,7 +130,7 @@ When invoking a non-call method defined within a step, you do so by
 `<step_name>.<method_name>(<arguments>)`.
 ====
 
-=== Run the Pipeline
+== Run the Pipeline
 
 Run the pipeline again and you will see logs similar to:
 

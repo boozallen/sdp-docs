@@ -1,4 +1,4 @@
-== Swap Libraries
+= Swap Libraries
 
 [IMPORTANT]
 ====
@@ -37,7 +37,7 @@ happen if the development team switched to using Gradle?
 All we would have to do is create a `gradle` library that implements the
 `build()` step of the pipeline template.
 
-=== Create the Gradle Library
+== Create the Gradle Library
 
 Remember that a library is just a subdirectory within the
 `Base Directory` configured as part of the Library Source in Jenkins. So
@@ -79,7 +79,8 @@ If you added this library on your local computer instead of through the
 GitHub UI, then please make sure you've pushed this change to the master
 branch of the repository.
 ====
-=== Swap from Maven to Gradle
+
+== Swap from Maven to Gradle
 
 Now that we have a swappable implementation for the `build()` step of
 the pipeline template, switching from Maven to Gradle is as easy as
@@ -98,7 +99,7 @@ libraries{
 }
 ----
 
-=== Run the Pipeline
+== Run the Pipeline
 
 Follow the same steps as before to run the job again and checkout the
 build logs:

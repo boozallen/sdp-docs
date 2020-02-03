@@ -1,5 +1,4 @@
-
-== Helm Multitenancy
+= Helm Multitenancy
 
 The default Helm installation allows anyone with access to the tiller
 server to perform deployments interacting with any release. This model
@@ -13,7 +12,7 @@ enforce separation of tenants.
 The https://docs.helm.sh/using_helm/#role-based-access-control[Helm docson using RBAC] are a good resource for more information.
 
 
-=== Environment Provisioning script
+== Environment Provisioning script
 
 In order to simplify the process for deploying Helm securely, we have
 written a

@@ -1,4 +1,4 @@
-== Create a Pipeline Job
+= Create a Pipeline Job
 
 Before we get started, we'll need to create a Pipeline job in Jenkins
 that we can play around with.

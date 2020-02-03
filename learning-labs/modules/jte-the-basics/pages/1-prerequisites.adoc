@@ -1,13 +1,13 @@
-== Prerequisites
+= Prerequisites
 
-=== Jenkins Instance
+== Jenkins Instance
 
 A Jenkins instance will be required for this lab. If you don't have one
 available to you, we would recommend going through the
 link:../../../local-development/index.html[Local Development] learning lab to deploy a local
 Jenkins instance through Docker.
 
-=== Ability to Create GitHub Repositories
+== Ability to Create GitHub Repositories
 
 When creating your first set of pipeline libraries and externalizing the
 pipeline configuration from Jenkins you will need to be able to create
@@ -19,7 +19,8 @@ Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab,
 etc) should integrate and work as expected with JTE. For the purposes of
 simplifying this lab, we will be using GitHub.
 ====
-=== GitHub PAT in the Jenkins Credential Store
+
+== GitHub PAT in the Jenkins Credential Store
 
 Create a
 https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line[GitHub
