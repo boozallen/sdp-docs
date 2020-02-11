@@ -9,7 +9,7 @@ terminal.
 
 You should see output similar to:
 
-image:../_images//empty_docker_ps.png[image]
+image:../_images/empty_docker_ps.png[image]
 
 == Internet Connectivity
 

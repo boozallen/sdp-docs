@@ -1,14 +1,10 @@
-
 = Local Development
 
 == What You'll Learn
 
-* {blank}
-+
-How to deploy a Jenkins instance on your local machine using Docker that
-can:::
-  ** Run containers as part of the CI/CD pipeline
-  ** Leverage the Jenkins Templating Engine
+How to deploy a Jenkins instance on your local machine using Docker that can:
 
-Click `Next` to move on to this lab's prerequisites.
+* Run containers as part of the CI/CD pipeline
+* Leverage the Jenkins Templating Engine
+
 

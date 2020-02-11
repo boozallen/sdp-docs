@@ -1,7 +1,6 @@
-name: how-to
-title: How-To's
+name: overview
+title: Overview
 version: 1.0
 start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
-- modules/guides/nav.adoc

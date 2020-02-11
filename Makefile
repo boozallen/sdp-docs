@@ -1,5 +1,6 @@
 # Minimal makefile to build Antora documentation
 BUILDDIR = build
+PLAYBOOK = antora-playbook.yml 
 
 # Put it first so that "make" without argument is like "make help".
 help: ## Show target options
@@ -23,5 +24,5 @@ docs: clean image ## builds the antora documentation
 	antora generate --stacktrace \
 	--generator  ../generator \
 	--to-dir $(BUILDDIR) \
-	--fetch \
-	antora-playbook.yml
+	--cache-dir .antora/cache \
+	$(PLAYBOOK)

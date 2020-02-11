@@ -1,3 +1,5 @@
 .DS_STORE
 pages/labs
 build
+node_modules/
+.antora/
