@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure the Pipeline &mdash; Solutions Delivery Platform  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Swap Libraries" href="5-swap-to-gradle.html" />
+    <link rel="prev" title="Create the Libraries" href="3-first-libraries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Solutions Delivery Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Components</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://jenkinsci.github.io/templating-engine-plugin">Jenkins Templating Engine</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://boozallen.github.io/sdp-libraries">Pipeline Libraries</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Deployment Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../deployment-guides/openshift/index.html">OpenShift</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Learning Labs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../try-it-out/docs/index.html">Try It Out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-development/index.html">Local Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JTE: The Basics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-pipeline-job.html">Write the Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-first-libraries.html">Create the Libraries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configure the Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-swap-to-gradle.html">Swap Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-multibranch.html">Apply to a GitHub Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-github-org.html">Apply to Multiple GitHub Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-summary.html">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jte-primitives/index.html">JTE: Pipeline Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jte-advanced-features/index.html">JTE: Advanced Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/helm-multitenancy.html">Helm Multitenancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/add_jenkins_credentials.html">Add Credentials to Jenkins</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://help.github.com/articles/creating-a-new-organization-from-scratch/">Create a GitHub Organization</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.twistlock.com/2018/05/08/securing-containers-red-hat-openshift-twistlock-deployment-script/">Deploy Twistlock to OpenShift</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute-to-docs.html">Contribute to this Documentation!</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Solutions Delivery Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">JTE: The Basics</a> &raquo;</li>
+        
+      <li>Configure the Pipeline</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/pages/learning-labs/jte-the-basics/4-first-configuration-file.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-the-pipeline">
+<span id="jte-the-basics-first-configuration-file"></span><h1>Configure the Pipeline<a class="headerlink" href="#configure-the-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>With the libraries created now discoverable by JTE, we can configure the pipeline
+and run it!</p>
+<p>From the main Jenkins page, click the job created earlier in this lab.
+In the lefthand navigation menu, click <code class="docutils literal notranslate"><span class="pre">Configure</span></code>.</p>
+<p>Scrolling down to the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> portion of the job configuration, you should
+still see the pipeline template created earlier in the <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">Template</span></code>
+text box:</p>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="p">()</span>
+<span class="n">static_code_analysis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>It’s now time to configure and run the pipeline.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">Configuration</span></code> text box enter:</p>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libraries</span><span class="p">{</span>
+    <span class="n">maven</span>
+    <span class="n">sonarqube</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Save</span></code>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">libraries</span></code> portion of the pipeline configuration file will
+read much like an application’s technical stack.  In this case,
+we’re telling JTE that during intialization of the pipeline that
+it should load the <code class="docutils literal notranslate"><span class="pre">maven</span></code> and <code class="docutils literal notranslate"><span class="pre">sonarqube</span></code> libraries.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">maven</span></code> library will provide the <code class="docutils literal notranslate"><span class="pre">build()</span></code> step and the
+<code class="docutils literal notranslate"><span class="pre">sonarqube</span></code> library will provide the <code class="docutils literal notranslate"><span class="pre">static_code_analysis()</span></code> step.</p>
+<p class="last">With these steps now implemented, we can run the pipeline.</p>
+</div>
+<div class="section" id="run-the-pipeline">
+<h2>Run the Pipeline<a class="headerlink" href="#run-the-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>After clicking <code class="docutils literal notranslate"><span class="pre">Save</span></code> you’ll be directed back to the main page for the job.</p>
+<p>To run the pipeline, click <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Now</span></code> in the lefthand navigation menu.</p>
+<p>Refresh the page and you should see build number 1 in the <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">History</span></code>
+on the bottom lefthand side of the screen.  Click the link to go to the Build’s
+page.</p>
+<p>In the lefthand navigation menu, click <code class="docutils literal notranslate"><span class="pre">Console</span> <span class="pre">Output</span></code> to view the build logs
+for this run of the pipeline.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Started by user admin
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[JTE] Pipeline Configuration Modifications (show)
+[JTE] Loading Library maven (show)
+[JTE] Library maven does not have a configuration file.
+[JTE] Loading Library sonarqube (show)
+[JTE] Library sonarqube does not have a configuration file.
+[JTE] Obtained Pipeline Template from job configuration
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/single-job
+[Pipeline] {
+[Pipeline] writeFile
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // node
+[JTE] [Step - maven/build.call()]
+[Pipeline] stage
+[Pipeline] { (Maven: Build)
+[Pipeline] echo
+build from the maven library
+[Pipeline] }
+[Pipeline] // stage
+[JTE] [Step - sonarqube/static_code_analysis.call()]
+[Pipeline] stage
+[Pipeline] { (SonarQube: Static Code Analysis)
+[Pipeline] echo
+static code analysis from the sonarqube library
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+</pre></div>
+</div>
+<p>As expected, JTE loaded the <code class="docutils literal notranslate"><span class="pre">maven</span></code> and <code class="docutils literal notranslate"><span class="pre">sonarqube</span></code> libraries and then
+executed the template.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>A couple points to note about the build log:</p>
+<ol class="last arabic">
+<li><p class="first">Any line that starts with <code class="docutils literal notranslate"><span class="pre">[JTE]</span></code> is a log coming from the Jenkins Templating Engine</p>
+</li>
+<li><p class="first">Pieces of JTE log output are hidden by default.  Clicking <code class="docutils literal notranslate"><span class="pre">show</span></code> will expand these sections.</p>
+</li>
+<li><p class="first">The first part of the pipeline output shows the initialization process</p>
+<blockquote>
+<div><ul class="simple">
+<li>pipeline configuration files being aggregated</li>
+<li>libraries being loaded</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Before steps are executed, JTE will tell you which step is being run and what library contributed the step</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5-swap-to-gradle.html" class="btn btn-neutral float-right" title="Swap Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="3-first-libraries.html" class="btn btn-neutral float-left" title="Create the Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Booz Allen Hamilton
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-144247959-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

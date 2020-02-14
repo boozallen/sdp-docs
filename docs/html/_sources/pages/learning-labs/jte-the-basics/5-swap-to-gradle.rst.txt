@@ -1,0 +1,145 @@
+.. _JTE The Basics Swap Libraries: 
+
+--------------
+Swap Libraries
+--------------
+
+.. important:: 
+
+    The purpose of the Jenkins Templating Engine is three fold: 
+
+    1. **Optimizing pipeline code reuse**
+
+    Now organizations can coalesce around a portfolio of centralized,
+    reusable pipeline libraries representing different tool integrations
+    for their CI/CD pipelines. 
+
+    2. **Simplify pipeline maintainability**
+
+    Separating a pipeline into a templates, configuration file, and 
+    pipeline libraries can also be thought of as separating the 
+    **business logic** of your pipeline from the **technical implementation**. 
+    In our experience, it is significantly easier to manage a template backed 
+    by modularized pipeline libraries than it is to manage application-specific 
+    Jenkinsfiles.
+
+    3. **Organizational Governance** 
+
+    With the traditional Jenkinsfile defined within, and duplicated across, source
+    code repositories it can be very challenging to ensure the same process is 
+    being followed by disparate application development teams and confirm that 
+    organizational policies around code quality and security are being met.  JTE 
+    brings a level of governance to your pipelines by centralizing the definition 
+    of the pipeline workflow to a common place. 
+
+
+To demonstrate the reusability of pipeline templates, what would happen if 
+the development team switched to using Gradle? 
+
+All we would have to do is create a ``gradle`` library that implements the
+``build()`` step of the pipeline template.  
+
+=========================
+Create the Gradle Library
+========================= 
+
+Remember that a library is just a subdirectory within the ``Base Directory`` configured 
+as part of the Library Source in Jenkins.  So to create the ``gradle`` library we should 
+create a ``gradle`` directory under the ``libraries`` directory. 
+
+Then, to implement the ``build()`` step for the pipeline, create a ``build.groovy`` file 
+within the newly created ``gradle`` subdirectory. 
+
+When you have created the new ``gradle`` directory and ``build.groovy`` file, your repository
+file structure will now be: 
+
+.. code:: 
+
+    .
+    └── libraries
+        ├── gradle
+        │   └── build.groovy
+        ├── maven
+        │   └── build.groovy
+        └── sonarqube
+            └── static_code_analysis.groovy
+
+
+The contents of the ``build.groovy`` should be: 
+
+.. code:: groovy 
+
+    void call(){
+        stage("Gradle: Build"){
+            println "build from the gradle library"
+        }
+    }
+
+.. note:: 
+
+    If you added this library on your local computer instead of through
+    the GitHub UI, then please make sure you've pushed this change to the 
+    master branch of the repository. 
+
+=========================
+Swap from Maven to Gradle
+=========================
+
+Now that we have a swappable implementation for the ``build()`` step 
+of the pipeline template, switching from Maven to Gradle is as easy as 
+changing the pipeline configuration. 
+
+Going back to the job configuration, in the ``Pipeline Configuration`` 
+text box, swap the ``maven`` line to ``gradle`` and click ``Save``. 
+
+The pipeline configuration should now be: 
+
+.. code:: groovy
+
+    libraries{
+        gradle
+        sonarqube
+    }
+
+================
+Run the Pipeline
+================
+
+Follow the same steps as before to run the job again and 
+checkout the build logs: 
+
+.. code-block:: text
+
+    Started by user admin
+    Running in Durability level: MAX_SURVIVABILITY
+    [Pipeline] Start of Pipeline
+    [JTE] Pipeline Configuration Modifications (show)
+    [JTE] Loading Library gradle (show)
+    [JTE] Library gradle does not have a configuration file.
+    [JTE] Loading Library sonarqube (show)
+    [JTE] Library sonarqube does not have a configuration file.
+    [JTE] Obtained Pipeline Template from job configuration
+    [Pipeline] node
+    Running on Jenkins in /var/jenkins_home/workspace/single-job
+    [Pipeline] {
+    [Pipeline] writeFile
+    [Pipeline] archiveArtifacts
+    Archiving artifacts
+    [Pipeline] }
+    [Pipeline] // node
+    [JTE] [Step - gradle/build.call()]
+    [Pipeline] stage
+    [Pipeline] { (Gradle: Build)
+    [Pipeline] echo
+    build from the gradle library
+    [Pipeline] }
+    [Pipeline] // stage
+    [JTE] [Step - sonarqube/static_code_analysis.call()]
+    [Pipeline] stage
+    [Pipeline] { (SonarQube: Static Code Analysis)
+    [Pipeline] echo
+    static code analysis from the sonarqube library
+    [Pipeline] }
+    [Pipeline] // stage
+    [Pipeline] End of Pipeline
+    Finished: SUCCESS
