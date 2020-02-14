@@ -12,9 +12,7 @@ content:
     tags: .*
     start_path: docs
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: 
-    - antora
-    - antora-2.1
+    branches: [ antora, antora-2.1 ]
     start_path: docs 
   - url: https://github.com/boozallen/sdp-docs.git
     branches: antora-1
