@@ -1,8 +1,0 @@
-= Deployment Guides
-
-== Overview
-
-This section contains guides implementing a stable SDP deployment on
-different platforms.
-
-

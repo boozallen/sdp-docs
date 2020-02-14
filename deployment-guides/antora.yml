@@ -1,7 +1,0 @@
-name: deployment-guides
-title: Deployment Guides
-version: 1.0
-start_page: ROOT:index.adoc
-nav:
-- modules/ROOT/nav.adoc
-- modules/openshift/nav.adoc
