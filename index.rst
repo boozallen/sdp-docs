@@ -5,8 +5,7 @@ Solutions Delivery Platform
 ===========================
 
 The Solutions Delivery Platform (SDP) is an accumulation of Booz Allen's lessons learned 
-implementing DevSecOps practices across multiple client projects and RFP Tech Challenges 
-such as NSF, GSA IAE, CMS PECOS, and Grants.Gov. 
+implementing DevSecOps practices across multiple client projects and RFP Tech Challenges. 
 
 At Booz Allen, DevSecOps is a foundational element of our Modern Software development
 Approach
