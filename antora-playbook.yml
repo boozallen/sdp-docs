@@ -1,6 +1,6 @@
 site:
   title: Solutions Delivery Platform
-  url: http://boozallen.github.io/sdp-docs-skin
+  url: https://boozallen.github.io/sdp-docs-skin/
   start_page: overview::index.adoc
 content:
   sources:
@@ -12,7 +12,9 @@ content:
     tags: .*
     start_path: docs
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: antora 
+    branches: 
+    - antora
+    - antora-2.1
     start_path: docs 
   - url: https://github.com/boozallen/sdp-docs.git
     branches: antora-1
