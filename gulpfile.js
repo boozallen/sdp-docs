@@ -14,7 +14,7 @@ function build(cb){
 function serve() {
     browserSync.init({
         server: {
-            baseDir: 'build',
+            baseDir: 'docs',
         },
     })
     watch([

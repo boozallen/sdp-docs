@@ -9,20 +9,10 @@ help: ## Show target options
 clean: ## removes remote documentation and compiled documentation
 	rm -rf $(BUILDDIR)/**
 
-image: ## builds the Booz Allen antora image
-	docker build resources -t antora/antora:boozallen
+.ONESHELL:
+docs: clean ## builds the antora documentation 
+	[ ! -d node_modules ] && npm i || true
+	$(shell npm bin)/antora generate --fetch --generator ./site-generator --to-dir docs $(PLAYBOOK)
 
-docs: clean image ## builds the antora documentation 
-	docker run \
-	-v ~/.git-credentials:/root/.git-credentials \
-	-v $(shell pwd):/app \
-	-v $(shell pwd)/resources/generator:/generator \
-	-w /app \
-	-e "DOCSEARCH_ENABLED=true" \
-	-e "DOCSEARCH_ENGINE=lunr" \
-	antora/antora:boozallen \
-	antora generate --stacktrace \
-	--generator  ../generator \
-	--to-dir $(BUILDDIR) \
-	--cache-dir .antora/cache \
-	$(PLAYBOOK)
+preview:
+	$(shell npm bin)/gulp preview 

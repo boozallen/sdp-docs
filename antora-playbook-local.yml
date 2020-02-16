@@ -8,9 +8,6 @@ content:
     branches: HEAD
     start_path: overview
   - url: .
-    start_path: deployment-guides
-    branches: HEAD
-  - url: .
     branches: HEAD
     start_path: learning-labs
 ui: 

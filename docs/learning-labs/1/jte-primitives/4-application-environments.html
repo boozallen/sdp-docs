@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Application Environments :: Solutions Delivery Platform</title>
+    <link rel="canonical" href="http://localhost/learning-labs/1/jte-primitives/4-application-environments.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Fira+Code">
+
+    <link rel="stylesheet"href="https:////cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/monokai-sublime.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/asciidoc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/groovy.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>  </head>
+  <body class="article">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/jte.svg" viewBox="20 0 80 100" alt="Jenkins Templating Engine Logo">
+      <span class="mdc-top-app-bar__title">Solutions Delivery Platform</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <i class="material-icons mdc-icon-button search" tabindex="0" role="button">search</i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">arrow_back</i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search">
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">close</i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../overview/1/index.html" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Learning Labs</a></li>
+    <li><a href="index.html">JTE: Pipeline Primitives</a></li>
+    <li><a href="4-application-environments.html">Application Environments</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="learning-labs" data-version="1">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="learning-labs" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="learning-labs" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../index.html">
+              Learning Labs
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../local-development/index.html">Local Development</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/2-run-jenkins.html">Run the Jenkins Containers</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/3-configure-jenkins.html">Configuring Jenkins</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/4-validate-jenkins.html">Validate Jenkins</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../jte-the-basics/index.html">JTE: The Basics</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/2-pipeline-job.html">Write the Template</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/3-first-libraries.html">Create the Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/4-first-configuration-file.html">Configure the Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/5-swap-to-gradle.html">Swap Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/6-multibranch.html">Apply to a GitHub Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/7-github-org.html">Apply to Multiple Github Repositories</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-the-basics/8-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="index.html">JTE: Pipeline Primitives</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="2-pipeline-job.html">Create a Pipeline Job</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="3-stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="4-application-environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="5-keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="6-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../jte-advanced-features/index.html">JTE: Advanced Features</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/2-default-step-implementation.html">Default Step Implementation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/3-pipeline-lifecycle-hooks.html">Pipeline Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/4-multimethod-steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/5-summary.html">Summary</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../overview/1/index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="file:///Users/steventerrana/Code/sdp/repos/sdp-docs/learning-labs/modules/jte-primitives/pages/4-application-environments.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">Application Environments</h1>
+            <div class="sect1">
+<h2 id="_what_is_an_application_environment"><a class="anchor" href="#_what_is_an_application_environment"></a>What is an Application Environment?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Performing an automated deployment is a ubiquitious step in continuous
+delivery pipelines.</p>
+</div>
+<div class="paragraph">
+<p>Libraries can implement steps to perform deployments and, when doing so,
+need a mechanism to tell the deployment step which application
+environment is being deployed to.</p>
+</div>
+<div class="paragraph">
+<p>The Application Environment acts to encapsulate the contextual
+information that identifies and differentiates an applications different
+application environments.</p>
+</div>
+<div class="paragraph">
+<p>In general, library steps should not accept input parameters. Deployment
+steps are one of the few exceptions to this rule.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="https://jenkinsci.github.io/templating-engine-plugin/pages/Primitives/application_environments.html">View
+the Application Environment documentation</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a_word_on_input_parameters_to_library_steps"><a class="anchor" href="#_a_word_on_input_parameters_to_library_steps"></a>A Word on Input Parameters to Library Steps</h3>
+<div class="paragraph">
+<p>Understanding <em>why</em>, in general, library steps should not accept input
+parameters is fundamental to understanding the goals of the Jenkins
+Templating Engine.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say we had some teams in an organization leveraging SonarQube for
+static code analysis and others using Fortify. If the
+<code>static_code_analysis</code> step implemented by the <code>sonarqube</code> library took
+input parameters - it would then require that <strong>every</strong> library that
+implements <code>static_code_analysis</code> take input parameters lest you break
+the interchangeability of libraries to use the same template.</p>
+</div>
+<div class="paragraph">
+<p>This would mean that the `fortify&#8217;s implementation would have to take
+the <strong>same</strong> input parameters as the `sonarqube&#8217;s implementation -
+otherwise switching between the two would break.</p>
+</div>
+<div class="paragraph">
+<p>Being able to swap implementations of steps in an out through different
+libraries is the primary mechanism through which JTE supports creating
+reusable, tool-agnostic pipeline templates.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s understandable that library steps require some externalized
+configuration as to not hard-code dependencies like server locations,
+thresholds for failure, etc. This is why library configuration is done
+through the pipeline configuration file and passed directly to the steps
+through an autowired variable as opposed to directly via input
+parameters.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can read more about how to externalize library configuration
+<a href="https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/externalizing_config.html">here</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Deployment steps are different. It is safe to assume that every step
+that performs a deployment needs to know some environment context.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_define_and_use_an_application_environment"><a class="anchor" href="#_define_and_use_an_application_environment"></a>Define and Use an Application Environment</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_a_deployment_library"><a class="anchor" href="#_create_a_deployment_library"></a>Create a Deployment Library</h3>
+<div class="paragraph">
+<p>Let&#8217;s actually create a mock deployment library to demonstrate the
+utility of Application Environments.</p>
+</div>
+<div class="paragraph">
+<p>In the same repository used during JTE: The Basics, add a new library
+called <code>ansible</code> with a step called <code>deploy_to</code> that takes an
+Application Environment parameter</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Remember that libraries are just subdirectories within a source code
+repository and that steps are just groovy files in those subdirectories
+that typically implement a <code>call</code> method.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the sake of our pretend <code>ansible</code> library, let&#8217;s assume that it
+needs to know a list of IP addresses relevant to the environment it&#8217;s
+deploying too.</p>
+</div>
+<div class="paragraph">
+<p><strong>libraries/ansible/deploy_to.groovy</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">void call(app_env){
+    stage("Deploy To: ${app_env.long_name}"){
+        println "performing a deployment through ansible.."
+        app_env.ip_addresses.each{ ip -&gt;
+            println "deploying to ${ip}"
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This step will announce it&#8217;s performing an ansible deployment and then
+iterate over the IP addresses provided on the application environment
+and print out the target server.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The file structure within your <code>libraries</code> directory should now be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>.
+├── libraries
+    ├── ansible
+    │   └── deploy_to.groovy
+    ├── gradle
+    │   └── build.groovy
+    ├── maven
+    │   └── build.groovy
+    └── sonarqube
+        └── static_code_analysis.groovy</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_define_the_application_environments_in_the_pipeline_configuration"><a class="anchor" href="#_define_the_application_environments_in_the_pipeline_configuration"></a>Define the Application Environments in the Pipeline Configuration</h3>
+<div class="paragraph">
+<p>We now need to load the <code>ansible</code> library and define the Application
+Environments.</p>
+</div>
+<div class="paragraph">
+<p>Update the <strong>Pipeline Configuration</strong> to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+    maven
+    sonarqube
+    ansible
+}
+
+stages{
+    continuous_integration{
+        build
+        static_code_analysis
+    }
+}
+
+application_environments{
+    dev{
+        ip_addresses = [ "0.0.0.1", "0.0.0.2" ]
+    }
+    prod{
+        long_name = "Production"
+        ip_addresses = [ "0.0.1.1", "0.0.1.2", "0.0.1.3", "0.0.1.4" ]
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Application Environments are defined in the <code>application_environments</code>
+block within the pipeline pipeline configuration.</p>
+</div>
+<div class="paragraph">
+<p>Each key defined in this block will represent an Application Environment
+and a variable will be made available in the pipeline template based
+upon this name.</p>
+</div>
+<div class="paragraph">
+<p>The only two keys that Application Environments explicitly define are
+<code>short_name</code> and <code>long_name</code>. These values default to the key defining
+the Application Environment in the Pipeline Configuration, but can be
+overridden.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_the_pipeline_template"><a class="anchor" href="#_update_the_pipeline_template"></a>Update the Pipeline Template</h3>
+<div class="paragraph">
+<p>Now that we have a library that performs a deployment step and
+Application Environments defined in the Pipeline Configuration, let&#8217;s
+update the Pipeline Template to pull it all together.</p>
+</div>
+<div class="paragraph">
+<p>Update the <strong>Pipeline Template</strong> to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">continuous_integration()
+deploy_to dev
+deploy_to prod</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These variables <code>dev</code> and <code>prod</code> come directly from the Applications
+Environments we just defined in the Pipeline Configuration.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_the_pipeline"><a class="anchor" href="#_run_the_pipeline"></a>Run the Pipeline</h3>
+<div class="paragraph">
+<p>From the Pipeline job&#8217;s main page, click <code>Build Now</code> in the lefthand
+navigation menu.</p>
+</div>
+<div class="paragraph">
+<p>When viewing the build logs, you should see output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/single-job
+[Pipeline] {
+[Pipeline] writeFile
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // node
+[JTE] [Stage - continuous_integration]
+[JTE] [Step - maven/build.call()]
+[Pipeline] stage
+[Pipeline] { (Maven: Build)
+[Pipeline] echo
+build from the maven library
+[Pipeline] }
+[Pipeline] // stage
+[JTE] [Step - sonarqube/static_code_analysis.call()]
+[Pipeline] stage
+[Pipeline] { (SonarQube: Static Code Analysis)
+[Pipeline] echo
+static code analysis from the sonarqube library
+[Pipeline] }
+[Pipeline] // stage
+[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
+[Pipeline] stage
+[Pipeline] { (Deploy To: dev)
+[Pipeline] echo
+performing a deployment through ansible..
+[Pipeline] echo
+deploying to 0.0.0.1
+[Pipeline] echo
+deploying to 0.0.0.2
+[Pipeline] }
+[Pipeline] // stage
+[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
+[Pipeline] stage
+[Pipeline] { (Deploy To: Production)
+[Pipeline] echo
+performing a deployment through ansible..
+[Pipeline] echo
+deploying to 0.0.1.1
+[Pipeline] echo
+deploying to 0.0.1.2
+[Pipeline] echo
+deploying to 0.0.1.3
+[Pipeline] echo
+deploying to 0.0.1.4
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] End of Pipeline
+Finished: SUCCESS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice the output was different for the deployment to the <code>dev</code>
+environment vs the deployment to <code>prod</code>. This is because different
+values were stored in each Application Environment and the library was
+able to use this contextual information and respond accordingly.</p>
+</div>
+</div>
+</div>
+</div>
+        </div>
+</article>
+<div class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>  </body>
+</html>

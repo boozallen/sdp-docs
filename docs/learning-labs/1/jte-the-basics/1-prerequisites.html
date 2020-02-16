@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prerequisites :: Solutions Delivery Platform</title>
+    <link rel="canonical" href="http://localhost/learning-labs/1/jte-the-basics/1-prerequisites.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Fira+Code">
+
+    <link rel="stylesheet"href="https:////cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/monokai-sublime.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/asciidoc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/groovy.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>  </head>
+  <body class="article">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/jte.svg" viewBox="20 0 80 100" alt="Jenkins Templating Engine Logo">
+      <span class="mdc-top-app-bar__title">Solutions Delivery Platform</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <i class="material-icons mdc-icon-button search" tabindex="0" role="button">search</i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">arrow_back</i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search">
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">close</i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../overview/1/index.html" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Learning Labs</a></li>
+    <li><a href="index.html">JTE: The Basics</a></li>
+    <li><a href="1-prerequisites.html">Prerequisites</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="learning-labs" data-version="1">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="learning-labs" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="learning-labs" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../index.html">
+              Learning Labs
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../local-development/index.html">Local Development</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/2-run-jenkins.html">Run the Jenkins Containers</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/3-configure-jenkins.html">Configuring Jenkins</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../local-development/4-validate-jenkins.html">Validate Jenkins</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="index.html">JTE: The Basics</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="2-pipeline-job.html">Write the Template</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="3-first-libraries.html">Create the Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="4-first-configuration-file.html">Configure the Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="5-swap-to-gradle.html">Swap Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="6-multibranch.html">Apply to a GitHub Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="7-github-org.html">Apply to Multiple Github Repositories</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="8-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../jte-primitives/index.html">JTE: Pipeline Primitives</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/2-pipeline-job.html">Create a Pipeline Job</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/3-stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/4-application-environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/5-keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-primitives/6-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../jte-advanced-features/index.html">JTE: Advanced Features</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/2-default-step-implementation.html">Default Step Implementation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/3-pipeline-lifecycle-hooks.html">Pipeline Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/4-multimethod-steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../jte-advanced-features/5-summary.html">Summary</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../overview/1/index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="file:///Users/steventerrana/Code/sdp/repos/sdp-docs/learning-labs/modules/jte-the-basics/pages/1-prerequisites.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">Prerequisites</h1>
+            <div class="sect1">
+<h2 id="_jenkins_instance"><a class="anchor" href="#_jenkins_instance"></a>Jenkins Instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Jenkins instance will be required for this lab. If you don&#8217;t have one
+available to you, we would recommend going through the
+<a href="../../../local-development/index.html">Local Development</a> learning lab to deploy a local
+Jenkins instance through Docker.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ability_to_create_github_repositories"><a class="anchor" href="#_ability_to_create_github_repositories"></a>Ability to Create GitHub Repositories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When creating your first set of pipeline libraries and externalizing the
+pipeline configuration from Jenkins you will need to be able to create
+GitHub repositories on <a href="https://github.com">github.com</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab,
+etc) should integrate and work as expected with JTE. For the purposes of
+simplifying this lab, we will be using GitHub.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_github_pat_in_the_jenkins_credential_store"><a class="anchor" href="#_github_pat_in_the_jenkins_credential_store"></a>GitHub PAT in the Jenkins Credential Store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a
+<a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">GitHub
+Personal Access Token</a>.</p>
+</div>
+<div class="paragraph">
+<p>Copy this token and store it in the Jenkins credential store.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the Jenkins home page, click <code>Credentials</code> in the lefthand
+navigation menu</p>
+</li>
+<li>
+<p>Select the <code>global</code> credential scope</p>
+</li>
+<li>
+<p>Select <code>Add Credential</code> in the lefthand navigation menu</p>
+</li>
+<li>
+<p>Enter your github username in the <code>Username</code> field</p>
+</li>
+<li>
+<p>Paste the Personal Access Token into the <code>Password</code> field</p>
+</li>
+<li>
+<p>Enter <code>github</code> into the <code>ID</code> field</p>
+</li>
+<li>
+<p>Enter <code>github</code> into the <code>Description</code> field</p>
+</li>
+<li>
+<p>Click <code>OK</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/pat.gif" alt="image"></span></p>
+</div>
+</div>
+</div>
+        </div>
+</article>
+<div class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>  </body>
+</html>

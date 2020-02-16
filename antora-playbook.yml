@@ -7,16 +7,20 @@ content:
   - url: https://github.com/boozallen/sdp-docs.git
     branches: antora-1
     start_path: overview
+
   - url: https://github.com/jenkinsci/templating-engine-plugin.git
     branches: master
     tags: .*
     start_path: docs
+
   - url: https://github.com/boozallen/sdp-libraries.git
     branches: [ antora, antora-2.1 ]
     start_path: docs 
+
   - url: https://github.com/boozallen/sdp-docs.git
     branches: antora-1
     start_path: learning-labs
+    
   - url: https://github.com/boozallen/sdp-iac.git
     branches: master
     start_path: deployment-guides
