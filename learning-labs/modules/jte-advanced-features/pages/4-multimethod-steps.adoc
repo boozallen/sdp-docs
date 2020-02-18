@@ -5,35 +5,26 @@ While learning about Pipeline Lifecycle Hooks, we created a step that:
 * implemented multiple methods
 * did not implement a `call` method
 
-In this section, we're going to dive into multi-method steps in a little
-more detail.
+In this section, we're going to dive into multi-method steps in a little more detail.
 
 [IMPORTANT]
 ====
-Have you ever wondered why library steps create a method named `call`?
-This is because, in groovy, `something()` gets translated to
-`something.call()`.
+Have you ever wondered why library steps create a method named `call`? This is because, in groovy, `something()` gets translated to `something.call()`.
 ====
 
-If we understand this concept, then it would make sense that we
-could define other methods within our steps and invoke them by their
-full name.
+If we understand this concept, then it would make sense that we could define other methods within our steps and invoke them by their full name.
 
 == When to use Multi-Method Steps
 
-The most common use case for defining multiple methods inside one step
-file is when you're creating some utility functionality.
+The most common use case for defining multiple methods inside one step file is when you're creating some utility functionality.
 
-To demonstrate this, let's create a mock `git` utility that can `add`,
-`commit`, and `push`.
+To demonstrate this, let's create a mock `git` utility that can `add`, `commit`, and `push`.
 
 == Create the Git Library
 
-In the same Pipeline Configuration Repository we used for JTE: The
-Basics, create a `git` library.
+In the same Pipeline Configuration Repository we used for JTE: The Basics, create a `git` library.
 
-Because we're creating a git utility, add a file called `git.groovy`
-with the contents:
+Because we're creating a git utility, add a file called `git.groovy` with the contents:
 
 [source,groovy]
 ----
@@ -59,18 +50,13 @@ void push(){
 }
 ----
 
-In this example, we're creating a step that serves as a utility wrapper.
-These are typically *not* invoked directly by Pipeline Templates but
-rather consumed by other steps. That is why it is okay, in this case, to
-accept input parameters for these methods.
+In this example, we're creating a step that serves as a utility wrapper. These are typically *not* invoked directly by Pipeline Templates but rather consumed by other steps. That is why it is okay, in this case, to accept input parameters for these methods.
 
-We will be invoking this functionality directly from the Pipeline
-Template to demonstrate its functionality.
+We will be invoking this functionality directly from the Pipeline Template to demonstrate its functionality.
 
 [IMPORTANT]
 ====
-The filestructure for your Pipeline Configuration libraries directory
-should now be:
+The filestructure for your Pipeline Configuration libraries directory should now be:
 
 [source,]
 ----
@@ -126,8 +112,7 @@ git.push()
 [IMPORTANT]
 .Important
 ====
-When invoking a non-call method defined within a step, you do so by
-`<step_name>.<method_name>(<arguments>)`.
+When invoking a non-call method defined within a step, you do so by `<step_name>.<method_name>(<arguments>)`.
 ====
 
 == Run the Pipeline

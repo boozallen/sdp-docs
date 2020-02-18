@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Section 1.1 - Preparing to Run the Installer :: Solutions Delivery Platform</title>
+    <link rel="canonical" href="http://localhost:3000/deployment-guides/1/openshift/1_1_Prepare_To_Install.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Fira+Code">
+
+    <link rel="stylesheet"href="https:////cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/monokai-sublime.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/asciidoc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/groovy.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>  </head>
+  <body class="article">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/jte.svg" viewBox="20 0 80 100" alt="Jenkins Templating Engine Logo">
+      <span class="mdc-top-app-bar__title">Solutions Delivery Platform</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <i class="material-icons mdc-icon-button search" tabindex="0" role="button">search</i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">arrow_back</i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search">
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">close</i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../overview/1/index.html" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Reference Architectures</a></li>
+    <li><a href="index.html">OpenShift</a></li>
+    <li><a href="1_1_Prepare_To_Install.html">Section 1.1 - Preparing to Run the Installer</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="deployment-guides" data-version="1">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../overview/1/index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="jte" class="select-version">
+            <option value="1.5.2">
+              1.5.2
+            </option>
+        </select>
+      </div>
+        <div data-component="jte" data-version="1.5.2" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../jte/1.5.2/index.html">
+              Jenkins Templating Engine
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/ADOPTERS.html">Adopters</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Pipeline Templating</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/pipeline-templating/what_is_a_pipeline_template.html">What is a pipeline template?</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/pipeline-templating/configuration_files.html">Pipeline Configuration Files</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/pipeline-templating/configuration_file_sandboxing.html">Pipeline Configuration File Sandboxing</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Job Types</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/job-types/template_step.html">The Template Step</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/job-types/pipeline.html">Individual Pipeline Jobs</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/job-types/repository.html">MultiBranch Projects</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/job-types/github_org.html">GitHub Organization Job</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Primitives</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/primitives/what_is_a_primitive_in_jte.html">What is a primitive in JTE?</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/primitives/application_environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/primitives/stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/primitives/keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/primitives/default_step_implementation.html">Default Step Implementation</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Library Development</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/externalizing_config.html">Exernalizing Library Configuration</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/validate_library_parameters.html">Validate Library Parameters</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/lifecycle_hooks.html">Leverage Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/multimethod_steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../jte/1.5.2/library-development/library_sources/library_sources.html">Library Sources</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/library_sources/scm_library_provider.html">SCM Library Provider</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/library_sources/plugin_library_provider.html">Plugin Library Provider</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/library_sources/example_library_walkthrough.html">Example Library Walkthrough</a>              </div>
+                  </div>
+            </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Governance</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/governance_model.html">Governance Model</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/governance_tier.html">Governance Tier</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/hierarchical_governance.html">Hierarchical Governance</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/config_file_aggregation.html">Configuration File Aggregation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/conditional_inheritance.html">Conditional Inheritance Examples</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/pipeline_template_selection.html">Pipeline Template Selection</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../jte/1.5.2/governance/library_selection.html">Library Selection</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="sdp-libraries" class="select-version">
+            <option value="2.1">
+              2.1
+            </option>
+            <option value="2">
+              2
+            </option>
+        </select>
+      </div>
+        <div data-component="sdp-libraries" data-version="2.1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../sdp-libraries/2.1/index.html">
+              SDP Pipeline Libraries
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Unit Testing</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/index.html">Purpose of Unit Testing</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/jenkins-spock.html">Jenkins Spock</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/writing-tests.html">Writing Unit Tests</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/executing-tests.html">Test Execution</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/faq.html">Frequently Asked Questions</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/docker/index.html">docker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/gitlab/index.html">gitlab</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/owasp_dep_check/index.html">OWASP Dependency Checker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/github_enterprise/index.html">GitHub Enterprise</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/github/index.html">github</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/openshift/index.html">openshift</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/owasp_zap/index.html">OWASP ZAP</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/sdp/index.html">sdp</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/a11y/index.html">a11y</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/slack/index.html">slack</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/kubernetes/index.html">kubernetes</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/sonarqube/index.html">sonarqube</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/protractor/index.html">protractor</a>              </div>
+                    </div>
+        </div>
+        <div data-component="sdp-libraries" data-version="2" class="hide">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../sdp-libraries/2/index.html">
+              SDP Pipeline Libraries
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Unit Testing</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/index.html">Purpose of Unit Testing</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/jenkins-spock.html">Jenkins Spock</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/writing-tests.html">Writing Unit Tests</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/executing-tests.html">Test Execution</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/faq.html">Frequently Asked Questions</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/docker/index.html">docker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/gitlab/index.html">gitlab</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/owasp_dep_check/index.html">OWASP Dependency Checker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/github_enterprise/index.html">GitHub Enterprise</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/github/index.html">github</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/openshift/index.html">openshift</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/owasp_zap/index.html">OWASP ZAP</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/sdp/index.html">sdp</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/a11y/index.html">a11y</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/slack/index.html">slack</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/kubernetes/index.html">kubernetes</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/sonarqube/index.html">sonarqube</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/protractor/index.html">protractor</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="learning-labs" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="learning-labs" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../learning-labs/1/index.html">
+              Learning Labs
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/local-development/index.html">Local Development</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/2-run-jenkins.html">Run the Jenkins Containers</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/3-configure-jenkins.html">Configuring Jenkins</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/4-validate-jenkins.html">Validate Jenkins</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-the-basics/index.html">JTE: The Basics</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/2-pipeline-job.html">Write the Template</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/3-first-libraries.html">Create the Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/4-first-configuration-file.html">Configure the Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/5-swap-to-gradle.html">Swap Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/6-multibranch.html">Apply to a GitHub Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/7-github-org.html">Apply to Multiple Github Repositories</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/8-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-primitives/index.html">JTE: Pipeline Primitives</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/2-pipeline-job.html">Create a Pipeline Job</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/3-stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/4-application-environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/5-keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/6-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-advanced-features/index.html">JTE: Advanced Features</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/2-default-step-implementation.html">Default Step Implementation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/3-pipeline-lifecycle-hooks.html">Pipeline Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/4-multimethod-steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/5-summary.html">Summary</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="deployment-guides" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="deployment-guides" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../index.html">
+              Reference Architectures
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="index.html">OpenShift</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="1_0_Deploy_Tools_Overview.html">Section 1 - Deploying the DevOps Tools</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="1_1_Prepare_To_Install.html">Section 1.1 - Preparing to Run the Installer</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="1_2_Run_Installer.html">Section 1.2 - Running the Installer Script</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="2_0_Pipeline_Config_Overview.html">Section 2 - Setting up a Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="2_1_Pipeline_Planning.html">Section 2.1 - Pipeline Planning</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="2_2_Pipeline_Config.html">Section 2.2 - Creating the Pipeline Configuration Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="3_0_Application_Environment_Overview.html">Section 3 - Setting up the Application Environment</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="3_1_Application_Environments.html">Section 3.1 - Creating the Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="3_2_Helm_Chart_Repo.html">Section 3.2 - Setting up the Helm Chart Repository</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="https://github.com/boozallen/sdp-iac/edit/master/deployment-guides/modules/openshift/pages/1_1_Prepare_To_Install.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">Section 1.1 - Preparing to Run the Installer</h1>
+            <div class="sect1">
+<h2 id="_log_into_openshift"><a class="anchor" href="#_log_into_openshift"></a>Log into OpenShift</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Run the command here, replacing the URI shown with the one for your
+cluster&#8217;s master node(s). The URI is the one you use to reach your
+OpenShift web console.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ oc login master.ocp.example.com:8443</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When prompted, use the login for your cluster-admin User.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clone_the_sdp_helm_chart_repository"><a class="anchor" href="#_clone_the_sdp_helm_chart_repository"></a>Clone the sdp-helm-chart Repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To clone the <a href="https://github.com/boozallen/sdp-helm-chart">sdp-helm-chart repository</a>, run one of the following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>## cloning via ssh
+$ git clone git@github.com:boozallen/sdp-helm-chart.git
+## cloning via https
+$ git clone https://github.com/boozallen/sdp-helm-chart.git</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_your_values_file"><a class="anchor" href="#_create_your_values_file"></a>Create Your Values File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From the root of your new sdp-helm-chart directory, copy
+values.template.yaml to values.yaml.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ cp values.template.yaml values.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The installer script will use the settings defined in this file when
+deploying the SDP.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This extra step is intended to prevent users from inadvertently pushingtheir values.yaml file, which may contain sensitive information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modify_the_values_file"><a class="anchor" href="#_modify_the_values_file"></a>Modify the Values File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The only value that you <em>must</em> change in values.yaml is <code>global.domain</code>.
+You should change it to match the subdomain your cluster uses for
+exposed routes. To easily see what that subdomain is for your cluster,
+you can run <code>oc get routes -n default</code> and look at the entries under the
+HOST/PORT column. It will be everything past the first period (.), so if
+one of the entries is <code>docker-registry-default.apps.ocp.example.com</code>
+then values.yaml should contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">global:
+  domain: apps.ocp.example.com</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also add to your values file any of the values described in the <a href="https://github.com/boozallen/sdp-helm-chart">sdp-helm-chart repository</a>
+README.</p>
+</div>
+<div class="paragraph">
+<p>While the SDP installation will deploy SonarQube and other tools, you
+can opt not to install them by changing their "enable" setting from
+<code>true</code> to <code>false</code>.</p>
+</div>
+</div>
+</div>
+        </div>
+</article>
+<div class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>  </body>
+</html>

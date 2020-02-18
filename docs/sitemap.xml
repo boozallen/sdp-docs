@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
+<loc>http://localhost:3000/sitemap-deployment-guides.xml</loc>
+</sitemap>
+<sitemap>
+<loc>http://localhost:3000/sitemap-jte.xml</loc>
+</sitemap>
+<sitemap>
 <loc>http://localhost:3000/sitemap-learning-labs.xml</loc>
 </sitemap>
 <sitemap>
 <loc>http://localhost:3000/sitemap-overview.xml</loc>
+</sitemap>
+<sitemap>
+<loc>http://localhost:3000/sitemap-sdp-libraries.xml</loc>
 </sitemap>
 </sitemapindex>

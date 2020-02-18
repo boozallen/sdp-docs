@@ -1,64 +1,43 @@
 = Pipeline Lifecycle Hooks
 
-There can be interdependent functionalities that present a challenge to
-the Jenkins Templating Engine.
+There can be interdependent functionalities that present a challenge to the Jenkins Templating Engine.
 
-For example, let's say we wanted to introduce Splunk monitoring by
-sending events as part of the pipeline.
+For example, let's say we wanted to introduce Splunk monitoring by sending events as part of the pipeline.
 
 How do you:
 
-[arabic]
 . Maintain a clean, easy to read Pipeline Template?
-. Maintain a separation of duties between libraries as to not hardcode a
-Splunk integration into every library step?
+. Maintain a separation of duties between libraries as to not hardcode a Splunk integration into every library step?
 
-It would be great if there was a seemless way to inject functionality in
-response to different phases of the pipeline without having to tightly
-couple that functionality to existing library steps or Pipeline
-Templates.
+It would be great if there was a seemless way to inject functionality in response to different phases of the pipeline without having to tightly couple that functionality to existing library steps or Pipeline Templates.
 
-You can! The Jenkins Templating Engine has a neat feature we call
-Pipeline Lifecycle Hooks that were made for just these situations.
+You can! The Jenkins Templating Engine has a neat feature we call Pipeline Lifecycle Hooks that were made for just these situations.
 
-We'll walk through the Splunk use case to demonstrate this
-functionality.
+We'll walk through the Splunk use case to demonstrate this functionality.
 
 [NOTE]
 ====
-Read the
-https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[entire
-pipeline lifecycle hook documentation].
+Read the https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[entire pipeline lifecycle hook documentation].
 ====
 
 == Create a Splunk Library
 
-Methods defined within steps are able to register themselves to
-correspond to specific lifecycle events via annotations. As such, these
-steps are typically not invoked directly by other steps or from the
-Pipeline Template.
+Methods defined within steps are able to register themselves to correspond to specific lifecycle events via annotations. As such, thesesteps are typically not invoked directly by other steps or from the Pipeline Template.
 
-Because of this, the name of the step is inconsequential but cannot
-conflict with other step names that are loaded.
+Because of this, the name of the step is inconsequential but cannot conflict with other step names that are loaded.
 
-Therefore, we typically recommend following a naming convention of
-prepending the step name with the library name to namespace the hooks.
+Therefore, we typically recommend following a naming convention of prepending the step name with the library name to namespace the hooks.
 
 [IMPORTANT]
 ====
-It doesn't matter what you call steps that only contain Pipeline
-Lifecycle Hook annotated methods. But to avoid collisions of everyone
-naming their hook steps `beforeStep.groovy` - we recommend
-`<libraryName>_<action>` as we'll demonstrate in this lab.
+It doesn't matter what you call steps that only contain Pipeline Lifecycle Hook annotated methods. But to avoid collisions of everyone naming their hook steps `beforeStep.groovy` - we recommend `<libraryName>_<action>` as we'll demonstrate in this lab.
 ====
 
 === Notify of Pipeline Start
 
-Within the same Library Source created during JTE: The Basics create a
-step called `splunk_pipeline_start.groovy`:
+Within the same Library Source created during JTE: The Basics create a step called `splunk_pipeline_start.groovy`:
 
-*libraries/splunk/splunk_pipeline_start.groovy*:
-
+.libraries/splunk/splunk_pipeline_start.groovy
 [source,groovy]
 ----
 @Init 
@@ -67,26 +46,18 @@ void call(context){
 }
 ----
 
-Breaking down this step, the `@Init` registers the `call` method defined
-in this step to be invoked at the beginning of the pipeline.
+Breaking down this step, the `@Init` registers the `call` method defined in this step to be invoked at the beginning of the pipeline.
 
-This `call` method takes a Map as an input parameter. This argument
-represents the pipeline context and will let you know the pipeline's
-current status as well as the library and step that the hook is
-responding to.
+This `call` method takes a Map as an input parameter. This argument represents the pipeline context and will let you know the pipeline's current status as well as the library and step that the hook is responding to.
 
 [NOTE]
 ====
-This input parameter to annotated steps is typically called `context`
-but can be called anything.
-Since Groovy is a dynamically typed language, this input parameter does
-not have to be given a class.
+This input parameter to annotated steps is typically called `context` but can be called anything. Since Groovy is a dynamically typed language, this input parameter does not have to be given a class.
 ====
 
 === Update the Pipeline Configuration
 
-In the Pipeline job again, update the Pipeline Configuration to load the
-`splunk` library we just created.
+In the Pipeline job again, update the Pipeline Configuration to load the `splunk` library we just created.
 
 [source,groovy]
 ----
@@ -98,8 +69,7 @@ libraries{
 }
 ----
 
-That's it! Just by loading the library, JTE will be able to find the
-methods within steps annotated with a Pipeline Lifecycle Hook.
+That's it! Just by loading the library, JTE will be able to find the methods within steps annotated with a Pipeline Lifecycle Hook.
 
 Run the Pipeline job and you should see output in the logs similar to:
 
@@ -112,31 +82,28 @@ Splunk: beginning of the pipeline!
 
 === Add Before and After Step Execution Hooks
 
-Let's add some hooks that inject themselves both before and after each
-step is executed in the pipeline.
+Let's add some hooks that inject themselves both before and after each step is executed in the pipeline.
 
 *libraries/splunk/splunk_step_watcher.groovy*:
 
-[source,]
+[source,groovy]
 ----
 @BeforeStep
 void before(context){
-println "Splunk: running before the ${context.library} library's ${context.step} step" 
+    println "Splunk: running before the ${context.library} library's ${context.step} step" 
 }
 
 @AfterStep
 void after(context){
-println "Splunk: running after the ${context.library} library's ${context.step} step" 
+    println "Splunk: running after the ${context.library} library's ${context.step} step" 
 }
 ----
 
 [NOTE]
 ====
-Here, we're defining two different methods in a single step. In the next
-section we'll talk about this in more detail.
-For right now, the important piece is that the method's have the
-`@BeforeStep` and `@AfterStep` annotations.
+Here, we're defining two different methods in a single step. In the next section we'll talk about this in more detail. For right now, the important piece is that the method's have the `@BeforeStep` and `@AfterStep` annotations.
 ====
+
 Rerunning the pipeline, we can now see these hooks get executed:
 
 [source,text]
@@ -281,12 +248,10 @@ Finished: SUCCESS
 
 === Notify of End of Pipeline Execution
 
-Let's try out one more hook to get executed when the pipeline has
-finished:
+Let's try out one more hook to get executed when the pipeline has finished:
 
-*libraries/splunk/splunk_pipeline_end.groovy*:
-
-[source,]
+.libraries/splunk/splunk_pipeline_end.groovy
+[source,groovy]
 ----
 @CleanUp
 void call(context){
@@ -440,47 +405,38 @@ Splunk: end of the pipeline!
 
 == Restricting Hook Execution
 
-What if we only wanted to execute the `@AfterStep` hook to be executed
-after the `static_code_analysis` step?
+What if we only wanted to execute the `@AfterStep` hook to be executed after the `static_code_analysis` step?
 
-Pipeline Lifecycle Hook annotations accept a *Closure* parameter. This
-Closure will be executed, and if the return of the Closure is non-false
-the step will be executed.
+Pipeline Lifecycle Hook annotations accept a *Closure* parameter. This Closure will be executed, and if the return of the Closure is non-false the step will be executed.
 
 [IMPORTANT]
 ====
-Remember: Groovy has implicit return statements. The last statement made
-becomes the return object by default.
+Remember: Groovy has implicit return statements. The last statement made becomes the return object by default.
 ====
+
 We call this functionality *Conditional Hook Execution*.
 
 === Update the `@AfterStep` Annotation
 
 Let's see it in action.
 
-Update the `@AfterStep` created in
-*libraries/splunk/splunk_step_watcher.groovy* to:
+Update the `@AfterStep` created in *libraries/splunk/splunk_step_watcher.groovy* to:
 
 [source,groovy]
 ----
 @AfterStep({ context.step.equals("static_code_analysis") })
 ----
 
-Rerun the pipeline and notice that now, the hook has been restricted to
-only run after the desired step.
+Rerun the pipeline and notice that now, the hook has been restricted to only run after the desired step.
 
 [IMPORTANT]
 ====
-.Important
-When the `Closure` parameter is invoked, it will have access to the
-`context` variable that is passed to the step itself as well as the
-library configuration that is stored via the `config` variable.
+When the `Closure` parameter is invoked, it will have access to the `context` variable that is passed to the step itself as well as the library configuration that is stored via the `config` variable.
 ====
 
 === Taking It A Step Further
 
-It would be even better if we could externalize the configuration of
-exactly which steps the `@AfterStep` hook should be triggered.
+It would be even better if we could externalize the configuration of exactly which steps the `@AfterStep` hook should be triggered.
 
 To do this, update the `@AfterStep` annotation again to be:
 
@@ -489,9 +445,7 @@ To do this, update the `@AfterStep` annotation again to be:
 @AfterStep({ context.step in config.afterSteps })
 ----
 
-Now, we can conditionally execute the hook by checking if the name of
-the step that was just executed is in an array called `afterSteps`
-defined as part of the `splunk` library in the Pipeline Configuration!
+Now, we can conditionally execute the hook by checking if the name of the step that was just executed is in an array called `afterSteps` defined as part of the `splunk` library in the Pipeline Configuration!
 
 Update the `splunk` portion of the Pipeline Configuration to:
 
@@ -507,16 +461,11 @@ libraries{
 }
 ----
 
-Run the pipeline again and notice that the hook was only executed after
-the steps defined in the Pipeline Configuration.
+Run the pipeline again and notice that the hook was only executed after the steps defined in the Pipeline Configuration.
 
 [NOTE]
 ====
-Conditional Execution Closure Parameters can be passed to any Pipeline
-Lifecycle Hook annotation. As long as the Closure returns a non-false
-value, the hook will be invoked.
+Conditional Execution Closure Parameters can be passed to any Pipeline Lifecycle Hook annotation. As long as the Closure returns a non-false value, the hook will be invoked.
 ====
 
-*Remember to read through the*
-https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[Pipeline
-Lifecycle Hook documentation] *to see all the annotations available*.
+*Remember to read through the* https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[Pipeline Lifecycle Hook documentation] *to see all the annotations available*.

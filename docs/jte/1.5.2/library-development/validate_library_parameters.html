@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Validate Library Parameters :: Solutions Delivery Platform</title>
+    <link rel="canonical" href="http://localhost:3000/jte/1.5.2/library-development/validate_library_parameters.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Fira+Code">
+
+    <link rel="stylesheet"href="https:////cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/monokai-sublime.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/asciidoc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/groovy.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>  </head>
+  <body class="article">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/jte.svg" viewBox="20 0 80 100" alt="Jenkins Templating Engine Logo">
+      <span class="mdc-top-app-bar__title">Solutions Delivery Platform</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <i class="material-icons mdc-icon-button search" tabindex="0" role="button">search</i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">arrow_back</i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search">
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">close</i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../overview/1/index.html" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Jenkins Templating Engine</a></li>
+    <li>Library Development</li>
+    <li><a href="validate_library_parameters.html">Validate Library Parameters</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="jte" data-version="1.5.2">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../overview/1/index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../overview/1/contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="jte" class="select-version">
+            <option value="1.5.2">
+              1.5.2
+            </option>
+        </select>
+      </div>
+        <div data-component="jte" data-version="1.5.2" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../index.html">
+              Jenkins Templating Engine
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../ADOPTERS.html">Adopters</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Pipeline Templating</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../pipeline-templating/what_is_a_pipeline_template.html">What is a pipeline template?</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../pipeline-templating/configuration_files.html">Pipeline Configuration Files</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../pipeline-templating/configuration_file_sandboxing.html">Pipeline Configuration File Sandboxing</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Job Types</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../job-types/template_step.html">The Template Step</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../job-types/pipeline.html">Individual Pipeline Jobs</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../job-types/repository.html">MultiBranch Projects</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../job-types/github_org.html">GitHub Organization Job</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Primitives</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../primitives/what_is_a_primitive_in_jte.html">What is a primitive in JTE?</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../primitives/application_environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../primitives/stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../primitives/keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../primitives/default_step_implementation.html">Default Step Implementation</a>              </div>
+                  </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Library Development</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="externalizing_config.html">Exernalizing Library Configuration</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="validate_library_parameters.html">Validate Library Parameters</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="lifecycle_hooks.html">Leverage Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="multimethod_steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="library_sources/library_sources.html">Library Sources</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="library_sources/scm_library_provider.html">SCM Library Provider</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="library_sources/plugin_library_provider.html">Plugin Library Provider</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="library_sources/example_library_walkthrough.html">Example Library Walkthrough</a>              </div>
+                  </div>
+            </div>
+     
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Governance</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/governance_model.html">Governance Model</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/governance_tier.html">Governance Tier</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/hierarchical_governance.html">Hierarchical Governance</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/config_file_aggregation.html">Configuration File Aggregation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/conditional_inheritance.html">Conditional Inheritance Examples</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/pipeline_template_selection.html">Pipeline Template Selection</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../governance/library_selection.html">Library Selection</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="sdp-libraries" class="select-version">
+            <option value="2.1">
+              2.1
+            </option>
+            <option value="2">
+              2
+            </option>
+        </select>
+      </div>
+        <div data-component="sdp-libraries" data-version="2.1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../sdp-libraries/2.1/index.html">
+              SDP Pipeline Libraries
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Unit Testing</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/index.html">Purpose of Unit Testing</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/jenkins-spock.html">Jenkins Spock</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/writing-tests.html">Writing Unit Tests</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/executing-tests.html">Test Execution</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/unit_testing/faq.html">Frequently Asked Questions</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/docker/index.html">docker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/gitlab/index.html">gitlab</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/owasp_dep_check/index.html">OWASP Dependency Checker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/github_enterprise/index.html">GitHub Enterprise</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/github/index.html">github</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/openshift/index.html">openshift</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/owasp_zap/index.html">OWASP ZAP</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/sdp/index.html">sdp</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/a11y/index.html">a11y</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/slack/index.html">slack</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/kubernetes/index.html">kubernetes</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/sonarqube/index.html">sonarqube</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2.1/protractor/index.html">protractor</a>              </div>
+                    </div>
+        </div>
+        <div data-component="sdp-libraries" data-version="2" class="hide">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../sdp-libraries/2/index.html">
+              SDP Pipeline Libraries
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/index.html">Overview</a>              </div>
+           
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+         
+          <span class="">Unit Testing</span>
+      </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/index.html">Purpose of Unit Testing</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/jenkins-spock.html">Jenkins Spock</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/writing-tests.html">Writing Unit Tests</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/executing-tests.html">Test Execution</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/unit_testing/faq.html">Frequently Asked Questions</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/docker/index.html">docker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/gitlab/index.html">gitlab</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/owasp_dep_check/index.html">OWASP Dependency Checker</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/github_enterprise/index.html">GitHub Enterprise</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/github/index.html">github</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/openshift/index.html">openshift</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/owasp_zap/index.html">OWASP ZAP</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/sdp/index.html">sdp</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/a11y/index.html">a11y</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/slack/index.html">slack</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/kubernetes/index.html">kubernetes</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/sonarqube/index.html">sonarqube</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../sdp-libraries/2/protractor/index.html">protractor</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="learning-labs" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="learning-labs" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../learning-labs/1/index.html">
+              Learning Labs
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/local-development/index.html">Local Development</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/2-run-jenkins.html">Run the Jenkins Containers</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/3-configure-jenkins.html">Configuring Jenkins</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/local-development/4-validate-jenkins.html">Validate Jenkins</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-the-basics/index.html">JTE: The Basics</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/2-pipeline-job.html">Write the Template</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/3-first-libraries.html">Create the Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/4-first-configuration-file.html">Configure the Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/5-swap-to-gradle.html">Swap Libraries</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/6-multibranch.html">Apply to a GitHub Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/7-github-org.html">Apply to Multiple Github Repositories</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-the-basics/8-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-primitives/index.html">JTE: Pipeline Primitives</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/2-pipeline-job.html">Create a Pipeline Job</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/3-stages.html">Stages</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/4-application-environments.html">Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/5-keywords.html">Keywords</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-primitives/6-summary.html">Summary</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../learning-labs/1/jte-advanced-features/index.html">JTE: Advanced Features</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/1-prerequisites.html">Prerequisites</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/2-default-step-implementation.html">Default Step Implementation</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/3-pipeline-lifecycle-hooks.html">Pipeline Lifecycle Hooks</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/4-multimethod-steps.html">Multi-Method Steps</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../learning-labs/1/jte-advanced-features/5-summary.html">Summary</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="deployment-guides" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="deployment-guides" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../deployment-guides/1/index.html">
+              Reference Architectures
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/index.html">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../deployment-guides/1/openshift/index.html">OpenShift</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/1_0_Deploy_Tools_Overview.html">Section 1 - Deploying the DevOps Tools</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/1_1_Prepare_To_Install.html">Section 1.1 - Preparing to Run the Installer</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/1_2_Run_Installer.html">Section 1.2 - Running the Installer Script</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/2_0_Pipeline_Config_Overview.html">Section 2 - Setting up a Pipeline</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/2_1_Pipeline_Planning.html">Section 2.1 - Pipeline Planning</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/2_2_Pipeline_Config.html">Section 2.2 - Creating the Pipeline Configuration Repository</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/3_0_Application_Environment_Overview.html">Section 3 - Setting up the Application Environment</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/3_1_Application_Environments.html">Section 3.1 - Creating the Application Environments</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="../../../deployment-guides/1/openshift/3_2_Helm_Chart_Repo.html">Section 3.2 - Setting up the Helm Chart Repository</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="https://github.com/jenkinsci/templating-engine-plugin/edit/master/docs/modules/library-development/pages/validate_library_parameters.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">Validate Library Parameters</h1>
+            <div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you haven&#8217;t read how to <a href="externalizing_config.html" class="page">externalize library configurations</a>, it&#8217;s strongly recommended you read that to have context on this page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This page explains how to confirm that library parameters, which are field-value pairs passed to a library though its external configuration, are valid. This means confirming any  parameters required by your library are supplied, and that all parameters supplied have an acceptable value and/or data type.</p>
+</div>
+<div class="paragraph">
+<p>For example, say your library requires a name for a Jenkins credential, and expects it to be passed through a field in your library&#8217;s config called "credential." You would want to ensure when your library is used that:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the aggregated  <em>pipeline_config.groovy</em>, there is a "credential" field in your library&#8217;s configuration</p>
+</li>
+<li>
+<p>The value for that "credential" field is a String (since we usually reference Jenkins credentials by a name)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_library_configuration_file_overview"><a class="anchor" href="#_the_library_configuration_file_overview"></a>The Library Configuration File - Overview</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Including a library config ( <em>library_config.groovy</em>) in your library is entirely optional. There are other ways to validate parameters, which are covered below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can validate the parameters passed via  <em>pipeline_config.groovy</em> by a library configuration file, or library config. This file, named  <em>library_config.groovy</em>, goes at the root of your library and includes a list of required and optional fields, as well as tests you want to apply to those fields. When your library is loaded by a JTE pipeline, each of your library&#8217;s parameters from the aggregated pipeline config file are tested according to the contents of the library config. If those tests fail, or there&#8217;s an extra field you didn&#8217;t specify, the pipeline fails.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a  <em>library_config.groovy</em> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">   fields{
+     required{
+       credential = String
+       mode = [ "mode1", "mode2" ]
+     }
+     optional{
+       library_option = ~/[oO]ption\s*\d+/
+       do_optional_thing = Boolean
+     }
+   }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, there are two required fields ("credential" and "mode"), and two optional fields ("library option" and "do_optional_thing"). The pipeline config is required to provide two parameters: a "credential" field with a String value and a "mode" field with a value of either "mode1" or "mode2." There are also two optional fields: "library_option", which must have a value that matches the regex expression <code>/[oO]ption\s*\d+/</code>, and "do_optional_thing", which must have a Boolean value. Given this example library config, this would be a valid snippet from your aggregated pipeline config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    credential = "credentialA"
+    mode = "mode1"
+    library_option = "Option123"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As would this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    credential = "secret-password"
+    mode = "mode2"
+    library_option = "option 3"
+    do_optional_thing = true
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Both these snippets have the two required fields, "credential" and "mode," and the only other fields are listed as optional in the library config. In addition, the values for each of those fields pass the tests set in the library config.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_listing_fields"><a class="anchor" href="#_listing_fields"></a>Listing Fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In your library config you specify a list of fields that you expect to be used in your library&#8217;s external configuration (i.e. in the pipeline config file). In this list, you must also distinguish between  <em>required</em> and  <em>optional</em> fields. This list establishes two rules:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If a  <em>required</em> field is not present in your library&#8217;s section of the pipeline configuration, then the pipeline fails</p>
+</li>
+<li>
+<p>If there is any field present in your library&#8217;s section of the pipeline configuration that is <strong>not</strong> listed as either a  <em>required</em> or <em>optional</em> field, then the pipeline fails</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validating_parameters"><a class="anchor" href="#_validating_parameters"></a>Validating Parameters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For every field in your library configuration, you must specify a rule that field&#8217;s value must conform to. There are currently three types of rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the value must be a particular data type (Type Match)</p>
+</li>
+<li>
+<p>the value must be one of a set of listed values (Enum Match)</p>
+</li>
+<li>
+<p>the value must match a given regex expression. (Regex Match)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_type_match"><a class="anchor" href="#_type_match"></a>Type Match</h3>
+<div class="paragraph">
+<p>If you want to test a parameter is of a particular data type (e.g. boolean, string), you put the name of that data type as the field&#8217;s value in the library config. For example, if I want to make sure "credential" is of type "String", my  <em>library_config.groovy</em> would contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">fields{
+  required{
+    credential = String
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The current options for data types to test for are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>boolean / Boolean</p>
+</li>
+<li>
+<p>String</p>
+</li>
+<li>
+<p>Integer / int</p>
+</li>
+<li>
+<p>Double</p>
+</li>
+<li>
+<p>BigDecimal</p>
+</li>
+<li>
+<p>Float</p>
+</li>
+<li>
+<p>Number</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enum_match"><a class="anchor" href="#_enum_match"></a>Enum Match</h3>
+<div class="paragraph">
+<p>If you want to test that a parameter is one a particular set of values, you can put an array of acceptable options as the field&#8217;s value in the library config. For example, if you want to make sure the field "intensity" is either "high", "medium," or "low," your  <em>library_config.groovy</em> would contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">fields{
+  required{
+    intensity = ["high", "medium", "low"]
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Given this library config, if the "intensity" value for your library (set by the pipeline config) isn&#8217;t one of those three values, then the pipeline will throw an error. For example, this pipeline config snippet would be valid:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    intensity = "medium"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But this snippet would cause an error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    intensity = "intense"
+    // throws an error because "intense" is neither "high," "medium", nor "low"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can put more than strings into these enum arrays; any type of object will work, and multiple types of objects can be in the same array.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_regex_match"><a class="anchor" href="#_regex_match"></a>Regex Match</h3>
+<div class="paragraph">
+<p>If you want to test that a String parameter conforms to a particular pattern, you can put a Regular Expression representing that pattern for the field&#8217;s value in the library config. For example, if you want to make sure "library_option" is one word with only alphanumeric characters, your  <em>library_config.groovy</em> would contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">fields{
+  required{
+    credential = ~/^[a-zA-Z0-9]+$/
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Given this library config, if the "credential" value for your library, set by the pipeline config, doesn&#8217;t match the regex expression <code>^[a-zA-Z0-9]+$</code>, then the pipeline will throw an error. For example, this snippet would be valid:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    credential = "secretPassword"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But this snippet would cause an error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    credential = "secret-password"
+    // throws an error because of the "-"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nested_fields"><a class="anchor" href="#_nested_fields"></a>Nested Fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The parameters for your library in the pipeline config aren&#8217;t always in a flat list; it&#8217;s common to logically group parameters in submaps. For example, your pipeline config may have a snippet like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">libraries{
+  your_library{
+    image{
+      name = "your-image"
+      credential = "repo-cred"
+    }
+    web_service{
+      url = "https://example.com"
+      credential = "service-cred"
+      options{
+        optionA = "foobar"
+        optionB = 7
+        optionC = true
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The library config is only concerned with the lines that have key-value pairs where the value isn&#8217;t another map. For example, you wouldn&#8217;t be able to set <code>web_service</code> or <code>web_serivice.options</code> as a required or optional field, but you can set the fields under them, like <code>web_service.credential</code> or <code>web_service.options.optionB</code> as required/optional.</p>
+</div>
+<div class="paragraph">
+<p>Also, if two parameters are grouped under the same field they don&#8217;t both have to be required/optional. Continuing with the  <em>pipeline_config.groovy</em> example snippet above, you could require <code>optionA</code> and <code>optionB</code>, but not <code>optionC</code>. The resulting library config might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">fields{
+  required{
+    image{
+      name = String
+      credential = String
+    }
+    web_service{
+      url = /^(http|https):\/\/.+$/
+      credential = String
+      options{
+        optionA = String
+        optionB = Integer
+      }
+    }
+  }
+  optional{
+    web_service{
+      options{
+        optionC = Boolean
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You would need to include the whole structure, but you can pick and choose which fields within those submaps are required and which are optional.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_validation_methods"><a class="anchor" href="#_additional_validation_methods"></a>Additional Validation Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While using a library configuration covers most libraries' validation requirements, you may wish to do more complex validation, or you may have a particular need that&#8217;s not met. For those cases, you can either create a separate pipeline step with the <code>@Validate</code> annotation, or you can validate the parameters within the step itself.</p>
+</div>
+<div class="sect2">
+<h3 id="_validating_within_the_step"><a class="anchor" href="#_validating_within_the_step"></a>Validating Within the Step</h3>
+<div class="paragraph">
+<p>In our primary example in how to <a href="externalizing_config.html" class="page">externalize library configurations</a>, we had a step that took an Integer <code>number</code> parameter, as well as a String <code>message</code> parameter. We assume that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>those input parameters are both configured</p>
+</li>
+<li>
+<p>those input parameters are of the correct type</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To actually validate these assumptions, the following code could be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">void call(){
+
+    // define library configuration parameters
+    String error_msg = """
+    This step has the following library parameters:
+
+      number:  [Integer] // required
+      message: [String]  // required
+
+    """
+
+    // validate number
+    if (config.number){
+        if (!(config.number instanceof Integer)){
+            error """
+            number parameter must be an Integer, received [${config.number}]
+            --
+            ${error_msg}
+            """
+        }
+    }else{
+        error """
+        must provide number parameter
+        --
+        ${error_msg}
+        """
+    }
+
+    // validate message
+    if (config.message){
+        if (!(config.message instanceof Integer)){
+            error """
+            message parameter must be a String, received [${config.message}]
+            --
+            ${error_msg}
+            """
+        }
+    }else{
+        error """
+        must provide message parameter
+        --
+        ${error_msg}
+        """
+    }
+
+    // execute step functionality
+    for(def i = 0, i &lt; config.number, i++){
+        println config.message
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validating_in_a_separate_step"><a class="anchor" href="#_validating_in_a_separate_step"></a>Validating in a Separate Step</h3>
+<div class="paragraph">
+<p>Since your library&#8217;s parameters are accessible w/in any step of your library, you can create a separate step that performs the validation, then annotate that step with <code>@validate</code> to run the step when the pipeline starts. Using the same example as above, the code below could be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Validate
+void call(){
+
+    // define library configuration parameters
+    String error_msg = """
+    This step has the following library parameters:
+
+      number:  [Integer] // required
+      message: [String]  // required
+
+    """
+
+    // validate number
+    if (config.number){
+        if (!(config.number instanceof Integer)){
+            error """
+            number parameter must be an Integer, received [${config.number}]
+            --
+            ${error_msg}
+            """
+        }
+    }else{
+        error """
+        must provide number parameter
+        --
+        ${error_msg}
+        """
+    }
+
+    // validate message
+    if (config.message){
+        if (!(config.message instanceof Integer)){
+            error """
+            message parameter must be a String, received [${config.message}]
+            --
+            ${error_msg}
+            """
+        }
+    }else{
+        error """
+        must provide message parameter
+        --
+        ${error_msg}
+        """
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </div>
+</article>
+<div class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>  </body>
+</html>

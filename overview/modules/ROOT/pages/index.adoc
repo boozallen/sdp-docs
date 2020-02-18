@@ -5,7 +5,7 @@ The Solutions Delivery Platform (SDP) is an accumulation of Booz Allen's lessons
 
 At Booz Allen, DevSecOps is a foundational element of our Modern Software development Approach
 
-image:../_images/modern-sd-approach.png[image]
+image::modern-sd-approach.png[]
 
 Over the past two years, we've developed an open source and reusable pipeline framework that jump starts projects. SDP has allowed the typical time to develop a pipeline from 3 to 4 months down to just a week.
 
