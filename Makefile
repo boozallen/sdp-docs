@@ -1,5 +1,5 @@
 # Minimal makefile to build Antora documentation
-BUILDDIR = build
+BUILDDIR = docs
 PLAYBOOK = antora-playbook.yml 
 
 # Put it first so that "make" without argument is like "make help".
@@ -10,9 +10,11 @@ clean: ## removes remote documentation and compiled documentation
 	rm -rf $(BUILDDIR)/**
 
 .ONESHELL:
-docs: clean ## builds the antora documentation 
+install:  ## installs the project's npm dependencies
 	[ ! -d node_modules ] && npm i || true
-	$(shell npm bin)/antora generate --fetch --generator ./site-generator --to-dir docs $(PLAYBOOK)
 
-preview:
+docs: clean install ## builds the antora documentation 
+	$(shell npm bin)/antora generate --fetch --generator ./site-generator --to-dir $(BUILDDIR) $(PLAYBOOK)
+
+preview: clean install ## runs a local preview server to view changes to the documentation
 	$(shell npm bin)/gulp preview 

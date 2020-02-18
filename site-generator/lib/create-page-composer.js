@@ -26,8 +26,7 @@ const { version: VERSION } = require('../package.json')
  * @returns {Function} A function to compose a page (i.e., wrap the embeddable
  *   HTML contents in a standalone page layout).
  */
-function createPageComposer (playbook, contentCatalog, uiCatalog, navigationCatalog, env = process.env) {
-
+function createPageComposer (playbook, contentCatalog, uiCatalog, env = process.env) {
   uiCatalog
     .findByType('helper')
     .forEach((file) => handlebars.registerHelper(file.stem, requireFromString(file.contents.toString(), file.path)))
@@ -41,7 +40,7 @@ function createPageComposer (playbook, contentCatalog, uiCatalog, navigationCata
       new Map()
     )
 
-  return createPageComposerInternal(buildSiteUiModel(playbook, contentCatalog, navigationCatalog), env, layouts)
+  return createPageComposerInternal(buildSiteUiModel(playbook, contentCatalog), env, layouts)
 }
 
 function createPageComposerInternal (site, env, layouts) {
@@ -98,7 +97,7 @@ function buildUiModel (file, contentCatalog, navigationCatalog, site, env) {
   }
 }
 
-function buildSiteUiModel (playbook, contentCatalog, navigationCatalog) {
+function buildSiteUiModel (playbook, contentCatalog) {
   const model = { title: playbook.site.title }
 
   let siteUrl = playbook.site.url
@@ -121,7 +120,29 @@ function buildSiteUiModel (playbook, contentCatalog, navigationCatalog) {
   if (startPage) model.homeUrl = startPage.pub.url
 
   // QUESTION should components be pre-sorted? should we make this configurable?
-  model.components = contentCatalog.getComponentMapSortedBy('title')
+  // model.components = contentCatalog.getComponentMapSortedBy('title')
+  
+  /*
+    Unfortunately, i can't find an easy way to list the components in the order that they
+    are specified as sources in the playbook. 
+
+    so, displayOrder overrides the default order listing of alphabetical by "title" to 
+    control the side navigation component order. 
+  */
+  model.components = []
+  var displayOrder = ["overview", "jte", "sdp-libraries", "learning-labs", "deployment-guides"]
+  if( displayOrder.length != playbook.content.sources.length ){
+    console.log("WARNING: there are more sources defined than referenced in site-generator/lib/create-page-composer.js:133")
+    console.log("It's likely a source was added without updating the displayOrder array.")
+  }
+  displayOrder.forEach((name) => {
+    var component = contentCatalog.getComponent(name)
+    if( component != undefined){
+      model.components.push(component)
+    } else {
+      console.log(`WARNING: component [${name}] is undefined`)
+    }
+  })
 
   model.keys = Object.entries(playbook.site.keys || {}).reduce((accum, [key, value]) => {
     if (value) accum[key] = value
@@ -132,19 +153,6 @@ function buildSiteUiModel (playbook, contentCatalog, navigationCatalog) {
   model.ui = {
     url: path.resolve('/', uiConfig.outputDir),
     defaultLayout: uiConfig.defaultLayout || DEFAULT_LAYOUT_NAME,
-  }
-
-  /*
-    iterate over component versions and add navigation data 
-  */
-  for(let component in model.components){
-    // build navigation data for latest version 
-    model.components[component].latestVersion.navigation = navigationCatalog.getNavigation(component.name, model.components[component].latestVersion.version) || []
-    // build navigation data for each version in array 
-    for(let versionIndex in model.components[component].versions){
-      let v = model.components[component].versions[versionIndex]
-      model.components[component].versions[versionIndex].navigation = navigationCatalog.getNavigation(component.name, v.version) || []
-    }
   }
 
   return model

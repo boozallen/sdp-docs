@@ -4,7 +4,7 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Solutions Delivery Platform :: Solutions Delivery Platform</title>
-    <link rel="canonical" href="http://localhost/overview/1/index.html">
+    <link rel="canonical" href="http://localhost:3000/overview/1/index.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -62,6 +62,42 @@
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class=" is-current-page" href="index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
       <div class="version-box">
         <select data-component="learning-labs" class="select-version">
             <option value="1">
@@ -281,42 +317,6 @@
         </div>
     </div>      
     <div class="clear"></div>
-    <div class="nav-trees">
-      <div class="version-box">
-        <select data-component="overview" class="select-version">
-            <option value="1">
-              1
-            </option>
-        </select>
-      </div>
-        <div data-component="overview" data-version="1" class="">
-          <div class="nav-item">
-              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class=" is-current-page" href="index.html">
-              Overview
-            </a>
-          </div>
-          <div class="nav-children-panel hide">
-             
-   
-     
-       
-   
-     
-      <div class="nav-item">
-        
-          
-            <a  class="spacer is-current-page" href="index.html">Welcome</a>              </div>
-           
-     
-      <div class="nav-item">
-        
-          
-            <a  class="spacer" href="contribute-to-docs.html">Contribute to this Documentation</a>              </div>
-                    </div>
-        </div>
-    </div>      
-    <div class="clear"></div>
 
     </div>
   </aside>
@@ -346,27 +346,19 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The some random change Solutions Delivery Platform (SDP) is an accumulation of Booz Allen&#8217;s
-lessons learned implementing DevSecOps practices across multiple client
-projects and RFP Tech Challenges.</p>
+<p>The Solutions Delivery Platform (SDP) is an accumulation of Booz Allen&#8217;s lessons learned implementing DevSecOps practices across multiple client projects and RFP Tech Challenges.</p>
 </div>
 <div class="paragraph">
-<p>At Booz Allen, DevSecOps is a foundational element of our Modern
-Software development Approach</p>
+<p>At Booz Allen, DevSecOps is a foundational element of our Modern Software development Approach</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="_images/modern-sd-approach.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Over the past two years, we&#8217;ve developed an open source and reusable
-pipeline framework that jump starts projects. SDP has allowed the
-typical time to develop a pipeline from 3 to 4 months down to just a
-week.</p>
+<p>Over the past two years, we&#8217;ve developed an open source and reusable pipeline framework that jump starts projects. SDP has allowed the typical time to develop a pipeline from 3 to 4 months down to just a week.</p>
 </div>
 <div class="paragraph">
-<p>Instead of creating per-application pipelines, SDP allows you to create
-tool-agnostic, templated workflows that can be used by multiple teams to
-achieve organizational governance.</p>
+<p>Instead of creating per-application pipelines, SDP allows you to create tool-agnostic, templated workflows that can be used by multiple teams to achieve organizational governance.</p>
 </div>
 </div>
 </div>
@@ -376,9 +368,7 @@ achieve organizational governance.</p>
 <div class="sect2">
 <h3 id="_container_orchestration_platform"><a class="anchor" href="#_container_orchestration_platform"></a>Container Orchestration Platform</h3>
 <div class="paragraph">
-<p>The container orchestration platform, typically a kubernetes based
-solution, is responsible for hosting the DevOps tools; such as Jenkins
-or SonarQube.</p>
+<p>The container orchestration platform, typically a kubernetes based solution, is responsible for hosting the DevOps tools; such as Jenkins or SonarQube.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -388,8 +378,7 @@ or SonarQube.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>There is no strict dependency on OpenShift or Kubernetes, though this
-will enable a more robust platform.</p>
+<p>There is no strict dependency on OpenShift or Kubernetes, though this will enable a more robust platform.</p>
 </div>
 </td>
 </tr>
@@ -399,10 +388,7 @@ will enable a more robust platform.</p>
 <div class="sect2">
 <h3 id="_jenkins_templating_engine"><a class="anchor" href="#_jenkins_templating_engine"></a>Jenkins Templating Engine</h3>
 <div class="paragraph">
-<p>The Jenkins Templating Engine is a custom plugin written by Booz Allen
-that enables the capabilities of the Solutions Delivery Platform; such
-as organizational governance through templating and hierarchical
-configuration files.</p>
+<p>The Jenkins Templating Engine is a custom plugin written by Booz Allen that enables the capabilities of the Solutions Delivery Platform; such as  organizational governance through templating and hierarchical configuration files.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -412,8 +398,7 @@ configuration files.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This plugin is available in the Jenkins Update Center under the name
-<a href="https://plugins.jenkins.io/templating-engine">Templating Engine Plugin</a>.</p>
+<p>This plugin is available in the Jenkins Update Center under the name <a href="https://plugins.jenkins.io/templating-engine">Templating Engine Plugin</a>.</p>
 </div>
 </td>
 </tr>
@@ -423,18 +408,13 @@ configuration files.</p>
 <div class="sect2">
 <h3 id="_sdp_pipeline_libraries"><a class="anchor" href="#_sdp_pipeline_libraries"></a>SDP Pipeline Libraries</h3>
 <div class="paragraph">
-<p>The SDP Pipeline Libraries are our reusable tool integrations that
-contain the actual technical implementations of pipeline actions; such
-as static code analysis, penetration testing, and deployments.</p>
+<p>The SDP Pipeline Libraries are our reusable tool integrations that contain the actual technical implementations of pipeline actions; such as static code analysis, penetration testing, and deployments.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_devsecops_dashboard"><a class="anchor" href="#_devsecops_dashboard"></a>DevSecOps Dashboard</h3>
 <div class="paragraph">
-<p>Your DevSeCops pipeline is able to observe everything about software
-delivery for your project or organization. Through SDP, you would be
-able to aggregate these metrics into a DevSecOps dashboard to enable
-continuous improvement of your processes.</p>
+<p>Your DevSeCops pipeline is able to observe everything about software delivery for your project or organization. Through SDP, you would be able to aggregate these metrics into a DevSecOps dashboard to enable continuous improvement of your processes.</p>
 </div>
 </div>
 </div>

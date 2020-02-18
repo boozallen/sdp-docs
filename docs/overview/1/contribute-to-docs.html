@@ -4,7 +4,7 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contribute to this Documentation! :: Solutions Delivery Platform</title>
-    <link rel="canonical" href="http://localhost/overview/1/contribute-to-docs.html">
+    <link rel="canonical" href="http://localhost:3000/overview/1/contribute-to-docs.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -62,6 +62,42 @@
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="overview" class="select-version">
+            <option value="1">
+              1
+            </option>
+        </select>
+      </div>
+        <div data-component="overview" data-version="1" class="">
+          <div class="nav-item">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="index.html">
+              Overview
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer" href="index.html">Welcome</a>              </div>
+           
+     
+      <div class="nav-item">
+        
+          
+            <a  class="spacer is-current-page" href="contribute-to-docs.html">Contribute to this Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
       <div class="version-box">
         <select data-component="learning-labs" class="select-version">
             <option value="1">
@@ -281,42 +317,6 @@
         </div>
     </div>      
     <div class="clear"></div>
-    <div class="nav-trees">
-      <div class="version-box">
-        <select data-component="overview" class="select-version">
-            <option value="1">
-              1
-            </option>
-        </select>
-      </div>
-        <div data-component="overview" data-version="1" class="">
-          <div class="nav-item">
-              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="index.html">
-              Overview
-            </a>
-          </div>
-          <div class="nav-children-panel hide">
-             
-   
-     
-       
-   
-     
-      <div class="nav-item">
-        
-          
-            <a  class="spacer" href="index.html">Welcome</a>              </div>
-           
-     
-      <div class="nav-item">
-        
-          
-            <a  class="spacer is-current-page" href="contribute-to-docs.html">Contribute to this Documentation</a>              </div>
-                    </div>
-        </div>
-    </div>      
-    <div class="clear"></div>
 
     </div>
   </aside>
@@ -343,45 +343,63 @@
 
         <div class="contents">
                 <h1 class="page">Contribute to this Documentation!</h1>
-            <div class="sect1">
-<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+            <div id="preamble">
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You have docker installed on your local machine (<a href="https://docs.docker.com/docker-for-mac/install/">Mac</a>, <a href="https://docs.docker.com/docker-for-windows/install/">Windows</a>)</p>
-</li>
-<li>
-<p>Ability to run <code>make</code> commands</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>We feel very strongly that a project is only as valuable as it is consumable. This makes our documentation as important, if not moreso, as the code that it describes. The documentation is never done though. It can always be better, and there can also be more examples to help those new to the project get acclimated.</p>
+</div>
+<div class="paragraph">
+<p>Creating excellent documentation is a group effort.  The easiest way to get started helping the Solutions Delivery Platform is to contribute to the documentation.  No contribution is too small!  Fix that typo.  Rephase something that could be said more clearly.</p>
+</div>
+<div class="paragraph">
+<p>Whatever type of contribution you&#8217;re trying to make, this page will help explain how the documentation is organized and how to get started making changes and viewing them locally so that you can submit that Pull Request to improve the docs.</p>
+</div>
+<div class="paragraph">
+<p>Thank you for your help!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_distributed_documentation"><a class="anchor" href="#_distributed_documentation"></a>Distributed Documentation</h2>
+<h2 id="_development_environment"><a class="anchor" href="#_development_environment"></a>Development Environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The documentation for SDP is distributed across multiple repositories in order to keep the documentation next to the code.  This greatly helps with ensuring documentation remains up to date by enforcing the documentation is maintained during Pull Request reviews.</p>
-</div>
-<div class="paragraph">
-<p>The rest of this documentation outlines how to contribute to the main SDP Documentation site.</p>
-</div>
-<div class="paragraph">
-<p>Both the  <a href="https://github.com/jenkinsci/templating-engine-plugin">Jenkins Templating Engine</a>
-and <a href="https://github.com/boozallen/sdp-libraries">SDP Pipeline Libraries</a> repositories will have
-documentation that explains how to contribute to those respective sites.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_local_development"><a class="anchor" href="#_local_development"></a>Local Development</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>There is a <code>Makefile</code> at the root of the <a href="https://github.com/boozallen/sdp-docs">SDP Documentation Repository</a> that automates some tasks to aide in local development of this documentation:</p>
+<p>Ensure the following tools are installed:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Local Development Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Make</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to organize and execute tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NPM</code> &amp; <code>Node</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node.js and node package manager used for previewing and building the documentation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>git</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source code management</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_make_commands"><a class="anchor" href="#_make_commands"></a>Make Commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Within each component&#8217;s source code repository, there is a <code>Makefile</code> that allows you to build the documentation and run a live-reloading preview server for local development purposes.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -394,56 +412,85 @@ documentation that explains how to contribute to those respective sites.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make html</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Builds the documentation locally.  Open <code>./docs/html/index.html</code> to see the resulting docs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outputs the available make targets</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make html live</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Runs a hot-reload server to see the documentation updated as changes are made on <code><a href="http://localhost:8000" class="bare">http://localhost:8000</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make docs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">builds the documentation based upon the Antora playbook <code>antora-playbook.yml</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make user=&lt;github username&gt; token=&lt;github pat&gt; html deploy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When run from the <code>master</code> branch, if you have write permissions to the SDP Documentation Repository, this will deploy the docs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>make preview</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">runs a live-reloading preview server containing the documentation stored in the component&#8217;s source code repository.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_submitting_contributions"><a class="anchor" href="#_submitting_contributions"></a>Submitting Contributions</h2>
+<h2 id="_antora"><a class="anchor" href="#_antora"></a>Antora</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SDP follows the Fork and Pull workflow for accepting contributions from contributors.</p>
+<p>The Solutions Delivery Platform leverages <a href="https://antora.org">Antora</a> for compiling the documentation across several source code repositories into static HTML to be deployed via GitHub Pages.</p>
+</div>
+<div class="sect2">
+<h3 id="_distributed_documentation"><a class="anchor" href="#_distributed_documentation"></a>Distributed Documentation</h3>
+<div class="paragraph">
+<p>Documentation should live alongside the code it describes.  The documentation for the Solutions Delivery Platform is spread across the component repositories.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/boozallen/sdp-docs">SDP Documentation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SDP Documentation repository serves to hold documentation not specfic any component (like the <a href="#learning-labs:index.adoc" class="page unresolved">Learning Labs</a>).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/jenkinsci/templating-engine-plugin">Jenkins Templating Engine</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Jenkins Templating Engine (JTE) is the core of the Solutions Delivery Platform.  It extends <a href="https://jenkins.io">Jenkins</a> to create tool-agnostic, pipeline templates that can be reused by multiple teams.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/boozallen/sdp-libraries">Pipeline Libraries</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SDP Pipeline Libraries are the open source portfolio of pre-existing tool integration libraries that plug into the Jenkins Templating Engine to accelerage DevSecOps.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/boozallen/sdp-iac">Infrastructure as Code</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SDP Infrastructure as Code repository holds the Infrastructure as Code and deployment guides for various reference architectures used to deploy the tools comprising a DevOps platform.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_the_ui_bundle"><a class="anchor" href="#_the_ui_bundle"></a>The UI Bundle</h3>
+<div class="paragraph">
+<p>With Antora, the styling of the documentation site is developed separately from the content of the site itself.  Antora leverages a <a href="https://docs.antora.org/antora/2.2/features/#interchangeable-ui">UI Bundle</a> to style the documentation site.</p>
 </div>
 <div class="paragraph">
-<p>The content for this site can be found in the <code>pages</code> directory of the repository.</p>
+<p>We have customized the <a href="https://docs.antora.org/antora-ui-default/">Default Antora UI</a> to create our own theme for Antora. This bundle can be found in the <a href="https://github.com/boozallen/sdp-docs-skin">SDP Documentation Skin Repository</a>.</p>
 </div>
-<div class="paragraph">
-<p>Images should be added to the <code>images</code> directory.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_steps_to_contribute"><a class="anchor" href="#_steps_to_contribute"></a>Steps to Contribute</h2>
+<h2 id="_making_a_change"><a class="anchor" href="#_making_a_change"></a>Making a Change</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Fork the <a href="https://github.com/boozallen/sdp-docs">SDP Documentation Repository</a></p>
-</li>
-<li>
-<p>Make changes to your own fork of the repository</p>
-</li>
-<li>
-<p>Create a Pull Request from your fork to the main repository</p>
-</li>
-<li>
-<p>Fill out the Pull Request Template describing your changes</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>When viewing the documentation on your laptop, each page of the documentation has a Table of Contents with the caption <strong>On this page</strong> that you can see on the right-hand side of the article.   Next to this caption, you&#8217;ll see a link to edit on GitHub.  This link will send you to the current page&#8217;s source in GitHub where you can directly make edits.   For smaller changes, like fixing a typo or rephrasing something, making the change directly in GitHub is sufficient.</p>
 </div>
 <div class="paragraph">
-<p>Lambda School has produced a great <a href="https://lambdaschool.com/the-commons/how-to-fork-and-contribute-to-a-project-using-git">tutorial</a> that explains the Fork and Pull model in more detail.</p>
+<p>For larger changes, it&#8217;s best to clone the component repository whose documentation you&#8217;re trying to update and then leverage <code>make preview</code> to see your changes against a local version of the documentation while developing them.</p>
+</div>
+<div class="paragraph">
+<p>In either case, to make a change GitHub will require you to fork the repository.   Commit your change to a branch on your forked repository and when happy with it, open a Pull Request and fill out the fields that have been prepopulated for you.</p>
 </div>
 </div>
 </div>

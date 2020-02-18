@@ -1,6 +1,6 @@
 site:
   title: Solutions Delivery Platform
-  url: http://localhost
+  url: http://localhost:3000
   start_page: overview::index.adoc
 content:
   sources:
