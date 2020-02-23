@@ -1,0 +1,30 @@
+site:
+  title: Solutions Delivery Platform
+  url: http://localhost:3000
+  start_page: overview::index.adoc
+content:
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: overview
+  - url: .
+    branches: HEAD
+    start_path: learning-labs
+  - url: https://github.com/jenkinsci/templating-engine-plugin.git
+    branches: master
+    tags: .*
+    start_path: docs
+  - url: https://github.com/boozallen/sdp-libraries.git
+    branches: [ antora, antora-2.1 ]
+    start_path: docs 
+  - url: https://github.com/boozallen/sdp-iac.git
+    branches: master
+    start_path: deployment-guides
+ui: 
+  bundle: 
+    url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.0/ui-bundle.zip
+    snapshot: true
+  supplemental_files:
+  - path: .nojekyll
+  - path: ui.yml
+    contents: "static_files: [ .nojekyll ]"

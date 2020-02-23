@@ -1,48 +1,25 @@
-# Minimal makefile for Sphinx documentation
-#
-
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = SolutionsDeliveryPlatform
-SOURCEDIR     = .
-BUILDDIR      = docs
-
-.PHONY: help Makefile 
+# Minimal makefile to build Antora documentation
+BUILDDIR = docs
+PLAYBOOK = antora-playbook.yml 
+ANTORABUNDLE = 
 
 # Put it first so that "make" without argument is like "make help".
 help: ## Show target options
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 clean: ## removes remote documentation and compiled documentation
-	rm -rf docs/doctrees docs/html 
+	rm -rf $(BUILDDIR)/**
 
-image: ## builds container image used to build documentation 
-	docker build . -t sdp-docs
+.ONESHELL:
+install:  ## installs the project's npm dependencies
+	[ ! -d node_modules ] && npm i || true
 
-# build docs 
-html: ## builds documentation in _build/html 
-      ## run make html live for hot reloading of edits during development
-	make clean 
-	make image
-	$(eval goal := $(filter-out $@,$(MAKECMDGOALS)))
-	@if [ "$(goal)" = "live" ]; then\
-		docker run -p 8000:8000 -v $(shell pwd):/app sdp-docs sphinx-autobuild -b html $(ALLSPHINXOPTS) . $(BUILDDIR)/html -H 0.0.0.0;\
-	elif [ "$(goal)" = "deploy" ]; then\
-		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
-		git add docs/*;\
-		git commit -m "updating documentation";\
-		git push;\
-	else\
-		docker run -v $(shell pwd):/app sdp-docs $(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);\
-	fi
+docs: clean install ## builds the antora documentation 
+	$(shell npm bin)/antora generate --fetch --generator ./site-generator --to-dir $(BUILDDIR) $(ANTORABUNDLE) $(PLAYBOOK)
 
-deploy: ;
+preview: clean install ## runs a local preview server to view changes to the documentation
+	$(shell npm bin)/gulp preview 
 
-live: ; 
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	echo "Make command $@ not found" 
-
+validate: docs ## uses html-proofer to search for broken links
+	docker build . -f html-proofer.Dockerfile -t html-proofer 
+	docker run -v $(shell pwd)/$(BUILDDIR)/:/site html-proofer --url-swap "http\://localhost\:3000:file:///site" --url-ignore "http://localhost.*"  /site

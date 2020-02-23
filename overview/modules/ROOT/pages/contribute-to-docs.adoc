@@ -1,0 +1,96 @@
+= Contribute to this Documentation!
+:table-caption!:
+:antora-link: https://antora.org 
+:jte-repo: https://github.com/jenkinsci/templating-engine-plugin
+:boozallen-org: https://github.com/boozallen
+:sdp-libraries-repo: {boozallen-org}/sdp-libraries
+:sdp-iac-repo: {boozallen-org}/sdp-iac
+:sdp-docs-repo: {boozallen-org}/sdp-docs
+:sdp-docs-skin-repo: {boozallen-org}/sdp-docs-skin
+:jenkins: https://jenkins.io
+:ui-bundle-docs: https://docs.antora.org/antora/2.2/features/#interchangeable-ui
+:default-antora-ui: https://docs.antora.org/antora-ui-default/
+
+We feel very strongly that a project is only as valuable as it is consumable. This makes our documentation as important, if not moreso, as the code that it describes. The documentation is never done though. It can always be better, and there can also be more examples to help those new to the project get acclimated. 
+
+Creating excellent documentation is a group effort.  The easiest way to get started helping the Solutions Delivery Platform is to contribute to the documentation.  No contribution is too small!  Fix that typo.  Rephase something that could be said more clearly.  
+
+Whatever type of contribution you're trying to make, this page will help explain how the documentation is organized and how to get started making changes and viewing them locally so that you can submit that Pull Request to improve the docs. 
+
+Thank you for your help! 
+
+== Development Environment
+
+Ensure the following tools are installed: 
+
+|===
+| Tool | Description
+
+| ``Make`` 
+| Used to organize and execute tasks 
+
+| ``NPM`` & ``Node``
+| Node.js and node package manager used for previewing and building the documentation 
+
+| ``git``
+| source code management
+
+|===
+
+== Make Commands 
+
+Within each component's source code repository, there is a ``Makefile`` that allows you to build the documentation and run a live-reloading preview server for local development purposes.
+
+|===
+| Command | Description 
+
+| ``make help``
+| outputs the available make targets
+
+| ``make docs`` 
+| builds the documentation based upon the Antora playbook ``antora-playbook.yml``
+
+| ``make preview`` 
+| runs a live-reloading preview server containing the documentation stored in the component's source code repository.
+
+|===
+
+== Antora
+
+The Solutions Delivery Platform leverages {antora-link}[Antora] for compiling the documentation across several source code repositories into static HTML to be deployed via GitHub Pages. 
+
+=== Distributed Documentation
+
+Documentation should live alongside the code it describes.  The documentation for the Solutions Delivery Platform is spread across the component repositories. 
+
+|===
+| Component | Description
+
+| {sdp-docs-repo}[SDP Documentation]
+| The SDP Documentation repository serves to hold documentation not specfic any component (like the xref:learning-labs:ROOT:index.adoc[Learning Labs]).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site. 
+
+| {jte-repo}[Jenkins Templating Engine]
+| The Jenkins Templating Engine (JTE) is the core of the Solutions Delivery Platform.  It extends {jenkins}[Jenkins] to create tool-agnostic, pipeline templates that can be reused by multiple teams. 
+
+| {sdp-libraries-repo}[Pipeline Libraries]
+| The SDP Pipeline Libraries are the open source portfolio of pre-existing tool integration libraries that plug into the Jenkins Templating Engine to accelerage DevSecOps. 
+
+| {sdp-iac-repo}[Infrastructure as Code]
+| The SDP Infrastructure as Code repository holds the Infrastructure as Code and deployment guides for various reference architectures used to deploy the tools comprising a DevOps platform.
+
+|===
+
+=== The UI Bundle
+
+With Antora, the styling of the documentation site is developed separately from the content of the site itself.  Antora leverages a {ui-bundle-docs}[UI Bundle] to style the documentation site. 
+
+We have customized the {default-antora-ui}[Default Antora UI] to create our own theme for Antora. This bundle can be found in the {sdp-docs-skin-repo}[SDP Documentation Skin Repository]. 
+
+== Making a Change 
+
+When viewing the documentation on your laptop, each page of the documentation has a Table of Contents with the caption *On this page* that you can see on the right-hand side of the article.   Next to this caption, you'll see a link to edit on GitHub.  This link will send you to the current page's source in GitHub where you can directly make edits.   For smaller changes, like fixing a typo or rephrasing something, making the change directly in GitHub is sufficient. 
+
+For larger changes, it's best to clone the component repository whose documentation you're trying to update and then leverage ``make preview`` to see your changes against a local version of the documentation while developing them. 
+
+In either case, to make a change GitHub will require you to fork the repository.   Commit your change to a branch on your forked repository and when happy with it, open a Pull Request and fill out the fields that have been prepopulated for you. 
+

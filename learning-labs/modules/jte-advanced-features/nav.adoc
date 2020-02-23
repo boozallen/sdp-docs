@@ -1,0 +1,6 @@
+* xref:index.adoc[JTE: Advanced Features]
+** xref:1-prerequisites.adoc[Prerequisites]
+** xref:2-default-step-implementation.adoc[Default Step Implementation]
+** xref:3-pipeline-lifecycle-hooks.adoc[Pipeline Lifecycle Hooks]
+** xref:4-multimethod-steps.adoc[Multi-Method Steps]
+** xref:5-summary.adoc[Summary]
