@@ -1,7 +1,6 @@
 name: learning-labs
 title: Learning Labs
 version: 1.0
-start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
 - modules/local-development/nav.adoc

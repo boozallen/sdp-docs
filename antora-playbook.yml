@@ -5,8 +5,12 @@ site:
 content:
   sources:
   - url: https://github.com/boozallen/sdp-docs.git
-    branches: antora-1
+    branches: master
     start_path: overview
+
+    - url: https://github.com/boozallen/sdp-docs.git
+    branches: master
+    start_path: learning-labs
 
   - url: https://github.com/jenkinsci/templating-engine-plugin.git
     branches: master
@@ -14,12 +18,9 @@ content:
     start_path: docs
 
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: [ antora, antora-2.1 ]
+    branches: release/.*
+    tags: .*
     start_path: docs 
-
-  - url: https://github.com/boozallen/sdp-docs.git
-    branches: antora-1
-    start_path: learning-labs
     
   - url: https://github.com/boozallen/sdp-iac.git
     branches: master

@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1084,9 +1084,9 @@
 <div class="paragraph">
 <p>From the root of the sdp-helm-chart directory, run the command</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>./installer.sh</pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./installer.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1099,33 +1099,28 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-This GitHub login must be for the public GitHub site, and not a GitHub
-Enterprise server
-====Should the installer script fail, see if you can use the error
-message to resolve the issue and try running the script again. If that
-fails, go to the previous pages of the guide and make sure the
-prerequisites are met and the steps were completed.
+<div class="paragraph">
+<p>This GitHub login must be for the public GitHub site, and not a GitHub Enterprise server</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>After the SDP has successfully been installed, you should see this
-message:</p>
+<p>Should the installer script fail, see if you can use the error message to resolve the issue and try running the script again. If that fails, go to the previous pages of the guide and make sure the prerequisites are met and the steps were completed.</p>
 </div>
-<div class="literalblock">
+<div class="paragraph">
+<p>After the SDP has successfully been installed, you should see this message:</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>Successfully Installed the Solutions Delivery Platform.
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Successfully Installed the Solutions Delivery Platform.
 
-✔ Solutions Delivery Platform Installed</pre>
+✔ Solutions Delivery Platform Installed</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>While the SDP has been installed on OpenShift, it needs a few minutes to
-prepare and set up. Go to the overview page for the "sdp" project in
-your OpenShift cluster&#8217;s web console to monitor the progress. The
-overview page should also show the links for Jenkins and any other tools
-you opted to install.</p>
+<p>While the SDP has been installed on OpenShift, it needs a few minutes to prepare and set up. Go to the overview page for the "sdp" project in your OpenShift cluster&#8217;s web console to monitor the progress. The overview page should also show the links for Jenkins and any other tools you opted to install.</p>
 </div>
 </div>
 </div>
@@ -1133,21 +1128,10 @@ you opted to install.</p>
 <h2 id="_verify_the_installation"><a class="anchor" href="#_verify_the_installation"></a>Verify the Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After a few minutes, Jenkins should finish setting up. On the overview
-page for the "sdp" project you should see all blue rings showing all of
-the pods are running successfully. When you click on the Jenkins link -
-it&#8217;ll be something like <em>http://jenkins.app.ocp.example.com</em> - you
-should be redirected to an OpenShift login page. Use your OpenShift
-credentials to log in. If you&#8217;re prompted to allow the <em>jenkins</em> Service
-Account to access your account, click "Allow selected permissions" to
-proceed. You should see a fresh Jenkins ready for new jobs.</p>
+<p>After a few minutes, Jenkins should finish setting up. On the overview page for the "sdp" project you should see all blue rings showing all of the pods are running successfully. When you click on the Jenkins link - it&#8217;ll be something like <em>http://jenkins.app.ocp.example.com</em> - you should be redirected to an OpenShift login page. Use your OpenShift credentials to log in. If you&#8217;re prompted to allow the <em>jenkins</em> Service Account to access your account, click "Allow selected permissions" to proceed. You should see a fresh Jenkins ready for new jobs.</p>
 </div>
 <div class="paragraph">
-<p>If you installed SonarQube, you should be able to click on the its link
-- it&#8217;ll be something like <em>http://sonarqube.apps.ocp-dev.microcaas.net</em>
-- and go to the SonarQube homepage. Log in with the username and
-password "admin" and optionally skip the tutorial. You should see an
-empty SonarQube ready to analyze projects.</p>
+<p>If you installed SonarQube, you should be able to click on the its link - it&#8217;ll be something like <em>http://sonarqube.apps.ocp-dev.microcaas.net</em> - and go to the SonarQube homepage. Log in with the username and password "admin" and optionally skip the tutorial. You should see an empty SonarQube ready to analyze projects.</p>
 </div>
 </div>
 </div>
@@ -1155,19 +1139,38 @@ empty SonarQube ready to analyze projects.</p>
 <h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If all you need is Jenkins and the DevOps tools, you should be finished.
-Jenkins has the JTE and a number of standard plugins installed for you.
-It also has credentials for GitHub, the Openshift Docker registry, and
-Sonarqube already created.</p>
+<p>If all you need is Jenkins and the DevOps tools, you should be finished. Jenkins has the JTE and a number of standard plugins installed for you. It also has credentials for GitHub, the Openshift Docker registry, and Sonarqube already created.</p>
 </div>
 <div class="paragraph">
-<p>Continue on to the following sections to walk through creating a CI/CD
-pipeline using the SDP to automatically deploy your applications to
-OpenShift.</p>
+<p>Continue on to the following sections to walk through creating a CI/CD pipeline using the SDP to automatically deploy your applications to OpenShift.</p>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"Section 1.1 - Preparing to Run the Installer","url":"/deployment-guides/1/openshift/1_1_Prepare_To_Install.html","urlType":"internal"})
+    console.log("page.next: ", {"content":"Section 2 - Setting up a Pipeline","url":"/deployment-guides/1/openshift/2_0_Pipeline_Config_Overview.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                2_0_Pipeline_Config_Overview.html"
+        >
+            <div class="title">
+                Section 2 - Setting up a Pipeline
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                1_1_Prepare_To_Install.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Section 1.1 - Preparing to Run the Installer
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>

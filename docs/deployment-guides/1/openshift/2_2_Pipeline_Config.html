@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1076,14 +1076,10 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are as many ways to create a set up a Pipeline Configuration
-Repository as there are ways to create software. This guide should
-provide a good foundation to build off of.</p>
+<p>There are as many ways to create a set up a Pipeline Configuration Repository as there are ways to create software. This guide should provide a good foundation to build off of.</p>
 </div>
 <div class="paragraph">
-<p>This page covers the creation of a simple pipeline configuration
-repository, a repository containing files that define one or more
-pipelines, with a single governance tier in the root. <a href="/sdp-docs/pages/jte/docs/pages/Governance/index.html">You can learn more about pipeline goverance here</a>.</p>
+<p>This page covers the creation of a simple pipeline configuration repository, a repository containing files that define one or more pipelines, with a single governance tier in the root. <a href="../../../jte/1.5.2/governance/governance_tier.html" class="page">You can learn more about pipeline goverance here</a>.</p>
 </div>
 </div>
 </div>
@@ -1091,9 +1087,7 @@ pipelines, with a single governance tier in the root. <a href="/sdp-docs/pages/j
 <h2 id="_create_a_repository"><a class="anchor" href="#_create_a_repository"></a>Create a Repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use an SCM like GitHub to <a href="https://help.github.com/articles/create-a-repo/">create a repository</a> to store your pipeline configuration. This way
-you can access, share, and maintain pipeline configuration like any
-other piece of code.</p>
+<p>Use an SCM like GitHub to <a href="https://help.github.com/articles/create-a-repo/">create a repository</a> to store your pipeline configuration. This way you can access, share, and maintain pipeline configuration like any other piece of code.</p>
 </div>
 </div>
 </div>
@@ -1101,9 +1095,7 @@ other piece of code.</p>
 <h2 id="_create_a_pipeline_template"><a class="anchor" href="#_create_a_pipeline_template"></a>Create a Pipeline Template</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>At the root of this repository create a file called <code>Jenkinsfile</code>. This
-is the default pipeline template. A simple pipeline template might look
-like this:</p>
+<p>At the root of this repository create a file called <code>Jenkinsfile</code>. This is the default pipeline template. A simple pipeline template might look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1126,7 +1118,9 @@ on_merge to: master, {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<a href="/sdp-docs/pages/jte/docs/pages/Templating/index.html">You can learn more about writing pipeline templates here</a>
+<div class="paragraph">
+<p><a href="../../../jte/1.5.2/pipeline-templating/what_is_a_pipeline_template.html" class="page">You can learn more about writing pipeline templates here</a></p>
+</div>
 </td>
 </tr>
 </table>
@@ -1137,10 +1131,7 @@ on_merge to: master, {
 <h2 id="_create_pipeline_config_groovy"><a class="anchor" href="#_create_pipeline_config_groovy"></a>Create pipeline_config.groovy</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Also at the root of your pipeline configuration repository, create a
-file called <code>pipeline_config.groovy</code>. Since this file will (likely) be
-in your global governance tier, you modify it to make changes that apply
-to every pipeline. A simple pipeline config file might look like this:</p>
+<p>Also at the root of your pipeline configuration repository, create a file called <code>pipeline_config.groovy</code>. Since this file will (likely) be in your global governance tier, you modify it to make changes that apply to every pipeline. A simple pipeline config file might look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1193,7 +1184,9 @@ libraries{
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<a href="/sdp-docs/pages/jte/docs/pages/Templating/configuration_files/index.html">You can learn more about writing pipeline config files here</a>
+<div class="paragraph">
+<p><a href="../../../jte/1.5.2/pipeline-templating/configuration_files.html" class="page">You can learn more about writing pipeline config files here</a></p>
+</div>
 </td>
 </tr>
 </table>
@@ -1205,9 +1198,9 @@ libraries{
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The pipeline defined by this example won&#8217;t work until you&#8217;ve finished
-setting up your application environments in OpenShift and written your
-helm configuration repository, which is covered in the next section.
+<div class="paragraph">
+<p>The pipeline defined by this example won&#8217;t work until you&#8217;ve finished setting up your application environments in OpenShift and written your helm configuration repository, which is covered in the next section.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1218,14 +1211,12 @@ helm configuration repository, which is covered in the next section.
 <h2 id="_about_the_example_pipeline_configuration"><a class="anchor" href="#_about_the_example_pipeline_configuration"></a>About The Example Pipeline Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how the example pipeline template and pipeline
-config file above work together to create a pipeline.</p>
+<p>This section explains how the example pipeline template and pipeline config file above work together to create a pipeline.</p>
 </div>
 <div class="sect2">
 <h3 id="_the_pipeline_template"><a class="anchor" href="#_the_pipeline_template"></a>The Pipeline Template</h3>
 <div class="paragraph">
-<p>Starting with the pipeline template, every pipeline created from <em>this</em>
-template will have these steps:</p>
+<p>Starting with the pipeline template, every pipeline created from <em>this</em> template will have these steps:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1242,10 +1233,7 @@ on_merge to: master, {// 4a) if a merge to the master branch triggered the build
 </div>
 </div>
 <div class="paragraph">
-<p>Now that the pipeline template has defined <em>what</em> the pipeline does,
-there needs <a href="/sdp-docs/pages/jte/docs/pages/Governance/index.html#library-selection">libraries</a> to be a pipeline config file to define <em>how</em>. It needs to
-provide the implementation for the pipeline steps, <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html">application environments</a> to define the dev and
-prod environments being deployed to, and <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html">keywords</a> for the variables <code>develop</code> and
+<p>Now that the pipeline template has defined <em>what</em> the pipeline does, there needs <a href="../../../jte/1.5.2/governance/library_selection.html" class="page">libraries</a> to be a pipeline config file to define <em>how</em>. It needs to provide the implementation for the pipeline steps, <a href="../../../jte/1.5.2/primitives/application_environments.html" class="page">application environments</a> to define the dev and prod environments being deployed to, and <a href="../../../jte/1.5.2/primitives/keywords.html" class="page">keywords</a> for the variables <code>develop</code> and
 <code>master</code> being used.</p>
 </div>
 </div>
@@ -1280,16 +1268,10 @@ prod environments being deployed to, and <a href="/sdp-docs/pages/jte/docs/pages
 </div>
 </div>
 <div class="paragraph">
-<p>For every step used in a pipeline template, something needs to define
-that step&#8217;s implementation. For the JTE, these step implementations most
-commonly come from "libraries", which are imported from a "library
-source". For this example pipeline, it&#8217;s assumed that the <a href="https://github.com/boozallen/sdp-libraries">sdp-libraries</a> library source
-is available, and any of the libraries it contains can be used.</p>
+<p>For every step used in a pipeline template, something needs to define that step&#8217;s implementation. For the JTE, these step implementations most commonly come from "libraries", which are imported from a "library source". For this example pipeline, it&#8217;s assumed that the <a href="https://github.com/boozallen/sdp-libraries">sdp-libraries</a> library source is available, and any of the libraries it contains can be used.</p>
 </div>
 <div class="paragraph">
-<p>Five libraries are being imported here: github_enterprise, sonarqube,
-docker, sdp, and OpenShift. Below is a mapping of steps to the libraries
-that are being used.</p>
+<p>Five libraries are being imported here: github_enterprise, sonarqube, docker, sdp, and OpenShift. Below is a mapping of steps to the libraries that are being used.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1306,9 +1288,7 @@ on_merge to: master, {// github_enterprise
 </div>
 </div>
 <div class="paragraph">
-<p>Although the sdp library doesn&#8217;t provide the implementation for any of
-the steps here, it&#8217;s being imported because both the SonarQube and
-OpenShift libraries depend on a step it defines.</p>
+<p>Although the sdp library doesn&#8217;t provide the implementation for any of the steps here, it&#8217;s being imported because both the SonarQube and OpenShift libraries depend on a step it defines.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1317,7 +1297,9 @@ OpenShift libraries depend on a step it defines.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<a href="/sdp-docs/pages/libraries/index.html">You can learn more about the SDP pipeline libraries here</a>
+<div class="paragraph">
+<p><a href="../../../sdp-libraries/2.1/index.html" class="page">You can learn more about the SDP pipeline libraries here</a></p>
+</div>
 </td>
 </tr>
 </table>
@@ -1340,13 +1322,8 @@ OpenShift libraries depend on a step it defines.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <a href="/sdp-docs/pages/libraries/openshift/README.html">OpenShift library</a> uses <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/application_environments.html">Application Environment primitives</a> to select which project in OpenShift to deploy to. For example,
-when the pipeline template calls <code>deploy to: dev</code>(which can also be read
-as <code>deploy(to: dev)</code>), it takes the <em>dev</em> application environment
-primitive object that we define here and uses its values in <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy">the deploy step</a>. The
-<code>short_name</code>, in particular, is used to select the target OpenShift
-project and which values.yaml file to use as part of the deployment.
-View the next section or the <a href="/sdp-docs/pages/libraries/openshift/README.html">OpenShift library</a> page for more details.</p>
+<p>The <a href="../../../sdp-libraries/2.1/openshift/index.html" class="page">OpenShift library</a> uses <a href="../../../jte/1.5.2/primitives/application_environments.html" class="page">Application Environment primitives</a> to select which project in OpenShift to deploy to. For example, when the pipeline template calls <code>deploy to: dev</code>(which can also be read as <code>deploy(to: dev)</code>), it takes the <em>dev</em> application environment primitive object that we define here and uses its values in the <code>deploy_to</code> step. The
+<code>short_name</code>, in particular, is used to select the target OpenShift project and which values.yaml file to use as part of the deployment. View the next section or the <a href="../../../sdp-libraries/2.1/openshift/index.html" class="page">OpenShift library</a> page for more details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1360,10 +1337,7 @@ View the next section or the <a href="/sdp-docs/pages/libraries/openshift/README
 </div>
 </div>
 <div class="paragraph">
-<p>The <a href="/sdp-docs/pages/libraries/github_enterprise/README.html">GitHub Enterprise library</a> uses <a href="/sdp-docs/pages/jte/docs/pages/Templating/primitives/keywords.html">Keyword primitives</a> to determine what kind of GitHub branch is being built. The
-steps <code>on_merge()</code>, <code>on_commit</code>, and <code>on_pull_request</code> take a regex
-expression as a parameter. These regex expressions have been stored as
-keywords to make the pipeline template more human-readable.</p>
+<p>The <a href="../../../sdp-libraries/2.1/github_enterprise/index.html" class="page">GitHub Enterprise library</a> uses <a href="../../../jte/1.5.2/primitives/keywords.html" class="page">Keyword primitives</a> to determine what kind of GitHub branch is being built. The steps <code>on_merge()</code>, <code>on_commit</code>, and <code>on_pull_request</code> take a regex expression as a parameter. These regex expressions have been stored as keywords to make the pipeline template more human-readable.</p>
 </div>
 </div>
 </div>
@@ -1372,14 +1346,7 @@ keywords to make the pipeline template more human-readable.</p>
 <h2 id="_closing_summary"><a class="anchor" href="#_closing_summary"></a>Closing Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This pipeline configuration repository, with a single governance tier
-located in the base of the repository, contains two files: <em>Jenkinsfile</em>
-and <em>pipeline_config.groovy</em>. The default pipeline template,
-<em>Jenkinsfile</em>, defines the steps that each pipeline executes. The
-pipeline configuration file, <em>pipeline_config.groovy</em>, controls how
-those steps are run in the pipeline by selecting the libraries to
-implement those steps, the settings for those libraries, and any other
-pipeline primitives being used.</p>
+<p>This pipeline configuration repository, with a single governance tier located in the base of the repository, contains two files: <em>Jenkinsfile</em> and <em>pipeline_config.groovy</em>. The default pipeline template, <em>Jenkinsfile</em>, defines the steps that each pipeline executes. The pipeline configuration file, <em>pipeline_config.groovy</em>, controls how those steps are run in the pipeline by selecting the libraries to implement those steps, the settings for those libraries, and any other pipeline primitives being used.</p>
 </div>
 <div class="paragraph">
 <p>Using the files in this example, pipelines will:</p>
@@ -1403,29 +1370,51 @@ pipeline primitives being used.</p>
 <h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You should be ready to move onto the next section, which covers creating
-a Helm chart repository. For more on the information covered in this
-section:</p>
+<p>You should be ready to move onto the next section, which covers creating a Helm chart repository. For more on the information covered in this section:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/sdp-docs/pages/jte/docs/pages/Templating/index.html">You can learn more about writing pipeline templates here</a></p>
+<p><a href="../../../jte/1.5.2/pipeline-templating/what_is_a_pipeline_template.html" class="page">You can learn more about writing pipeline templates here</a></p>
 </li>
 <li>
-<p><a href="/sdp-docs/pages/jte/docs/pages/Templating/configuration_files/index.html">You can learn more about writing pipeline config files here</a></p>
+<p><a href="../../../jte/1.5.2/pipeline-templating/configuration_files.html" class="page">You can learn more about writing pipeline config files here</a></p>
 </li>
 <li>
-<p><a href="/sdp-docs/pages/libraries/index.html">You can learn more about the SDP pipeline libraries here</a></p>
+<p><a href="../../../sdp-libraries/2.1/index.html" class="page">You can learn more about the SDP pipeline libraries here</a></p>
 </li>
 <li>
-<p><a href="/sdp-docs/pages/jte/docs/pages/Library_Development/index.html">You can learn more about writing your own pipeline libraries here</a></p>
+<p><a href="../../../jte/1.5.2/library-development/getting_started.html" class="page">You can learn more about writing your own pipeline libraries here</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"Section 2.1 - Pipeline Planning","url":"/deployment-guides/1/openshift/2_1_Pipeline_Planning.html","urlType":"internal"})
+    console.log("page.next: ", {"content":"Section 3 - Setting up the Application Environment","url":"/deployment-guides/1/openshift/3_0_Application_Environment_Overview.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                3_0_Application_Environment_Overview.html"
+        >
+            <div class="title">
+                Section 3 - Setting up the Application Environment
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                2_1_Pipeline_Planning.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Section 2.1 - Pipeline Planning
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>

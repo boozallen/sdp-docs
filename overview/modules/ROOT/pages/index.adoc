@@ -11,6 +11,14 @@ Over the past two years, we've developed an open source and reusable pipeline fr
 
 Instead of creating per-application pipelines, SDP allows you to create tool-agnostic, templated workflows that can be used by multiple teams to achieve organizational governance.
 
+.Toggle Me
+[%collapsible]
+====
+collapsible - these details are revealed by clicking the title
+====
+
+blah
+
 == Components
 
 === Container Orchestration Platform

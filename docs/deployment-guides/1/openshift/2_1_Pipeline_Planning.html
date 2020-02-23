@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1077,16 +1077,10 @@
 <h2 id="_identify_your_source_code"><a class="anchor" href="#_identify_your_source_code"></a>Identify Your Source Code</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Where are you, or your team&#8217;s developers, storing their code? Ideally,
-there&#8217;s some source code management tool (SCM) that&#8217;s being used to
-centralize, share, and manage source code. The SDP takes advantage of
-these features of SCMs in your CI/CD pipelines.</p>
+<p>Where are you, or your team&#8217;s developers, storing their code? Ideally, there&#8217;s some source code management tool (SCM) that&#8217;s being used to centralize, share, and manage source code. The SDP takes advantage of these features of SCMs in your CI/CD pipelines.</p>
 </div>
 <div class="paragraph">
-<p>Currently, the preferred SCM is <a href="https://github.com/">GitHub</a>, which is where the SDP keeps and
-maintains its source code. Other Git-based SCMS like GitLab are also
-viable, as are other SCMs like Mercurial, though the SDP libraries to
-support them have not yet been created.</p>
+<p>Currently, the preferred SCM is <a href="https://github.com/">GitHub</a>, which is where the SDP keeps and maintains its source code.</p>
 </div>
 </div>
 </div>
@@ -1094,26 +1088,15 @@ support them have not yet been created.</p>
 <h2 id="_understand_your_pipeline"><a class="anchor" href="#_understand_your_pipeline"></a>Understand Your Pipeline</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A basic DevSecOps, CI/CD Pipeline will do three things: build, deploy,
-and test. It should take the raw source code and change it to a format
-that will run optimally on your platform. It should also take the output
-of the build and deploy it to your platform. Lastly it should be
-automatically testing various aspects of the application and all
-throughout the pipeline - anything from unit tests to penetration tests.</p>
+<p>A basic DevSecOps, CI/CD Pipeline will do three things: build, deploy, and test. It should take the raw source code and change it to a format that will run optimally on your platform. It should also take the output of the build and deploy it to your platform. Lastly it should be automatically testing various aspects of the application and all throughout the pipeline - anything from unit tests to penetration tests.</p>
 </div>
 <div class="paragraph">
-<p>There are myriad ways to do any of these three tasks, but because it&#8217;s
-assumed you&#8217;ll be deploying on OpenShift we can make some assumptions
-about your pipeline.</p>
+<p>There are myriad ways to do any of these three tasks, but because it&#8217;s assumed you&#8217;ll be deploying on OpenShift we can make some assumptions about your pipeline.</p>
 </div>
 <div class="sect2">
 <h3 id="_building"><a class="anchor" href="#_building"></a>Building</h3>
 <div class="paragraph">
-<p>Since OpenShift is a container application platform, and it&#8217;s assumed
-that your application is being deployed to OpenShift, it can also be
-assumed that your application running as (Docker) containers. The SDP&#8217;s <a href="/sdp-docs/pages/libraries/docker/README.html">Docker Library</a>
-makes it easy to build images from your source code repository and store
-them in OpenShift&#8217;s built-in container registry.</p>
+<p>Since OpenShift is a container application platform, and it&#8217;s assumed that your application is being deployed to OpenShift, it can also be assumed that your application running as (Docker) containers. The SDP&#8217;s <a href="../../../sdp-libraries/2.1/docker/index.html" class="page">Docker Library</a> makes it easy to build images from your source code repository and store them in OpenShift&#8217;s built-in container registry.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1122,8 +1105,9 @@ them in OpenShift&#8217;s built-in container registry.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-OpenShift has some <a href="https://docs.openshift.com/container-platform/3.9/creating_images/guidelines.html">guidelines around creating container images</a> that it&#8217;s important to be aware of. The section on
-supporting arbitrary user IDs is especially important.
+<div class="paragraph">
+<p>OpenShift has some <a href="https://docs.openshift.com/container-platform/3.9/creating_images/guidelines.html">guidelines around creating container images</a> that it&#8217;s important to be aware of. The section on supporting arbitrary user IDs is especially important.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1132,25 +1116,42 @@ supporting arbitrary user IDs is especially important.
 <div class="sect2">
 <h3 id="_testing"><a class="anchor" href="#_testing"></a>Testing</h3>
 <div class="paragraph">
-<p>The SDP currently has libraries for tools that run <a href="/sdp-docs/pages/libraries/sonarqube/README.html">code quality tests</a>, <a href="/sdp-docs/pages/libraries/a11y/README.html">accessibility compliance (508) tests</a>, <a href="/sdp-docs/pages/libraries/owasp_zap/README.html">penetration tests</a>, and more. Which
-ones you should use depends on the needs of your application. Automated
-tests like these are useful for detecting issues earlier in a feature&#8217;s
-lifecycle, where it&#8217;s easier (and cheaper) to correct.</p>
+<p>The SDP currently has libraries for tools that run <a href="../../../sdp-libraries/2.1/a11y/index.html" class="page">code quality tests</a>, <a href="../../../sdp-libraries/2.1/a11y/index.html" class="page">accessibility compliance (508) tests</a>, <a href="../../../sdp-libraries/2.1/owasp_zap/index.html" class="page">penetration tests</a>, and more. Which ones you should use depends on the needs of your application. Automated tests like these are useful for detecting issues earlier in a feature&#8217;s lifecycle, where it&#8217;s easier (and cheaper) to correct.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_deploying"><a class="anchor" href="#_deploying"></a>Deploying</h3>
 <div class="paragraph">
-<p>The <a href="/sdp-docs/pages/libraries/openshift/README.html">OpenShift Library</a> makes it easy to deploy to different OpenShift projects using <a href="https://helm.sh/">Helm</a>, a
-Kubernetes/OpenShift package manager and templating tool. How to deploy
-an application is defined in a Helm chart or charts, which is maintained
-in your SCM alongside your source code and pipeline configuration. This
-is covered in greater detail in Section 3.</p>
+<p>The <a href="../../../sdp-libraries/2.1/openshift/index.html" class="page">OpenShift Library</a> makes it easy to deploy to different OpenShift projects using <a href="https://helm.sh/">Helm</a>, a Kubernetes/OpenShift package manager and templating tool. How to deploy an application is defined in a Helm chart or charts, which is maintained in your SCM alongside your source code and pipeline configuration. This is covered in greater detail in Section 3.</p>
 </div>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"Section 2 - Setting up a Pipeline","url":"/deployment-guides/1/openshift/2_0_Pipeline_Config_Overview.html","urlType":"internal"})
+    console.log("page.next: ", {"content":"Section 2.2 - Creating the Pipeline Configuration Repository","url":"/deployment-guides/1/openshift/2_2_Pipeline_Config.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                2_2_Pipeline_Config.html"
+        >
+            <div class="title">
+                Section 2.2 - Creating the Pipeline Configuration Repository
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                2_0_Pipeline_Config_Overview.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Section 2 - Setting up a Pipeline
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>

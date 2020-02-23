@@ -8,4 +8,4 @@ A Jenkins instance will be required for this lab. If you don't have one availabl
 
 This lab is the third and final lab specificially dedicated to the Jenkins Templating Engine's functionality.
 
-Please be sure to have completed the xref:learning-labs:jte-primitives.adoc[JTE: Pipeline Primitives] lab before attempting this one as we will be picking up where that lab leaves off.
+Please be sure to have completed the xref:learning-labs:jte-primitives:index.adoc[JTE: Pipeline Primitives] lab before attempting this one as we will be picking up where that lab leaves off.

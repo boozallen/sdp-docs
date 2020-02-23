@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1077,13 +1077,11 @@
 <h2 id="_log_into_openshift"><a class="anchor" href="#_log_into_openshift"></a>Log into OpenShift</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Run the command here, replacing the URI shown with the one for your
-cluster&#8217;s master node(s). The URI is the one you use to reach your
-OpenShift web console.</p>
+<p>Run the command here, replacing the URI shown with the one for your cluster&#8217;s master node(s). The URI is the one you use to reach your OpenShift web console.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ oc login master.ocp.example.com:8443</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ oc login master.ocp.example.com:8443</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1099,7 +1097,7 @@ OpenShift web console.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>## cloning via ssh
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">## cloning via ssh
 $ git clone git@github.com:boozallen/sdp-helm-chart.git
 ## cloning via https
 $ git clone https://github.com/boozallen/sdp-helm-chart.git</code></pre>
@@ -1111,8 +1109,7 @@ $ git clone https://github.com/boozallen/sdp-helm-chart.git</code></pre>
 <h2 id="_create_your_values_file"><a class="anchor" href="#_create_your_values_file"></a>Create Your Values File</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>From the root of your new sdp-helm-chart directory, copy
-values.template.yaml to values.yaml.</p>
+<p>From the root of your new sdp-helm-chart directory, copy values.template.yaml to values.yaml.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1120,8 +1117,7 @@ values.template.yaml to values.yaml.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The installer script will use the settings defined in this file when
-deploying the SDP.</p>
+<p>The installer script will use the settings defined in this file when deploying the SDP.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1130,7 +1126,9 @@ deploying the SDP.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This extra step is intended to prevent users from inadvertently pushingtheir values.yaml file, which may contain sensitive information.
+<div class="paragraph">
+<p>This extra step is intended to prevent users from inadvertently pushingtheir values.yaml file, which may contain sensitive information.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1141,13 +1139,7 @@ This extra step is intended to prevent users from inadvertently pushingtheir val
 <h2 id="_modify_the_values_file"><a class="anchor" href="#_modify_the_values_file"></a>Modify the Values File</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The only value that you <em>must</em> change in values.yaml is <code>global.domain</code>.
-You should change it to match the subdomain your cluster uses for
-exposed routes. To easily see what that subdomain is for your cluster,
-you can run <code>oc get routes -n default</code> and look at the entries under the
-HOST/PORT column. It will be everything past the first period (.), so if
-one of the entries is <code>docker-registry-default.apps.ocp.example.com</code>
-then values.yaml should contain:</p>
+<p>The only value that you <em>must</em> change in values.yaml is <code>global.domain</code>. You should change it to match the subdomain your cluster uses for exposed routes. To easily see what that subdomain is for your cluster, you can run <code>oc get routes -n default</code> and look at the entries under the HOST/PORT column. It will be everything past the first period (.), so if one of the entries is <code>docker-registry-default.apps.ocp.example.com</code> then values.yaml should contain:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1156,17 +1148,38 @@ then values.yaml should contain:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>You can also add to your values file any of the values described in the <a href="https://github.com/boozallen/sdp-helm-chart">sdp-helm-chart repository</a>
-README.</p>
+<p>You can also add to your values file any of the values described in the <a href="https://github.com/boozallen/sdp-helm-chart">sdp-helm-chart repository</a> README.</p>
 </div>
 <div class="paragraph">
-<p>While the SDP installation will deploy SonarQube and other tools, you
-can opt not to install them by changing their "enable" setting from
-<code>true</code> to <code>false</code>.</p>
+<p>While the SDP installation will deploy SonarQube and other tools, you can opt not to install them by changing their "enable" setting from <code>true</code> to <code>false</code>.</p>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"Section 1 - Deploying the DevOps Tools","url":"/deployment-guides/1/openshift/1_0_Deploy_Tools_Overview.html","urlType":"internal"})
+    console.log("page.next: ", {"content":"Section 1.2 - Running the Installer Script","url":"/deployment-guides/1/openshift/1_2_Run_Installer.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                1_2_Run_Installer.html"
+        >
+            <div class="title">
+                Section 1.2 - Running the Installer Script
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                1_0_Deploy_Tools_Overview.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Section 1 - Deploying the DevOps Tools
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>

@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1077,11 +1077,8 @@
 <h2 id="_section_3_overview"><a class="anchor" href="#_section_3_overview"></a>Section 3 Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="/sdp-docs/pages/libraries/openshift/README.html">OpenShift library</a> has a <a href="https://github.com/boozallen/sdp-libraries/blob/master/openshift/deploy_to.groovy">deploy step</a> that can be used to deploy the most recent build of a
-particular service to a given <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects">OpenShift project</a>. The first part of this section covers
-how to create and configure the target OpenShift projects. The second
-part goes over how to create a Helm repository, defines how your
-application is deployed.</p>
+<p>The <a href="../../../sdp-libraries/2.1/openshift/index.html" class="page">OpenShift library</a> has a <code>deploy_to()</code> that can be used to deploy the most recent build of a
+particular service to a given <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/projects_and_users.html#projects">OpenShift project</a>. The first part of this section covers how to create and configure the target OpenShift projects. The second part goes over how to create a Helm repository, defines how your application is deployed.</p>
 </div>
 </div>
 </div>
@@ -1096,8 +1093,7 @@ application is deployed.</p>
 <p>A working Openshift cluster</p>
 </li>
 <li>
-<p>Credentials for a User on that cluster that has the <em>cluster-admin</em>
-role</p>
+<p>Credentials for a User on that cluster that has the <em>cluster-admin</em> role</p>
 </li>
 <li>
 <p>Access to the relevant GitHub Repositories</p>
@@ -1110,12 +1106,10 @@ role</p>
 <div class="ulist">
 <ul>
 <li>
-<p>OCP:
-<a href="https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html" class="bare">https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html</a></p>
+<p><a href="https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html">OCP</a></p>
 </li>
 <li>
-<p>OKD:
-<a href="https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli" class="bare">https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli</a></p>
+<p><a href="https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli">OKD</a></p>
 </li>
 </ul>
 </div>
@@ -1141,7 +1135,31 @@ role</p>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"Section 2.2 - Creating the Pipeline Configuration Repository","url":"/deployment-guides/1/openshift/2_2_Pipeline_Config.html","urlType":"internal"})
+    console.log("page.next: ", {"content":"Section 3.1 - Creating the Application Environments","url":"/deployment-guides/1/openshift/3_1_Application_Environments.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                3_1_Application_Environments.html"
+        >
+            <div class="title">
+                Section 3.1 - Creating the Application Environments
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                2_2_Pipeline_Config.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Section 2.2 - Creating the Pipeline Configuration Repository
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>

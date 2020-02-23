@@ -67,7 +67,7 @@ Documentation should live alongside the code it describes.  The documentation fo
 | Component | Description
 
 | {sdp-docs-repo}[SDP Documentation]
-| The SDP Documentation repository serves to hold documentation not specfic any component (like the xref:learning-labs:index.adoc[Learning Labs]).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site. 
+| The SDP Documentation repository serves to hold documentation not specfic any component (like the xref:learning-labs:ROOT:index.adoc[Learning Labs]).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site. 
 
 | {jte-repo}[Jenkins Templating Engine]
 | The Jenkins Templating Engine (JTE) is the core of the Solutions Delivery Platform.  It extends {jenkins}[Jenkins] to create tool-agnostic, pipeline templates that can be reused by multiple teams. 

@@ -250,7 +250,7 @@
       <div class="nav-item">
         
           
-            <a  class="spacer" href="#getting_start.adoc">Getting Started</a>              </div>
+            <a  class="spacer" href="../../../jte/1.5.2/library-development/getting_started.html">Getting Started</a>              </div>
            
      
       <div class="nav-item">
@@ -1077,9 +1077,7 @@
 <h2 id="_section_1_overview"><a class="anchor" href="#_section_1_overview"></a>Section 1 Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have completed this section, you should have a functioning
-deployment of the SDP. This includes a Jenkins master, one or more
-Jenkins agents, and services used by SDP libraries, such as SonarQube.</p>
+<p>Once you have completed this section, you should have a functioning deployment of the SDP. This includes a Jenkins master, one or more Jenkins agents, and services used by SDP libraries, such as SonarQube.</p>
 </div>
 </div>
 </div>
@@ -1094,27 +1092,23 @@ Jenkins agents, and services used by SDP libraries, such as SonarQube.</p>
 <p>A working OpenShift cluster</p>
 </li>
 <li>
-<p>Credentials for a User on that cluster that has the <em>cluster-admin</em>
-role</p>
+<p>Credentials for a User on that cluster that has the <em>cluster-admin</em> role</p>
 </li>
 <li>
 <p>Access to the relevant GitHub Repositories</p>
 </li>
 <li>
-<p>The Helm client installed
-(<a href="https://docs.helm.sh/using_helm/#installing-helm" class="bare">https://docs.helm.sh/using_helm/#installing-helm</a>)</p>
+<p>The <a href="https://docs.helm.sh/using_helm/#installing-helm">Helm</a> client installed</p>
 </li>
 <li>
 <p>The OpenShift CLI installed</p>
 <div class="ulist">
 <ul>
 <li>
-<p>OCP:
-<a href="https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html" class="bare">https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html</a></p>
+<p><a href="https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html">OCP</a></p>
 </li>
 <li>
-<p>OKD:
-<a href="https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli" class="bare">https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli</a></p>
+<p><a href="https://docs.okd.io/3.11/cli_reference/get_started_cli.html#cli-reference-get-started-cli">OKD</a></p>
 </li>
 </ul>
 </div>
@@ -1143,28 +1137,23 @@ role</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Your OpenShift cluster meets the minimum hardware requirements as laid
-out in the documentation</p>
+<p>Your OpenShift cluster meets the minimum hardware requirements as laid out in the documentation</p>
 <div class="ulist">
 <ul>
 <li>
-<p>OCP 3.11 (formerly OpenShift Enterprise):
-<a href="https://docs.openshift.com/container-platform/3.11/install/prerequisites.html" class="bare">https://docs.openshift.com/container-platform/3.11/install/prerequisites.html</a></p>
+<p><a href="https://docs.openshift.com/container-platform/3.11/install/prerequisites.html">OCP 3.11 (formerly OpenShift Enterprise)</a></p>
 </li>
 <li>
-<p>OKD 3.11 (formerly OpenShift Origin):
-<a href="https://docs.okd.io/3.11/install/prerequisites.html" class="bare">https://docs.okd.io/3.11/install/prerequisites.html</a></p>
+<p><a href="https://docs.okd.io/3.11/install/prerequisites.html">OKD 3.11 (formerly OpenShift Origin)</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Your cluster has enough available CPU and Memory for the SDP
-containers (see below)</p>
+<p>Your cluster has enough available CPU and Memory for the SDP containers (see below)</p>
 </li>
 <li>
-<p>Your cluster has enough remaining CPU and Memory for your application
-and any additional services (such as Prometheus, for monitoring)</p>
+<p>Your cluster has enough remaining CPU and Memory for your application and any additional services (such as Prometheus, for monitoring)</p>
 </li>
 </ul>
 </div>
@@ -1173,39 +1162,35 @@ and any additional services (such as Prometheus, for monitoring)</p>
 <div class="sect1">
 <h2 id="_additional_recommendations"><a class="anchor" href="#_additional_recommendations"></a>Additional Recommendations</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Your OpenShift Cluster is able to:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Your OpenShift cluster is able to create Persistent Volumes</dt>
-<dd>
+<p>Create Persistent Volumes:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>OCP 3.11:
-<a href="https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/index.html" class="bare">https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/index.html</a></p>
+<p><a href="https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/index.html">OCP 3.11</a></p>
 </li>
 <li>
-<p>OKD 3.11:
-<a href="https://docs.okd.io/3.11/install_config/persistent_storage/index.html" class="bare">https://docs.okd.io/3.11/install_config/persistent_storage/index.html</a></p>
+<p><a href="https://docs.okd.io/3.11/install_config/persistent_storage/index.html">OKD 3.1</a></p>
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 </li>
 <li>
-<p></p>
-<div class="paragraph">
-<p>Your OpenShift cluster is able to dynamically create said Persistent
-Volumes::
-  <strong> OCP 3.11:
-  <a href="https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html" class="bare">https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html</a>
-  </strong> OKD 3.11:
-  <a href="https://docs.okd.io/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html" class="bare">https://docs.okd.io/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html</a></p>
+<p>Dynamically create said Persistent Volumes</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html">OCP 3.11</a></p>
+</li>
+<li>
+<p><a href="https://docs.okd.io/3.11/install_config/persistent_storage/dynamically_provisioning_pvs.html">OKD 3.11</a></p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1217,10 +1202,9 @@ Volumes::
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-While not required to deploy the SDP, persistent volumes allow for
-safely restarting containers without loosing any storage or history. It
-can also make certain pipeline actions faster, such as building Docker
-images.
+<div class="paragraph">
+<p>While not required to deploy the SDP, persistent volumes allow for safely restarting containers without loosing any storage or history. It can also make certain pipeline actions faster, such as building Docker images.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1230,22 +1214,22 @@ images.
 <div class="sect1">
 <h2 id="_container_resource_recommendations"><a class="anchor" href="#_container_resource_recommendations"></a>Container Resource Recommendations</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 93%;">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 27%;">
-<col style="width: 23%;">
-<col style="width: 28%;">
-<col style="width: 22%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Container</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CPU (ea.)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory (ea.)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantity</strong></p></td>
+<th class="tableblock halign-left valign-top">Container</th>
+<th class="tableblock halign-left valign-top">CPU (ea.)</th>
+<th class="tableblock halign-left valign-top">Memory (ea.)</th>
+<th class="tableblock halign-left valign-top">Quantity</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jenkins Master</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1000m</p></td>
@@ -1266,28 +1250,36 @@ images.
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all" style="width: 69%;">
-<colgroup>
-<col style="width: 24%;">
-<col style="width: 34%;">
-<col style="width: 42%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Total</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CPU</strong>: 2250m</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory</strong>: 5500Mi</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p><em>* While only one Jenkins Agent is required, it&#8217;s highly recommended to
-have more. The quantity depends on how frequently Jenkins builds are
-run.</em></p>
+<p><em>* While only one Jenkins Agent is required, it&#8217;s highly recommended to have more. The quantity depends on how frequently Jenkins builds are run.</em></p>
 </div>
 </div>
 </div>
-        </div>
+            <script>
+    console.log("page.previous: ", {"content":"OpenShift","url":"/deployment-guides/1/openshift/index.html","urlType":"internal","items":[{"content":"Section 1 - Deploying the DevOps Tools","url":"/deployment-guides/1/openshift/1_0_Deploy_Tools_Overview.html","urlType":"internal"},{"content":"Section 1.1 - Preparing to Run the Installer","url":"/deployment-guides/1/openshift/1_1_Prepare_To_Install.html","urlType":"internal"},{"content":"Section 1.2 - Running the Installer Script","url":"/deployment-guides/1/openshift/1_2_Run_Installer.html","urlType":"internal"},{"content":"Section 2 - Setting up a Pipeline","url":"/deployment-guides/1/openshift/2_0_Pipeline_Config_Overview.html","urlType":"internal"},{"content":"Section 2.1 - Pipeline Planning","url":"/deployment-guides/1/openshift/2_1_Pipeline_Planning.html","urlType":"internal"},{"content":"Section 2.2 - Creating the Pipeline Configuration Repository","url":"/deployment-guides/1/openshift/2_2_Pipeline_Config.html","urlType":"internal"},{"content":"Section 3 - Setting up the Application Environment","url":"/deployment-guides/1/openshift/3_0_Application_Environment_Overview.html","urlType":"internal"},{"content":"Section 3.1 - Creating the Application Environments","url":"/deployment-guides/1/openshift/3_1_Application_Environments.html","urlType":"internal"},{"content":"Section 3.2 - Setting up the Helm Chart Repository","url":"/deployment-guides/1/openshift/3_2_Helm_Chart_Repo.html","urlType":"internal"}]})
+    console.log("page.next: ", {"content":"Section 1.1 - Preparing to Run the Installer","url":"/deployment-guides/1/openshift/1_1_Prepare_To_Install.html","urlType":"internal"})
+</script>
+
+<div class="nav-buttons">
+        <a class="next" href="                1_1_Prepare_To_Install.html"
+        >
+            <div class="title">
+                Section 1.1 - Preparing to Run the Installer
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+        <a class="previous" href="                index.html"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                OpenShift
+            </div>
+        </a>
+</div>        </div>
 </article>
 <div class="footer">
   <p>This page was built using the Antora default UI.</p>
