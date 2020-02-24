@@ -1,7 +1,9 @@
 site:
   title: Solutions Delivery Platform
-  url: https://boozallen.github.io/sdp-docs-skin/
+  url: https://boozallen.github.io/sdp-docs/
   start_page: overview::index.adoc
+  keys: 
+    google_analytics: 'UA-144247959-1'
 content:
   sources:
   - url: https://github.com/boozallen/sdp-docs.git
@@ -18,7 +20,7 @@ content:
     start_path: docs
 
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: release/.*
+    branches: [ master, release/1.2 ]
     tags: .*
     start_path: docs 
     
@@ -31,5 +33,7 @@ ui:
     snapshot: true
   supplemental_files:
   - path: .nojekyll
+  - path: googleb68ed66af787ac15.html
+    contents: 'google-site-verification: googleb68ed66af787ac15.html'
   - path: ui.yml
-    contents: "static_files: [ .nojekyll ]"
+    contents: "static_files: [ .nojekyll, googleb68ed66af787ac15.html ]"

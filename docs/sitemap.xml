@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://boozallen.github.io/sdp-docs/sitemap-deployment-guides.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://boozallen.github.io/sdp-docs/sitemap-jte.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://boozallen.github.io/sdp-docs/sitemap-learning-labs.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://boozallen.github.io/sdp-docs/sitemap-overview.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://boozallen.github.io/sdp-docs/sitemap-sdp-libraries.xml</loc>
+</sitemap>
+</sitemapindex>
