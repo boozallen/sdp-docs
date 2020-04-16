@@ -3,7 +3,7 @@ site:
   url: https://boozallen.github.io/sdp-docs/
   start_page: overview::index.adoc
   keys: 
-    google_analytics: 'UA-144247959-1'
+    google_analytics: 'UA-144247959-2'
 content:
   sources:
   - url: https://github.com/boozallen/sdp-docs.git

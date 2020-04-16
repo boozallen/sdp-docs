@@ -6,8 +6,8 @@
     <title>GitHub Organization Job :: Solutions Delivery Platform</title>
     <link rel="canonical" href="https://boozallen.github.io/sdp-docs/jte/1.5.2/job-types/github_org.html">
     <meta name="generator" content="Antora 2.2.0">
-    <link rel="stylesheet" href="../../../_/css/site.css">    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144247959-1"></script>
-    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-144247959-1')</script>
+    <link rel="stylesheet" href="../../../_/css/site.css">    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144247959-2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-144247959-2')</script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -358,6 +358,25 @@
         
           
             <a  class="spacer" href="../governance/library_selection.html">Library Selection</a>              </div>
+                  </div>
+     
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../developer/index.html">Developer Documentation</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../developer/initialization.html">Initialization Process</a>              </div>
                   </div>
               </div>
         </div>
@@ -1099,12 +1118,18 @@
 <p>JTE can be used to apply a pipeline template to an entire GitHub Organization by creating a <strong>GitHub Organization</strong> job in Jenkins.</p>
 </div>
 <div class="paragraph">
-<p>To configure this, under the <strong>Projects</strong> section you will set the <strong>Project Recognizer</strong> as <code>Jenkins Templating Engine</code> (as shown below)</p>
+<p>To configure this, under the <strong>Projects</strong> section you will set the <strong>Project Recognizer</strong> as <code>Jenkins Templating Engine</code>.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/github_org_project_recognizer.png" alt="github org project recognizer">
 </div>
+</div>
+<div class="sect1">
+<h2 id="_exclude_branches_without_pipeline_config_groovy"><a class="anchor" href="#_exclude_branches_without_pipeline_config_groovy"></a>Exclude Branches Without <code>pipeline_config.groovy</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When <code>Jenkins Templating Engine</code> is selected, a checkbox option is presented to exclude branches in source code repositories that do not have a <code>pipeline_config.groovy</code> file at the root of the repository.</p>
+</div>
+<div class="paragraph">
+<p>The default value is to create pipeline jobs for every branch regardless of whether a <code>pipeline_config.groovy</code> is present or not.</p>
 </div>
 </div>
 </div>
@@ -1115,12 +1140,7 @@
 <p>Note, the <strong>GitHub Organization</strong> project can configure a <strong>Governance Tier</strong> for specifying pipeline templates, library sources, and applying a pipeline configuration to every branch of every repository in a GitHub Organization.</p>
 </div>
 <div class="paragraph">
-<p>You can find these settings under the <code>Jenkins Templating Engine</code> section of the job configuration, as shown below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/github_org_governance_tier.png" alt="github org governance tier">
-</div>
+<p>You can find these settings under the <code>Jenkins Templating Engine</code> section of the job configuration.</p>
 </div>
 </div>
 </div>
