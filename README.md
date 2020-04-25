@@ -10,7 +10,7 @@ As such, it also serves as the [Antora](https://antora.org) playbook repository.
 ## Building the Docs 
 
 From the root of this repository, run ``make docs`` to build the documentation
-locally.  Once finished, the static files will be in the ``build`` directory. 
+locally.  Once finished, the static files will be in the ``docs`` directory. 
 
 ## Build Details
 
