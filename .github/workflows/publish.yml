@@ -5,10 +5,10 @@ on:
   schedule: 
     - cron: '* * * * *'
 jobs:
-  Unit_Test:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
       uses: actions/checkout@v1
     - name: Build Docs 
-      run: make docs 
+      run: make docs && ls docs
