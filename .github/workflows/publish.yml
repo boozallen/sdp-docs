@@ -1,0 +1,14 @@
+name: Publish
+on:
+  push:
+    branches: master
+  schedule: 
+    - cron: '* * * * *'
+jobs:
+  Unit_Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v1
+    - name: Build Docs 
+      run: make docs 
