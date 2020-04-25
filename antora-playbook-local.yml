@@ -6,17 +6,18 @@ content:
   sources:
   - url: .
     branches: HEAD
-    start_path: overview
-  - url: .
-    branches: HEAD
-    start_path: learning-labs
+    start_paths: [ overview, learning-labs ]
+
   - url: https://github.com/jenkinsci/templating-engine-plugin.git
-    branches: master
-    tags: .*
+    branches: []
+    tags: [ '*', '!1.0*', '!1.1*', '!v1.2', '!1.v2*', '!1.3*', '!1.4*', '!1.5*' ]
     start_path: docs
+
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: [ antora, antora-2.1 ]
+    branches: [ master ]
+    tags: [ '*', '!v1.0' ]
     start_path: docs 
+    
   - url: https://github.com/boozallen/sdp-iac.git
     branches: master
     start_path: deployment-guides
@@ -26,5 +27,7 @@ ui:
     snapshot: true
   supplemental_files:
   - path: .nojekyll
+  - path: googleb68ed66af787ac15.html
+    contents: 'google-site-verification: googleb68ed66af787ac15.html'
   - path: ui.yml
-    contents: "static_files: [ .nojekyll ]"
+    contents: "static_files: [ .nojekyll, googleb68ed66af787ac15.html ]"

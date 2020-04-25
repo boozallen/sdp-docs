@@ -1,5 +1,4 @@
 .DS_STORE
-pages/labs
-build
 node_modules/
 .antora/
+site-generator/node_modules

@@ -10,16 +10,9 @@ help: ## Show target options
 clean: ## removes remote documentation and compiled documentation
 	rm -rf $(BUILDDIR)/**
 
-.ONESHELL:
-install:  ## installs the project's npm dependencies
-	[ ! -d node_modules ] && npm i || true
+image: 
+	@echo "Building Antora Image" 
+	@docker build . -t sdp-antora
 
-docs: clean install ## builds the antora documentation 
-	$(shell npm bin)/antora generate --fetch --generator ./site-generator --to-dir $(BUILDDIR) $(ANTORABUNDLE) $(PLAYBOOK)
-
-preview: clean install ## runs a local preview server to view changes to the documentation
-	$(shell npm bin)/gulp preview 
-
-validate: docs ## uses html-proofer to search for broken links
-	docker build . -f html-proofer.Dockerfile -t html-proofer 
-	docker run -v $(shell pwd)/$(BUILDDIR)/:/site html-proofer --url-swap "http\://localhost\:3000:file:///site" --url-ignore "http://localhost.*"  /site
+docs: clean image ## builds the antora documentation 	
+	@docker run -v ~/.git-credentials:/root/.git-credentials -v $(shell pwd):/antora:Z --rm -t sdp-antora generate --stacktrace --generator ./site-generator --to-dir $(BUILDDIR) $(ANTORABUNDLE) $(PLAYBOOK)
