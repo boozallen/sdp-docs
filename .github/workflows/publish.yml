@@ -1,0 +1,17 @@
+name: Publish
+on:
+  push:
+    branches: master
+  schedule: 
+    - cron: '0 20 * * *'
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v1
+    - name: Build Docs 
+      run: make docs
+    - uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

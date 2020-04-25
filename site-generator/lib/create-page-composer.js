@@ -131,10 +131,6 @@ function buildSiteUiModel (playbook, contentCatalog) {
   */
   model.components = []
   var displayOrder = ["overview", "jte", "sdp-libraries", "learning-labs", "deployment-guides"]
-  if( displayOrder.length != playbook.content.sources.length ){
-    console.log("WARNING: there are more sources defined than referenced in site-generator/lib/create-page-composer.js:133")
-    console.log("It's likely a source was added without updating the displayOrder array.")
-  }
   displayOrder.forEach((name) => {
     var component = contentCatalog.getComponent(name)
     if( component != undefined){
