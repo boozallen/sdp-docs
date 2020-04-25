@@ -7,6 +7,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: github.repository == 'boozallen/sdp-docs'
     steps:
     - name: Checkout Code
       uses: actions/checkout@v1
