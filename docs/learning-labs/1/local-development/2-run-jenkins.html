@@ -1584,6 +1584,9 @@
 <div class="paragraph">
 <p>In your terminal, run:</p>
 </div>
+<div class="paragraph">
+<p>(If running Docker for Windows, please refer to Important section below)</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>    docker run --name jenkins \
@@ -1673,6 +1676,10 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
+<div class="paragraph">
+<p>Windows OS: When using Docker for Windows, use the following command to run the Jenkins container:
+docker run --name jenkins -v /usr/local/bin/docker:/usr/bin/docker -v //var/run/docker.sock:/var/run/docker.sock --privileged --user root -p 50000:50000 -p 8080:8080 -d jenkins/jenkins:lts</p>
+</div>
 <div class="paragraph">
 <p>You can run <code>docker logs -f jenkins</code> to see the Jenkins logs.  It will say "Jenkins is fully up and running" when Jenkins is ready.</p>
 </div>
