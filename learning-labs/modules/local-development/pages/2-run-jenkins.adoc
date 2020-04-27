@@ -4,7 +4,7 @@ Docker simplifies packaging applications with all their dependencies.
 
 Through Docker, we can have a running Jenkins instance in a matter of seconds. 
 
-In your terminal, run: <br />
+In your terminal, run: 
 
 (If running Docker for Windows, please refer to Important section below)
 
@@ -64,7 +64,7 @@ If port 8080 is already in use by another process then this command will fail.  
 
 [IMPORTANT]
 ====
-Windows OS: When using Docker for Windows, use the following command to run the Jenkins container: <br />
+Windows OS: When using Docker for Windows, use the following command to run the Jenkins container: 
 docker run --name jenkins -v /usr/local/bin/docker:/usr/bin/docker -v //var/run/docker.sock:/var/run/docker.sock --privileged --user root -p 50000:50000 -p 8080:8080 -d jenkins/jenkins:lts
 
 You can run ``docker logs -f jenkins`` to see the Jenkins logs.  It will say "Jenkins is fully up and running" when Jenkins is ready.
