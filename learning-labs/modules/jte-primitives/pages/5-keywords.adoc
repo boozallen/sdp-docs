@@ -11,7 +11,7 @@ In this example, we'll use a Keyword as a feature flag externalized from the Pip
 
 [NOTE]
 ====
-xrefs:jte:primitives:keywords.adoc[View the Keyword documentation]
+xref:jte:primitives:keywords.adoc[View the Keyword documentation]
 ====
 
 == Define and Use A Keyword
