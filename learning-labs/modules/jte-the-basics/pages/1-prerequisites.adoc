@@ -18,6 +18,13 @@ Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab, etc) shoul
 
 Create a {github-pat}[GitHub Personal Access Token].
 
+[NOTE]
+====
+If you intend to create public repositories then your PAT is merely acting to authenticate to GitHub in order to avoid rate limiting, you do not need to grant any scopes to the PAT. 
+
+If you will be creating private repositories, you'll need to grant the repo scope to the PAT.
+====
+
 Copy this token and store it in the Jenkins credential store.
 
 . From the Jenkins home page, click `Credentials` in the lefthand navigation menu
