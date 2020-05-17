@@ -80,6 +80,7 @@ From the Jenkins home page:
 . In the lefthand navigation menu click `Manage Jenkins`
 . Click `Configure System`
 . Scroll down to the `Jenkins Templating Engine` configuration section
+. Under `Pipeline Configuration` select `From SCM`
 . Select `Git` for the `Source Location` drop down menu
 . Under `Repository URL` type the *https* URL for the GitHub Repository containing the libraries, template, and configuration file
 . In the `Credentials` drop down menu, select the github credential created during the prerequisites
