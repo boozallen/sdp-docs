@@ -19,7 +19,7 @@ If this is still configured, remove it.
 . From the Jenkins homepage, Click `Manage Jenkins` in the lefthand navigation menu
 . Click `Configure System`
 . Scroll down to the `Jenkins Templating Engine` configuration section
-. For the `Source Location` dropdown menu, select `None`
+. Under `Pipeline Configuration` dropdown menu, select `None`
 . Remove any text in the `Configuration Base Directory` text box
 . Click `Save`
 
