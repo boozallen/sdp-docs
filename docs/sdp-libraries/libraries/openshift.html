@@ -2267,6 +2267,16 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/openshift/Openshift_deploy_to_diagram.png" alt="Openshift deploy to diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_library_configurations"><a class="anchor" href="#_library_configurations"></a>Library Configurations</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -2323,19 +2333,22 @@ libraries{
 <p><strong>Create Helm Configuration Repository</strong></p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll need to create a GitHub repository to store the helm chart for your application(s). See the <a href="https://docs.helm.sh/helm/#helm-create">helm docs on provisioning a new chart</a> to get intialize the repository with the skeleton for your chart.</p>
+<p>You&#8217;ll need to create a GitHub repository to store the helm chart for your application(s). See the <a href="https://docs.helm.sh/helm/#helm-create">helm docs on provisioning a new chart</a> to get initialize the repository with the skeleton for your chart.</p>
 </div>
 <div class="paragraph">
-<p>How you choose to build your helm chart is up to you, you can put every api object in the <code>templates</code> directory or have subcharts for each individual microservice.  SDP doesn&#8217;t care, as all it does is clone the github repository and deploy the chart using the specified values file.</p>
+<p>How you choose to build your helm chart is up to you. You can put every api object in the <code>templates</code> directory or have subcharts for each individual microservice. All the library does is clone the GitHub repository and deploy the chart using the specified values file.</p>
+</div>
+<div class="paragraph">
+<p>For most users, the only branch of the helm configuration repository needed is the "master" branch. However, if you want to use different branches for different app environments, you can add a <code>helm_chart_branch</code> setting to your application environments in your pipeline config.</p>
 </div>
 <div class="paragraph">
 <p><strong>Values File Conventions</strong></p>
 </div>
 <div class="paragraph">
-<p>Given that we tag container images using the git SHA, SDP will clone your helm configuration repository and update a key corresponding to the current version of each  container image for each application environment.</p>
+<p>Given that we tag container images using the git SHA, SDP will clone your helm configuration repository and update a key corresponding to the current version of each container image for each application environment.</p>
 </div>
 <div class="paragraph">
-<p>As such, a certain syntax is required in your values file.  You must have an <code>image_shas</code> key. SDP will automatically add subkeys for each repositories under this <code>image_shas</code> with a value that is the git SHA.</p>
+<p>As such, a certain syntax is required in your values file.  You must have a <code>repos</code> global key. SDP will automatically add elements for each repository to <code>repos</code> (assuming <code>repos</code> is a List already) and set their value to include the appropriate Git SHA.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2345,7 +2358,7 @@ libraries{
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Given that YAML keys can&#8217;t have hypens, hyphens in repository names will be replaced with underscores.</p>
+<p>Since YAML keys can&#8217;t have hyphens or numbers, any hyphens in repository names will be replaced with underscores and numbers will be spelled out.</p>
 </div>
 </td>
 </tr>
@@ -2353,25 +2366,30 @@ libraries{
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">image_shas:
-  my_sample_application: abcdefgh
-  another_repo: abcdef</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">global:
+  repos:
+    - name: my_sample_application
+      sha: abcdefgh
+    - name: my_sample_application_two
+      sha: abcdef
+    - name: third_sample_application
+      sha: a1b2c3</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>you can add whatever other keys are necessary to appropriately parameterize your helm chart.</p>
+<p>You can add whatever other keys are necessary to appropriately parameterize your helm chart.</p>
 </div>
 <div class="paragraph">
 <p><strong>Helm Configurations for the Library</strong></p>
 </div>
 <div class="paragraph">
-<p>The helm configuration repository, github credential, tiller namespace, and tiller credential can be configured globally in the library spec and overriden for specific application environments.</p>
+<p>The helm configuration repository, github credential, tiller namespace, and tiller credential can be configured globally in the library spec and overridden for specific application environments.</p>
 </div>
 <div class="paragraph">
-<p>The values file to will default to <code>values.${app_env.short_name}.yaml</code>, or can be overridden via <code>app_env.chart_values_file</code>.</p>
+<p>The values file used will default to <code>values.${app_env.short_name}.yaml</code>, but a different file can be selected through <code>app_env.chart_values_file</code>.</p>
 </div>
 <div class="paragraph">
-<p>The name of the release will default to <code>app_env.short_name</code>, or can be overridden via <code>app_env.tiller_release_name</code></p>
+<p>The name of the release will default to <code>app_env.short_name</code>, but can be set through <code>app_env.tiller_release_name</code></p>
 </div>
 <div class="paragraph">
 <p>An example of helm configurations:</p>
@@ -2452,10 +2470,11 @@ libraries{
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. OpenShift Library Configuration Options</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
@@ -2463,6 +2482,7 @@ libraries{
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Default Value</th>
 <th class="tableblock halign-left valign-top">Defined On</th>
+<th class="tableblock halign-left valign-top">Required</th>
 </tr>
 </thead>
 <tbody>
@@ -2471,54 +2491,70 @@ libraries{
 <td class="tableblock halign-left valign-top"><p class="tableblock">The OpenShift Console URL when specified per app env</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">app_env</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if <strong>url</strong> is not defined</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The OpenShift Console URL when specified globally</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">library spec</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if <strong>openshift_url</strong> is not defined</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">helm_configuration_repository</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The GitHub Repository containing the helm chart(s) for this application</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">both</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">helm_configuration_repository_credential</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Jenkins credential ID to access the helm configuration GitHub repository</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">both</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tiller_namespace</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The tiller namespace for this application</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">both</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tiller_credential</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Jenkins credential ID referencing an OpenShift credential</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">both</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tiller_release_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the release to deploy</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">app env</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if app_env.short_name is not defined</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">chart_values_file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The values file to use for the release</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">app_env</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if app_env.short_name is not defined</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">helm_chart_branch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The branch of helm_configuration_repository to use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"master"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">app_env</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">promote_previous_image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether or not to promote a previously-built image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Boolean) true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">both</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 </tr>
 </tbody>
 </table>
@@ -2569,16 +2605,42 @@ libraries{
 <p>Openshift is deployed and accessible from Jenkins</p>
 </li>
 <li>
-<p>Helm configuration repository creates</p>
+<p>The helm configuration repository defines the application as it would be deployed to Openshift</p>
 </li>
 <li>
-<p>Values files contain the <code>image_shas</code> key convention</p>
+<p>Values files follow the convention for repo names &amp; Git SHAs</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The values file has the key <code>global.repos</code></p>
 </li>
 <li>
-<p>A Jenkins credential exists to access helm configuration repository</p>
+<p>That key is a list of maps, each with two keys:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>name</strong>: the name of the source GitHub repository</p>
 </li>
 <li>
-<p>A Jenkins credential exists to login with OpenShift CLI</p>
+<p><strong>sha</strong>: the Git SHA for the last commit</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>These maps are added automatically so long as <code>global.repos</code> is a list of maps</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A Jenkins credential exists to access the helm configuration repository</p>
+</li>
+<li>
+<p>A Jenkins credential exists to log in with OpenShift CLI</p>
+</li>
+<li>
+<p>The "pipeline-utility-steps plugin" is installed on Jenkins (supplies the readYAML step)</p>
 </li>
 </ul>
 </div>
@@ -2587,13 +2649,35 @@ libraries{
 <div class="sect1">
 <h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="_updates_were_rejected"><a class="anchor" href="#_updates_were_rejected"></a>Updates were rejected&#8230;&#8203;</h3>
+<div class="paragraph">
+<p><strong>Message</strong>: Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. You may want to first integrate the remote changes (e.g., 'git pull &#8230;&#8203;') before pushing again.</p>
+</div>
+<div class="paragraph">
+<p><strong>Solution</strong>: Re-run the pipeline while no other pipeline jobs are running that would deploy to Openshift</p>
+</div>
+<div class="paragraph">
+<p><strong>Explanation</strong>: After deploying to Helm, the pipeline attempts to update the helm-configuration-repository with the latest Git SHA for the pipeline&#8217;s source code repo. However, if in the time between checking out the helm chart from Git and pushing updates, another pipeline pushes its own updates, then git will throw an error.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_faq"><a class="anchor" href="#_faq"></a>FAQ</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="_is_there_a_way_to_securely_deploy_openshift_secrets_to_my_ephemeral_environments"><a class="anchor" href="#_is_there_a_way_to_securely_deploy_openshift_secrets_to_my_ephemeral_environments"></a>Is there a way to securely deploy OpenShift Secrets to my ephemeral environment(s)?</h3>
+<div class="paragraph">
+<p>Any secrets with the label "ephemeral = true" will be exported from the reference environment (e.g. dev) to the new ephemeral environment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_for_my_helm_configuration_repository_do_i_need_to_use_github"><a class="anchor" href="#_for_my_helm_configuration_repository_do_i_need_to_use_github"></a>For my helm configuration repository, do I need to use GitHub?</h3>
+<div class="paragraph">
+<p>This library was developed and tested while using GitHub to manage the Helm configuration repostiory, but any Git SCM solution should work as well.</p>
+</div>
+</div>
 </div>
 </div>
             <script>
