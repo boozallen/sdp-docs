@@ -13,7 +13,7 @@
 
 We feel very strongly that a project is only as valuable as it is consumable. This makes our documentation as important, if not moreso, as the code that it describes. The documentation is never done though. It can always be better, and there can also be more examples to help those new to the project get acclimated. 
 
-Creating excellent documentation is a group effort.  The easiest way to get started helping the Solutions Delivery Platform is to contribute to the documentation.  No contribution is too small!  Fix that typo.  Rephase something that could be said more clearly.  
+Creating excellent documentation is a group effort.  The easiest way to get started helping the Solutions Delivery Platform is to contribute to the documentation.  No contribution is too small!  Fix that typo.  Rephrase something that could be said more clearly.  
 
 Whatever type of contribution you're trying to make, this page will help explain how the documentation is organized and how to get started making changes and viewing them locally so that you can submit that Pull Request to improve the docs. 
 
@@ -67,7 +67,7 @@ Documentation should live alongside the code it describes.  The documentation fo
 | Component | Description
 
 | {sdp-docs-repo}[SDP Documentation]
-| The SDP Documentation repository serves to hold documentation not specfic any component (like the xref:learning-labs:ROOT:index.adoc[Learning Labs]).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site. 
+| The SDP Documentation repository serves to hold documentation not specfic to any component (like the xref:learning-labs:ROOT:index.adoc[Learning Labs]).  It also serves as the Antora playbook repository, containing the instructions to build the aggregated documentation site. 
 
 | {jte-repo}[Jenkins Templating Engine]
 | The Jenkins Templating Engine (JTE) is the core of the Solutions Delivery Platform.  It extends {jenkins}[Jenkins] to create tool-agnostic, pipeline templates that can be reused by multiple teams. 
