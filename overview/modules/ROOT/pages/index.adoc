@@ -15,7 +15,7 @@ Instead of creating per-application pipelines, SDP allows you to create tool-agn
 
 === Container Orchestration Platform
 
-The container orchestration platform, typically a kubernetes based solution, is responsible for hosting the DevOps tools; such as Jenkins or SonarQube.
+The container orchestration platform, typically a Kubernetes-based solution, is responsible for hosting the DevOps tools; such as Jenkins or SonarQube.
 
 [NOTE]
 ====
@@ -37,4 +37,4 @@ The SDP Pipeline Libraries are our reusable tool integrations that contain the a
 
 === DevSecOps Dashboard
 
-Your DevSeCops pipeline is able to observe everything about software delivery for your project or organization. Through SDP, you would be able to aggregate these metrics into a DevSecOps dashboard to enable continuous improvement of your processes.
+Your DevSecOps pipeline is able to observe everything about software delivery for your project or organization. Through SDP, you would be able to aggregate these metrics into a DevSecOps dashboard to enable continuous improvement of your processes.
