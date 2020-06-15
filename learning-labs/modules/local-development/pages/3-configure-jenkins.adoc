@@ -93,3 +93,14 @@ At this point, Jenkins will restart automatically. Log in again with either the 
 ====
 You can run `docker logs -f jenkins` to see the Jenkins logs. It will say "Jenkins is fully up and running" when Jenkins has completed the restart and is ready to be interacted with.
 ====
+
+== Installing the Docker Pipeline plugin
+
+Now, we need to install the Docker Pipeline plugin, which can be found as the `Docker Pipeline` in the Jenkins Update Center.
+
+. In the lefthand navigation menu, select _Manage Jenkins_
+. In the middle of the screen, Select _Manage Plugins_
+. Select the _Available_ tab at the top
+. In the upper right _Filter_ text box, type: `Docker Pipeline`
+
+Follow the same steps used for installing the jenkins templating engine and restart the Jenkins instance.
