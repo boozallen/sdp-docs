@@ -11,8 +11,12 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v1
+      with: 
+        persist-credentials: false
     - name: Build Docs 
       run: make docs
-    - uses: mikeal/publish-to-github-action@master
-      env:
+    - uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: .
