@@ -15,10 +15,7 @@ jobs:
         persist-credentials: false
     - name: Build Docs 
       run: make docs
-    - uses: JamesIves/github-pages-deploy-action@releases/v3.5.5
+    - uses: peaceiris/actions-gh-pages@v3
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: .
-      env: 
-        ACTIONS_STEP_DEBUG: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
