@@ -1,0 +1,45 @@
+= SDP Container Images in Iron Bank
+
+The container images comprising the Solutions Delivery Platform have been accredited for use throughout the Department of Defense (DoD) and are current published to the Iron Bank container registry. 
+
+== What is Iron Bank? 
+
+Iron Bank is a container registry maintained by the Platform One team. In order for a container image to be hosted in Iron Bank and marked approved, the image must pass a stringent container hardening pipeline in alignment with the https://software.af.mil/dsop/documents/[DoD container hardening document].  Findings from this container hardening pipeline must either be patched or justifications provided to the Chief Software Office (CSO) of the Air Force (AF), Nic Chaillan, to accept the risk. 
+
+[NOTE]
+====
+To learn more about Platform One and their offerings visit https://software.af.mil.
+====
+
+== What are these images for?
+
+SDP uses container images to both deploy the DevOps tooling (Jenkins, SonarQube, etc) as well as by xref:sdp-libraries:ROOT:index.adoc[SDP Pipeline Libraries] to provide runtime environments for steps. 
+
+== How do I use these images? 
+
+=== Create an Account
+
+If you have not already, navigate to the https://ironbank.dsop.io[Iron Bank Portal] and register for an account
+
+=== Navigate to the SDP images
+
+Once you have an account, navigate to the https://ironbank.dsop.io/product?vendor=solutions-delivery-platform[SDP page] to view all of the container images that have been accredited for use throughout DoD for SDP. 
+
+=== Download the image 
+
+. Click the card for the image you would like to use. 
+. You should see a link for "Container Artifacts"
+. Follow the instructions to download the image's tar file and load into your own environment 
+
+=== Run the Image
+
+Once the tar file has been loaded, it can now be run.  Refer to each container image's README for instructions on how to run each image.
+
+[NOTE]
+====
+The source code for the container images in Iron Bank can be found at https://repo1.dsop.io/dsop/solutions-delivery-platform
+====
+
+=== Upload the image to your own container registry
+
+To use these images in your own environment, you will need to load the tar file representing the image into your container runtime tool (docker, podman, etc) and publish the image to your own container registry. 
