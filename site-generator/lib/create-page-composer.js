@@ -121,24 +121,7 @@ function buildSiteUiModel (playbook, contentCatalog) {
 
   // QUESTION should components be pre-sorted? should we make this configurable?
   // model.components = contentCatalog.getComponentMapSortedBy('title')
-  
-  /*
-    Unfortunately, i can't find an easy way to list the components in the order that they
-    are specified as sources in the playbook. 
-
-    so, displayOrder overrides the default order listing of alphabetical by "title" to 
-    control the side navigation component order. 
-  */
-  model.components = []
-  var displayOrder = ["overview", "jte", "sdp-libraries", "learning-labs", "deployment-guides"]
-  displayOrder.forEach((name) => {
-    var component = contentCatalog.getComponent(name)
-    if( component != undefined){
-      model.components.push(component)
-    } else {
-      console.log(`WARNING: component [${name}] is undefined`)
-    }
-  })
+  model.components = contentCatalog.getComponents()
 
   model.keys = Object.entries(playbook.site.keys || {}).reduce((accum, [key, value]) => {
     if (value) accum[key] = value

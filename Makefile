@@ -10,9 +10,10 @@ help: ## Show target options
 clean: ## removes remote documentation and compiled documentation
 	rm -rf $(BUILDDIR)/**
 
-image: 
+imagePush: 
 	@echo "Building Antora Image" 
-	@docker build . -t sdp-antora
+	@docker build . -t docker.pkg.github.com/boozallen/sdp-docs/builder
+	@docker push docker.pkg.github.com/boozallen/sdp-docs/builder
 
-docs: clean image ## builds the antora documentation 	
-	@docker run -v ~/.git-credentials:/root/.git-credentials -v $(shell pwd):/antora:Z --rm -t sdp-antora generate --stacktrace --generator ./site-generator --to-dir $(BUILDDIR) $(ANTORABUNDLE) $(PLAYBOOK)
+docs: clean ## builds the antora documentation 	
+	@docker run -v ~/.git-credentials:/root/.git-credentials -v $(shell pwd):/antora:Z --rm -t docker.pkg.github.com/boozallen/sdp-docs/builder generate --stacktrace --generator booz-allen-site-generator --to-dir $(BUILDDIR) $(ANTORABUNDLE) $(PLAYBOOK)

@@ -1,6 +1,6 @@
 {
   "name": "booz-allen-site-generator",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "A customization of Antora's default site generator pipeline",
   "main": "lib/index.js",
   "engines": {
