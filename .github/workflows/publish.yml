@@ -14,7 +14,7 @@ jobs:
       with: 
         persist-credentials: false
     - name: Build Docs 
-      run: docker login -u {{github.actor}} -p {{github.token}} https://docker.pkg.github.com && make docs
+      run: docker login -u ${{github.actor}} -p ${{github.token}} https://docker.pkg.github.com && make docs
     - uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
