@@ -16,7 +16,7 @@ content:
     start_path: docs
 
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: [ master ]
+    branches: [ master, 2.0 ]
     tags: [ '*', '!v1.0' ]
     start_path: docs 
     
