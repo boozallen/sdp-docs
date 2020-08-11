@@ -7,7 +7,7 @@ site:
 content:
   sources:
   - url: https://github.com/boozallen/sdp-docs.git
-    branches: master
+    branches: [ master, 2.0 ]
     start_paths: [ overview, learning-labs ]
 
   - url: https://github.com/jenkinsci/templating-engine-plugin.git
@@ -16,7 +16,7 @@ content:
     start_path: docs
 
   - url: https://github.com/boozallen/sdp-libraries.git
-    branches: [ master, 2.0 ]
+    branches: [ master ]
     tags: [ '*', '!v1.0' ]
     start_path: docs 
     
