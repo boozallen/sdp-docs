@@ -16,6 +16,6 @@ The modularity that JTE promotes allows you to do this across teams _regardless_
 * Configure your first tool-agnostic pipeline template
 * Create your first set of pipeline libraries to provide tool-specific implementations of steps
 * Create your first pipeline configuration file that implements the template
-* Learn the difference types of jobs available in Jenkins and when to use them
+* Learn the different types of jobs available in Jenkins and when to use them
 * Learn how to take the Jenkinsfile (pipeline template) *out* of the repository
 * Learn how to consolidate pipeline configurations and apply the same template across multiple repositories
