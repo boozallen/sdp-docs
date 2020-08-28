@@ -22,7 +22,7 @@ Read the https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Deve
 
 == Create a Splunk Library
 
-Methods defined within steps are able to register themselves to correspond to specific lifecycle events via annotations. As such, thesesteps are typically not invoked directly by other steps or from the Pipeline Template.
+Methods defined within steps are able to register themselves to correspond to specific lifecycle events via annotations. As such, these steps are typically not invoked directly by other steps or from the Pipeline Template.
 
 Because of this, the name of the step is inconsequential but cannot conflict with other step names that are loaded.
 
