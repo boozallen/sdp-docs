@@ -29,7 +29,7 @@ It's understandable that library steps require some externalized configuration a
 
 [NOTE]
 ====
-You can read more about how to externalize library configuration xref:jte:library-development:externalizing_config.adoc[here].
+You can read more about how to externalize library configuration xref:1.7.1:jte:library-development:externalizing_config.adoc[here].
 ====
 
 Deployment steps are different. It is safe to assume that every step that performs a deployment needs to know some environment context.
