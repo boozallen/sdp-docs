@@ -80,7 +80,7 @@ To make our libraries accessible to every job configured to use JTE on the Jenki
 . In the lefthand navigation menu, click `Manage Jenkins`
 . Select the first option, `Configure System`
 . Scroll down to the `Jenkins Templating Engine` configuration section
-. Click `Add` under `Library Sources`
+. Click `Add` under `Library Sources` -- do not edit the `Pipeline Configuration` section
 . Ensure the `Library Provider` is set to `From SCM`
 . Select `Git` as the `SCM` type
 . Enter the *https* repository URL
