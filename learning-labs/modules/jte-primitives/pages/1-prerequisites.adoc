@@ -12,7 +12,7 @@ This lab will assume we're using the same pipeline configuration repository used
 
 === Remove the Global Governance Tier's Pipeline Configuration
 
-For the purposes of this lab, we will only be using the Pipeline Job type. In JTE: The Basics, we created added a Pipeline Configuration to the Global Governance Tier that applies to every job on the Jenkins instance.
+For the purposes of this lab, we will only be using the Pipeline Job type. In JTE: The Basics, we created a Pipeline Configuration to the Global Governance Tier that applies to every job on the Jenkins instance.
 
 If this is still configured, remove it.
 
