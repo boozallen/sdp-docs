@@ -1,6 +1,6 @@
 = Default Step Implementation
 
-There are a large number of use cases where a step contributed by library is going to do the same thing:
+There are a large number of use cases where a step contributed by a library is going to do the same thing:
 
 . Check out the source code
 . Run some CLI command
@@ -221,6 +221,6 @@ $ docker rm -f e41cf335bb258d366d9c5dc2a91090184d0bc00b207ccf10b125e035a3a5ede5
 
 You can see JTE announcing it's about to execute a step called `unit_test` that was constructed via the default step implementation here: `[JTE] [Step - Default Step Implementation/unit_test.call()]`.
 
-When the step executed, it checked if the `maven` step was available locally and pulls the image if not.
+When the step was executed, it checked if the `maven` step was available locally and pulled the image if not.
 
 Within the container image, it then ran `mvn -v` and the maven version was printed to the build log.
