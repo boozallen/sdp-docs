@@ -21,7 +21,6 @@ We're going to run through a couple quick steps to ensure that the deployed Jenk
 This confirms that JTE has been installed successfully
 ====
 
-. Check the box "Provide a pipeline template (Jenkinsfile)"
 . In the _Pipeline Template_ text box, enter:
 
 [source,groovy]
