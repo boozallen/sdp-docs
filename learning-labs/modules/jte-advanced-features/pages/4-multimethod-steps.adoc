@@ -63,19 +63,25 @@ The filestructure for your Pipeline Configuration libraries directory should now
 .
 ├── libraries
     ├── ansible
-    │   └── deploy_to.groovy
+    │   └── steps
+    │       └── deploy_to.groovy
     ├── git
-    │   └── git.groovy
+    │   └── steps
+    │       └── git.groovy
     ├── gradle
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     ├── maven
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     ├── sonarqube
-    │   └── static_code_analysis.groovy
+    │   └── steps
+    │       └── static_code_analysis.groovy
     └── splunk
-        ├── splunk_pipeline_end.groovy
-        ├── splunk_pipeline_start.groovy
-        └── splunk_step_watcher.groovy
+        └── steps
+            ├── splunk_pipeline_end.groovy
+            ├── splunk_pipeline_start.groovy
+            └── splunk_step_watcher.groovy
 ----
 ====
 

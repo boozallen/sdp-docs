@@ -21,9 +21,11 @@ Create the following directory structure within your repository:
 .
 └── libraries
     ├── maven
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     └── sonarqube
-        └── static_code_analysis.groovy
+        └── steps
+            └── static_code_analysis.groovy
 ----
 
 [IMPORTANT]
@@ -31,7 +33,7 @@ Create the following directory structure within your repository:
 When configuring this repository as a *Library Source* for JTE in Jenkins, you will be able to configure the base directory. Since there might be other sources in this repository in the future, all of the libraries we create will be stored in the `libraries` directory.
 ====
 
-It is important to understand that a library in JTE is just a _directory_, likely in a source code repository, that contains groovy files. When a library is loaded, each groovy file in the library's directory will become a step named after the base filename.
+It is important to understand that a library in JTE is just a _directory_, likely in a source code repository, that contains a steps directory with groovy files. When a library is loaded, each groovy file in the library's steps directory will become a step named after the base filename.
 
 == Implement the Steps
 
@@ -44,7 +46,7 @@ Generally, the most idiomatic way to define a step is to create a `call` method 
 In future labs, we'll learn how to pass information to our steps through the pipeline configuration file.
 ====
 
-.libraries/maven/build.groovy
+.libraries/maven/steps/build.groovy
 [source,groovy]
 ----
 void call(){
@@ -54,7 +56,7 @@ void call(){
 }
 ----
 
-.libraries/sonarqube/static_code_analysis.groovy
+.libraries/sonarqube/steps/static_code_analysis.groovy
 [source,groovy]
 ----
 void call(){

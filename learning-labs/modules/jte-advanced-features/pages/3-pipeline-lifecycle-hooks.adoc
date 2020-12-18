@@ -17,7 +17,7 @@ We'll walk through the Splunk use case to demonstrate this functionality.
 
 [NOTE]
 ====
-Read the https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[entire pipeline lifecycle hook documentation].
+Read the xref:jte:library-development:lifecycle_hooks.adoc[entire pipeline lifecycle hook documentation].
 ====
 
 == Create a Splunk Library
@@ -37,23 +37,16 @@ It doesn't matter what you call steps that only contain Pipeline Lifecycle Hook 
 
 Within the same Library Source created during JTE: The Basics create a step called `splunk_pipeline_start.groovy`:
 
-.libraries/splunk/splunk_pipeline_start.groovy
+.libraries/splunk/steps/splunk_pipeline_start.groovy
 [source,groovy]
 ----
 @Init 
-void call(context){
+void call(){
     println "Splunk: beginning of the pipeline!" 
 }
 ----
 
 Breaking down this step, the `@Init` registers the `call` method defined in this step to be invoked at the beginning of the pipeline.
-
-This `call` method takes a Map as an input parameter. This argument represents the pipeline context and will let you know the pipeline's current status as well as the library and step that the hook is responding to.
-
-[NOTE]
-====
-This input parameter to annotated steps is typically called `context` but can be called anything. Since Groovy is a dynamically typed language, this input parameter does not have to be given a class.
-====
 
 === Update the Pipeline Configuration
 
@@ -84,20 +77,23 @@ Splunk: beginning of the pipeline!
 
 Let's add some hooks that inject themselves both before and after each step is executed in the pipeline.
 
-*libraries/splunk/splunk_step_watcher.groovy*:
 
+.libraries/splunk/steps/splunk_step_watcher.groovy
 [source,groovy]
 ----
 @BeforeStep
-void before(context){
-    println "Splunk: running before the ${context.library} library's ${context.step} step" 
+void before(){
+    println "Splunk: running before the ${hookContext.library} library's ${hookContext.step} step" 
 }
 
 @AfterStep
-void after(context){
-    println "Splunk: running after the ${context.library} library's ${context.step} step" 
+void after(){
+    println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step" 
 }
 ----
+
+Take notice of the autowired `hookContext` variable.  This variable provides runtime context for the hook based on the "event" that is triggering the hook to run. 
+
 
 [NOTE]
 ====
@@ -424,14 +420,14 @@ Update the `@AfterStep` created in *libraries/splunk/splunk_step_watcher.groovy*
 
 [source,groovy]
 ----
-@AfterStep({ context.step.equals("static_code_analysis") })
+@AfterStep({ hookContext.step.equals("static_code_analysis") })
 ----
 
 Rerun the pipeline and notice that now, the hook has been restricted to only run after the desired step.
 
 [IMPORTANT]
 ====
-When the `Closure` parameter is invoked, it will have access to the `context` variable that is passed to the step itself as well as the library configuration that is stored via the `config` variable.
+When the `Closure` parameter is invoked, it will have access to the `hookContext` variable as well as the library configuration that is stored via the `config` variable.
 ====
 
 === Taking It A Step Further
@@ -442,7 +438,7 @@ To do this, update the `@AfterStep` annotation again to be:
 
 [source,groovy]
 ----
-@AfterStep({ context.step in config.afterSteps })
+@AfterStep({ hookContext.step in config.afterSteps })
 ----
 
 Now, we can conditionally execute the hook by checking if the name of the step that was just executed is in an array called `afterSteps` defined as part of the `splunk` library in the Pipeline Configuration!
@@ -468,4 +464,4 @@ Run the pipeline again and notice that the hook was only executed after the step
 Conditional Execution Closure Parameters can be passed to any Pipeline Lifecycle Hook annotation. As long as the Closure returns a non-false value, the hook will be invoked.
 ====
 
-*Remember to read through the* https://jenkinsci.github.io/templating-engine-plugin/pages/Library_Development/lifecycle_hooks.html[Pipeline Lifecycle Hook documentation] *to see all the annotations available*.
+*Remember to read through the* xref:jte:library_development:lifecycle_hooks.adoc[Pipeline Lifecycle Hook documentation] *to see all the annotations available*.
