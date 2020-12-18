@@ -60,12 +60,15 @@ The file structure in your GitHub repository should now look like this:
 ----
 .
 ├── libraries
-│  ├── gradle
-│  │   └── build.groovy
-│  ├── maven
-│  │   └── build.groovy
-│  └── sonarqube
-│      └── static_code_analysis.groovy
+│   ├── gradle
+│   │   └── steps
+│   │       └── build.groovy
+│   ├── maven
+│   │   └── steps
+│   │       └── build.groovy
+│   └── sonarqube
+│       └── steps
+│           └── static_code_analysis.groovy
 └── pipeline-configuration
     ├── Jenkinsfile
     └── pipeline_config.groovy
