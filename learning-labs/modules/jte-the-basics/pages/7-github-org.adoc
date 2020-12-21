@@ -21,8 +21,7 @@ We need to edit the pipeline configuration file (`pipeline_config.groovy`) we cr
 .pipeline-configuration/pipeline_config.groovy
 [source,groovy]
 ----
-libraries{
-    merge = true 
+@merge libraries{
     sonarqube 
 }
 ----
@@ -33,7 +32,7 @@ In this configuration, both applications are using SonarQube. Since this is a co
 
 The application repositories will each get their own `pipeline_config.groovy` to indicate if they are using the `maven` or the `gradle` library.
 
-Since we want to allow these apps to add _additional_ configurations, we need to be explicit about that by setting `merge = true` in the `libraries` block of the pipeline configuration.
+Since we want to allow these apps to add _additional_ configurations, we need to be explicit about that by annotating the `libraries` block with `@merge` in the pipeline configuration.
 ====
 
 [IMPORTANT]

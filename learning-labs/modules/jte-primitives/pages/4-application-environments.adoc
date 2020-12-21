@@ -71,15 +71,19 @@ The file structure within your `libraries` directory should now be:
 [source,]
 ----
 .
-├── libraries
+└── libraries
     ├── ansible
-    │   └── deploy_to.groovy
+    │   └── steps
+    │       └── deploy_to.groovy
     ├── gradle
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     ├── maven
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     └── sonarqube
-        └── static_code_analysis.groovy
+        └── steps
+            └── static_code_analysis.groovy
 ----
 
 ====

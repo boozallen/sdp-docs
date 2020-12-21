@@ -36,11 +36,14 @@ When you have created the new `gradle` directory and `build.groovy` file, your r
 .
 └── libraries
     ├── gradle
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     ├── maven
-    │   └── build.groovy
+    │   └── steps
+    │       └── build.groovy
     └── sonarqube
-        └── static_code_analysis.groovy
+        └── steps
+            └── static_code_analysis.groovy
 ----
 
 The contents of the `build.groovy` should be:
