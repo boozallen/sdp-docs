@@ -89,7 +89,7 @@ Now, we'll create a `GitHub Organization Project` that can automatically create 
 
 After creating the GitHub Organization job in Jenkins, you will be redirected to the logs of the GitHub Organization being scanned to find repositories that match the wildcard format entered during job creation. This will scope the repositories for which jobs are created to just this lab's application repositories.
 
-Once scanning has finished, go view the GitHub Orgnization's job page in Jenkins and you will see two Multibranch Projects have been created for `example-jte-app-gradle` and `example-jte-app-maven`.
+Once scanning has finished, go view the GitHub Orgnization's job page in Jenkins and you will see two Multibranch Projects have been created for `jte-the-basics--app-gradle` and `jte-the-basics-app-maven`.
 
 Explore each of these jobs to see that the `gradle` repository's pipeline loaded the `gradle` library and the `maven` repository loaded the `maven` library and both pipelines loaded the `sonarqube` library.
 
