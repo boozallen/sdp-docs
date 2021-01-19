@@ -23,7 +23,9 @@ Scroll down on the job's configuration page to the `Pipeline` configuration sect
 
 Make sure that `Jenkins Templating Engine` is selected in the `Definition` drop down configuration option.
 
-In the `Pipeline Template` text box, enter:
+Check the box for `Provide default pipeline template (Jenkinsfile)`.
+
+In the `Jenkinsfile` text box, enter:
 
 [source,groovy]
 ----
