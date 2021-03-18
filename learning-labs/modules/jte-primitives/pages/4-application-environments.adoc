@@ -49,7 +49,7 @@ Remember that libraries are just subdirectories within a source code repository 
 
 For the sake of our pretend `ansible` library, let's assume that it needs to know a list of IP addresses relevant to the environment it's deploying too.
 
-.libraries/ansible/deploy_to.groovy
+.libraries/ansible/steps/deploy_to.groovy
 [source,groovy]
 ----
 void call(app_env){
