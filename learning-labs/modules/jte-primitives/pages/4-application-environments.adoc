@@ -47,7 +47,7 @@ In the same repository used during JTE: The Basics, add a new library called `an
 Remember that libraries are just subdirectories within a source code repository and that steps are just groovy files in those subdirectories that typically implement a `call` method.
 ====
 
-For the sake of our pretend `ansible` library, let's assume that it needs to know a list of IP addresses relevant to the environment it's deploying too.
+For the sake of our pretend `ansible` library, let's assume that it needs to know a list of IP addresses relevant to the environment it's deploying to.
 
 .libraries/ansible/deploy_to.groovy
 [source,groovy]
