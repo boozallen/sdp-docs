@@ -7,6 +7,7 @@ Now, we're going to configure that Jenkins instance by:
 * Entering the initial admin password
 * Installing the default suggested plugins
 * Installing the Jenkins Templating Engine
+* Installing the Docker Pipeline plugin
 
 == Initial Admin Password
 
