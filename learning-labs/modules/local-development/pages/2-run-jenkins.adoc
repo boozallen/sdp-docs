@@ -80,7 +80,7 @@ Then, to start jenkins, run:
 | -d
 | Runs the container process in the background
 
-| jenkins/jenkins:lts
+| jenkins:lts-docker
 | The container image from which to run this container
 
 |===
