@@ -3,7 +3,7 @@
 
 == Jenkins Instance
 
-A Jenkins instance will be required for this lab. If you don't have one available to you, we would recommend going through the xref:local-development:index.adoc[Local Development] learning lab to deploy a local Jenkins instance through Docker.
+A Jenkins instance will be required for this lab. If you don't have one available to you, we would recommend going through the xref:local-development:index.adoc[Local Development] Learning Lab to deploy a local Jenkins instance through Docker.
 
 == Ability to Create GitHub Repositories
 
@@ -11,29 +11,44 @@ When creating your first set of pipeline libraries and externalizing the pipelin
 
 [NOTE]
 ====
-Theoretically, any git-based SCM provider (BitBucket, GitHub, GitLab, etc) should integrate and work as expected with JTE. For the purposes of simplifying this lab, we will be using GitHub.
+Theoretically, any git-based SCM provider (Bitbucket, GitHub, GitLab, etc.) should integrate and work as expected with JTE. For the purposes of simplifying this lab, we will be using GitHub.
 ====
 
 == GitHub PAT in the Jenkins Credential Store
 
-Create a {github-pat}[GitHub Personal Access Token].
-
 [NOTE]
 ====
-If you intend to create public repositories then your PAT is merely acting to authenticate to GitHub in order to avoid rate limiting, you do not need to grant any scopes to the PAT. 
+If you intend to create public repositories then your PAT is merely acting to authenticate to GitHub in order to avoid rate limiting; you do not need to grant any scopes to the PAT. 
 
-If you will be creating private repositories, you'll need to grant the repo scope to the PAT.
+If you will be creating private repositories, you'll need to grant the `repo` scope to the PAT.
 ====
+
+Create a {github-pat}[GitHub Personal Access Token (PAT)]. See the link for more specific directions.
+
+. Click on your profile picture at the top-right of GitHub, then `Settings`, `Developer settings`, and `Personal access tokens`.
+. Create a `Classic` token, do not use the `Fine-grained token` beta.
+. Note/Name: `jte-the-basics`
+. Select scope: `repo` (Full control of private repositories)
+. Select scope: `admin:org` (Full control of orgs and teams, read and write org projects)
+. Leave all other scopes blank, click the `Generate token` button.
+
+image::personal-access-token.png[]
 
 Copy this token and store it in the Jenkins credential store.
 
-. From the Jenkins home page, click `Credentials` in the lefthand navigation menu
-. Select the `global` credential scope
-. Select `Add Credential` in the lefthand navigation menu
-. Enter your github username in the `Username` field
-. Paste the Personal Access Token into the `Password` field
-. Enter `github` into the `ID` field
-. Enter `github` into the `Description` field
-. Click `OK`
+. From your Jenkins home page, click `Manage Jenkins` in the left-hand navigation menu.
+. From your the Manage Jenkins page, click `Manage Credentials`.
+. Select the `(global)` link under `Domains`.
+. Click the `Add Credentials` button at the top right.
+. Kind: `Username with password`
+. Enter your GitHub username in the `Username` field.
+. Paste the Personal Access Token into the `Password` field.
+. Enter `github` into the `ID` field.
+. Enter `github` into the `Description` field.
+. Click `Create`.
 
-image:pat.gif[]
+image::jenkins-github-credentials.png[]
+
+You should see your new credential under the list of `Global credentials (unrestricted)`:
+
+image::jenkins-global-credentials.png[]
