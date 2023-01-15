@@ -4,7 +4,7 @@
 
 Ensure Docker is installed and running on your local machine.
 
-You can validate docker is running by running `docker ps` in your terminal.
+You can validate the Docker process is running by running `docker ps` in your terminal.
 
 You should see output similar to:
 

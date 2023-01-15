@@ -4,7 +4,7 @@ Docker simplifies packaging applications with all their dependencies.
 
 Through Docker, we can have a running Jenkins instance in a matter of seconds. 
 
-In your terminal, first build a jenkins image with docker installed. Create a `Dockerfile` with the following:
+In your terminal, first build a jenkins image with docker installed. Create a `Dockerfile` in an empty directory with the following:
 
 [source,]
 ----
@@ -33,12 +33,12 @@ docker build -t jenkins:lts-docker .
 
 [NOTE]
 ====
-Running Jenkins as a docker container on a BAH managed machine requires specific certificates and tooling to be installed. A Dockerfile meeting these requirements can be built from the https://github.boozallencsn.com/solutions-delivery-platform/bah-jenkins[solutions-delivery-platform/bah-jenkins] repo.
+Running Jenkins as a docker container on a BAH-managed machine requires specific certificates and tooling to be installed. A Dockerfile meeting these requirements can be built from the https://github.boozallencsn.com/solutions-delivery-platform/bah-jenkins[solutions-delivery-platform/bah-jenkins] repo.
 ====
 
-Then, to start jenkins, run:
+Then, to start Jenkins, run:
 
-(If running Docker for Windows, please refer to Important section below)
+On Linux or Mac:
 
 [source,]
 ----
@@ -52,47 +52,7 @@ Then, to start jenkins, run:
     jenkins:lts-docker
 ----
 
-.Command Line Breakdown
-|===
-| Command Section | Description
-
-| docker run
-| Tells docker to going to run a container image
-
-| --name jenkins
-| Names the container being launched `jenkins`. This is done for ease of referencing it later.
-
-| -v /var/run/docker.sock:/var/run/docker.sock
-| Mounts the local docker daemon socket to the Jenkins container.
-
-| –privileged
-| Escalates the container permissions so it can launch containers on the host docker daemon
-
-| –user root
-| Runs the container as the root user so it can launch containers on the host docker daemon
-
-| -p 50000:50000
-| Port forwarding of the default JNLP agent port to our localhost
-
-| -p 8080:8080
-| Port forwading of the Jenkins Console port to our localhost
-
-| -d
-| Runs the container process in the background
-
-| jenkins:lts-docker
-| The container image from which to run this container
-
-|===
-
-[NOTE]
-====
-If port 8080 is already in use by another process then this command will fail.  To run Jenkins on a different port, swap out the first 8080 to your desired port: ``<desired port number>:8080``.  
-====
-
-[IMPORTANT]
-====
-Windows OS: When using Docker for Windows, use the following command to run the Jenkins container: 
+On Windows:
 
 [source,]
 ----
@@ -106,9 +66,45 @@ Windows OS: When using Docker for Windows, use the following command to run the 
     jenkins:lts-docker
 ----
 
-You can run ``docker logs -f jenkins`` to see the Jenkins logs.  It will say "Jenkins is fully up and running" when Jenkins is ready.
+.Command Line Breakdown
+|===
+| Command Section | Description
 
+| docker run
+| Tells Docker to run a command in a new container.
+
+| --name jenkins
+| Names the container being launched `jenkins`. This is done for ease of referencing it later.
+
+| -v /var/run/docker.sock:/var/run/docker.sock
+| Mounts the local Docker daemon socket to the Jenkins container.
+
+| –-privileged
+| Escalates the container permissions so it can launch containers on the host docker daemon.
+
+| –-user root
+| Runs the container as the root user so it can launch containers on the host docker daemon.
+
+| -p 50000:50000
+| Port forwarding of the default JNLP agent port to our localhost.
+
+| -p 8080:8080
+| Port forwarding of the Jenkins port to our localhost.
+
+| -d
+| Runs the container process in the background.
+
+| jenkins:lts-docker
+| The container image from which to run this container.
+
+|===
+
+[NOTE]
 ====
+If port 8080 is already in use by another process then this command will fail.  To run Jenkins on a different port, swap out the first 8080 to your desired port: ``<desired port number>:8080``.  
+====
+
+You can run ``docker logs -f jenkins`` to see the Jenkins logs.  It will say "Jenkins is fully up and running" when Jenkins is ready.
 
 You can validate the container launched as expected by going to ``http://localhost:8080``. 
 
