@@ -1,8 +1,8 @@
 = Create a Pipeline Job
 
-Before we get started, we'll need to create a Pipeline job in Jenkins that we can play around with.
+Before we get started, we'll need to create a Pipeline Job in Jenkins that we can play around with.
 
-Feel free to reuse the Pipeline job created during JTE: The Basics or follow the `same instructions<JTE The Basics Pipeline Job>` to create a new job for this lab.
+Feel free to reuse the Pipeline Job created during JTE: The Basics or follow the `same instructions<JTE The Basics Pipeline Job>` to create a new job for this lab.
 
 When you're finished, you should have:
 
@@ -18,7 +18,7 @@ static_code_analysis()
 
 [source,groovy]
 ----
-libraries{
+libraries {
     maven
     sonarqube
 }
@@ -26,7 +26,7 @@ libraries{
 
 [NOTE]
 ====
-If you're reusing the same Pipeline job, your pipeline configuration may specify the `gradle` instead of the `maven` library. Either will do for the purposes of this lab.
+If you're reusing the same Pipeline Job, your pipeline configuration may specify the `gradle` instead of the `maven` library. Either will do for the purposes of this lab, but switch it back to `maven` if it's different.
 ====
 
-This Pipeline job is going to be the playground within which we learn about the different pipeline primitives for the rest of the lab.
+This Pipeline Job is going to be the playground where we learn about the different pipeline primitives for the rest of this lab.
