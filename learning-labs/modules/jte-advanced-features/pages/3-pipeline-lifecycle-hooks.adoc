@@ -2,22 +2,22 @@
 
 There can be interdependent functionalities that present a challenge to the Jenkins Templating Engine.
 
-For example, let's say we wanted to introduce Splunk monitoring by sending events as part of the pipeline.
+For example, let's say we wanted to introduce Splunk(link) monitoring by sending events as part of the pipeline.
 
 How do you:
 
-. Maintain a clean, easy to read Pipeline Template?
+. Maintain a clean, easy-to-read Pipeline Template?
 . Maintain a separation of duties between libraries as to not hardcode a Splunk integration into every library step?
 
-It would be great if there was a seemless way to inject functionality in response to different phases of the pipeline without having to tightly couple that functionality to existing library steps or Pipeline Templates.
+It would be great if there was a seamless way to inject functionality in response to different phases of the pipeline without having to tightly couple that functionality to existing library steps or Pipeline Templates...
 
-You can! The Jenkins Templating Engine has a neat feature we call Pipeline Lifecycle Hooks that were made for just these situations.
+There is! The Jenkins Templating Engine has a neat feature we call Pipeline Lifecycle Hooks that were made for just these situations.
 
 We'll walk through the Splunk use case to demonstrate this functionality.
 
 [NOTE]
 ====
-Read the xref:jte:library-development:lifecycle_hooks.adoc[entire pipeline lifecycle hook documentation].
+Read the xref:jte:library-development:lifecycle_hooks.adoc[entire Pipeline Lifecycle Hook documentation].
 ====
 
 == Create a Splunk Library
@@ -26,22 +26,22 @@ Methods defined within steps are able to register themselves to correspond to sp
 
 Because of this, the name of the step is inconsequential but cannot conflict with other step names that are loaded.
 
-Therefore, we typically recommend following a naming convention of prepending the step name with the library name to namespace the hooks.
+Therefore, we typically recommend following a naming convention of prepending the step name with the library name.
 
 [IMPORTANT]
 ====
-It doesn't matter what you call steps that only contain Pipeline Lifecycle Hook annotated methods. But to avoid collisions of everyone naming their hook steps `beforeStep.groovy` - we recommend `<libraryName>_<action>` as we'll demonstrate in this lab.
+It doesn't matter what you call steps that only contain Pipeline Lifecycle Hook-annotated methods. But to avoid collisions of everyone naming their hook steps `beforeStep.groovy` - we recommend `<libraryName>_<action>` as we'll demonstrate in this lab.
 ====
 
 === Notify of Pipeline Start
 
-Within the same Library Source created during JTE: The Basics create a step called `splunk_pipeline_start.groovy`:
+Within the same Library Source repo you created during JTE: The Basics, create a step called `splunk_pipeline_start.groovy` within `libraries/splunk`:
 
 .libraries/splunk/steps/splunk_pipeline_start.groovy
 [source,groovy]
 ----
 @Init 
-void call(){
+void call() {
     println "Splunk: beginning of the pipeline!" 
 }
 ----
@@ -50,11 +50,11 @@ Breaking down this step, the `@Init` registers the `call` method defined in this
 
 === Update the Pipeline Configuration
 
-In the Pipeline job again, update the Pipeline Configuration to load the `splunk` library we just created.
+In the `single-job` again, update the Pipeline Configuration to load the `splunk` library we just created.
 
 [source,groovy]
 ----
-libraries{
+libraries {
     maven
     sonarqube
     ansible
@@ -64,344 +64,89 @@ libraries{
 
 That's it! Just by loading the library, JTE will be able to find the methods within steps annotated with a Pipeline Lifecycle Hook.
 
-Run the Pipeline job and you should see output in the logs similar to:
+Run the job and you should see output in the logs similar to:
 
 [source,text]
 ----
-[JTE] [@Init - splunk/splunk_pipeline_start.call]
+[JTE][@Init - splunk/splunk_pipeline_start.call]
 [Pipeline] echo
 Splunk: beginning of the pipeline!
 ----
 
 === Add Before and After Step Execution Hooks
 
-Let's add some hooks that inject themselves both before and after each step is executed in the pipeline.
-
+Let's add some hooks that inject themselves both before and after each step is executed in the pipeline. Add an additional step file to your Splunk library:
 
 .libraries/splunk/steps/splunk_step_watcher.groovy
 [source,groovy]
 ----
 @BeforeStep
-void before(){
+void before() {
     println "Splunk: running before the ${hookContext.library} library's ${hookContext.step} step" 
 }
 
 @AfterStep
-void after(){
+void after() {
     println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step" 
 }
 ----
 
-Take notice of the autowired `hookContext` variable.  This variable provides runtime context for the hook based on the "event" that is triggering the hook to run. 
+Take notice of the JTE-native `hookContext` variable.  This variable provides runtime context for the hook based on the "event" that is triggering the hook to run. 
 
 
 [NOTE]
 ====
+Make sure you push your code to the `main/master` branch before running.
+
 Here, we're defining two different methods in a single step. In the next section we'll talk about this in more detail. For right now, the important piece is that the method's have the `@BeforeStep` and `@AfterStep` annotations.
 ====
 
-Rerunning the pipeline, we can now see these hooks get executed:
+Rerunning the pipeline, we can now see these hooks get executed before and after (Maven in this snippet):
 
 [source,text]
 ----
-[Pipeline] Start of Pipeline
-[JTE] Pipeline Configuration Modifications (show)
-[JTE] Loading Library maven (show)
-[JTE] Library maven does not have a configuration file.
-[JTE] Loading Library sonarqube (show)
-[JTE] Library sonarqube does not have a configuration file.
-[JTE] Loading Library ansible (show)
-[JTE] Library ansible does not have a configuration file.
-[JTE] Loading Library splunk (show)
-[JTE] Library splunk does not have a configuration file.
-[JTE] Creating step unit_test from the default step implementation.
-[JTE] Obtained Pipeline Template from job configuration
-[Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/single-job
-[Pipeline] {
-[Pipeline] writeFile
-[Pipeline] archiveArtifacts
-Archiving artifacts
-[Pipeline] }
-[Pipeline] // node
-[JTE] [@Init - splunk/splunk_pipeline_start.call]
-[Pipeline] echo
-Splunk: beginning of the pipeline!
-[JTE] [Stage - continuous_integration]
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the Default Step Implementation library's unit_test step
-[JTE] [Step - Default Step Implementation/unit_test.call()]
-[Pipeline] stage
-[Pipeline] { (Unit Test)
-[Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/single-job
-[Pipeline] {
-[Pipeline] isUnix
-[Pipeline] sh
-+ docker inspect -f . maven
-.
-[Pipeline] withDockerContainer
-Jenkins seems to be running inside container cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c
-$ docker run -t -d -u 0:0 -w /var/jenkins_home/workspace/single-job --volumes-from cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven cat
-$ docker top ead0198246fc908dfb815941ae07227b849ab092b49c9f9db59c46b24718b9d8 -eo pid,comm
-[Pipeline] {
-[Pipeline] unstash
-[Pipeline] sh
-+ mvn -v
-Apache Maven 3.6.2 (40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T15:06:16Z)
-Maven home: /usr/share/maven
-Java version: 11.0.5, vendor: Oracle Corporation, runtime: /usr/local/openjdk-11
-Default locale: en, platform encoding: UTF-8
-OS name: "linux", version: "4.9.125-linuxkit", arch: "amd64", family: "unix"
-[Pipeline] }
-$ docker stop --time=1 ead0198246fc908dfb815941ae07227b849ab092b49c9f9db59c46b24718b9d8
-$ docker rm -f ead0198246fc908dfb815941ae07227b849ab092b49c9f9db59c46b24718b9d8
-[Pipeline] // withDockerContainer
-[Pipeline] }
-[Pipeline] // node
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the Default Step Implementation library's unit_test step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the maven library's build step
-[JTE] [Step - maven/build.call()]
+[JTE][Step - maven/build.call()]
 [Pipeline] stage
 [Pipeline] { (Maven: Build)
 [Pipeline] echo
 build from the maven library
 [Pipeline] }
 [Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
+[JTE][@AfterStep - splunk/splunk_step_watcher.after]
 [Pipeline] echo
 Splunk: running after the maven library's build step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the sonarqube library's static_code_analysis step
-[JTE] [Step - sonarqube/static_code_analysis.call()]
-[Pipeline] stage
-[Pipeline] { (SonarQube: Static Code Analysis)
-[Pipeline] echo
-static code analysis from the sonarqube library
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the sonarqube library's static_code_analysis step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
-[Pipeline] stage
-[Pipeline] { (Deploy To: dev)
-[Pipeline] echo
-performing a deployment through ansible..
-[Pipeline] echo
-deploying to 0.0.0.1
-[Pipeline] echo
-deploying to 0.0.0.2
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the ansible library's deploy_to step
-[Pipeline] timeout
-Timeout set to expire in 5 min 0 sec
-[Pipeline] {
-[Pipeline] input
-Approve the deployment?
-Proceed or Abort
-Approved by admin
-[Pipeline] }
-[Pipeline] // timeout
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
-[Pipeline] stage
-[Pipeline] { (Deploy To: Production)
-[Pipeline] echo
-performing a deployment through ansible..
-[Pipeline] echo
-deploying to 0.0.1.1
-[Pipeline] echo
-deploying to 0.0.1.2
-[Pipeline] echo
-deploying to 0.0.1.3
-[Pipeline] echo
-deploying to 0.0.1.4
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the ansible library's deploy_to step
-[Pipeline] End of Pipeline
-Finished: SUCCESS
 ----
 
 === Notify of End of Pipeline Execution
 
-Let's try out one more hook to get executed when the pipeline has finished:
+Let's try out one more hook to get executed when the pipeline has finished, create a third step file:
 
 .libraries/splunk/splunk_pipeline_end.groovy
 [source,groovy]
 ----
 @CleanUp
-void call(context){
+void call(context) {
     println "Splunk: end of the pipeline!" 
 }
 ----
 
-Run the pipeline again and you should see logs similar to:
+Push your code, then run the pipeline again and you should see logs at the end similar to:
 
 [source,text]
 ----
-[Pipeline] Start of Pipeline
-[JTE] Pipeline Configuration Modifications (show)
-[JTE] Loading Library maven (show)
-[JTE] Library maven does not have a configuration file.
-[JTE] Loading Library sonarqube (show)
-[JTE] Library sonarqube does not have a configuration file.
-[JTE] Loading Library ansible (show)
-[JTE] Library ansible does not have a configuration file.
-[JTE] Loading Library splunk (show)
-[JTE] Library splunk does not have a configuration file.
-[JTE] Creating step unit_test from the default step implementation.
-[JTE] Obtained Pipeline Template from job configuration
-[Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/single-job
-[Pipeline] {
-[Pipeline] writeFile
-[Pipeline] archiveArtifacts
-Archiving artifacts
-[Pipeline] }
-[Pipeline] // node
-[JTE] [@Init - splunk/splunk_pipeline_start.call]
-[Pipeline] echo
-Sending Splunk event for beginning of the pipeline!
-[JTE] [Stage - continuous_integration]
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the Default Step Implementation library's unit_test step
-[JTE] [Step - Default Step Implementation/unit_test.call()]
-[Pipeline] stage
-[Pipeline] { (Unit Test)
-[Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/single-job
-[Pipeline] {
-[Pipeline] isUnix
-[Pipeline] sh
-+ docker inspect -f . maven
-.
-[Pipeline] withDockerContainer
-Jenkins seems to be running inside container cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c
-$ docker run -t -d -u 0:0 -w /var/jenkins_home/workspace/single-job --volumes-from cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven cat
-$ docker top 109ac04fcc911f8df3ca5281720f50886497045230b43ae2a6ca4e9b1b0b1271 -eo pid,comm
-[Pipeline] {
-[Pipeline] unstash
-[Pipeline] sh
-+ mvn -v
-Apache Maven 3.6.2 (40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T15:06:16Z)
-Maven home: /usr/share/maven
-Java version: 11.0.5, vendor: Oracle Corporation, runtime: /usr/local/openjdk-11
-Default locale: en, platform encoding: UTF-8
-OS name: "linux", version: "4.9.125-linuxkit", arch: "amd64", family: "unix"
-[Pipeline] }
-$ docker stop --time=1 109ac04fcc911f8df3ca5281720f50886497045230b43ae2a6ca4e9b1b0b1271
-$ docker rm -f 109ac04fcc911f8df3ca5281720f50886497045230b43ae2a6ca4e9b1b0b1271
-[Pipeline] // withDockerContainer
-[Pipeline] }
-[Pipeline] // node
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the Default Step Implementation library's unit_test step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the maven library's build step
-[JTE] [Step - maven/build.call()]
-[Pipeline] stage
-[Pipeline] { (Maven: Build)
-[Pipeline] echo
-build from the maven library
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the maven library's build step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the sonarqube library's static_code_analysis step
-[JTE] [Step - sonarqube/static_code_analysis.call()]
-[Pipeline] stage
-[Pipeline] { (SonarQube: Static Code Analysis)
-[Pipeline] echo
-static code analysis from the sonarqube library
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the sonarqube library's static_code_analysis step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
-[Pipeline] stage
-[Pipeline] { (Deploy To: dev)
-[Pipeline] echo
-performing a deployment through ansible..
-[Pipeline] echo
-deploying to 0.0.0.1
-[Pipeline] echo
-deploying to 0.0.0.2
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the ansible library's deploy_to step
-[Pipeline] timeout
-Timeout set to expire in 5 min 0 sec
-[Pipeline] {
-[Pipeline] input
-Approve the deployment?
-Proceed or Abort
-Approved by admin
-[Pipeline] }
-[Pipeline] // timeout
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
-[Pipeline] echo
-Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
-[Pipeline] stage
-[Pipeline] { (Deploy To: Production)
-[Pipeline] echo
-performing a deployment through ansible..
-[Pipeline] echo
-deploying to 0.0.1.1
-[Pipeline] echo
-deploying to 0.0.1.2
-[Pipeline] echo
-deploying to 0.0.1.3
-[Pipeline] echo
-deploying to 0.0.1.4
-[Pipeline] }
-[Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the ansible library's deploy_to step
-[JTE] [@CleanUp - splunk/splunk_pipeline_end.call]
+[JTE][@CleanUp - splunk/splunk_pipeline_end.call]
 [Pipeline] echo
 Splunk: end of the pipeline!
 [Pipeline] End of Pipeline
+Finished: SUCCESS
 ----
 
 == Restricting Hook Execution
 
-What if we only wanted to execute the `@AfterStep` hook to be executed after the `static_code_analysis` step?
+What if we only wanted the `@AfterStep` hook to be executed after the `static_code_analysis` step?
 
 Pipeline Lifecycle Hook annotations accept a *Closure* parameter. This Closure will be executed, and if the return of the Closure is non-false the step will be executed.
 
@@ -416,14 +161,23 @@ We call this functionality *Conditional Hook Execution*.
 
 Let's see it in action.
 
-Update the `@AfterStep` created in *libraries/splunk/splunk_step_watcher.groovy* to:
+Update the line with `@AfterStep` to:
 
+.libraries/splunk/steps/splunk_step_watcher.groovy
 [source,groovy]
 ----
+@BeforeStep
+void before() {
+    println "Splunk: running before the ${hookContext.library} library's ${hookContext.step} step" 
+}
+
 @AfterStep({ hookContext.step.equals("static_code_analysis") })
+void after() {
+    println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step" 
+}
 ----
 
-Rerun the pipeline and notice that now, the hook has been restricted to only run after the desired step.
+Push your code, re-run the pipeline and notice that now, the hook has been restricted to only run after the desired step.
 
 [IMPORTANT]
 ====
@@ -438,20 +192,28 @@ To do this, update the `@AfterStep` annotation again to be:
 
 [source,groovy]
 ----
+@BeforeStep
+void before() {
+    println "Splunk: running before the ${hookContext.library} library's ${hookContext.step} step" 
+}
+
 @AfterStep({ hookContext.step in config.afterSteps })
+void after() {
+    println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step" 
+}
 ----
 
 Now, we can conditionally execute the hook by checking if the name of the step that was just executed is in an array called `afterSteps` defined as part of the `splunk` library in the Pipeline Configuration!
 
-Update the `splunk` portion of the Pipeline Configuration to:
+Update the `splunk` portion of the `single-job` Pipeline Configuration to:
 
 [source,groovy]
 ----
-libraries{
+libraries {
     maven
     sonarqube
     ansible
-    splunk{
+    splunk {
         afterSteps = [ "static_code_analysis", "unit_test"  ]
     }
 }

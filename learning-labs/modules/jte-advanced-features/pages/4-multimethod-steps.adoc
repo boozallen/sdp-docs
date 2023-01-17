@@ -9,7 +9,7 @@ In this section, we're going to dive into multi-method steps in a little more de
 
 [IMPORTANT]
 ====
-Have you ever wondered why library steps create a method named `call`? This is because, in groovy, `something()` gets translated to `something.call()`.
+Have you ever wondered why library steps create a method named `call`? This is because, in the Groovy scripting language, `something()` gets translated to `something.call()`.
 ====
 
 If we understand this concept, then it would make sense that we could define other methods within our steps and invoke them by their full name.
@@ -24,39 +24,39 @@ To demonstrate this, let's create a mock `git` utility that can `add`, `commit`,
 
 In the same Pipeline Configuration Repository we used for JTE: The Basics, create a `git` library.
 
-Because we're creating a git utility, add a file called `git.groovy` with the contents:
+Because we're creating a git utility, add a file called `git.groovy` in `libraries/git` in your Library Sources repo with the contents:
 
 [source,groovy]
 ----
 /*
     takes an arraylist of files to pass to git add 
 */
-void add(ArrayList files){
+void add(ArrayList files) {
     println "git add ${files.join(" ")}"
 }
 
 /*
     takes a string commit message to pass to git commit 
 */
-void commit(String message){
+void commit(String message) {
     println "git commit -m ${message}" 
 }
 
 /*
     performs the git push
 */
-void push(){
+void push() {
     println "git push" 
 }
 ----
 
 In this example, we're creating a step that serves as a utility wrapper. These are typically *not* invoked directly by Pipeline Templates but rather consumed by other steps. That is why it is okay, in this case, to accept input parameters for these methods.
 
-We will be invoking this functionality directly from the Pipeline Template to demonstrate its functionality.
+We will be invoking this functionality directly from the Pipeline Template to demonstrate its usefulness.
 
 [IMPORTANT]
 ====
-The filestructure for your Pipeline Configuration libraries directory should now be:
+The file structure for your Pipeline Configuration libraries directory should now be:
 
 [source,]
 ----
@@ -87,13 +87,13 @@ The filestructure for your Pipeline Configuration libraries directory should now
 
 == Update the Pipeline Configuration
 
-Update the Pipeline Configuration to load the `git` library.
+Update the Pipeline Configuration in your `single-job` to load the `git` library.
 
 The `libraries` portion of the Pipeline Configuration should now be:
 
 [source,groovy]
 ----
-libraries{
+libraries {
     maven
     sonarqube
     ansible
@@ -106,7 +106,7 @@ libraries{
 
 == Use the new Git Utility
 
-Prepend to the existing Pipeline Template:
+Prepend to the existing Jenkinsfile/Template for `single-job` (before `continuous_integration()`):
 
 [source,groovy]
 ----
@@ -123,160 +123,144 @@ When invoking a non-call method defined within a step, you do so by `<step_name>
 
 == Run the Pipeline
 
-Run the pipeline again and you will see logs similar to:
+Run the `single-job` again and you will see logs similar to:
 
 [source,text]
 ----
 Started by user admin
-Running in Durability level: MAX_SURVIVABILITY
-[Pipeline] Start of Pipeline
 [JTE] Pipeline Configuration Modifications (show)
-[JTE] Loading Library maven (show)
-[JTE] Library maven does not have a configuration file.
-[JTE] Loading Library sonarqube (show)
-[JTE] Library sonarqube does not have a configuration file.
-[JTE] Loading Library ansible (show)
-[JTE] Library ansible does not have a configuration file.
-[JTE] Loading Library splunk (show)
-[JTE] Library splunk does not have a configuration file.
-[JTE] Loading Library git (show)
-[JTE] Library git does not have a configuration file.
-[JTE] Creating step unit_test from the default step implementation.
 [JTE] Obtained Pipeline Template from job configuration
-[Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/single-job
-[Pipeline] {
-[Pipeline] writeFile
-[Pipeline] archiveArtifacts
-Archiving artifacts
-[Pipeline] }
-[Pipeline] // node
-[JTE] [@Init - splunk/splunk_pipeline_start.call]
+[JTE] Loading Library maven (show)
+[JTE] Loading Library sonarqube (show)
+[JTE] Loading Library ansible (show)
+[JTE] Loading Library splunk (show)
+[JTE] Loading Library git (show)
+[JTE] Creating step unit_test from the default step implementation.
+[JTE] Template Primitives are overwriting Jenkins steps with the following names: (show)
+[Pipeline] Start of Pipeline
+[JTE][@Init - splunk/splunk_pipeline_start.call]
 [Pipeline] echo
-Sending Splunk event for beginning of the pipeline!
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+Splunk: beginning of the pipeline!
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the git library's git step
-[JTE] [Step - git/git.add(ArrayList)]
+[JTE][Step - git/git.add(ArrayList)]
 [Pipeline] echo
 git add a b c
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the git library's git step
-[JTE] [Step - git/git.commit(String)]
+[JTE][Step - git/git.commit(String)]
 [Pipeline] echo
 git commit -m my commit message
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the git library's git step
-[JTE] [Step - git/git.push()]
+[JTE][Step - git/git.push()]
 [Pipeline] echo
 git push
-[JTE] [Stage - continuous_integration]
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][Stage - continuous_integration]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
-Splunk: running before the Default Step Implementation library's unit_test step
-[JTE] [Step - Default Step Implementation/unit_test.call()]
+Splunk: running before the null library's unit_test step
+[JTE][Step - null/unit_test.call()]
 [Pipeline] stage
 [Pipeline] { (Unit Test)
 [Pipeline] node
 Running on Jenkins in /var/jenkins_home/workspace/single-job
 [Pipeline] {
 [Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
 [Pipeline] sh
 + docker inspect -f . maven
 .
+[Pipeline] }
+[Pipeline] // withEnv
 [Pipeline] withDockerContainer
-Jenkins seems to be running inside container cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c
-$ docker run -t -d -u 0:0 -w /var/jenkins_home/workspace/single-job --volumes-from cc7140d4fb91bef940e2fabe7225dcbcc9b44a3a5e17ee703b8fcbe42e53a17c -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven cat
-$ docker top 4bedf0c251a44759408b76ac7dc6db2bebef8438f95018911a0424dfeb68f18d -eo pid,comm
+Jenkins seems to be running inside container f8a61ccd04d1fd2e436dc0ccbc3f5ad59cd95b6a736420fb3ef808b9da5b7dec
+$ docker run -t -d -u 0:0 -w /var/jenkins_home/workspace/single-job --volumes-from f8a61ccd04d1fd2e436dc0ccbc3f5ad59cd95b6a736420fb3ef808b9da5b7dec -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven cat
+$ docker top 8a28e4d78d0bb343f652e5420c00767b50a4e87f12f075f420ecfd5ce73a32d3 -eo pid,comm
 [Pipeline] {
 [Pipeline] unstash
 [Pipeline] sh
 + mvn -v
-Apache Maven 3.6.2 (40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T15:06:16Z)
+Apache Maven 3.8.7 (b89d5959fcde851dcb1c8946a785a163f14e1e29)
 Maven home: /usr/share/maven
-Java version: 11.0.5, vendor: Oracle Corporation, runtime: /usr/local/openjdk-11
-Default locale: en, platform encoding: UTF-8
-OS name: "linux", version: "4.9.125-linuxkit", arch: "amd64", family: "unix"
+Java version: 17.0.5, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.10.104-linuxkit", arch: "amd64", family: "unix"
 [Pipeline] }
-$ docker stop --time=1 4bedf0c251a44759408b76ac7dc6db2bebef8438f95018911a0424dfeb68f18d
-$ docker rm -f 4bedf0c251a44759408b76ac7dc6db2bebef8438f95018911a0424dfeb68f18d
+$ docker stop --time=1 8a28e4d78d0bb343f652e5420c00767b50a4e87f12f075f420ecfd5ce73a32d3
+$ docker rm -f --volumes 8a28e4d78d0bb343f652e5420c00767b50a4e87f12f075f420ecfd5ce73a32d3
 [Pipeline] // withDockerContainer
 [Pipeline] }
 [Pipeline] // node
 [Pipeline] }
 [Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
+[JTE][@AfterStep - splunk/splunk_step_watcher.after]
 [Pipeline] echo
-Splunk: running after the Default Step Implementation library's unit_test step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+Splunk: running after the null library's unit_test step
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the maven library's build step
-[JTE] [Step - maven/build.call()]
+[JTE][Step - maven/build.call()]
 [Pipeline] stage
 [Pipeline] { (Maven: Build)
 [Pipeline] echo
 build from the maven library
 [Pipeline] }
 [Pipeline] // stage
-[JTE] [@AfterStep - splunk/splunk_step_watcher.after]
-[Pipeline] echo
-Splunk: running after the maven library's build step
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the sonarqube library's static_code_analysis step
-[JTE] [Step - sonarqube/static_code_analysis.call()]
+[JTE][Step - sonarqube/static_code_analysis.call()]
 [Pipeline] stage
 [Pipeline] { (SonarQube: Static Code Analysis)
 [Pipeline] echo
 static code analysis from the sonarqube library
 [Pipeline] }
 [Pipeline] // stage
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@AfterStep - splunk/splunk_step_watcher.after]
+[Pipeline] echo
+Splunk: running after the sonarqube library's static_code_analysis step
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
+[JTE][Step - ansible/deploy_to.call(ApplicationEnvironment)]
 [Pipeline] stage
-[Pipeline] { (Deploy To: dev)
+[Pipeline] { (Deploy to: dev)
 [Pipeline] echo
-performing a deployment through ansible..
+Performing a deployment through Ansible..
 [Pipeline] echo
-deploying to 0.0.0.1
+Deploying to 0.0.0.1
 [Pipeline] echo
-deploying to 0.0.0.2
+Deploying to 0.0.0.2
 [Pipeline] }
 [Pipeline] // stage
-[Pipeline] timeout
-Timeout set to expire in 5 min 0 sec
-[Pipeline] {
-[Pipeline] input
-Approve the deployment?
-Proceed or Abort
-Approved by admin
-[Pipeline] }
-[Pipeline] // timeout
-[JTE] [@BeforeStep - splunk/splunk_step_watcher.before]
+[JTE][@BeforeStep - splunk/splunk_step_watcher.before]
 [Pipeline] echo
 Splunk: running before the ansible library's deploy_to step
-[JTE] [Step - ansible/deploy_to.call(ApplicationEnvironment)]
+[JTE][Step - ansible/deploy_to.call(ApplicationEnvironment)]
 [Pipeline] stage
-[Pipeline] { (Deploy To: Production)
+[Pipeline] { (Deploy to: Production)
 [Pipeline] echo
-performing a deployment through ansible..
+Performing a deployment through Ansible..
 [Pipeline] echo
-deploying to 0.0.1.1
+Deploying to 0.0.1.1
 [Pipeline] echo
-deploying to 0.0.1.2
+Deploying to 0.0.1.2
 [Pipeline] echo
-deploying to 0.0.1.3
+Deploying to 0.0.1.3
 [Pipeline] echo
-deploying to 0.0.1.4
+Deploying to 0.0.1.4
 [Pipeline] }
 [Pipeline] // stage
-[JTE] [@CleanUp - splunk/splunk_pipeline_end.call]
+[JTE][@CleanUp - splunk/splunk_pipeline_end.call]
 [Pipeline] echo
 Splunk: end of the pipeline!
 [Pipeline] End of Pipeline
 Finished: SUCCESS
 ----
+
+You learned in this lesson that we can call steps in a very programmatic way from our template, this opens the door to new and creative ways to create a governed pipeline that allows flexibility for different step implementations.

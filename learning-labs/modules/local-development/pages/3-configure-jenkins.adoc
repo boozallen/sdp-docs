@@ -99,6 +99,6 @@ Now, we need to install the Docker Pipeline plugin, which can be found as the `D
 . In the left-hand navigation menu, select _Manage Jenkins_.
 . In the middle of the screen, select _Manage Plugins_.
 . In the left-hand navigation menu, select _Available plugins_.
-. In the _Search available plugins_ text box, type: `Docker Pipelinee`
+. In the _Search available plugins_ text box, type: `Docker Pipeline`
 
 Follow the same steps used for installing the Jenkins Templating Engine and restart the Jenkins instance.
