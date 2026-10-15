@@ -1,4 +1,6 @@
 # Solutions Delivery Platform Documentation 
+# ⚠️ PROJECT RETIRED / UNMAINTAINED
+This repository is no longer actively maintained. 
 
 ## Antora 
 
