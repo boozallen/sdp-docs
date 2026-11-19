@@ -75,8 +75,7 @@ Splunk: beginning of the pipeline!
 
 === Add Before and After Step Execution Hooks
 
-Let's add some hooks that inject themselves both before and after each step is executed in the pipeline.
-
+Let's add some hooks that inject themselves both before and after each step is executed in the pipeline:
 
 .libraries/splunk/steps/splunk_step_watcher.groovy
 [source,groovy]
@@ -246,7 +245,7 @@ Finished: SUCCESS
 
 Let's try out one more hook to get executed when the pipeline has finished:
 
-.libraries/splunk/splunk_pipeline_end.groovy
+.libraries/splunk/steps/splunk_pipeline_end.groovy
 [source,groovy]
 ----
 @CleanUp
@@ -416,11 +415,14 @@ We call this functionality *Conditional Hook Execution*.
 
 Let's see it in action.
 
-Update the `@AfterStep` created in *libraries/splunk/splunk_step_watcher.groovy* to:
+Update the `@AfterStep` created in *libraries/splunk/steps/splunk_step_watcher.groovy* to:
 
 [source,groovy]
 ----
 @AfterStep({ hookContext.step.equals("static_code_analysis") })
+void after(){
+    println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step"
+}
 ----
 
 Rerun the pipeline and notice that now, the hook has been restricted to only run after the desired step.
@@ -439,6 +441,9 @@ To do this, update the `@AfterStep` annotation again to be:
 [source,groovy]
 ----
 @AfterStep({ hookContext.step in config.afterSteps })
+void after(){
+    println "Splunk: running after the ${hookContext.library} library's ${hookContext.step} step"
+}
 ----
 
 Now, we can conditionally execute the hook by checking if the name of the step that was just executed is in an array called `afterSteps` defined as part of the `splunk` library in the Pipeline Configuration!
